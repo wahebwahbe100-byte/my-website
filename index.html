@@ -40,7 +40,7 @@
 
     .glass {
       background: rgba(255,255,255,0.04);
-      backdrop-filter: blur(8px);
+      backdrop-filter: blur(10px);
     }
 
     .image-hover {
@@ -70,6 +70,57 @@
     .fade-in-section.show {
       opacity: 1;
       transform: translateY(0) scale(1);
+    }
+
+    .contact-box {
+      background:
+        linear-gradient(rgba(2, 6, 23, 0.84), rgba(2, 6, 23, 0.9)),
+        url("images/world-bg.jpg");
+      background-size: cover;
+      background-position: center;
+      border: 1px solid rgba(34, 211, 238, 0.16);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .contact-box::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at top center, rgba(34,211,238,0.12), transparent 30%),
+        radial-gradient(circle at bottom left, rgba(99,102,241,0.12), transparent 30%);
+      pointer-events: none;
+    }
+
+    .contact-content {
+      position: relative;
+      z-index: 2;
+    }
+
+    .whatsapp-btn {
+      background: linear-gradient(90deg, #22d3ee, #06b6d4);
+      color: #020617;
+      position: relative;
+      transition: 0.4s ease;
+      box-shadow: 0 0 18px rgba(34, 211, 238, 0.35);
+    }
+
+    .whatsapp-btn:hover {
+      transform: scale(1.05);
+      box-shadow:
+        0 0 18px rgba(34, 211, 238, 0.55),
+        0 0 40px rgba(34, 211, 238, 0.35),
+        0 0 70px rgba(34, 211, 238, 0.22);
+    }
+
+    .email-btn {
+      transition: 0.35s ease;
+    }
+
+    .email-btn:hover {
+      transform: translateY(-2px);
+      background: rgba(255,255,255,0.08);
     }
   </style>
 </head>
@@ -332,40 +383,43 @@
 
   <!-- CONTACT -->
   <section id="contact" class="mx-auto max-w-5xl px-6 pb-24">
-    <div class="rounded-[2rem] border border-cyan-400/20 bg-gradient-to-r from-cyan-400/10 to-indigo-500/10 p-10 text-center shadow-2xl">
-      <h2 class="text-3xl font-bold sm:text-4xl">جاهز للبدء بموقعك الاحترافي؟</h2>
-      <p class="mx-auto mt-4 max-w-2xl text-lg leading-8 text-white/75">
-        ابدأ الآن بموقع حديث يمنحك حضورًا قويًا على الإنترنت، مع دومين خاص وإمكانية تطوير المميزات التي يحتاجها نشاطك.
-      </p>
+    <div class="contact-box rounded-[2rem] p-10 text-center shadow-2xl">
+      <div class="contact-content">
+        <h2 class="text-3xl font-bold sm:text-4xl">جاهز للبدء بموقعك الاحترافي؟</h2>
 
-      <div class="mt-8 flex flex-wrap justify-center gap-4">
-        <a
-          href="https://wa.me/15213873166"
-          target="_blank"
-          rel="noreferrer"
-          class="inline-block rounded-2xl bg-cyan-400 px-8 py-3 font-semibold text-slate-950 transition hover:scale-105"
-        >
-          تواصل عبر واتساب
-        </a>
+        <p class="mx-auto mt-4 max-w-2xl text-lg leading-8 text-white/80">
+          ابدأ الآن بموقع حديث يمنحك حضورًا قويًا على الإنترنت، مع دومين خاص وإمكانية تطوير المميزات التي يحتاجها نشاطك.
+        </p>
 
-        <a
-          href="mailto:wahebwahbe100@gmail.com"
-          class="inline-block rounded-2xl border border-white/15 bg-white/5 px-8 py-3 font-semibold text-white transition hover:bg-white/10"
-        >
-          تواصل عبر الإيميل
-        </a>
-      </div>
+        <div class="mt-8 flex flex-wrap justify-center gap-4">
+          <a
+            href="https://wa.me/15213873166"
+            target="_blank"
+            rel="noreferrer"
+            class="whatsapp-btn inline-block rounded-2xl px-8 py-3 font-semibold"
+          >
+            تواصل عبر واتساب
+          </a>
 
-      <p class="mt-8 text-xl font-bold text-cyan-300">
-        لا تدفع أي شيء حتى تستلم موقعك كاملًا.
-      </p>
+          <a
+            href="mailto:wahebwahbe100@gmail.com"
+            class="email-btn inline-block rounded-2xl border border-white/15 bg-white/5 px-8 py-3 font-semibold text-white"
+          >
+            تواصل عبر الإيميل
+          </a>
+        </div>
 
-      <div class="mt-12 fade-in-section image-hover overflow-hidden rounded-2xl border border-white/10 shadow-xl">
-        <img
-          src="images/website-main.jpg"
-          alt="عرض تصميم الموقع"
-          class="h-80"
-        />
+        <p class="mt-8 text-xl font-bold text-cyan-300">
+          لا تدفع أي شيء حتى تستلم موقعك كاملًا.
+        </p>
+
+        <div class="mt-12 fade-in-section image-hover overflow-hidden rounded-2xl border border-white/10 shadow-xl">
+          <img
+            src="images/website-main.jpg"
+            alt="عرض تصميم الموقع"
+            class="h-80"
+          />
+        </div>
       </div>
     </div>
   </section>
