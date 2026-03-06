@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="de">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Waheb Wahbe | تصميم مواقع احترافية</title>
+  <title>Waheb Sity | Professionelles Webdesign</title>
   <meta
     name="description"
-    content="تصميم مواقع إلكترونية احترافية للشركات والأطباء والمهندسين والمطاعم والحلاقين والمتاجر مع تسليم سريع وتصميم عصري."
+    content="Professionelles Webdesign für Unternehmen, Ärzte, Ingenieure, Restaurants, Friseure und Onlineshops mit schneller Lieferung und modernem Design."
   />
 
   <script src="https://cdn.tailwindcss.com"></script>
@@ -113,7 +113,7 @@
       content: "";
       position: absolute;
       bottom: -6px;
-      right: 0;
+      left: 0;
       width: 0;
       height: 2px;
       background: #22d3ee;
@@ -158,7 +158,7 @@
     .video-badge {
       position: absolute;
       top: 1rem;
-      right: 1rem;
+      left: 1rem;
       z-index: 3;
       background: rgba(2, 6, 23, 0.75);
       backdrop-filter: blur(10px);
@@ -184,12 +184,12 @@
     .title-line::after {
       content: "";
       position: absolute;
-      right: 0;
+      left: 0;
       bottom: -8px;
       width: 100%;
       height: 5px;
       border-radius: 999px;
-      background: linear-gradient(to left, #22d3ee, #3b82f6);
+      background: linear-gradient(to right, #22d3ee, #3b82f6);
     }
 
     .glow-orb {
@@ -302,22 +302,30 @@
       </a>
 
       <nav class="hidden items-center gap-8 text-sm font-semibold text-white/80 md:flex">
-        <a href="#home" class="nav-link transition hover:text-cyan-400">الرئيسية</a>
-        <a href="#about" class="nav-link transition hover:text-cyan-400">من نحن</a>
-        <a href="#services" class="nav-link transition hover:text-cyan-400">الخدمات</a>
-        <a href="#projects" class="nav-link transition hover:text-cyan-400">الأعمال</a>
-        <a href="#features" class="nav-link transition hover:text-cyan-400">المميزات</a>
-        <a href="#contact" class="nav-link transition hover:text-cyan-400">التواصل</a>
+        <a href="#home" class="nav-link transition hover:text-cyan-400" data-i18n="nav_home">Startseite</a>
+        <a href="#about" class="nav-link transition hover:text-cyan-400" data-i18n="nav_about">Über uns</a>
+        <a href="#services" class="nav-link transition hover:text-cyan-400" data-i18n="nav_services">Leistungen</a>
+        <a href="#projects" class="nav-link transition hover:text-cyan-400" data-i18n="nav_projects">Projekte</a>
+        <a href="#features" class="nav-link transition hover:text-cyan-400" data-i18n="nav_features">Vorteile</a>
+        <a href="#contact" class="nav-link transition hover:text-cyan-400" data-i18n="nav_contact">Kontakt</a>
       </nav>
 
-      <a
-        href="https://wa.me/15213873166"
-        target="_blank"
-        rel="noreferrer"
-        class="rounded-xl bg-cyan-400 px-5 py-2 text-sm font-bold text-slate-950 transition hover:scale-105"
-      >
-        ابدأ الآن
-      </a>
+      <div class="flex items-center gap-3">
+        <select id="langSwitcher" class="rounded-xl border border-white/10 bg-slate-900 px-3 py-2 text-sm text-white outline-none">
+          <option value="de">DE</option>
+          <option value="en">EN</option>
+        </select>
+
+        <a
+          href="https://wa.me/15213873166"
+          target="_blank"
+          rel="noreferrer"
+          class="rounded-xl bg-cyan-400 px-5 py-2 text-sm font-bold text-slate-950 transition hover:scale-105"
+          data-i18n="start_now"
+        >
+          Jetzt starten
+        </a>
+      </div>
     </div>
   </header>
 
@@ -325,59 +333,60 @@
   <section id="home" class="hero-bg border-b border-white/10">
     <div class="mx-auto grid max-w-7xl items-center gap-12 px-6 py-20 lg:grid-cols-2">
       <div class="fade-up">
-        <span class="inline-flex rounded-full border border-cyan-400/20 bg-cyan-400/10 px-4 py-1 text-sm font-semibold text-cyan-300">
-          تصميم وتطوير مواقع احترافية
+        <span class="inline-flex rounded-full border border-cyan-400/20 bg-cyan-400/10 px-4 py-1 text-sm font-semibold text-cyan-300" data-i18n="hero_badge">
+          Professionelles Webdesign & Entwicklung
         </span>
 
         <h1 class="mt-6 text-4xl font-bold leading-tight sm:text-5xl lg:text-6xl">
-          موقع إلكتروني احترافي
-          <span class="text-cyan-400">يصنع حضورك الحقيقي</span>
-          على الإنترنت
+          <span data-i18n="hero_title_1">Eine professionelle Website</span>
+          <span class="text-cyan-400" data-i18n="hero_title_2">macht Ihre echte Präsenz</span>
+          <span data-i18n="hero_title_3">im Internet sichtbar</span>
         </h1>
 
-        <p class="mt-6 max-w-2xl text-lg leading-8 text-white/75">
-          نصمم لك موقعًا حديثًا وسريعًا يعرض نشاطك أو خدماتك أو مشروعك بشكل قوي ومرتب،
-          مع توافق كامل مع الجوال وإمكانية إضافة أي خصائص تحتاجها.
+        <p class="mt-6 max-w-2xl text-lg leading-8 text-white/75" data-i18n="hero_desc">
+          Wir gestalten für Sie eine moderne und schnelle Website, die Ihr Unternehmen, Ihre Dienstleistungen oder Ihr Projekt stark und übersichtlich präsentiert – vollständig mobiloptimiert und mit allen Funktionen, die Sie brauchen.
         </p>
 
         <div class="mt-8 flex flex-wrap gap-4">
           <a
             href="#contact"
             class="rounded-2xl bg-cyan-400 px-6 py-3 font-semibold text-slate-950 transition hover:scale-105"
+            data-i18n="hero_cta_1"
           >
-            اطلب موقعك الآن
+            Jetzt Website anfragen
           </a>
 
           <a
             href="#projects"
             class="rounded-2xl border border-white/15 bg-white/5 px-6 py-3 font-semibold text-white transition hover:bg-white/10"
+            data-i18n="hero_cta_2"
           >
-            مشاهدة النماذج
+            Beispiele ansehen
           </a>
         </div>
 
         <div class="mt-10 grid gap-4 sm:grid-cols-3">
           <div class="glass rounded-2xl border border-white/10 p-5 text-center">
             <div class="text-2xl font-bold text-cyan-400">48H</div>
-            <p class="mt-2 text-sm text-white/65">سرعة في التسليم</p>
+            <p class="mt-2 text-sm text-white/65" data-i18n="hero_stat_1">Schnelle Lieferung</p>
           </div>
 
           <div class="glass rounded-2xl border border-white/10 p-5 text-center">
             <div class="text-2xl font-bold text-cyan-400">.de / .com</div>
-            <p class="mt-2 text-sm text-white/65">دومين خاص</p>
+            <p class="mt-2 text-sm text-white/65" data-i18n="hero_stat_2">Eigene Domain</p>
           </div>
 
           <div class="glass rounded-2xl border border-white/10 p-5 text-center">
             <div class="text-2xl font-bold text-cyan-400">0€</div>
-            <p class="mt-2 text-sm text-white/65">الدفع بعد الاستلام</p>
+            <p class="mt-2 text-sm text-white/65" data-i18n="hero_stat_3">Zahlung nach Lieferung</p>
           </div>
         </div>
       </div>
 
       <div class="fade-up">
         <div class="video-frame min-h-[320px] lg:min-h-[520px]">
-          <div class="video-badge rounded-xl px-4 py-2 text-sm font-semibold text-cyan-300">
-            عرض بصري لموقعك
+          <div class="video-badge rounded-xl px-4 py-2 text-sm font-semibold text-cyan-300" data-i18n="video_badge">
+            Visuelle Vorschau Ihrer Website
           </div>
 
           <video
@@ -390,19 +399,18 @@
             poster="images/website-mockup.png"
           >
             <source src="images/laptop-showcase.mp4" type="video/mp4" />
-            المتصفح لديك لا يدعم تشغيل الفيديو.
+            Ihr Browser unterstützt kein Video.
           </video>
         </div>
 
         <div class="mt-8 text-center">
           <h3 class="text-2xl font-bold text-white sm:text-3xl">
-            نحول فكرتك إلى
-            <span class="text-cyan-400">موقع احترافي يلفت الأنظار</span>
+            <span data-i18n="hero_bottom_title_1">Wir verwandeln Ihre Idee in eine</span>
+            <span class="text-cyan-400" data-i18n="hero_bottom_title_2">professionelle Website, die Aufmerksamkeit erzeugt</span>
           </h3>
 
-          <p class="mx-auto mt-4 max-w-3xl text-lg leading-8 text-white/75">
-            نصمم مواقع عصرية وسريعة تعكس قوة مشروعك وتمنحك حضورًا مميزًا على الإنترنت،
-            مع تجربة استخدام جذابة ومتوافقة مع جميع الأجهزة.
+          <p class="mx-auto mt-4 max-w-3xl text-lg leading-8 text-white/75" data-i18n="hero_bottom_desc">
+            Wir gestalten moderne und schnelle Websites, die die Stärke Ihres Projekts widerspiegeln und Ihnen eine besondere Online-Präsenz geben – mit attraktiver Benutzererfahrung und voller Kompatibilität auf allen Geräten.
           </p>
         </div>
       </div>
@@ -410,52 +418,49 @@
   </section>
 
   <!-- ABOUT -->
-  <section id="about" class="relative overflow-hidden mx-auto max-w-7xl px-6 py-24">
-    <div class="glow-orb top-10 right-10 h-72 w-72 bg-cyan-500/10"></div>
+  <section id="about" class="relative mx-auto max-w-7xl overflow-hidden px-6 py-24">
+    <div class="glow-orb right-10 top-10 h-72 w-72 bg-cyan-500/10"></div>
     <div class="glow-orb bottom-10 left-10 h-72 w-72 bg-indigo-500/10"></div>
 
     <div class="grid items-center gap-14 lg:grid-cols-2">
       <div class="fade-up">
-        <span class="inline-flex rounded-full border border-cyan-400/20 bg-cyan-400/10 px-4 py-1 text-sm font-semibold text-cyan-300">
-          لماذا نحن؟
+        <span class="inline-flex rounded-full border border-cyan-400/20 bg-cyan-400/10 px-4 py-1 text-sm font-semibold text-cyan-300" data-i18n="about_badge">
+          Warum wir?
         </span>
 
         <h2 class="mt-6 text-4xl font-bold leading-tight sm:text-5xl">
-          هل تفكر في إنشاء
-          <span class="title-line">موقع إلكتروني احترافي</span>
-          لنشاطك؟
+          <span data-i18n="about_title_1">Denken Sie über eine</span>
+          <span class="title-line" data-i18n="about_title_2">professionelle Website</span>
+          <span data-i18n="about_title_3">für Ihr Geschäft nach?</span>
         </h2>
 
-        <p class="mt-8 text-lg leading-8 text-white/80">
-          نحن نوفر لك خدمة متكاملة لإنشاء موقع يعكس نشاطك الحقيقي ويمنحك حضورًا قويًا على الإنترنت
-          بطريقة احترافية تساعدك على كسب ثقة العملاء من أول زيارة.
+        <p class="mt-8 text-lg leading-8 text-white/80" data-i18n="about_p1">
+          Wir bieten Ihnen einen kompletten Service zur Erstellung einer Website, die Ihr Unternehmen authentisch widerspiegelt und Ihnen eine starke Online-Präsenz gibt – auf professionelle Weise, die vom ersten Besuch an Vertrauen schafft.
+        </p>
+
+        <p class="mt-5 text-lg leading-8 text-white/80" data-i18n="about_p2">
+          Ob Arzt, Ingenieur, Restaurantbesitzer, Friseur oder Inhaber eines anderen Unternehmens – wir erstellen eine Website, die perfekt zu Ihrer Branche passt und Ihre Ziele klar unterstützt.
+        </p>
+
+        <p class="mt-5 text-lg leading-8 text-white/80" data-i18n="about_p3">
+          Ihre Website kann ein Buchungssystem, Dienstleistungs- oder Produktdarstellungen, Vorstellungsseiten, direkte Kontaktmöglichkeiten oder beliebige individuelle Funktionen enthalten.
         </p>
 
         <p class="mt-5 text-lg leading-8 text-white/80">
-          سواء كنت طبيبًا، مهندسًا، صاحب مطعم، حلاقًا أو صاحب أي نشاط آخر،
-          نقوم ببناء موقع يناسب طبيعة عملك ويخدم أهدافك بشكل واضح واحترافي.
+          <span data-i18n="about_p4_1">Außerdem bieten wir Ihnen eine eigene Domain mit der Endung</span>
+          <span class="font-bold text-cyan-300"> .de </span>
+          <span data-i18n="about_p4_2">oder</span>
+          <span class="font-bold text-cyan-300"> .com </span>
+          <span data-i18n="about_p4_3">je nach Wunsch.</span>
         </p>
 
-        <p class="mt-5 text-lg leading-8 text-white/80">
-          يمكن أن يتضمن موقعك نظام حجز مواعيد، عرض خدمات أو منتجات، صفحات تعريفية، وسائل تواصل مباشرة،
-          أو أي خصائص خاصة تريد إضافتها حسب طبيعة مشروعك.
+        <p class="mt-5 text-lg leading-8 text-white/80" data-i18n="about_p5">
+          Wir garantieren eine schnelle Umsetzung – in den meisten Fällen erhalten Sie Ihre Website in weniger als 48 Stunden.
         </p>
 
-        <p class="mt-5 text-lg leading-8 text-white/80">
-          كما نوفر لك دومين خاص باسم موقعك ينتهي بـ
-          <span class="font-bold text-cyan-300">.de</span>
-          أو
-          <span class="font-bold text-cyan-300">.com</span>
-          حسب رغبتك.
-        </p>
-
-        <p class="mt-5 text-lg leading-8 text-white/80">
-          نلتزم بسرعة التنفيذ حيث يتم تسليم الموقع خلال أقل من 48 ساعة في معظم الحالات.
-        </p>
-
-        <div class="mt-8 rounded-3xl border border-cyan-400/20 bg-gradient-to-l from-cyan-500/10 to-blue-500/10 p-6 shadow-xl">
-          <p class="text-2xl font-bold text-cyan-300">
-            لا تدفع أي شيء حتى تستلم موقعك كاملًا وتكون راضيًا عنه.
+        <div class="mt-8 rounded-3xl border border-cyan-400/20 bg-gradient-to-r from-cyan-500/10 to-blue-500/10 p-6 shadow-xl">
+          <p class="text-2xl font-bold text-cyan-300" data-i18n="about_highlight">
+            Sie zahlen erst, wenn Ihre Website vollständig fertig ist und Sie zufrieden sind.
           </p>
         </div>
       </div>
@@ -464,12 +469,12 @@
         <div class="group relative overflow-hidden rounded-3xl border border-white/10 bg-slate-900/60 shadow-2xl sm:col-span-2 fade-up">
           <img
             src="images/website-mockup.png"
-            alt="تصميم موقع احترافي"
+            alt="Professionelles Webdesign"
             class="h-72 w-full object-cover transition duration-700 group-hover:scale-105 group-hover:brightness-110"
           />
           <div class="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-slate-900/10 to-transparent"></div>
-          <div class="absolute bottom-5 right-5 rounded-2xl border border-white/10 bg-slate-950/70 px-4 py-2 text-sm font-semibold text-cyan-300 backdrop-blur-md">
-            تصميم احترافي عصري
+          <div class="absolute bottom-5 left-5 rounded-2xl border border-white/10 bg-slate-950/70 px-4 py-2 text-sm font-semibold text-cyan-300 backdrop-blur-md" data-i18n="about_image_badge">
+            Modernes professionelles Design
           </div>
         </div>
 
@@ -477,14 +482,14 @@
           <div class="overflow-hidden rounded-2xl">
             <img
               src="images/booking-system.jpg"
-              alt="نظام حجز"
+              alt="Buchungssystem"
               class="h-56 w-full object-cover transition duration-700 hover:scale-105"
             />
           </div>
           <div class="pt-4">
-            <h3 class="text-lg font-bold text-white">نظام حجز</h3>
-            <p class="mt-2 text-sm leading-6 text-white/65">
-              مناسب للعيادات والحلاقين والمشاريع التي تحتاج إلى تنظيم المواعيد باحترافية.
+            <h3 class="text-lg font-bold text-white" data-i18n="booking_title">Buchungssystem</h3>
+            <p class="mt-2 text-sm leading-6 text-white/65" data-i18n="booking_desc">
+              Ideal für Arztpraxen, Friseure und Unternehmen, die Termine professionell organisieren möchten.
             </p>
           </div>
         </div>
@@ -493,9 +498,9 @@
           <div class="mb-4 inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-cyan-400/15 text-2xl text-cyan-300">
             ✨
           </div>
-          <h3 class="text-xl font-bold text-white">واجهة تبني الثقة</h3>
-          <p class="mt-3 text-sm leading-7 text-white/70">
-            تصميم أنيق وسرعة ممتازة وأسلوب عرض واضح يساعد عميلك على فهم خدماتك واتخاذ قرار التواصل بسرعة.
+          <h3 class="text-xl font-bold text-white" data-i18n="trust_title">Ein Auftritt, der Vertrauen schafft</h3>
+          <p class="mt-3 text-sm leading-7 text-white/70" data-i18n="trust_desc">
+            Elegantes Design, starke Performance und eine klare Struktur helfen Ihren Kunden, Ihre Leistungen schnell zu verstehen und Kontakt aufzunehmen.
           </p>
         </div>
       </div>
@@ -506,43 +511,43 @@
   <section id="services" class="border-y border-white/10 bg-white/5">
     <div class="mx-auto max-w-7xl px-6 py-24">
       <div class="max-w-2xl fade-up">
-        <p class="text-sm font-semibold uppercase tracking-[0.2em] text-cyan-400">الخدمات</p>
-        <h2 class="mt-3 text-3xl font-bold sm:text-4xl">كل ما تحتاجه لموقع قوي واحترافي</h2>
-        <p class="mt-4 text-white/70 leading-8">
-          نقدم لك حلولًا متكاملة لبناء حضور رقمي مميز يساعدك على الوصول إلى عملائك بطريقة حديثة وأنيقة.
+        <p class="text-sm font-semibold uppercase tracking-[0.2em] text-cyan-400" data-i18n="services_badge">Leistungen</p>
+        <h2 class="mt-3 text-3xl font-bold sm:text-4xl" data-i18n="services_title">Alles, was Sie für eine starke professionelle Website brauchen</h2>
+        <p class="mt-4 leading-8 text-white/70" data-i18n="services_desc">
+          Wir bieten Ihnen komplette Lösungen für eine starke digitale Präsenz, damit Sie Ihre Kunden modern und stilvoll erreichen.
         </p>
       </div>
 
       <div class="mt-12 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
         <div class="section-card fade-up rounded-3xl border border-white/10 bg-slate-900/70 p-6 shadow-xl">
           <div class="mb-5 inline-flex rounded-2xl bg-cyan-400/10 p-4 text-cyan-300">🌐</div>
-          <h3 class="text-xl font-semibold">تصميم مواقع احترافية</h3>
-          <p class="mt-3 text-sm leading-6 text-white/65">
-            تصميم مواقع حديثة وسريعة ومتوافقة مع الجوال لتناسب نشاطك التجاري أو الشخصي.
+          <h3 class="text-xl font-semibold" data-i18n="service_1_title">Professionelles Webdesign</h3>
+          <p class="mt-3 text-sm leading-6 text-white/65" data-i18n="service_1_desc">
+            Moderne, schnelle und mobiloptimierte Websites für Unternehmen oder persönliche Projekte.
           </p>
         </div>
 
         <div class="section-card fade-up rounded-3xl border border-white/10 bg-slate-900/70 p-6 shadow-xl">
           <div class="mb-5 inline-flex rounded-2xl bg-cyan-400/10 p-4 text-cyan-300">🛒</div>
-          <h3 class="text-xl font-semibold">متاجر إلكترونية</h3>
-          <p class="mt-3 text-sm leading-6 text-white/65">
-            إنشاء متجر منظم مع صفحات منتجات واضحة وتجربة شراء سهلة وجذابة.
+          <h3 class="text-xl font-semibold" data-i18n="service_2_title">Onlineshops</h3>
+          <p class="mt-3 text-sm leading-6 text-white/65" data-i18n="service_2_desc">
+            Strukturierte Shops mit klaren Produktseiten und einfacher, attraktiver Kaufabwicklung.
           </p>
         </div>
 
         <div class="section-card fade-up rounded-3xl border border-white/10 bg-slate-900/70 p-6 shadow-xl">
           <div class="mb-5 inline-flex rounded-2xl bg-cyan-400/10 p-4 text-cyan-300">⚙️</div>
-          <h3 class="text-xl font-semibold">تطوير مخصص</h3>
-          <p class="mt-3 text-sm leading-6 text-white/65">
-            إضافة خصائص خاصة مثل الحجز والطلبات والنماذج أو أي فكرة تريد تنفيذها لمشروعك.
+          <h3 class="text-xl font-semibold" data-i18n="service_3_title">Individuelle Entwicklung</h3>
+          <p class="mt-3 text-sm leading-6 text-white/65" data-i18n="service_3_desc">
+            Individuelle Funktionen wie Buchungen, Bestellungen, Formulare oder besondere Ideen für Ihr Projekt.
           </p>
         </div>
 
         <div class="section-card fade-up rounded-3xl border border-white/10 bg-slate-900/70 p-6 shadow-xl">
           <div class="mb-5 inline-flex rounded-2xl bg-cyan-400/10 p-4 text-cyan-300">🚀</div>
-          <h3 class="text-xl font-semibold">تحسين الأداء والدعم</h3>
-          <p class="mt-3 text-sm leading-6 text-white/65">
-            تحسين سرعة الموقع وتجربة المستخدم والتوافق مع مختلف الشاشات والأجهزة.
+          <h3 class="text-xl font-semibold" data-i18n="service_4_title">Performance & Support</h3>
+          <p class="mt-3 text-sm leading-6 text-white/65" data-i18n="service_4_desc">
+            Optimierung von Geschwindigkeit, Benutzererfahrung und Kompatibilität auf allen Geräten.
           </p>
         </div>
       </div>
@@ -552,55 +557,55 @@
   <!-- PROJECTS -->
   <section id="projects" class="mx-auto max-w-7xl px-6 py-24">
     <div class="fade-up">
-      <p class="text-sm font-semibold uppercase tracking-[0.2em] text-cyan-400">نماذج</p>
-      <h2 class="mt-3 text-3xl font-bold sm:text-4xl">أمثلة لأنواع المواقع الممكنة</h2>
-      <p class="mt-4 max-w-2xl text-white/70 leading-8">
-        هذه أمثلة لأفكار يمكن تنفيذها حسب طبيعة مشروعك، مع إمكانية تخصيص الألوان والأقسام والمميزات كما تريد.
+      <p class="text-sm font-semibold uppercase tracking-[0.2em] text-cyan-400" data-i18n="projects_badge">Beispiele</p>
+      <h2 class="mt-3 text-3xl font-bold sm:text-4xl" data-i18n="projects_title">Beispiele für mögliche Website-Typen</h2>
+      <p class="mt-4 max-w-2xl leading-8 text-white/70" data-i18n="projects_desc">
+        Dies sind Beispiele für Websites, die je nach Projekt individuell umgesetzt werden können – Farben, Bereiche und Funktionen lassen sich anpassen.
       </p>
     </div>
 
     <div class="mt-12 grid gap-6 md:grid-cols-3">
       <div class="zoom-in overflow-hidden rounded-3xl border border-white/10 bg-slate-900/70 shadow-xl transition duration-300 hover:-translate-y-2 hover:shadow-cyan-500/10">
         <div class="image-hover h-52">
-          <img src="images/business-site.jpg" alt="موقع شركة" />
+          <img src="images/business-site.jpg" alt="Unternehmenswebsite" />
         </div>
         <div class="p-6">
-          <span class="rounded-full border border-cyan-400/30 bg-cyan-400/10 px-3 py-1 text-xs font-medium text-cyan-300">
-            أعمال
+          <span class="rounded-full border border-cyan-400/30 bg-cyan-400/10 px-3 py-1 text-xs font-medium text-cyan-300" data-i18n="project_1_badge">
+            Business
           </span>
-          <h3 class="mt-5 text-2xl font-semibold">موقع شركة</h3>
-          <p class="mt-3 text-sm leading-6 text-white/65">
-            موقع احترافي للتعريف بالشركة وعرض الخدمات والمشاريع وتسهيل التواصل مع العملاء.
+          <h3 class="mt-5 text-2xl font-semibold" data-i18n="project_1_title">Unternehmenswebsite</h3>
+          <p class="mt-3 text-sm leading-6 text-white/65" data-i18n="project_1_desc">
+            Professionelle Website zur Vorstellung des Unternehmens, der Leistungen und Projekte mit einfacher Kontaktaufnahme.
           </p>
         </div>
       </div>
 
       <div class="zoom-in overflow-hidden rounded-3xl border border-white/10 bg-slate-900/70 shadow-xl transition duration-300 hover:-translate-y-2 hover:shadow-cyan-500/10">
         <div class="image-hover h-52">
-          <img src="images/ecommerce-site.jpg" alt="متجر إلكتروني" />
+          <img src="images/ecommerce-site.jpg" alt="Onlineshop" />
         </div>
         <div class="p-6">
-          <span class="rounded-full border border-cyan-400/30 bg-cyan-400/10 px-3 py-1 text-xs font-medium text-cyan-300">
-            متجر
+          <span class="rounded-full border border-cyan-400/30 bg-cyan-400/10 px-3 py-1 text-xs font-medium text-cyan-300" data-i18n="project_2_badge">
+            Shop
           </span>
-          <h3 class="mt-5 text-2xl font-semibold">متجر إلكتروني</h3>
-          <p class="mt-3 text-sm leading-6 text-white/65">
-            واجهة بيع عصرية مع عرض المنتجات بشكل منظم وتجربة شراء سهلة وواضحة.
+          <h3 class="mt-5 text-2xl font-semibold" data-i18n="project_2_title">Onlineshop</h3>
+          <p class="mt-3 text-sm leading-6 text-white/65" data-i18n="project_2_desc">
+            Moderne Verkaufsoberfläche mit strukturierter Produktdarstellung und einfacher Benutzerführung.
           </p>
         </div>
       </div>
 
       <div class="zoom-in overflow-hidden rounded-3xl border border-white/10 bg-slate-900/70 shadow-xl transition duration-300 hover:-translate-y-2 hover:shadow-cyan-500/10">
         <div class="image-hover h-52">
-          <img src="images/booking-site.jpg" alt="موقع حجز مواعيد" />
+          <img src="images/booking-site.jpg" alt="Terminbuchungsseite" />
         </div>
         <div class="p-6">
-          <span class="rounded-full border border-cyan-400/30 bg-cyan-400/10 px-3 py-1 text-xs font-medium text-cyan-300">
-            حجوزات
+          <span class="rounded-full border border-cyan-400/30 bg-cyan-400/10 px-3 py-1 text-xs font-medium text-cyan-300" data-i18n="project_3_badge">
+            Buchung
           </span>
-          <h3 class="mt-5 text-2xl font-semibold">موقع حجز مواعيد</h3>
-          <p class="mt-3 text-sm leading-6 text-white/65">
-            مناسب للأطباء والعيادات والحلاقين وكل نشاط يحتاج إلى تنظيم الحجوزات بطريقة واضحة.
+          <h3 class="mt-5 text-2xl font-semibold" data-i18n="project_3_title">Terminbuchungs-Website</h3>
+          <p class="mt-3 text-sm leading-6 text-white/65" data-i18n="project_3_desc">
+            Ideal für Ärzte, Praxen, Friseure und alle Unternehmen, die Termine klar organisieren möchten.
           </p>
         </div>
       </div>
@@ -611,10 +616,10 @@
   <section id="features" class="border-y border-white/10 bg-white/5">
     <div class="mx-auto max-w-7xl px-6 py-24">
       <div class="max-w-2xl fade-up">
-        <p class="text-sm font-semibold uppercase tracking-[0.2em] text-cyan-400">المميزات</p>
-        <h2 class="mt-3 text-3xl font-bold sm:text-4xl">كل ما يحتاجه موقعك في مكان واحد</h2>
-        <p class="mt-4 text-white/70 leading-8">
-          نركز على الجودة والسرعة والجمال البصري حتى تحصل على موقع يليق بنشاطك ويعطي عملاءك انطباعًا قويًا.
+        <p class="text-sm font-semibold uppercase tracking-[0.2em] text-cyan-400" data-i18n="features_badge">Vorteile</p>
+        <h2 class="mt-3 text-3xl font-bold sm:text-4xl" data-i18n="features_title">Alles, was Ihre Website braucht – an einem Ort</h2>
+        <p class="mt-4 leading-8 text-white/70" data-i18n="features_desc">
+          Wir konzentrieren uns auf Qualität, Geschwindigkeit und visuelle Stärke, damit Ihre Website Ihr Unternehmen optimal präsentiert.
         </p>
       </div>
 
@@ -622,59 +627,63 @@
         <div class="zoom-in rounded-[2rem] border border-white/10 bg-slate-900/80 p-8 shadow-2xl">
           <div class="flex items-center justify-between gap-4">
             <div>
-              <p class="text-sm font-semibold text-cyan-400">الخدمة الأساسية</p>
-              <h3 class="mt-2 text-3xl font-bold">موقع احترافي متكامل</h3>
+              <p class="text-sm font-semibold text-cyan-400" data-i18n="feature_main_badge">Basisangebot</p>
+              <h3 class="mt-2 text-3xl font-bold" data-i18n="feature_main_title">Komplette professionelle Website</h3>
             </div>
-            <div class="rounded-2xl bg-cyan-400/10 px-4 py-2 text-cyan-300">جاهز خلال 48 ساعة</div>
+            <div class="rounded-2xl bg-cyan-400/10 px-4 py-2 text-cyan-300" data-i18n="feature_ready">
+              In 48 Stunden bereit
+            </div>
           </div>
 
           <div class="mt-8 space-y-4">
             <div class="flex items-start gap-3">
               <span class="feature-check">✓</span>
-              <p class="text-white/80">تصميم احترافي ومتجاوب مع جميع الشاشات</p>
+              <p class="text-white/80" data-i18n="feature_1">Professionelles, responsives Design für alle Bildschirmgrößen</p>
             </div>
             <div class="flex items-start gap-3">
               <span class="feature-check">✓</span>
-              <p class="text-white/80">ربط واتساب وإيميل ووسائل تواصل مباشرة</p>
+              <p class="text-white/80" data-i18n="feature_2">WhatsApp-, E-Mail- und direkte Kontaktintegration</p>
             </div>
             <div class="flex items-start gap-3">
               <span class="feature-check">✓</span>
-              <p class="text-white/80">إمكانية إضافة حجز مواعيد أو متجر أو صفحات خدمات</p>
+              <p class="text-white/80" data-i18n="feature_3">Buchungssystem, Shop oder Leistungsseiten möglich</p>
             </div>
             <div class="flex items-start gap-3">
               <span class="feature-check">✓</span>
-              <p class="text-white/80">دومين خاص باسم نشاطك حسب التوفر</p>
+              <p class="text-white/80" data-i18n="feature_4">Eigene Domain passend zu Ihrem Unternehmen</p>
             </div>
             <div class="flex items-start gap-3">
               <span class="feature-check">✓</span>
-              <p class="text-white/80">ألوان عصرية وسرعة ممتازة وتجربة مستخدم جميلة</p>
+              <p class="text-white/80" data-i18n="feature_5">Moderne Farben, starke Performance und schöne Benutzererfahrung</p>
             </div>
           </div>
 
           <div class="mt-8 rounded-2xl border border-cyan-400/20 bg-cyan-400/5 p-5 text-center">
-            <p class="text-lg font-bold text-cyan-300">الدفع بعد الاستلام والرضا الكامل</p>
+            <p class="text-lg font-bold text-cyan-300" data-i18n="feature_payment">
+              Zahlung erst nach Lieferung und voller Zufriedenheit
+            </p>
           </div>
         </div>
 
         <div class="grid gap-6">
           <div class="section-card fade-up rounded-3xl border border-white/10 bg-slate-900/70 p-6 shadow-xl">
-            <h3 class="text-xl font-semibold">مناسب لمجالات كثيرة</h3>
-            <p class="mt-3 text-white/65 leading-7">
-              للأطباء والمهندسين والمطاعم والحلاقين والشركات والمتاجر والمشاريع الشخصية.
+            <h3 class="text-xl font-semibold" data-i18n="side_1_title">Für viele Branchen geeignet</h3>
+            <p class="mt-3 leading-7 text-white/65" data-i18n="side_1_desc">
+              Für Ärzte, Ingenieure, Restaurants, Friseure, Unternehmen, Shops und persönliche Projekte.
             </p>
           </div>
 
           <div class="section-card fade-up rounded-3xl border border-white/10 bg-slate-900/70 p-6 shadow-xl">
-            <h3 class="text-xl font-semibold">واجهة تبني الثقة</h3>
-            <p class="mt-3 text-white/65 leading-7">
-              تصميم أنيق يساعد العميل على فهم خدمتك بسرعة ويعطي انطباعًا احترافيًا من أول زيارة.
+            <h3 class="text-xl font-semibold" data-i18n="side_2_title">Ein Auftritt, der Vertrauen schafft</h3>
+            <p class="mt-3 leading-7 text-white/65" data-i18n="side_2_desc">
+              Ein elegantes Design hilft dem Kunden, Ihre Leistung schnell zu verstehen und vermittelt vom ersten Moment Professionalität.
             </p>
           </div>
 
           <div class="section-card fade-up rounded-3xl border border-white/10 bg-slate-900/70 p-6 shadow-xl">
-            <h3 class="text-xl font-semibold">مرونة كاملة بالتعديل</h3>
-            <p class="mt-3 text-white/65 leading-7">
-              يمكن تعديل الأقسام والصور والنصوص والخصائص بما يناسب نشاطك وأهدافك بدقة.
+            <h3 class="text-xl font-semibold" data-i18n="side_3_title">Volle Flexibilität bei Änderungen</h3>
+            <p class="mt-3 leading-7 text-white/65" data-i18n="side_3_desc">
+              Bereiche, Bilder, Texte und Funktionen können exakt an Ihr Unternehmen und Ihre Ziele angepasst werden.
             </p>
           </div>
         </div>
@@ -686,10 +695,10 @@
   <section id="contact" class="mx-auto max-w-5xl px-6 py-24">
     <div class="contact-box rounded-[2rem] p-10 text-center shadow-2xl fade-in-section">
       <div class="contact-content">
-        <h2 class="text-3xl font-bold sm:text-4xl">جاهز للبدء بموقعك الاحترافي؟</h2>
+        <h2 class="text-3xl font-bold sm:text-4xl" data-i18n="contact_title">Bereit für Ihre professionelle Website?</h2>
 
-        <p class="mx-auto mt-4 max-w-2xl text-lg leading-8 text-white/80">
-          ابدأ الآن بموقع حديث يمنحك حضورًا قويًا على الإنترنت، مع إمكانيات تطوير تناسب مشروعك.
+        <p class="mx-auto mt-4 max-w-2xl text-lg leading-8 text-white/80" data-i18n="contact_desc">
+          Starten Sie jetzt mit einer modernen Website, die Ihnen eine starke Online-Präsenz gibt und passend zu Ihrem Projekt erweitert werden kann.
         </p>
 
         <div class="contact-buttons-box mx-auto mt-10 max-w-3xl rounded-[1.75rem] border border-white/10 p-8">
@@ -699,21 +708,23 @@
               target="_blank"
               rel="noreferrer"
               class="whatsapp-btn inline-block rounded-2xl px-8 py-3 font-semibold"
+              data-i18n="contact_whatsapp"
             >
-              تواصل عبر واتساب
+              Kontakt per WhatsApp
             </a>
 
             <a
               href="mailto:wahebwahbe100@gmail.com"
               class="email-btn inline-block rounded-2xl border border-white/15 bg-white/5 px-8 py-3 font-semibold text-white"
+              data-i18n="contact_email"
             >
-              تواصل عبر الإيميل
+              Kontakt per E-Mail
             </a>
           </div>
         </div>
 
-        <p class="mt-8 text-xl font-bold text-cyan-300">
-          لا تدفع أي شيء حتى تستلم موقعك كاملًا.
+        <p class="mt-8 text-xl font-bold text-cyan-300" data-i18n="contact_note">
+          Sie zahlen nichts, bis Ihre Website vollständig fertig ist.
         </p>
       </div>
     </div>
@@ -723,12 +734,13 @@
   <footer class="border-t border-white/10 bg-slate-950">
     <div class="mx-auto max-w-7xl px-6 py-10 text-center text-sm text-white/70">
       <p>
-        © 2026 جميع الحقوق محفوظة
+        © 2026
+        <span data-i18n="footer_rights">Alle Rechte vorbehalten</span>
         <span class="font-semibold text-white">Waheb Wahbe</span>
       </p>
 
       <p class="mt-2">
-        البريد الإلكتروني:
+        <span data-i18n="footer_email">E-Mail:</span>
         <a href="mailto:wahebwahbe100@gmail.com" class="text-cyan-400 hover:underline">
           wahebwahbe100@gmail.com
         </a>
@@ -737,7 +749,7 @@
       <img src="images/logo.png" alt="Waheb Site Logo" class="footer-logo" />
 
       <p class="mt-4 text-white/60">
-        Made with <span class="heart">❤️</span> in Germany
+        <span data-i18n="footer_made">Made with</span> <span class="heart">❤️</span> <span data-i18n="footer_in">in Germany</span>
       </p>
     </div>
   </footer>
@@ -757,6 +769,242 @@
 
     fadeItems.forEach((item) => {
       observer.observe(item);
+    });
+
+    const translations = {
+      de: {
+        nav_home: "Startseite",
+        nav_about: "Über uns",
+        nav_services: "Leistungen",
+        nav_projects: "Projekte",
+        nav_features: "Vorteile",
+        nav_contact: "Kontakt",
+        start_now: "Jetzt starten",
+
+        hero_badge: "Professionelles Webdesign & Entwicklung",
+        hero_title_1: "Eine professionelle Website",
+        hero_title_2: "macht Ihre echte Präsenz",
+        hero_title_3: "im Internet sichtbar",
+        hero_desc: "Wir gestalten für Sie eine moderne und schnelle Website, die Ihr Unternehmen, Ihre Dienstleistungen oder Ihr Projekt stark und übersichtlich präsentiert – vollständig mobiloptimiert und mit allen Funktionen, die Sie brauchen.",
+        hero_cta_1: "Jetzt Website anfragen",
+        hero_cta_2: "Beispiele ansehen",
+        hero_stat_1: "Schnelle Lieferung",
+        hero_stat_2: "Eigene Domain",
+        hero_stat_3: "Zahlung nach Lieferung",
+        video_badge: "Visuelle Vorschau Ihrer Website",
+        hero_bottom_title_1: "Wir verwandeln Ihre Idee in eine",
+        hero_bottom_title_2: "professionelle Website, die Aufmerksamkeit erzeugt",
+        hero_bottom_desc: "Wir gestalten moderne und schnelle Websites, die die Stärke Ihres Projekts widerspiegeln und Ihnen eine besondere Online-Präsenz geben – mit attraktiver Benutzererfahrung und voller Kompatibilität auf allen Geräten.",
+
+        about_badge: "Warum wir?",
+        about_title_1: "Denken Sie über eine",
+        about_title_2: "professionelle Website",
+        about_title_3: "für Ihr Geschäft nach?",
+        about_p1: "Wir bieten Ihnen einen kompletten Service zur Erstellung einer Website, die Ihr Unternehmen authentisch widerspiegelt und Ihnen eine starke Online-Präsenz gibt – auf professionelle Weise, die vom ersten Besuch an Vertrauen schafft.",
+        about_p2: "Ob Arzt, Ingenieur, Restaurantbesitzer, Friseur oder Inhaber eines anderen Unternehmens – wir erstellen eine Website, die perfekt zu Ihrer Branche passt und Ihre Ziele klar unterstützt.",
+        about_p3: "Ihre Website kann ein Buchungssystem, Dienstleistungs- oder Produktdarstellungen, Vorstellungsseiten, direkte Kontaktmöglichkeiten oder beliebige individuelle Funktionen enthalten.",
+        about_p4_1: "Außerdem bieten wir Ihnen eine eigene Domain mit der Endung",
+        about_p4_2: "oder",
+        about_p4_3: "je nach Wunsch.",
+        about_p5: "Wir garantieren eine schnelle Umsetzung – in den meisten Fällen erhalten Sie Ihre Website in weniger als 48 Stunden.",
+        about_highlight: "Sie zahlen erst, wenn Ihre Website vollständig fertig ist und Sie zufrieden sind.",
+        about_image_badge: "Modernes professionelles Design",
+        booking_title: "Buchungssystem",
+        booking_desc: "Ideal für Arztpraxen, Friseure und Unternehmen, die Termine professionell organisieren möchten.",
+        trust_title: "Ein Auftritt, der Vertrauen schafft",
+        trust_desc: "Elegantes Design, starke Performance und eine klare Struktur helfen Ihren Kunden, Ihre Leistungen schnell zu verstehen und Kontakt aufzunehmen.",
+
+        services_badge: "Leistungen",
+        services_title: "Alles, was Sie für eine starke professionelle Website brauchen",
+        services_desc: "Wir bieten Ihnen komplette Lösungen für eine starke digitale Präsenz, damit Sie Ihre Kunden modern und stilvoll erreichen.",
+        service_1_title: "Professionelles Webdesign",
+        service_1_desc: "Moderne, schnelle und mobiloptimierte Websites für Unternehmen oder persönliche Projekte.",
+        service_2_title: "Onlineshops",
+        service_2_desc: "Strukturierte Shops mit klaren Produktseiten und einfacher, attraktiver Kaufabwicklung.",
+        service_3_title: "Individuelle Entwicklung",
+        service_3_desc: "Individuelle Funktionen wie Buchungen, Bestellungen, Formulare oder besondere Ideen für Ihr Projekt.",
+        service_4_title: "Performance & Support",
+        service_4_desc: "Optimierung von Geschwindigkeit, Benutzererfahrung und Kompatibilität auf allen Geräten.",
+
+        projects_badge: "Beispiele",
+        projects_title: "Beispiele für mögliche Website-Typen",
+        projects_desc: "Dies sind Beispiele für Websites, die je nach Projekt individuell umgesetzt werden können – Farben, Bereiche und Funktionen lassen sich anpassen.",
+        project_1_badge: "Business",
+        project_1_title: "Unternehmenswebsite",
+        project_1_desc: "Professionelle Website zur Vorstellung des Unternehmens, der Leistungen und Projekte mit einfacher Kontaktaufnahme.",
+        project_2_badge: "Shop",
+        project_2_title: "Onlineshop",
+        project_2_desc: "Moderne Verkaufsoberfläche mit strukturierter Produktdarstellung und einfacher Benutzerführung.",
+        project_3_badge: "Buchung",
+        project_3_title: "Terminbuchungs-Website",
+        project_3_desc: "Ideal für Ärzte, Praxen, Friseure und alle Unternehmen, die Termine klar organisieren möchten.",
+
+        features_badge: "Vorteile",
+        features_title: "Alles, was Ihre Website braucht – an einem Ort",
+        features_desc: "Wir konzentrieren uns auf Qualität, Geschwindigkeit und visuelle Stärke, damit Ihre Website Ihr Unternehmen optimal präsentiert.",
+        feature_main_badge: "Basisangebot",
+        feature_main_title: "Komplette professionelle Website",
+        feature_ready: "In 48 Stunden bereit",
+        feature_1: "Professionelles, responsives Design für alle Bildschirmgrößen",
+        feature_2: "WhatsApp-, E-Mail- und direkte Kontaktintegration",
+        feature_3: "Buchungssystem, Shop oder Leistungsseiten möglich",
+        feature_4: "Eigene Domain passend zu Ihrem Unternehmen",
+        feature_5: "Moderne Farben, starke Performance und schöne Benutzererfahrung",
+        feature_payment: "Zahlung erst nach Lieferung und voller Zufriedenheit",
+        side_1_title: "Für viele Branchen geeignet",
+        side_1_desc: "Für Ärzte, Ingenieure, Restaurants, Friseure, Unternehmen, Shops und persönliche Projekte.",
+        side_2_title: "Ein Auftritt, der Vertrauen schafft",
+        side_2_desc: "Ein elegantes Design hilft dem Kunden, Ihre Leistung schnell zu verstehen und vermittelt vom ersten Moment Professionalität.",
+        side_3_title: "Volle Flexibilität bei Änderungen",
+        side_3_desc: "Bereiche, Bilder, Texte und Funktionen können exakt an Ihr Unternehmen und Ihre Ziele angepasst werden.",
+
+        contact_title: "Bereit für Ihre professionelle Website?",
+        contact_desc: "Starten Sie jetzt mit einer modernen Website, die Ihnen eine starke Online-Präsenz gibt und passend zu Ihrem Projekt erweitert werden kann.",
+        contact_whatsapp: "Kontakt per WhatsApp",
+        contact_email: "Kontakt per E-Mail",
+        contact_note: "Sie zahlen nichts, bis Ihre Website vollständig fertig ist.",
+
+        footer_rights: "Alle Rechte vorbehalten ",
+        footer_email: "E-Mail:",
+        footer_made: "Made with",
+        footer_in: "in Germany"
+      },
+
+      en: {
+        nav_home: "Home",
+        nav_about: "About",
+        nav_services: "Services",
+        nav_projects: "Projects",
+        nav_features: "Features",
+        nav_contact: "Contact",
+        start_now: "Start Now",
+
+        hero_badge: "Professional Web Design & Development",
+        hero_title_1: "A professional website",
+        hero_title_2: "builds your true presence",
+        hero_title_3: "on the internet",
+        hero_desc: "We create a modern and fast website for your business, services, or project — fully mobile-friendly and ready for any features you need.",
+        hero_cta_1: "Request your website now",
+        hero_cta_2: "View examples",
+        hero_stat_1: "Fast delivery",
+        hero_stat_2: "Custom domain",
+        hero_stat_3: "Pay after delivery",
+        video_badge: "Visual preview of your website",
+        hero_bottom_title_1: "We turn your idea into a",
+        hero_bottom_title_2: "professional website that stands out",
+        hero_bottom_desc: "We design modern and fast websites that reflect the strength of your project and give you a strong online presence across all devices.",
+
+        about_badge: "Why us?",
+        about_title_1: "Thinking about creating a",
+        about_title_2: "professional website",
+        about_title_3: "for your business?",
+        about_p1: "We provide a complete service to create a website that reflects your real business and gives you a strong online presence in a professional way that builds trust from the first visit.",
+        about_p2: "Whether you are a doctor, engineer, restaurant owner, barber, or any other business owner, we build a website that suits your work perfectly.",
+        about_p3: "Your website can include a booking system, service or product pages, about pages, direct contact options, or any custom features you need.",
+        about_p4_1: "We also provide a custom domain ending with",
+        about_p4_2: "or",
+        about_p4_3: "depending on your choice.",
+        about_p5: "We are committed to fast execution — in most cases your website is delivered in less than 48 hours.",
+        about_highlight: "You pay nothing until your website is fully delivered and you are satisfied.",
+        about_image_badge: "Modern professional design",
+        booking_title: "Booking System",
+        booking_desc: "Perfect for clinics, barbers, and businesses that need professional appointment management.",
+        trust_title: "A design that builds trust",
+        trust_desc: "Elegant design, excellent speed, and clear presentation help your clients understand your services and contact you quickly.",
+
+        services_badge: "Services",
+        services_title: "Everything you need for a strong professional website",
+        services_desc: "We offer complete solutions to build a strong digital presence that helps you reach your clients in a modern and stylish way.",
+        service_1_title: "Professional Web Design",
+        service_1_desc: "Modern, fast, and mobile-friendly websites tailored to your business or personal brand.",
+        service_2_title: "Online Stores",
+        service_2_desc: "Well-structured online shops with clear product pages and a smooth shopping experience.",
+        service_3_title: "Custom Development",
+        service_3_desc: "Custom features such as booking, orders, forms, or any idea you want to bring to life.",
+        service_4_title: "Performance & Support",
+        service_4_desc: "Improved speed, user experience, and compatibility across all screens and devices.",
+
+        projects_badge: "Examples",
+        projects_title: "Examples of website types we can build",
+        projects_desc: "These are examples of website ideas that can be customized to fit your project, including colors, sections, and features.",
+        project_1_badge: "Business",
+        project_1_title: "Company Website",
+        project_1_desc: "A professional website to present your company, services, and projects with easy client contact.",
+        project_2_badge: "Store",
+        project_2_title: "Online Store",
+        project_2_desc: "A modern selling interface with organized products and a smooth shopping experience.",
+        project_3_badge: "Booking",
+        project_3_title: "Appointment Booking Website",
+        project_3_desc: "Ideal for doctors, clinics, barbers, and any business that needs organized appointment booking.",
+
+        features_badge: "Features",
+        features_title: "Everything your website needs in one place",
+        features_desc: "We focus on quality, speed, and visual appeal so your website truly matches your business and leaves a strong impression.",
+        feature_main_badge: "Core Service",
+        feature_main_title: "Complete Professional Website",
+        feature_ready: "Ready within 48 hours",
+        feature_1: "Professional responsive design for all screen sizes",
+        feature_2: "WhatsApp, email, and direct contact integration",
+        feature_3: "Booking system, store, or service pages can be added",
+        feature_4: "Custom domain based on your business",
+        feature_5: "Modern colors, strong speed, and beautiful user experience",
+        feature_payment: "Payment only after delivery and full satisfaction",
+        side_1_title: "Suitable for many industries",
+        side_1_desc: "For doctors, engineers, restaurants, barbers, companies, stores, and personal projects.",
+        side_2_title: "A look that builds trust",
+        side_2_desc: "An elegant design helps clients understand your service quickly and creates a professional first impression.",
+        side_3_title: "Full flexibility for edits",
+        side_3_desc: "Sections, images, texts, and features can all be customized to fit your business and goals.",
+
+        contact_title: "Ready to start your professional website?",
+        contact_desc: "Start now with a modern website that gives you a strong online presence and can be expanded to fit your project.",
+        contact_whatsapp: "Contact via WhatsApp",
+        contact_email: "Contact via Email",
+        contact_note: "You pay nothing until your website is fully delivered.",
+
+        footer_rights: "All rights reserved ",
+        footer_email: "Email:",
+        footer_made: "Made with",
+        footer_in: "in Germany"
+      }
+    };
+
+    function setLanguage(lang) {
+      document.documentElement.lang = lang;
+
+      const elements = document.querySelectorAll('[data-i18n]');
+      elements.forEach((element) => {
+        const key = element.getAttribute('data-i18n');
+        if (translations[lang] && translations[lang][key]) {
+          element.textContent = translations[lang][key];
+        }
+      });
+
+      localStorage.setItem('site-language', lang);
+
+      if (lang === 'de') {
+        document.title = 'WahebSity | Professionelles Webdesign';
+        document.querySelector('meta[name="description"]').setAttribute(
+          'content',
+          'Professionelles Webdesign für Unternehmen, Ärzte, Ingenieure, Restaurants, Friseure und Onlineshops mit schneller Lieferung und modernem Design.'
+        );
+      } else {
+        document.title = 'WahebSity | Professional Web Design';
+        document.querySelector('meta[name="description"]').setAttribute(
+          'content',
+          'Professional website design for companies, doctors, engineers, restaurants, barbers, and online stores with fast delivery and modern design.'
+        );
+      }
+    }
+
+    const langSwitcher = document.getElementById('langSwitcher');
+    const savedLanguage = localStorage.getItem('site-language') || 'de';
+
+    langSwitcher.value = savedLanguage;
+    setLanguage(savedLanguage);
+
+    langSwitcher.addEventListener('change', (e) => {
+      setLanguage(e.target.value);
     });
   </script>
 
