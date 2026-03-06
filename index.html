@@ -28,7 +28,7 @@
 
     @keyframes beat {
       0%, 100% { transform: scale(1); }
-      50% { transform: scale(1.1); }
+      50% { transform: scale(1.08); }
     }
 
     .hero-bg {
@@ -98,10 +98,18 @@
       z-index: 2;
     }
 
+    .contact-buttons-box {
+      background:
+        linear-gradient(rgba(2, 6, 23, 0.55), rgba(2, 6, 23, 0.72)),
+        url("images/world-bg.jpg");
+      background-size: cover;
+      background-position: center;
+      box-shadow: inset 0 0 0 1px rgba(255,255,255,0.05);
+    }
+
     .whatsapp-btn {
       background: linear-gradient(90deg, #22d3ee, #06b6d4);
       color: #020617;
-      position: relative;
       transition: 0.4s ease;
       box-shadow: 0 0 18px rgba(34, 211, 238, 0.35);
     }
@@ -121,6 +129,55 @@
     .email-btn:hover {
       transform: translateY(-2px);
       background: rgba(255,255,255,0.08);
+    }
+
+    .video-frame {
+      position: relative;
+      overflow: hidden;
+      border-radius: 2rem;
+      border: 1px solid rgba(255,255,255,0.10);
+      box-shadow: 0 25px 80px rgba(0,0,0,0.35);
+      background: linear-gradient(135deg, rgba(34,211,238,0.10), rgba(99,102,241,0.12));
+    }
+
+    .video-frame::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border-radius: inherit;
+      box-shadow: inset 0 0 0 1px rgba(255,255,255,0.06);
+      pointer-events: none;
+      z-index: 2;
+    }
+
+    .hero-video {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: cover;
+      transition: transform .8s ease;
+    }
+
+    .video-frame:hover .hero-video {
+      transform: scale(1.03);
+    }
+
+    .video-badge {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      z-index: 3;
+      background: rgba(2, 6, 23, 0.75);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .section-card:hover {
+      transform: translateY(-4px);
+    }
+
+    .section-card {
+      transition: 0.3s ease;
     }
   </style>
 </head>
@@ -206,8 +263,23 @@
         </div>
       </div>
 
-      <div class="image-hover border border-white/10 shadow-2xl">
-        <img src="images/website-mockup.png" alt="تصميم موقع احترافي" />
+      <div class="video-frame min-h-[320px] lg:min-h-[520px]">
+        <div class="video-badge rounded-xl px-4 py-2 text-sm font-semibold text-cyan-300">
+          عرض بصري لموقعك
+        </div>
+
+        <video
+          class="hero-video"
+          autoplay
+          muted
+          loop
+          playsinline
+          controls
+          poster="images/website-main.jpg"
+        >
+          <source src="videos/laptop-showcase.mp4" type="video/mp4" />
+          المتصفح لديك لا يدعم تشغيل الفيديو.
+        </video>
       </div>
     </div>
   </section>
@@ -295,28 +367,28 @@
       </div>
 
       <div class="mt-12 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
-        <div class="rounded-3xl border border-white/10 bg-slate-900/70 p-6 shadow-xl transition hover:-translate-y-1 hover:bg-slate-900">
+        <div class="section-card rounded-3xl border border-white/10 bg-slate-900/70 p-6 shadow-xl">
           <h3 class="text-xl font-semibold">تصميم مواقع احترافية</h3>
           <p class="mt-3 text-sm leading-6 text-white/65">
             تصميم مواقع حديثة وسريعة ومتوافقة مع الجوال لتناسب نشاطك التجاري أو الشخصي.
           </p>
         </div>
 
-        <div class="rounded-3xl border border-white/10 bg-slate-900/70 p-6 shadow-xl transition hover:-translate-y-1 hover:bg-slate-900">
+        <div class="section-card rounded-3xl border border-white/10 bg-slate-900/70 p-6 shadow-xl">
           <h3 class="text-xl font-semibold">متاجر إلكترونية</h3>
           <p class="mt-3 text-sm leading-6 text-white/65">
             إنشاء متجر منظم مع صفحات منتجات واضحة وتجربة استخدام سهلة وجذابة.
           </p>
         </div>
 
-        <div class="rounded-3xl border border-white/10 bg-slate-900/70 p-6 shadow-xl transition hover:-translate-y-1 hover:bg-slate-900">
+        <div class="section-card rounded-3xl border border-white/10 bg-slate-900/70 p-6 shadow-xl">
           <h3 class="text-xl font-semibold">تطوير مخصص</h3>
           <p class="mt-3 text-sm leading-6 text-white/65">
             إضافة خصائص خاصة مثل الحجز، الطلبات، النماذج، أو أي فكرة تريد تنفيذها لمشروعك.
           </p>
         </div>
 
-        <div class="rounded-3xl border border-white/10 bg-slate-900/70 p-6 shadow-xl transition hover:-translate-y-1 hover:bg-slate-900">
+        <div class="section-card rounded-3xl border border-white/10 bg-slate-900/70 p-6 shadow-xl">
           <h3 class="text-xl font-semibold">تحسين الأداء والدعم</h3>
           <p class="mt-3 text-sm leading-6 text-white/65">
             تحسين سرعة الموقع، تجربة المستخدم، والتوافق مع مختلف الشاشات والأجهزة.
@@ -391,22 +463,24 @@
           ابدأ الآن بموقع حديث يمنحك حضورًا قويًا على الإنترنت، مع دومين خاص وإمكانية تطوير المميزات التي يحتاجها نشاطك.
         </p>
 
-        <div class="mt-8 flex flex-wrap justify-center gap-4">
-          <a
-            href="https://wa.me/15213873166"
-            target="_blank"
-            rel="noreferrer"
-            class="whatsapp-btn inline-block rounded-2xl px-8 py-3 font-semibold"
-          >
-            تواصل عبر واتساب
-          </a>
+        <div class="contact-buttons-box mx-auto mt-10 max-w-3xl rounded-[1.75rem] border border-white/10 p-8">
+          <div class="flex flex-wrap justify-center gap-4">
+            <a
+              href="https://wa.me/15213873166"
+              target="_blank"
+              rel="noreferrer"
+              class="whatsapp-btn inline-block rounded-2xl px-8 py-3 font-semibold"
+            >
+              تواصل عبر واتساب
+            </a>
 
-          <a
-            href="mailto:wahebwahbe100@gmail.com"
-            class="email-btn inline-block rounded-2xl border border-white/15 bg-white/5 px-8 py-3 font-semibold text-white"
-          >
-            تواصل عبر الإيميل
-          </a>
+            <a
+              href="mailto:wahebwahbe100@gmail.com"
+              class="email-btn inline-block rounded-2xl border border-white/15 bg-white/5 px-8 py-3 font-semibold text-white"
+            >
+              تواصل عبر الإيميل
+            </a>
+          </div>
         </div>
 
         <p class="mt-8 text-xl font-bold text-cyan-300">
