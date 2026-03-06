@@ -1,315 +1,117 @@
-<!DOCTYPE html>
-<html lang="ar" dir="rtl">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Waheb Wahbe | تصميم مواقع احترافية</title>
-  <meta name="description" content="تصميم مواقع إلكترونية احترافية مع دومين خاص وتسليم سريع خلال أقل من 48 ساعة، والدفع بعد الاستلام." />
-  <script src="https://cdn.tailwindcss.com"></script>
+<!-- ABOUT / WHY US -->
+<section id="about" class="mx-auto max-w-7xl px-6 py-24">
+  <div class="grid items-center gap-14 lg:grid-cols-2">
 
-  <style>
-    html {
-      scroll-behavior: smooth;
-    }
+    <!-- Text Content -->
+    <div>
+      <span class="inline-flex rounded-full border border-cyan-400/20 bg-cyan-400/10 px-4 py-1 text-sm font-semibold text-cyan-300">
+        لماذا نحن؟
+      </span>
 
-    .heart {
-      color: #ef4444;
-      display: inline-block;
-      animation: softBeat 2s ease-in-out infinite;
-      transform-origin: center;
-    }
+      <h2 class="mt-6 text-4xl font-bold leading-tight text-white sm:text-5xl">
+        هل تفكر في إنشاء
+        <span class="font-bold underline decoration-cyan-400 underline-offset-8">موقع إلكتروني احترافي</span>
+        لنشاطك ولكن لا تعرف من أين تبدأ؟
+      </h2>
 
-    @keyframes softBeat {
-      0% { transform: scale(1); }
-      25% { transform: scale(1.08); }
-      50% { transform: scale(1); }
-      75% { transform: scale(1.05); }
-      100% { transform: scale(1); }
-    }
-
-    .hero-glow {
-      box-shadow: 0 0 80px rgba(34, 211, 238, 0.08);
-    }
-  </style>
-</head>
-
-<body class="bg-slate-950 text-white selection:bg-cyan-400 selection:text-slate-950">
-
-  <!-- NAVBAR -->
-  <header class="sticky top-0 z-50 border-b border-white/10 bg-slate-950/80 backdrop-blur">
-    <div class="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
-      <a href="#" class="text-xl font-bold tracking-wide text-white">
-        Waheb<span class="text-cyan-400">Site</span>
-      </a>
-
-      <nav class="hidden items-center gap-8 text-sm font-semibold text-white/80 md:flex">
-        <a href="#" class="transition hover:text-cyan-400">الرئيسية</a>
-        <a href="#about" class="transition hover:text-cyan-400">من نحن</a>
-        <a href="#services" class="transition hover:text-cyan-400">الخدمات</a>
-        <a href="#projects" class="transition hover:text-cyan-400">الأعمال</a>
-        <a href="#contact" class="transition hover:text-cyan-400">التواصل</a>
-      </nav>
-
-      <a
-        href="https://wa.me/15213873166"
-        target="_blank"
-        rel="noreferrer"
-        class="rounded-xl bg-cyan-400 px-5 py-2 text-sm font-bold text-slate-950 transition hover:scale-105"
-      >
-        ابدأ مشروعك
-      </a>
-    </div>
-  </header>
-
-  <!-- HERO -->
-  <section class="relative overflow-hidden border-b border-white/10">
-    <div class="absolute inset-0 bg-gradient-to-br from-indigo-500/20 via-sky-500/10 to-cyan-400/10"></div>
-
-    <div class="relative mx-auto grid max-w-7xl items-center gap-12 px-6 py-24 lg:grid-cols-2">
-      <div>
-        <span class="inline-flex rounded-full border border-white/15 bg-white/5 px-4 py-1 text-sm text-white/80">
-          مصمم ومطور مواقع احترافية
-        </span>
-
-        <h1 class="mt-6 text-4xl font-bold leading-tight sm:text-5xl lg:text-6xl">
-          أصنع
-          <span class="text-cyan-400">مواقع إلكترونية احترافية</span>
-          تساعدك على الظهور بشكل قوي وجذاب على الإنترنت
-        </h1>
-
-        <p class="mt-6 max-w-2xl text-lg leading-8 text-white/70">
-          إذا كنت تريد موقعًا يعرض خدماتك أو نشاطك أو مشروعك بشكل احترافي، فأنت في المكان الصحيح.
-          نحن نصمم لك موقعًا سريعًا، حديثًا، ومتوافقًا مع جميع الأجهزة ليمنحك حضورًا قويًا وثقة أكبر أمام عملائك.
-        </p>
-
-        <div class="mt-8 flex flex-wrap gap-4">
-          <a
-            href="#contact"
-            class="rounded-2xl bg-cyan-400 px-6 py-3 font-semibold text-slate-950 shadow-lg transition hover:scale-105"
-          >
-            ابدأ مشروعك الآن
-          </a>
-
-          <a
-            href="#projects"
-            class="rounded-2xl border border-white/15 bg-white/5 px-6 py-3 font-semibold text-white transition hover:bg-white/10"
-          >
-            مشاهدة الأعمال
-          </a>
-        </div>
-      </div>
-
-      <div class="grid gap-4 sm:grid-cols-2">
-        <div class="hero-glow rounded-3xl border border-white/10 bg-white/5 p-6 shadow-2xl">
-          <div class="text-3xl">سرعة</div>
-          <h3 class="mt-4 text-xl font-semibold">تنفيذ سريع</h3>
-          <p class="mt-2 text-sm leading-6 text-white/65">
-            تنفيذ المواقع خلال وقت قصير مع الحفاظ على الجودة والاحترافية في كل التفاصيل.
-          </p>
-        </div>
-
-        <div class="rounded-3xl border border-white/10 bg-white/5 p-6 shadow-2xl">
-          <div class="text-3xl">توافق</div>
-          <h3 class="mt-4 text-xl font-semibold">متجاوب مع كل الأجهزة</h3>
-          <p class="mt-2 text-sm leading-6 text-white/65">
-            يعمل بشكل ممتاز على الهاتف والتابلت والكمبيوتر ليصل إليك العملاء بسهولة من أي مكان.
-          </p>
-        </div>
-
-        <div class="rounded-3xl border border-white/10 bg-white/5 p-6 shadow-2xl sm:col-span-2">
-          <div class="text-3xl">مرونة</div>
-          <h3 class="mt-4 text-xl font-semibold">جاهز للتطوير والتوسع</h3>
-          <p class="mt-2 text-sm leading-6 text-white/65">
-            يمكن إضافة اللغة الألمانية والإنجليزية مستقبلاً، وإضافة ميزات جديدة مثل الحجز والمبيعات والطلبات.
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ABOUT -->
-  <section id="about" class="mx-auto max-w-5xl px-6 py-20">
-    <h2 class="text-4xl font-bold leading-tight text-white">
-      هل تفكر في إنشاء
-      <span class="font-bold underline decoration-cyan-400">موقع إلكتروني احترافي</span>
-      لنشاطك ولكن لا تعرف من أين تبدأ؟
-    </h2>
-
-    <p class="mt-6 text-lg leading-8 text-white/80">
-      لقد وصلت إلى
-      <span class="font-bold underline decoration-cyan-400">المكان الصحيح</span>.
-      نحن نوفّر لك خدمة متكاملة لإنشاء موقع يعكس نشاطك الحقيقي ويمنحك
-      <span class="font-bold underline decoration-cyan-400">حضورًا قويًا على الإنترنت</span>
-      بطريقة احترافية تساعدك على كسب ثقة العملاء من أول زيارة.
-    </p>
-
-    <p class="mt-4 text-lg leading-8 text-white/80">
-      سواء كنت
-      <span class="font-bold underline">طبيبًا</span>،
-      <span class="font-bold underline">مهندسًا</span>،
-      <span class="font-bold underline">صاحب مطعم</span>،
-      <span class="font-bold underline">حلاقًا</span>
-      أو صاحب أي نشاط أو مشروع خاص، نقوم ببناء موقع يناسب طبيعة عملك ويخدم أهدافك بشكل واضح واحترافي.
-    </p>
-
-    <p class="mt-4 text-lg leading-8 text-white/80">
-      يمكن أن يتضمن موقعك جميع المزايا التي تحتاجها مثل
-      <span class="font-bold underline">نظام حجز المواعيد</span>،
-      عرض الخدمات أو المنتجات،
-      صفحات تعريفية عنك أو عن شركتك،
-      وسائل تواصل مباشرة مع العملاء،
-      أو أي خصائص خاصة تريد إضافتها حسب طبيعة مشروعك.
-    </p>
-
-    <p class="mt-4 text-lg leading-8 text-white/80">
-      كما نوفر لك
-      <span class="font-bold underline decoration-cyan-400">دومين خاص باسم موقعك</span>
-      ينتهي بـ
-      <span class="font-bold text-white">.de</span>
-      أو
-      <span class="font-bold text-white">.com</span>
-      حسب رغبتك، ليظهر نشاطك بشكل أكثر احترافية ومصداقية أمام العملاء.
-    </p>
-
-    <p class="mt-4 text-lg leading-8 text-white/80">
-      نلتزم أيضًا بسرعة التنفيذ، حيث يتم
-      <span class="font-bold underline decoration-cyan-400">تسليم الموقع خلال أقل من 48 ساعة</span>
-      في معظم الحالات، مع الحرص على أن يكون الموقع جاهزًا للعمل بالكامل عند التسليم.
-    </p>
-
-    <p class="mt-6 text-xl font-bold text-cyan-400">
-      لا تدفع أي شيء حتى تستلم موقعك كاملًا وتكون راضيًا عنه.
-    </p>
-  </section>
-
-  <!-- SERVICES -->
-  <section id="services" class="mx-auto max-w-7xl px-6 py-20">
-    <div class="max-w-2xl">
-      <p class="text-sm font-semibold uppercase tracking-[0.2em] text-cyan-400">الخدمات</p>
-      <h2 class="mt-3 text-3xl font-bold sm:text-4xl">كل ما تحتاجه لموقع قوي واحترافي</h2>
-    </div>
-
-    <div class="mt-12 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
-      <div class="rounded-3xl border border-white/10 bg-white/5 p-6 shadow-xl transition hover:-translate-y-1 hover:bg-white/10">
-        <h3 class="text-xl font-semibold">تصميم مواقع احترافية</h3>
-        <p class="mt-3 text-sm leading-6 text-white/65">
-          تصميم مواقع حديثة وسريعة ومتوافقة مع الجوال لتناسب نشاطك التجاري أو الشخصي.
-        </p>
-      </div>
-
-      <div class="rounded-3xl border border-white/10 bg-white/5 p-6 shadow-xl transition hover:-translate-y-1 hover:bg-white/10">
-        <h3 class="text-xl font-semibold">متاجر إلكترونية</h3>
-        <p class="mt-3 text-sm leading-6 text-white/65">
-          إنشاء متاجر إلكترونية منظمة مع صفحات منتجات واضحة وتجربة استخدام مريحة وجذابة.
-        </p>
-      </div>
-
-      <div class="rounded-3xl border border-white/10 bg-white/5 p-6 shadow-xl transition hover:-translate-y-1 hover:bg-white/10">
-        <h3 class="text-xl font-semibold">تطوير مخصص</h3>
-        <p class="mt-3 text-sm leading-6 text-white/65">
-          برمجة خصائص وصفحات خاصة حسب احتياجك، مثل الحجز، الطلبات، النماذج، أو أي فكرة تريد تنفيذها.
-        </p>
-      </div>
-
-      <div class="rounded-3xl border border-white/10 bg-white/5 p-6 shadow-xl transition hover:-translate-y-1 hover:bg-white/10">
-        <h3 class="text-xl font-semibold">تحسين الأداء والدعم</h3>
-        <p class="mt-3 text-sm leading-6 text-white/65">
-          تحسين سرعة الموقع وتجربة المستخدم والتوافق مع مختلف الشاشات والأجهزة.
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <!-- PROJECTS -->
-  <section id="projects" class="border-y border-white/10 bg-white/5">
-    <div class="mx-auto max-w-7xl px-6 py-20">
-      <div>
-        <p class="text-sm font-semibold uppercase tracking-[0.2em] text-cyan-400">نماذج</p>
-        <h2 class="mt-3 text-3xl font-bold sm:text-4xl">أمثلة لأنواع المواقع الممكنة</h2>
-      </div>
-
-      <div class="mt-12 grid gap-6 md:grid-cols-3">
-        <div class="rounded-3xl border border-white/10 bg-slate-900/60 p-6 shadow-xl">
-          <span class="rounded-full border border-cyan-400/30 bg-cyan-400/10 px-3 py-1 text-xs font-medium text-cyan-300">
-            أعمال
-          </span>
-          <h3 class="mt-5 text-2xl font-semibold">موقع شركة</h3>
-          <p class="mt-3 text-sm leading-6 text-white/65">
-            موقع احترافي للتعريف بالشركة، عرض الخدمات، إبراز المشاريع، وتسهيل التواصل مع العملاء.
-          </p>
-        </div>
-
-        <div class="rounded-3xl border border-white/10 bg-slate-900/60 p-6 shadow-xl">
-          <span class="rounded-full border border-cyan-400/30 bg-cyan-400/10 px-3 py-1 text-xs font-medium text-cyan-300">
-            متجر
-          </span>
-          <h3 class="mt-5 text-2xl font-semibold">متجر إلكتروني</h3>
-          <p class="mt-3 text-sm leading-6 text-white/65">
-            واجهة بيع عصرية مع عرض المنتجات بشكل منظم، وصفحات واضحة، وتجربة شراء مريحة وسلسة.
-          </p>
-        </div>
-
-        <div class="rounded-3xl border border-white/10 bg-slate-900/60 p-6 shadow-xl">
-          <span class="rounded-full border border-cyan-400/30 bg-cyan-400/10 px-3 py-1 text-xs font-medium text-cyan-300">
-            شخصي
-          </span>
-          <h3 class="mt-5 text-2xl font-semibold">موقع شخصي أو بورتفوليو</h3>
-          <p class="mt-3 text-sm leading-6 text-white/65">
-            موقع يعرض خبراتك، أعمالك السابقة، خدماتك، ووسائل التواصل معك بطريقة منظمة واحترافية.
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CTA / CONTACT -->
-  <section id="contact" class="mx-auto max-w-5xl px-6 py-20">
-    <div class="rounded-[2rem] border border-cyan-400/20 bg-gradient-to-r from-cyan-400/10 to-indigo-500/10 p-10 text-center shadow-2xl">
-      <h2 class="text-3xl font-bold sm:text-4xl">جاهز للبدء بموقعك الاحترافي؟</h2>
-      <p class="mx-auto mt-4 max-w-2xl text-lg leading-8 text-white/70">
-        ابدأ الآن بموقع حديث يمنحك حضورًا قويًا على الإنترنت، مع إمكانية إضافة دومين خاص وتطوير المميزات التي يحتاجها نشاطك.
+      <p class="mt-8 text-lg leading-8 text-white/80">
+        لقد وصلت إلى
+        <span class="font-bold text-white underline decoration-cyan-400 underline-offset-4">المكان الصحيح</span>.
+        نحن نوفر لك خدمة متكاملة لإنشاء موقع يعكس نشاطك الحقيقي ويمنحك
+        <span class="font-bold text-white underline decoration-cyan-400 underline-offset-4">حضورًا قويًا على الإنترنت</span>
+        بطريقة احترافية تساعدك على كسب ثقة العملاء من أول زيارة.
       </p>
 
-      <div class="mt-8 flex flex-wrap justify-center gap-4">
-        <a
-          href="https://wa.me/15213873166"
-          target="_blank"
-          rel="noreferrer"
-          class="inline-block rounded-2xl bg-cyan-400 px-8 py-3 font-semibold text-slate-950 transition hover:scale-105"
-        >
-          تواصل الآن عبر واتساب
-        </a>
+      <p class="mt-5 text-lg leading-8 text-white/80">
+        سواء كنت
+        <span class="font-bold text-white underline underline-offset-4">طبيبًا</span>،
+        <span class="font-bold text-white underline underline-offset-4">مهندسًا</span>،
+        <span class="font-bold text-white underline underline-offset-4">صاحب مطعم</span>،
+        <span class="font-bold text-white underline underline-offset-4">حلاقًا</span>
+        أو صاحب أي نشاط آخر، نقوم ببناء موقع يناسب طبيعة عملك ويخدم أهدافك بشكل واضح واحترافي.
+      </p>
 
-        <a
-          href="mailto:wahebwahbe100@gmail.com"
-          class="inline-block rounded-2xl border border-white/15 bg-white/5 px-8 py-3 font-semibold text-white transition hover:bg-white/10"
-        >
-          تواصل عبر الإيميل
-        </a>
+      <p class="mt-5 text-lg leading-8 text-white/80">
+        يمكن أن يتضمن موقعك جميع المزايا التي تحتاجها مثل
+        <span class="font-bold text-white underline underline-offset-4">نظام حجز المواعيد</span>،
+        عرض الخدمات أو المنتجات،
+        صفحات تعريفية عنك أو عن شركتك،
+        وسائل تواصل مباشرة مع العملاء،
+        أو أي خصائص خاصة تريد إضافتها حسب طبيعة مشروعك.
+      </p>
+
+      <p class="mt-5 text-lg leading-8 text-white/80">
+        كما نوفر لك
+        <span class="font-bold text-white underline decoration-cyan-400 underline-offset-4">دومين خاص باسم موقعك</span>
+        ينتهي بـ
+        <span class="font-bold text-white">.de</span>
+        أو
+        <span class="font-bold text-white">.com</span>
+        حسب رغبتك، ليظهر نشاطك بشكل أكثر احترافية ومصداقية أمام العملاء.
+      </p>
+
+      <p class="mt-5 text-lg leading-8 text-white/80">
+        نلتزم أيضًا بسرعة التنفيذ، حيث يتم
+        <span class="font-bold text-white underline decoration-cyan-400 underline-offset-4">تسليم الموقع خلال أقل من 48 ساعة</span>
+        في معظم الحالات، مع الحرص على أن يكون الموقع جاهزًا للعمل بالكامل عند التسليم.
+      </p>
+
+      <p class="mt-8 text-2xl font-bold text-cyan-400">
+        لا تدفع أي شيء حتى تستلم موقعك كاملًا وتكون راضيًا عنه.
+      </p>
+
+      <!-- Stats -->
+      <div class="mt-10 grid gap-4 sm:grid-cols-3">
+        <div class="rounded-2xl border border-white/10 bg-white/5 p-5 text-center">
+          <div class="text-2xl font-bold text-cyan-400">48H</div>
+          <p class="mt-2 text-sm text-white/70">سرعة في التسليم</p>
+        </div>
+        <div class="rounded-2xl border border-white/10 bg-white/5 p-5 text-center">
+          <div class="text-2xl font-bold text-cyan-400">100%</div>
+          <p class="mt-2 text-sm text-white/70">موقع مخصص لك</p>
+        </div>
+        <div class="rounded-2xl border border-white/10 bg-white/5 p-5 text-center">
+          <div class="text-2xl font-bold text-cyan-400">0€</div>
+          <p class="mt-2 text-sm text-white/70">الدفع بعد الاستلام</p>
+        </div>
       </div>
     </div>
-  </section>
 
-  <!-- FOOTER -->
-  <footer class="border-t border-white/10 bg-slate-950">
-    <div class="mx-auto max-w-7xl px-6 py-10 text-center text-sm text-white/70">
-      <p>
-        © 2026 جميع الحقوق محفوظة
-        <span class="font-semibold text-white">Waheb Wahbe</span>
-      </p>
+    <!-- Images -->
+    <div class="grid gap-5 sm:grid-cols-2">
+      <div class="overflow-hidden rounded-[2rem] border border-white/10 bg-white/5 shadow-2xl sm:col-span-2">
+        <img
+          src="images/website-main.jpg"
+          alt="تصميم موقع احترافي"
+          class="h-72 w-full object-cover"
+        />
+      </div>
 
-      <p class="mt-2">
-        البريد الإلكتروني:
-        <a href="mailto:wahebwahbe100@gmail.com" class="text-cyan-400 hover:underline">
-          wahebwahbe100@gmail.com
-        </a>
-      </p>
+      <div class="overflow-hidden rounded-[2rem] border border-white/10 bg-white/5 shadow-xl">
+        <img
+          src="images/booking-system.jpg"
+          alt="نظام حجز مواعيد"
+          class="h-64 w-full object-cover"
+        />
+      </div>
 
-      <p class="mt-4 text-white/60">
-        Made with <span class="heart">❤️</span> in Germany
-      </p>
+      <div class="overflow-hidden rounded-[2rem] border border-white/10 bg-white/5 shadow-xl">
+        <img
+          src="images/business-site.jpg"
+          alt="موقع نشاط تجاري"
+          class="h-64 w-full object-cover"
+        />
+      </div>
+
+      <div class="rounded-[2rem] border border-cyan-400/20 bg-gradient-to-r from-cyan-400/10 to-indigo-500/10 p-6 shadow-xl sm:col-span-2">
+        <h3 class="text-2xl font-bold text-white">
+          موقع مصمم لزيادة الثقة وتحويل الزائر إلى عميل
+        </h3>
+        <p class="mt-3 leading-7 text-white/75">
+          تصميم حديث، عرض قوي للخدمات، وسهولة تواصل مباشرة مع العميل، حتى يظهر نشاطك بشكل احترافي من أول نظرة.
+        </p>
+      </div>
     </div>
-  </footer>
 
-</body>
-</html>
+  </div>
+</section>
