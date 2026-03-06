@@ -6,9 +6,8 @@
   <title>Waheb Wahbe | تصميم مواقع احترافية</title>
   <meta
     name="description"
-    content="تصميم مواقع إلكترونية احترافية للشركات والأطباء والمهندسين والمطاعم والحلاقين والمتاجر مع تسليم سريع وتصميم عصري."
+    content="تصميم مواقع إلكترونية احترافية بعرض مريح على هواتف الآيفون، مع تصميم عصري سريع ومتجاوب للشركات والأطباء والمهندسين والمطاعم والحلاقين والمتاجر."
   />
-
   <script src="https://cdn.tailwindcss.com"></script>
 
   <style>
@@ -17,146 +16,31 @@
     }
 
     body {
+      margin: 0;
       background: #020617;
+      color: white;
       overflow-x: hidden;
       font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
     }
 
-    .heart {
-      display: inline-block;
-      animation: beat 2.2s ease-in-out infinite;
-      transform-origin: center;
+    .site-shell {
+      width: 100%;
+      max-width: 1600px;
+      margin-inline: auto;
+      padding-inline: 10px;
     }
 
-    @keyframes beat {
-      0%, 100% { transform: scale(1); }
-      50% { transform: scale(1.08); }
-    }
-
-    @keyframes floatY {
-      0%, 100% { transform: translateY(0px); }
-      50% { transform: translateY(-10px); }
+    .glass {
+      background: rgba(255,255,255,0.05);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255,255,255,0.08);
     }
 
     .hero-bg {
       background:
-        radial-gradient(circle at top right, rgba(34, 211, 238, 0.16), transparent 30%),
-        radial-gradient(circle at top left, rgba(99, 102, 241, 0.14), transparent 25%),
-        linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0));
-      position: relative;
-      overflow: hidden;
-    }
-
-    .hero-bg::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background:
-        radial-gradient(circle at 20% 25%, rgba(34,211,238,0.08), transparent 20%),
-        radial-gradient(circle at 80% 20%, rgba(99,102,241,0.08), transparent 20%);
-      pointer-events: none;
-    }
-
-    .glass {
-      background: rgba(255,255,255,0.04);
-      backdrop-filter: blur(10px);
-    }
-
-    .fade-up,
-    .fade-in-section,
-    .zoom-in {
-      opacity: 0;
-      transition: opacity 1s ease, transform 1s ease;
-    }
-
-    .fade-up {
-      transform: translateY(40px);
-    }
-
-    .fade-in-section {
-      transform: translateY(40px) scale(0.98);
-    }
-
-    .zoom-in {
-      transform: scale(0.94);
-    }
-
-    .fade-up.show,
-    .fade-in-section.show,
-    .zoom-in.show {
-      opacity: 1;
-      transform: translateY(0) scale(1);
-    }
-
-    .nav-link {
-      position: relative;
-    }
-
-    .nav-link::after {
-      content: "";
-      position: absolute;
-      bottom: -6px;
-      right: 0;
-      width: 0;
-      height: 2px;
-      background: #22d3ee;
-      transition: .3s ease;
-    }
-
-    .nav-link:hover::after {
-      width: 100%;
-    }
-
-    .video-frame {
-      position: relative;
-      overflow: hidden;
-      border-radius: 2rem;
-      border: 1px solid rgba(255,255,255,0.10);
-      box-shadow: 0 25px 80px rgba(0,0,0,0.35);
-      background: linear-gradient(135deg, rgba(34,211,238,0.10), rgba(99,102,241,0.12));
-    }
-
-    .video-frame::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      border-radius: inherit;
-      box-shadow: inset 0 0 0 1px rgba(255,255,255,0.06);
-      pointer-events: none;
-      z-index: 2;
-    }
-
-    .hero-video {
-      width: 100%;
-      height: 100%;
-      display: block;
-      object-fit: cover;
-      transition: transform .8s ease;
-    }
-
-    .video-frame:hover .hero-video {
-      transform: scale(1.02);
-    }
-
-    .video-badge {
-      position: absolute;
-      top: 1rem;
-      right: 1rem;
-      z-index: 3;
-      background: rgba(2, 6, 23, 0.75);
-      backdrop-filter: blur(10px);
-      border: 1px solid rgba(255,255,255,0.08);
-      animation: floatY 3s ease-in-out infinite;
-    }
-
-    .section-card {
-      transition: 0.35s ease;
-    }
-
-    .section-card:hover {
-      transform: translateY(-5px);
-      border-color: rgba(34,211,238,0.25);
-      box-shadow: 0 18px 40px rgba(0,0,0,0.25);
+        radial-gradient(circle at top right, rgba(34,211,238,0.16), transparent 28%),
+        radial-gradient(circle at top left, rgba(99,102,241,0.14), transparent 24%),
+        linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0));
     }
 
     .title-line {
@@ -175,7 +59,59 @@
       background: linear-gradient(to left, #22d3ee, #3b82f6);
     }
 
-    .glow-orb {
+    .section-card {
+      transition: 0.35s ease;
+    }
+
+    .section-card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(34,211,238,0.28);
+      box-shadow: 0 16px 36px rgba(0,0,0,0.24);
+    }
+
+    .site-logo {
+      height: 88px;
+      width: auto;
+      object-fit: contain;
+      filter: drop-shadow(0 0 18px rgba(34,211,238,0.24));
+    }
+
+    .footer-logo {
+      height: 95px;
+      width: auto;
+      object-fit: contain;
+      margin: 18px auto 0;
+      filter: drop-shadow(0 0 14px rgba(34,211,238,0.20));
+    }
+
+    .hero-media {
+      position: relative;
+      overflow: hidden;
+      border-radius: 2rem;
+      background: linear-gradient(135deg, rgba(34,211,238,0.10), rgba(99,102,241,0.14));
+      border: 1px solid rgba(255,255,255,0.08);
+      min-height: 240px;
+      box-shadow: 0 25px 70px rgba(0,0,0,0.28);
+    }
+
+    .hero-media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .badge-floating {
+      position: absolute;
+      top: 14px;
+      right: 14px;
+      background: rgba(2, 6, 23, 0.78);
+      border: 1px solid rgba(255,255,255,0.09);
+      backdrop-filter: blur(10px);
+      color: #67e8f9;
+    }
+
+    .glow {
       position: absolute;
       border-radius: 9999px;
       filter: blur(70px);
@@ -184,176 +120,100 @@
     }
 
     .feature-check {
-      width: 1.35rem;
-      height: 1.35rem;
+      width: 1.4rem;
+      height: 1.4rem;
       display: inline-flex;
       align-items: center;
       justify-content: center;
       border-radius: 9999px;
       background: rgba(34,211,238,0.14);
       color: #67e8f9;
-      font-size: 0.85rem;
+      font-size: 0.86rem;
       flex-shrink: 0;
     }
 
-    .contact-box {
-      background:
-        linear-gradient(rgba(2, 6, 23, 0.70), rgba(2, 6, 23, 0.82)),
-        url("images/imagesworld-bg.jpg");
-      background-size: cover;
-      background-position: center;
-      position: relative;
-      overflow: hidden;
-      border: 1px solid rgba(34, 211, 238, 0.16);
-    }
-
-    .contact-content {
-      position: relative;
-      z-index: 2;
-    }
-
-    .contact-buttons-box {
-      background:
-        linear-gradient(rgba(2, 6, 23, 0.50), rgba(2, 6, 23, 0.66)),
-        url("images/imagesworld-bg.jpg");
-      background-size: cover;
-      background-position: center;
-      box-shadow: inset 0 0 0 1px rgba(255,255,255,0.05);
-    }
-
-    .whatsapp-btn {
+    .cta-btn {
       background: linear-gradient(90deg, #22d3ee, #06b6d4);
       color: #020617;
-      transition: 0.35s ease;
-      box-shadow: 0 0 18px rgba(34, 211, 238, 0.35);
-    }
-
-    .whatsapp-btn:hover {
-      transform: scale(1.05);
-      box-shadow:
-        0 0 18px rgba(34, 211, 238, 0.55),
-        0 0 40px rgba(34, 211, 238, 0.35),
-        0 0 70px rgba(34, 211, 238, 0.20);
-    }
-
-    .email-btn {
+      box-shadow: 0 0 18px rgba(34,211,238,0.34);
       transition: 0.35s ease;
     }
 
-    .email-btn:hover {
-      transform: translateY(-2px);
+    .cta-btn:hover {
+      transform: scale(1.04);
+      box-shadow: 0 0 24px rgba(34,211,238,0.5);
+    }
+
+    .ghost-btn {
+      transition: 0.35s ease;
+    }
+
+    .ghost-btn:hover {
       background: rgba(255,255,255,0.08);
-    }
-
-    .site-logo {
-      height: 82px;
-      width: auto;
-      object-fit: contain;
-      filter: drop-shadow(0 0 18px rgba(34,211,238,0.24));
-    }
-
-    .footer-logo {
-      height: 100px;
-      width: auto;
-      object-fit: contain;
-      margin: 18px auto 0;
-      filter: drop-shadow(0 0 16px rgba(34,211,238,0.18));
-    }
-
-    .mobile-menu-btn {
-      display: none;
+      transform: translateY(-1px);
     }
 
     .mobile-menu {
       display: none;
     }
 
-    .container-wide {
-      width: min(100%, 1380px);
-      margin-inline: auto;
-      padding-inline: 24px;
+    .mobile-menu.show {
+      display: block;
     }
 
-    @media (max-width: 1024px) {
-      .site-logo {
-        height: 74px;
-      }
+    .fade-up,
+    .zoom-in {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: 0.9s ease;
     }
 
-    @media (max-width: 768px) {
-      .container-wide {
-        padding-inline: 18px;
+    .zoom-in {
+      transform: scale(0.96);
+    }
+
+    .fade-up.show,
+    .zoom-in.show {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+
+    @media (max-width: 767px) {
+      .site-shell {
+        padding-inline: 8px;
       }
 
       .site-logo {
-        height: 72px;
+        height: 80px;
       }
 
       .footer-logo {
-        height: 84px;
+        height: 82px;
       }
 
-      .hero-video {
-        min-height: 300px;
-      }
-
-      .mobile-menu-btn {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-      }
-
-      .desktop-nav {
-        display: none !important;
-      }
-
-      .mobile-menu {
-        display: none;
-      }
-
-      .mobile-menu.show {
-        display: block;
-      }
-    }
-
-    @media (max-width: 640px) {
-      .container-wide {
-        padding-inline: 10px;
-      }
-
-      .site-logo {
-        height: 66px;
-      }
-
-      .footer-logo {
-        height: 78px;
-      }
-
-      .hero-video {
-        min-height: 270px;
+      .hero-media {
+        min-height: 200px;
       }
     }
   </style>
 </head>
-<body class="text-white">
-
+<body>
   <header class="sticky top-0 z-50 border-b border-white/10 bg-slate-950/85 backdrop-blur-xl">
-    <div class="container-wide">
-      <div class="flex items-center justify-between gap-4 py-3 md:py-4">
+    <div class="site-shell">
+      <div class="flex items-center justify-between gap-3 py-3">
         <a href="#home" class="flex items-center">
           <img src="images/logo.png" alt="Waheb Site Logo" class="site-logo" />
         </a>
 
-        <nav class="desktop-nav hidden items-center gap-8 text-sm font-semibold text-white/80 md:flex">
-          <a href="#home" class="nav-link transition hover:text-cyan-400">الرئيسية</a>
-          <a href="#about" class="nav-link transition hover:text-cyan-400">من نحن</a>
-          <a href="#services" class="nav-link transition hover:text-cyan-400">الخدمات</a>
-          <a href="#projects" class="nav-link transition hover:text-cyan-400">الأعمال</a>
-          <a href="#features" class="nav-link transition hover:text-cyan-400">المميزات</a>
-          <a href="#contact" class="nav-link transition hover:text-cyan-400">التواصل</a>
+        <nav class="hidden items-center gap-7 text-sm font-semibold text-white/80 md:flex">
+          <a href="#home" class="transition hover:text-cyan-400">الرئيسية</a>
+          <a href="#services" class="transition hover:text-cyan-400">الخدمات</a>
+          <a href="#projects" class="transition hover:text-cyan-400">الأعمال</a>
+          <a href="#features" class="transition hover:text-cyan-400">المميزات</a>
+          <a href="#contact" class="transition hover:text-cyan-400">التواصل</a>
         </nav>
 
-        <div class="flex items-center gap-3">
+        <div class="flex items-center gap-2">
           <a
             href="https://wa.me/15213873166"
             target="_blank"
@@ -363,318 +223,178 @@
             ابدأ الآن
           </a>
 
-          <button id="menuBtn" class="mobile-menu-btn rounded-xl border border-white/10 bg-white/5 p-3 text-white md:hidden" aria-label="فتح القائمة">
+          <button id="menuBtn" class="rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-white md:hidden">
             ☰
           </button>
         </div>
       </div>
 
       <div id="mobileMenu" class="mobile-menu border-t border-white/10 pb-4 md:hidden">
-        <div class="mt-4 grid gap-2 rounded-2xl bg-white/5 p-3 text-center text-sm font-semibold text-white/85">
-          <a href="#home" class="rounded-xl px-4 py-3 transition hover:bg-white/10">الرئيسية</a>
-          <a href="#about" class="rounded-xl px-4 py-3 transition hover:bg-white/10">من نحن</a>
-          <a href="#services" class="rounded-xl px-4 py-3 transition hover:bg-white/10">الخدمات</a>
-          <a href="#projects" class="rounded-xl px-4 py-3 transition hover:bg-white/10">الأعمال</a>
-          <a href="#features" class="rounded-xl px-4 py-3 transition hover:bg-white/10">المميزات</a>
-          <a href="#contact" class="rounded-xl px-4 py-3 transition hover:bg-white/10">التواصل</a>
-          <a
-            href="https://wa.me/15213873166"
-            target="_blank"
-            rel="noreferrer"
-            class="mt-2 rounded-xl bg-cyan-400 px-4 py-3 font-bold text-slate-950"
-          >
-            ابدأ الآن
-          </a>
+        <div class="mt-4 grid grid-cols-2 gap-2 rounded-2xl bg-white/5 p-3 text-center text-sm font-semibold text-white/85">
+          <a href="#home" class="rounded-xl px-4 py-3 hover:bg-white/10">الرئيسية</a>
+          <a href="#services" class="rounded-xl px-4 py-3 hover:bg-white/10">الخدمات</a>
+          <a href="#projects" class="rounded-xl px-4 py-3 hover:bg-white/10">الأعمال</a>
+          <a href="#features" class="rounded-xl px-4 py-3 hover:bg-white/10">المميزات</a>
+          <a href="#contact" class="rounded-xl px-4 py-3 hover:bg-white/10">التواصل</a>
+          <a href="https://wa.me/15213873166" target="_blank" rel="noreferrer" class="rounded-xl bg-cyan-400 px-4 py-3 font-bold text-slate-950">واتساب</a>
         </div>
       </div>
     </div>
   </header>
 
-  <section id="home" class="hero-bg border-b border-white/10">
-    <div class="container-wide">
-      <div class="grid grid-cols-1 sm:grid-cols-2 items-center gap-8 py-10 sm:py-14 lg:grid-cols-2 lg:gap-14 lg:py-16">
-        <div class="fade-up">
-          <span class="inline-flex rounded-full border border-cyan-400/20 bg-cyan-400/10 px-4 py-1 text-sm font-semibold text-cyan-300">
+  <section id="home" class="hero-bg relative overflow-hidden border-b border-white/10 py-10 sm:py-14">
+    <div class="glow top-10 right-5 h-52 w-52 bg-cyan-500/10"></div>
+    <div class="glow bottom-0 left-5 h-52 w-52 bg-indigo-500/10"></div>
+
+    <div class="site-shell relative z-10">
+      <div class="grid grid-cols-2 gap-4 sm:gap-6 lg:grid-cols-2 lg:items-center">
+        <div class="fade-up rounded-[2rem] border border-white/10 bg-slate-900/55 p-5 shadow-2xl sm:p-7">
+          <span class="inline-flex rounded-full border border-cyan-400/20 bg-cyan-400/10 px-4 py-1 text-xs sm:text-sm font-semibold text-cyan-300">
             تصميم وتطوير مواقع احترافية
           </span>
 
-          <h1 class="mt-6 text-4xl font-bold leading-tight sm:text-5xl lg:text-6xl">
-            موقع إلكتروني احترافي
-            <span class="text-cyan-400">يصنع حضورك الحقيقي</span>
-            على الإنترنت
+          <h1 class="mt-5 text-2xl font-bold leading-tight sm:text-4xl lg:text-6xl">
+            موقع حديث
+            <span class="text-cyan-400">بعرض قوي</span>
+            ويعطي نشاطك حضورًا حقيقيًا
           </h1>
 
-          <p class="mt-6 max-w-2xl text-lg leading-8 text-white/75">
-            نصمم لك موقعًا حديثًا وسريعًا يعرض نشاطك أو خدماتك أو مشروعك بشكل قوي ومرتب،
-            مع توافق كامل مع الجوال وإمكانية إضافة أي خصائص تحتاجها.
+          <p class="mt-4 text-sm leading-7 text-white/75 sm:text-base lg:text-lg lg:leading-8">
+            نصمم لك موقعًا سريعًا وعصريًا ومتجاوبًا مع الآيفون وكل الهواتف،
+            مع عرض مريح ومساحات أفضل وتجربة استخدام احترافية.
           </p>
 
-          <div class="mt-8 flex flex-col gap-4 sm:flex-row sm:flex-wrap">
-            <a
-              href="#contact"
-              class="rounded-2xl bg-cyan-400 px-6 py-3 text-center font-semibold text-slate-950 transition hover:scale-105"
-            >
-              اطلب موقعك الآن
-            </a>
-
-            <a
-              href="#projects"
-              class="rounded-2xl border border-white/15 bg-white/5 px-6 py-3 text-center font-semibold text-white transition hover:bg-white/10"
-            >
-              مشاهدة النماذج
-            </a>
+          <div class="mt-6 grid grid-cols-1 gap-3 sm:grid-cols-2">
+            <a href="#contact" class="cta-btn rounded-2xl px-6 py-3 text-center font-semibold">اطلب موقعك الآن</a>
+            <a href="#projects" class="ghost-btn rounded-2xl border border-white/15 bg-white/5 px-6 py-3 text-center font-semibold text-white">شاهد النماذج</a>
           </div>
 
-          <div class="mt-10 grid gap-4 sm:grid-cols-3">
-            <div class="glass rounded-2xl border border-white/10 p-5 text-center">
-              <div class="text-2xl font-bold text-cyan-400">48H</div>
-              <p class="mt-2 text-sm text-white/65">سرعة في التسليم</p>
+          <div class="mt-6 grid grid-cols-2 gap-3 lg:grid-cols-3">
+            <div class="glass rounded-2xl p-4 text-center">
+              <div class="text-xl font-bold text-cyan-400">48H</div>
+              <p class="mt-1 text-xs sm:text-sm text-white/65">تسليم سريع</p>
             </div>
-
-            <div class="glass rounded-2xl border border-white/10 p-5 text-center">
-              <div class="text-2xl font-bold text-cyan-400">.de / .com</div>
-              <p class="mt-2 text-sm text-white/65">دومين خاص</p>
+            <div class="glass rounded-2xl p-4 text-center">
+              <div class="text-xl font-bold text-cyan-400">.de / .com</div>
+              <p class="mt-1 text-xs sm:text-sm text-white/65">دومين خاص</p>
             </div>
-
-            <div class="glass rounded-2xl border border-white/10 p-5 text-center">
-              <div class="text-2xl font-bold text-cyan-400">0€</div>
-              <p class="mt-2 text-sm text-white/65">الدفع بعد الاستلام</p>
+            <div class="glass rounded-2xl p-4 text-center col-span-2 lg:col-span-1">
+              <div class="text-xl font-bold text-cyan-400">0€</div>
+              <p class="mt-1 text-xs sm:text-sm text-white/65">الدفع بعد الاستلام</p>
             </div>
           </div>
         </div>
 
         <div class="fade-up">
-          <div class="video-frame min-h-[320px] lg:min-h-[520px]">
-            <div class="video-badge rounded-xl px-4 py-2 text-sm font-semibold text-cyan-300">
-              عرض بصري لموقعك
+          <div class="hero-media">
+            <div class="badge-floating rounded-xl px-4 py-2 text-xs sm:text-sm font-semibold">
+              مناسب للآيفون
             </div>
+            <img src="images/website-mockup.png" alt="تصميم موقع احترافي" />
+          </div>
 
-            <video
-              class="hero-video"
-              autoplay
-              muted
-              loop
-              playsinline
-              controls
-              poster="images/website-mockup.png"
-            >
-              <source src="images/laptop-showcase.mp4" type="video/mp4" />
-              المتصفح لديك لا يدعم تشغيل الفيديو.
-            </video>
+          <div class="mt-4 grid grid-cols-2 gap-3">
+            <div class="glass rounded-2xl p-4 text-center">
+              <p class="text-sm font-semibold text-cyan-300">واجهة أنيقة</p>
+              <p class="mt-2 text-xs sm:text-sm text-white/70">تعطي انطباع قوي من أول زيارة</p>
+            </div>
+            <div class="glass rounded-2xl p-4 text-center">
+              <p class="text-sm font-semibold text-cyan-300">عرض أعرض</p>
+              <p class="mt-2 text-xs sm:text-sm text-white/70">استغلال أفضل لشاشة الهاتف</p>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <section id="about" class="relative overflow-hidden py-20">
-    <div class="glow-orb top-10 right-10 h-72 w-72 bg-cyan-500/10"></div>
-    <div class="glow-orb bottom-10 left-10 h-72 w-72 bg-indigo-500/10"></div>
-
-    <div class="container-wide">
-      <div class="grid items-center gap-12 lg:grid-cols-2 lg:gap-14">
-        <div class="fade-up">
-          <span class="inline-flex rounded-full border border-cyan-400/20 bg-cyan-400/10 px-4 py-1 text-sm font-semibold text-cyan-300">
-            لماذا نحن؟
-          </span>
-
-          <h2 class="mt-6 text-4xl font-bold leading-tight sm:text-5xl">
-            هل تفكر في إنشاء
-            <span class="title-line">موقع إلكتروني احترافي</span>
-            لنشاطك؟
-          </h2>
-
-          <p class="mt-8 text-lg leading-8 text-white/80">
-            نحن نوفر لك خدمة متكاملة لإنشاء موقع يعكس نشاطك الحقيقي ويمنحك حضورًا قويًا على الإنترنت
-            بطريقة احترافية تساعدك على كسب ثقة العملاء من أول زيارة.
-          </p>
-
-          <p class="mt-5 text-lg leading-8 text-white/80">
-            سواء كنت طبيبًا، مهندسًا، صاحب مطعم، حلاقًا أو صاحب أي نشاط آخر،
-            نقوم ببناء موقع يناسب طبيعة عملك ويخدم أهدافك بشكل واضح واحترافي.
-          </p>
-
-          <p class="mt-5 text-lg leading-8 text-white/80">
-            يمكن أن يتضمن موقعك نظام حجز مواعيد، عرض خدمات أو منتجات، صفحات تعريفية، وسائل تواصل مباشرة،
-            أو أي خصائص خاصة تريد إضافتها حسب طبيعة مشروعك.
-          </p>
-
-          <div class="mt-8 rounded-3xl border border-cyan-400/20 bg-gradient-to-l from-cyan-500/10 to-blue-500/10 p-6 shadow-xl">
-            <p class="text-2xl font-bold text-cyan-300">
-              لا تدفع أي شيء حتى تستلم موقعك كاملًا وتكون راضيًا عنه.
-            </p>
-          </div>
-        </div>
-
-        <div class="grid gap-5 sm:grid-cols-2">
-          <div class="group relative overflow-hidden rounded-3xl border border-white/10 bg-slate-900/60 shadow-2xl sm:col-span-2 fade-up">
-            <img
-              src="images/website-mockup.png"
-              alt="تصميم موقع احترافي"
-              class="h-72 w-full object-cover transition duration-700 group-hover:scale-105 group-hover:brightness-110"
-            />
-            <div class="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-slate-900/10 to-transparent"></div>
-            <div class="absolute bottom-5 right-5 rounded-2xl border border-white/10 bg-slate-950/70 px-4 py-2 text-sm font-semibold text-cyan-300 backdrop-blur-md">
-              تصميم احترافي عصري
-            </div>
-          </div>
-
-          <div class="section-card fade-up rounded-3xl border border-white/10 bg-slate-900/60 p-3 shadow-xl">
-            <div class="overflow-hidden rounded-2xl">
-              <img
-                src="images/booking-system.jpg"
-                alt="نظام حجز"
-                class="h-56 w-full object-cover transition duration-700 hover:scale-105"
-              />
-            </div>
-            <div class="pt-4">
-              <h3 class="text-lg font-bold text-white">نظام حجز</h3>
-              <p class="mt-2 text-sm leading-6 text-white/65">
-                مناسب للعيادات والحلاقين والمشاريع التي تحتاج إلى تنظيم المواعيد باحترافية.
-              </p>
-            </div>
-          </div>
-
-          <div class="section-card fade-up flex flex-col justify-center rounded-3xl border border-cyan-400/15 bg-gradient-to-br from-cyan-400/10 to-blue-500/10 p-6 shadow-xl">
-            <div class="mb-4 inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-cyan-400/15 text-2xl text-cyan-300">
-              ✨
-            </div>
-            <h3 class="text-xl font-bold text-white">واجهة تبني الثقة</h3>
-            <p class="mt-3 text-sm leading-7 text-white/70">
-              تصميم أنيق وسرعة ممتازة وأسلوب عرض واضح يساعد عميلك على فهم خدماتك واتخاذ قرار التواصل بسرعة.
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="services" class="border-y border-white/10 bg-white/5 py-20">
-    <div class="container-wide">
-      <div class="max-w-2xl fade-up">
-        <p class="text-sm font-semibold uppercase tracking-[0.2em] text-cyan-400">الخدمات</p>
-        <h2 class="mt-3 text-3xl font-bold sm:text-4xl">كل ما تحتاجه لموقع قوي واحترافي</h2>
+  <section id="services" class="py-16">
+    <div class="site-shell">
+      <div class="fade-up max-w-2xl">
+        <p class="text-sm font-semibold tracking-[0.2em] text-cyan-400">الخدمات</p>
+        <h2 class="mt-3 text-3xl font-bold sm:text-4xl">خدمات كاملة لموقعك</h2>
         <p class="mt-4 leading-8 text-white/70">
-          نقدم لك حلولًا متكاملة لبناء حضور رقمي مميز يساعدك على الوصول إلى عملائك بطريقة حديثة وأنيقة.
+          نصمم لك موقعًا احترافيًا يناسب نشاطك مع صفحات واضحة وتصميم جذاب وتجربة استخدام ممتازة على الهاتف والكمبيوتر.
         </p>
       </div>
 
-      <div class="mt-10 grid grid-cols-2 gap-4 sm:gap-6 md:grid-cols-2 xl:grid-cols-4">
-        <div class="section-card fade-up rounded-3xl border border-white/10 bg-slate-900/70 p-6 shadow-xl">
-          <div class="mb-5 inline-flex rounded-2xl bg-cyan-400/10 p-4 text-cyan-300">🌐</div>
-          <h3 class="text-xl font-semibold">تصميم مواقع احترافية</h3>
-          <p class="mt-3 text-sm leading-6 text-white/65">
-            تصميم مواقع حديثة وسريعة ومتوافقة مع الجوال لتناسب نشاطك التجاري أو الشخصي.
-          </p>
+      <div class="mt-10 grid grid-cols-2 gap-4 md:grid-cols-2 xl:grid-cols-4">
+        <div class="section-card fade-up rounded-3xl border border-white/10 bg-slate-900/70 p-5 shadow-xl">
+          <div class="mb-4 inline-flex rounded-2xl bg-cyan-400/10 p-4 text-cyan-300">🌐</div>
+          <h3 class="text-lg font-semibold sm:text-xl">تصميم مواقع احترافية</h3>
+          <p class="mt-3 text-sm leading-6 text-white/65">موقع عصري سريع ومتجاوب يناسب نشاطك التجاري أو الشخصي.</p>
         </div>
 
-        <div class="section-card fade-up rounded-3xl border border-white/10 bg-slate-900/70 p-6 shadow-xl">
-          <div class="mb-5 inline-flex rounded-2xl bg-cyan-400/10 p-4 text-cyan-300">🛒</div>
-          <h3 class="text-xl font-semibold">متاجر إلكترونية</h3>
-          <p class="mt-3 text-sm leading-6 text-white/65">
-            إنشاء متجر منظم مع صفحات منتجات واضحة وتجربة شراء سهلة وجذابة.
-          </p>
+        <div class="section-card fade-up rounded-3xl border border-white/10 bg-slate-900/70 p-5 shadow-xl">
+          <div class="mb-4 inline-flex rounded-2xl bg-cyan-400/10 p-4 text-cyan-300">🛒</div>
+          <h3 class="text-lg font-semibold sm:text-xl">متجر إلكتروني</h3>
+          <p class="mt-3 text-sm leading-6 text-white/65">واجهة بيع واضحة مع عرض منظم للمنتجات وتجربة شراء سهلة.</p>
         </div>
 
-        <div class="section-card fade-up rounded-3xl border border-white/10 bg-slate-900/70 p-6 shadow-xl">
-          <div class="mb-5 inline-flex rounded-2xl bg-cyan-400/10 p-4 text-cyan-300">⚙️</div>
-          <h3 class="text-xl font-semibold">تطوير مخصص</h3>
-          <p class="mt-3 text-sm leading-6 text-white/65">
-            إضافة خصائص خاصة مثل الحجز والطلبات والنماذج أو أي فكرة تريد تنفيذها لمشروعك.
-          </p>
+        <div class="section-card fade-up rounded-3xl border border-white/10 bg-slate-900/70 p-5 shadow-xl">
+          <div class="mb-4 inline-flex rounded-2xl bg-cyan-400/10 p-4 text-cyan-300">📅</div>
+          <h3 class="text-lg font-semibold sm:text-xl">نظام حجز</h3>
+          <p class="mt-3 text-sm leading-6 text-white/65">مثالي للعيادات والحلاقين والمطاعم وكل نشاط يحتاج مواعيد.</p>
         </div>
 
-        <div class="section-card fade-up rounded-3xl border border-white/10 bg-slate-900/70 p-6 shadow-xl">
-          <div class="mb-5 inline-flex rounded-2xl bg-cyan-400/10 p-4 text-cyan-300">🚀</div>
-          <h3 class="text-xl font-semibold">تحسين الأداء والدعم</h3>
-          <p class="mt-3 text-sm leading-6 text-white/65">
-            تحسين سرعة الموقع وتجربة المستخدم والتوافق مع مختلف الشاشات والأجهزة.
-          </p>
+        <div class="section-card fade-up rounded-3xl border border-white/10 bg-slate-900/70 p-5 shadow-xl">
+          <div class="mb-4 inline-flex rounded-2xl bg-cyan-400/10 p-4 text-cyan-300">🚀</div>
+          <h3 class="text-lg font-semibold sm:text-xl">تحسين الأداء</h3>
+          <p class="mt-3 text-sm leading-6 text-white/65">سرعة ممتازة وتجربة استخدام جميلة وتوافق مع مختلف الشاشات.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <section id="projects" class="py-20">
-    <div class="container-wide">
-      <div class="fade-up">
-        <p class="text-sm font-semibold uppercase tracking-[0.2em] text-cyan-400">نماذج</p>
-        <h2 class="mt-3 text-3xl font-bold sm:text-4xl">أمثلة لأنواع المواقع الممكنة</h2>
-        <p class="mt-4 max-w-2xl leading-8 text-white/70">
-          هذه أمثلة لأفكار يمكن تنفيذها حسب طبيعة مشروعك، مع إمكانية تخصيص الألوان والأقسام والمميزات كما تريد.
+  <section id="projects" class="border-y border-white/10 bg-white/5 py-16">
+    <div class="site-shell">
+      <div class="fade-up max-w-2xl">
+        <p class="text-sm font-semibold tracking-[0.2em] text-cyan-400">الأعمال</p>
+        <h2 class="mt-3 text-3xl font-bold sm:text-4xl">نماذج لمواقع يمكن تنفيذها</h2>
+        <p class="mt-4 leading-8 text-white/70">
+          نخصص التصميم حسب نشاطك مع إمكانية تعديل الصور والنصوص والألوان والصفحات كما تريد.
         </p>
       </div>
 
       <div class="mt-10 grid grid-cols-2 gap-4 md:grid-cols-3">
-        <div class="zoom-in overflow-hidden rounded-3xl border border-white/10 bg-slate-900/70 shadow-xl transition duration-300 hover:-translate-y-2 hover:shadow-cyan-500/10">
-          <div class="h-52 overflow-hidden">
-            <img src="images/business-site.jpg" alt="موقع شركة" class="h-full w-full object-cover transition duration-700 hover:scale-105" />
-          </div>
-          <div class="p-6">
-            <span class="rounded-full border border-cyan-400/30 bg-cyan-400/10 px-3 py-1 text-xs font-medium text-cyan-300">
-              أعمال
-            </span>
-            <h3 class="mt-5 text-2xl font-semibold">موقع شركة</h3>
-            <p class="mt-3 text-sm leading-6 text-white/65">
-              موقع احترافي للتعريف بالشركة وعرض الخدمات والمشاريع وتسهيل التواصل مع العملاء.
-            </p>
+        <div class="zoom-in overflow-hidden rounded-3xl border border-white/10 bg-slate-900/75 shadow-xl">
+          <img src="images/business-site.jpg" alt="موقع شركة" class="h-40 w-full object-cover sm:h-52" />
+          <div class="p-5">
+            <span class="rounded-full border border-cyan-400/30 bg-cyan-400/10 px-3 py-1 text-xs font-medium text-cyan-300">أعمال</span>
+            <h3 class="mt-4 text-lg font-semibold sm:text-2xl">موقع شركة</h3>
+            <p class="mt-3 text-sm leading-6 text-white/65">عرض خدمات الشركة والمشاريع وطرق التواصل بشكل قوي وواضح.</p>
           </div>
         </div>
 
-        <div class="zoom-in overflow-hidden rounded-3xl border border-white/10 bg-slate-900/70 shadow-xl transition duration-300 hover:-translate-y-2 hover:shadow-cyan-500/10">
-          <div class="h-52 overflow-hidden">
-            <img src="images/ecommerce-site.jpg" alt="متجر إلكتروني" class="h-full w-full object-cover transition duration-700 hover:scale-105" />
-          </div>
-          <div class="p-6">
-            <span class="rounded-full border border-cyan-400/30 bg-cyan-400/10 px-3 py-1 text-xs font-medium text-cyan-300">
-              متجر
-            </span>
-            <h3 class="mt-5 text-2xl font-semibold">متجر إلكتروني</h3>
-            <p class="mt-3 text-sm leading-6 text-white/65">
-              واجهة بيع عصرية مع عرض المنتجات بشكل منظم وتجربة شراء سهلة وواضحة.
-            </p>
+        <div class="zoom-in overflow-hidden rounded-3xl border border-white/10 bg-slate-900/75 shadow-xl">
+          <img src="images/ecommerce-site.jpg" alt="متجر إلكتروني" class="h-40 w-full object-cover sm:h-52" />
+          <div class="p-5">
+            <span class="rounded-full border border-cyan-400/30 bg-cyan-400/10 px-3 py-1 text-xs font-medium text-cyan-300">متجر</span>
+            <h3 class="mt-4 text-lg font-semibold sm:text-2xl">متجر إلكتروني</h3>
+            <p class="mt-3 text-sm leading-6 text-white/65">منتجات مرتبة وتجربة شراء عصرية وسهلة للعميل.</p>
           </div>
         </div>
 
-        <div class="zoom-in overflow-hidden rounded-3xl border border-white/10 bg-slate-900/70 shadow-xl transition duration-300 hover:-translate-y-2 hover:shadow-cyan-500/10">
-          <div class="h-52 overflow-hidden">
-            <img src="images/booking-site.jpg" alt="موقع حجز مواعيد" class="h-full w-full object-cover transition duration-700 hover:scale-105" />
-          </div>
-          <div class="p-6">
-            <span class="rounded-full border border-cyan-400/30 bg-cyan-400/10 px-3 py-1 text-xs font-medium text-cyan-300">
-              حجوزات
-            </span>
-            <h3 class="mt-5 text-2xl font-semibold">موقع حجز مواعيد</h3>
-            <p class="mt-3 text-sm leading-6 text-white/65">
-              مناسب للأطباء والعيادات والحلاقين وكل نشاط يحتاج إلى تنظيم الحجوزات بطريقة واضحة.
-            </p>
+        <div class="zoom-in overflow-hidden rounded-3xl border border-white/10 bg-slate-900/75 shadow-xl col-span-2 md:col-span-1">
+          <img src="images/booking-site.jpg" alt="موقع حجز مواعيد" class="h-40 w-full object-cover sm:h-52" />
+          <div class="p-5">
+            <span class="rounded-full border border-cyan-400/30 bg-cyan-400/10 px-3 py-1 text-xs font-medium text-cyan-300">حجوزات</span>
+            <h3 class="mt-4 text-lg font-semibold sm:text-2xl">موقع حجز</h3>
+            <p class="mt-3 text-sm leading-6 text-white/65">حجز مواعيد واضح وسهل للأطباء والعيادات والحلاقين.</p>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <section id="features" class="border-y border-white/10 bg-white/5 py-20">
-    <div class="container-wide">
-      <div class="max-w-2xl fade-up">
-        <p class="text-sm font-semibold uppercase tracking-[0.2em] text-cyan-400">المميزات</p>
-        <h2 class="mt-3 text-3xl font-bold sm:text-4xl">كل ما يحتاجه موقعك في مكان واحد</h2>
-        <p class="mt-4 leading-8 text-white/70">
-          نركز على الجودة والسرعة والجمال البصري حتى تحصل على موقع يليق بنشاطك ويعطي عملاءك انطباعًا قويًا.
-        </p>
-      </div>
+  <section id="features" class="py-16">
+    <div class="site-shell">
+      <div class="grid gap-6 lg:grid-cols-2">
+        <div class="zoom-in rounded-[2rem] border border-white/10 bg-slate-900/80 p-6 shadow-2xl sm:p-8">
+          <p class="text-sm font-semibold text-cyan-400">الخدمة الأساسية</p>
+          <h2 class="mt-3 text-3xl font-bold sm:text-4xl">موقع متكامل وجاهز</h2>
 
-      <div class="mt-12 grid gap-6 lg:grid-cols-2">
-        <div class="zoom-in rounded-[2rem] border border-white/10 bg-slate-900/80 p-8 shadow-2xl">
-          <div class="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-            <div>
-              <p class="text-sm font-semibold text-cyan-400">الخدمة الأساسية</p>
-              <h3 class="mt-2 text-3xl font-bold">موقع احترافي متكامل</h3>
-            </div>
-            <div class="rounded-2xl bg-cyan-400/10 px-4 py-2 text-center text-cyan-300">جاهز خلال 48 ساعة</div>
-          </div>
-
-          <div class="mt-8 space-y-4">
+          <div class="mt-7 space-y-4">
             <div class="flex items-start gap-3">
               <span class="feature-check">✓</span>
               <p class="text-white/80">تصميم احترافي ومتجاوب مع جميع الشاشات</p>
@@ -685,7 +405,7 @@
             </div>
             <div class="flex items-start gap-3">
               <span class="feature-check">✓</span>
-              <p class="text-white/80">إمكانية إضافة حجز مواعيد أو متجر أو صفحات خدمات</p>
+              <p class="text-white/80">إضافة حجز أو متجر أو صفحات خدمات حسب الطلب</p>
             </div>
             <div class="flex items-start gap-3">
               <span class="feature-check">✓</span>
@@ -693,7 +413,7 @@
             </div>
             <div class="flex items-start gap-3">
               <span class="feature-check">✓</span>
-              <p class="text-white/80">ألوان عصرية وسرعة ممتازة وتجربة مستخدم جميلة</p>
+              <p class="text-white/80">ألوان عصرية وعرض مريح جدًا على الهاتف</p>
             </div>
           </div>
 
@@ -702,112 +422,66 @@
           </div>
         </div>
 
-        <div class="grid gap-6">
-          <div class="section-card fade-up rounded-3xl border border-white/10 bg-slate-900/70 p-6 shadow-xl">
-            <h3 class="text-xl font-semibold">مناسب لمجالات كثيرة</h3>
-            <p class="mt-3 leading-7 text-white/65">
-              للأطباء والمهندسين والمطاعم والحلاقين والشركات والمتاجر والمشاريع الشخصية.
-            </p>
+        <div class="grid grid-cols-2 gap-4">
+          <div class="section-card fade-up rounded-3xl border border-white/10 bg-slate-900/70 p-5 shadow-xl">
+            <h3 class="text-lg font-semibold sm:text-xl">مناسب لمجالات كثيرة</h3>
+            <p class="mt-3 text-sm leading-7 text-white/65">للشركات والأطباء والمهندسين والمطاعم والحلاقين والمتاجر.</p>
           </div>
 
-          <div class="section-card fade-up rounded-3xl border border-white/10 bg-slate-900/70 p-6 shadow-xl">
-            <h3 class="text-xl font-semibold">واجهة تبني الثقة</h3>
-            <p class="mt-3 leading-7 text-white/65">
-              تصميم أنيق يساعد العميل على فهم خدمتك بسرعة ويعطي انطباعًا احترافيًا من أول زيارة.
-            </p>
+          <div class="section-card fade-up rounded-3xl border border-white/10 bg-slate-900/70 p-5 shadow-xl">
+            <h3 class="text-lg font-semibold sm:text-xl">واجهة تبني الثقة</h3>
+            <p class="mt-3 text-sm leading-7 text-white/65">أسلوب عرض واضح وانطباع قوي من أول زيارة.</p>
           </div>
 
-          <div class="section-card fade-up rounded-3xl border border-white/10 bg-slate-900/70 p-6 shadow-xl">
-            <h3 class="text-xl font-semibold">مرونة كاملة بالتعديل</h3>
-            <p class="mt-3 leading-7 text-white/65">
-              يمكن تعديل الأقسام والصور والنصوص والخصائص بما يناسب نشاطك وأهدافك بدقة.
-            </p>
+          <div class="section-card fade-up rounded-3xl border border-white/10 bg-slate-900/70 p-5 shadow-xl">
+            <h3 class="text-lg font-semibold sm:text-xl">مرونة في التعديل</h3>
+            <p class="mt-3 text-sm leading-7 text-white/65">تعديل الأقسام والصور والنصوص حسب مشروعك.</p>
+          </div>
+
+          <div class="section-card fade-up rounded-3xl border border-cyan-400/15 bg-gradient-to-br from-cyan-400/10 to-blue-500/10 p-5 shadow-xl">
+            <h3 class="text-lg font-semibold sm:text-xl">مناسب للآيفون</h3>
+            <p class="mt-3 text-sm leading-7 text-white/70">تقليل الفراغات وجعل الموقع أعرض بدل الشكل الطولي.</p>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <section id="contact" class="py-20">
-    <div class="container-wide">
-      <div class="contact-box rounded-[2rem] p-6 text-center shadow-2xl sm:p-10 fade-in-section">
-        <div class="contact-content">
-          <h2 class="text-3xl font-bold sm:text-4xl">جاهز للبدء بموقعك الاحترافي؟</h2>
+  <section id="contact" class="pb-16">
+    <div class="site-shell">
+      <div class="rounded-[2rem] border border-cyan-400/15 bg-[linear-gradient(rgba(2,6,23,0.72),rgba(2,6,23,0.84)),url('images/imagesworld-bg.jpg')] bg-cover bg-center p-6 text-center shadow-2xl sm:p-10">
+        <h2 class="text-3xl font-bold sm:text-4xl">جاهز للبدء بموقعك؟</h2>
+        <p class="mx-auto mt-4 max-w-2xl text-lg leading-8 text-white/80">
+          ابدأ الآن بموقع حديث يمنحك حضورًا قويًا على الإنترنت ويظهر بشكل مريح وأنيق على هواتف الآيفون.
+        </p>
 
-          <p class="mx-auto mt-4 max-w-2xl text-lg leading-8 text-white/80">
-            ابدأ الآن بموقع حديث يمنحك حضورًا قويًا على الإنترنت، مع إمكانيات تطوير تناسب مشروعك.
-          </p>
-
-          <div class="contact-buttons-box mx-auto mt-10 max-w-3xl rounded-[1.75rem] border border-white/10 p-5 sm:p-8">
-            <div class="flex flex-col justify-center gap-4 sm:flex-row sm:flex-wrap">
-              <a
-                href="https://wa.me/+4915213873166"
-                target="_blank"
-                rel="noreferrer"
-                class="whatsapp-btn inline-block rounded-2xl px-8 py-3 font-semibold"
-              >
-                تواصل عبر واتساب
-              </a>
-
-              <a
-                href="mailto:wahebwahbe100@gmail.com"
-                class="email-btn inline-block rounded-2xl border border-white/15 bg-white/5 px-8 py-3 font-semibold text-white"
-              >
-                تواصل عبر الإيميل
-              </a>
-            </div>
+        <div class="mx-auto mt-8 max-w-3xl rounded-[1.75rem] border border-white/10 bg-[linear-gradient(rgba(2,6,23,0.52),rgba(2,6,23,0.68)),url('images/imagesworld-bg.jpg')] bg-cover bg-center p-5 sm:p-8">
+          <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
+            <a href="https://wa.me/15213873166" target="_blank" rel="noreferrer" class="cta-btn rounded-2xl px-8 py-3 font-semibold">تواصل عبر واتساب</a>
+            <a href="mailto:wahebwahbe100@gmail.com" class="ghost-btn rounded-2xl border border-white/15 bg-white/5 px-8 py-3 font-semibold text-white">تواصل عبر الإيميل</a>
           </div>
-
-          <p class="mt-8 text-xl font-bold text-cyan-300">
-            لا تدفع أي شيء حتى تستلم موقعك كاملًا.
-          </p>
         </div>
+
+        <p class="mt-8 text-xl font-bold text-cyan-300">لا تدفع أي شيء حتى تستلم موقعك كاملًا.</p>
       </div>
     </div>
   </section>
 
   <footer class="border-t border-white/10 bg-slate-950">
-    <div class="container-wide py-10 text-center text-sm text-white/70">
-      <p>
-        © 2026 جميع الحقوق محفوظة
-        <span class="font-semibold text-white">Waheb Wahbe</span>
-      </p>
-
+    <div class="site-shell py-10 text-center text-sm text-white/70">
+      <p>© 2026 جميع الحقوق محفوظة <span class="font-semibold text-white">Waheb Wahbe</span></p>
       <p class="mt-2">
         البريد الإلكتروني:
-        <a href="mailto:wahebwahbe100@gmail.com" class="text-cyan-400 hover:underline">
-          wahebwahbe100@gmail.com
-        </a>
+        <a href="mailto:wahebwahbe100@gmail.com" class="text-cyan-400 hover:underline">wahebwahbe100@gmail.com</a>
       </p>
-
       <img src="images/logo.png" alt="Waheb Site Logo" class="footer-logo" />
-
-      <p class="mt-4 text-white/60">
-        Made with <span class="heart">❤️</span> in Germany
-      </p>
+      <p class="mt-4 text-white/60">Made with ❤️ in Germany</p>
     </div>
   </footer>
 
   <script>
-    const fadeItems = document.querySelectorAll('.fade-up, .fade-in-section, .zoom-in');
-
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('show');
-        }
-      });
-    }, {
-      threshold: 0.15
-    });
-
-    fadeItems.forEach((item) => {
-      observer.observe(item);
-    });
-
     const menuBtn = document.getElementById('menuBtn');
     const mobileMenu = document.getElementById('mobileMenu');
-
     menuBtn.addEventListener('click', () => {
       mobileMenu.classList.toggle('show');
     });
@@ -815,7 +489,17 @@
     document.querySelectorAll('#mobileMenu a').forEach(link => {
       link.addEventListener('click', () => mobileMenu.classList.remove('show'));
     });
-  </script>
 
+    const items = document.querySelectorAll('.fade-up, .zoom-in');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('show');
+        }
+      });
+    }, { threshold: 0.12 });
+
+    items.forEach((item) => observer.observe(item));
+  </script>
 </body>
 </html>
