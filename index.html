@@ -18,6 +18,7 @@
 
     body {
       background: #020617;
+      overflow-x: hidden;
     }
 
     .heart {
@@ -31,11 +32,38 @@
       50% { transform: scale(1.08); }
     }
 
+    @keyframes floatY {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-12px); }
+    }
+
+    @keyframes pulseGlow {
+      0%, 100% { box-shadow: 0 0 0 rgba(34,211,238,0.0); }
+      50% { box-shadow: 0 0 30px rgba(34,211,238,0.25); }
+    }
+
+    @keyframes shine {
+      0% { transform: translateX(-120%); }
+      100% { transform: translateX(120%); }
+    }
+
     .hero-bg {
       background:
         radial-gradient(circle at top right, rgba(34, 211, 238, 0.14), transparent 30%),
         radial-gradient(circle at top left, rgba(99, 102, 241, 0.14), transparent 25%),
         linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0));
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-bg::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at 20% 30%, rgba(34,211,238,0.08), transparent 20%),
+        radial-gradient(circle at 80% 20%, rgba(99,102,241,0.08), transparent 20%);
+      pointer-events: none;
     }
 
     .glass {
@@ -61,21 +89,34 @@
       filter: brightness(1.08);
     }
 
-    .fade-in-section {
+    .fade-in-section,
+    .fade-up,
+    .zoom-in {
       opacity: 0;
-      transform: translateY(40px) scale(0.98);
       transition: opacity 1s ease, transform 1s ease;
     }
 
-    .fade-in-section.show {
+    .fade-in-section {
+      transform: translateY(40px) scale(0.98);
+    }
+
+    .fade-up {
+      transform: translateY(45px);
+    }
+
+    .zoom-in {
+      transform: scale(0.92);
+    }
+
+    .fade-in-section.show,
+    .fade-up.show,
+    .zoom-in.show {
       opacity: 1;
       transform: translateY(0) scale(1);
     }
 
     .contact-box {
-      background:
-        linear-gradient(rgba(2, 6, 23, 0.84), rgba(2, 6, 23, 0.9)),
-        url("images/imagesworld-bg.jpg");
+      background: url("images/imagesworld-bg.jpg");
       background-size: cover;
       background-position: center;
       border: 1px solid rgba(34, 211, 238, 0.16);
@@ -83,13 +124,11 @@
       overflow: hidden;
     }
 
-    .contact-box::before {
+    .contact-box::after {
       content: "";
       position: absolute;
       inset: 0;
-      background:
-        radial-gradient(circle at top center, rgba(34,211,238,0.12), transparent 30%),
-        radial-gradient(circle at bottom left, rgba(99,102,241,0.12), transparent 30%);
+      background: linear-gradient(rgba(2, 6, 23, 0.70), rgba(2, 6, 23, 0.78));
       pointer-events: none;
     }
 
@@ -100,7 +139,7 @@
 
     .contact-buttons-box {
       background:
-        linear-gradient(rgba(2, 6, 23, 0.55), rgba(2, 6, 23, 0.72)),
+        linear-gradient(rgba(2, 6, 23, 0.50), rgba(2, 6, 23, 0.65)),
         url("images/imagesworld-bg.jpg");
       background-size: cover;
       background-position: center;
@@ -112,6 +151,7 @@
       color: #020617;
       transition: 0.4s ease;
       box-shadow: 0 0 18px rgba(34, 211, 238, 0.35);
+      animation: pulseGlow 2.8s ease-in-out infinite;
     }
 
     .whatsapp-btn:hover {
@@ -170,14 +210,143 @@
       background: rgba(2, 6, 23, 0.75);
       backdrop-filter: blur(10px);
       border: 1px solid rgba(255,255,255,0.08);
+      animation: floatY 3s ease-in-out infinite;
     }
 
     .section-card:hover {
-      transform: translateY(-4px);
+      transform: translateY(-6px);
+      border-color: rgba(34,211,238,0.25);
+      box-shadow: 0 18px 40px rgba(0,0,0,0.25);
     }
 
     .section-card {
+      transition: 0.35s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .section-card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: -120%;
+      width: 80%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.06), transparent);
+      transition: 0.7s ease;
+    }
+
+    .section-card:hover::before {
+      right: 140%;
+    }
+
+    .glow-orb {
+      position: absolute;
+      border-radius: 9999px;
+      filter: blur(60px);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .title-line {
+      position: relative;
+      display: inline-block;
+    }
+
+    .title-line::after {
+      content: "";
+      position: absolute;
+      bottom: -8px;
+      right: 0;
+      width: 100%;
+      height: 6px;
+      border-radius: 999px;
+      background: linear-gradient(to left, #22d3ee, #3b82f6);
+    }
+
+    .stats-card:hover {
+      transform: translateY(-4px) scale(1.02);
+      border-color: rgba(34,211,238,0.25);
+    }
+
+    .stats-card {
+      transition: 0.35s ease;
+    }
+
+    .feature-check {
+      width: 1.35rem;
+      height: 1.35rem;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 9999px;
+      background: rgba(34,211,238,0.14);
+      color: #67e8f9;
+      font-size: 0.85rem;
+      flex-shrink: 0;
+    }
+
+    .pricing-box {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .pricing-box::before {
+      content: "";
+      position: absolute;
+      inset: -1px;
+      background: linear-gradient(135deg, rgba(34,211,238,0.22), rgba(99,102,241,0.18), transparent);
+      border-radius: inherit;
+      z-index: 0;
+    }
+
+    .pricing-inner {
+      position: relative;
+      z-index: 1;
+      border-radius: inherit;
+      background: rgba(2,6,23,0.92);
+    }
+
+    .nav-link {
+      position: relative;
+    }
+
+    .nav-link::after {
+      content: "";
+      position: absolute;
+      bottom: -6px;
+      right: 0;
+      width: 0;
+      height: 2px;
+      background: #22d3ee;
       transition: 0.3s ease;
+    }
+
+    .nav-link:hover::after {
+      width: 100%;
+    }
+
+    .hero-text-box {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-text-box::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: -130%;
+      width: 50%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.06), transparent);
+      animation: shine 4.5s linear infinite;
+      pointer-events: none;
+    }
+
+    @media (max-width: 768px) {
+      .hero-video {
+        min-height: 260px;
+      }
     }
   </style>
 </head>
@@ -192,11 +361,12 @@
       </a>
 
       <nav class="hidden items-center gap-8 text-sm font-semibold text-white/80 md:flex">
-        <a href="#home" class="transition hover:text-cyan-400">الرئيسية</a>
-        <a href="#about" class="transition hover:text-cyan-400">من نحن</a>
-        <a href="#services" class="transition hover:text-cyan-400">الخدمات</a>
-        <a href="#projects" class="transition hover:text-cyan-400">الأعمال</a>
-        <a href="#contact" class="transition hover:text-cyan-400">التواصل</a>
+        <a href="#home" class="nav-link transition hover:text-cyan-400">الرئيسية</a>
+        <a href="#about" class="nav-link transition hover:text-cyan-400">من نحن</a>
+        <a href="#services" class="nav-link transition hover:text-cyan-400">الخدمات</a>
+        <a href="#projects" class="nav-link transition hover:text-cyan-400">الأعمال</a>
+        <a href="#pricing" class="nav-link transition hover:text-cyan-400">الميزات</a>
+        <a href="#contact" class="nav-link transition hover:text-cyan-400">التواصل</a>
       </nav>
 
       <a
@@ -213,21 +383,23 @@
   <!-- HERO -->
   <section id="home" class="hero-bg border-b border-white/10">
     <div class="mx-auto grid max-w-7xl items-center gap-12 px-6 py-20 lg:grid-cols-2">
-      <div>
+      <div class="fade-up">
         <span class="inline-flex rounded-full border border-cyan-400/20 bg-cyan-400/10 px-4 py-1 text-sm font-semibold text-cyan-300">
           تصميم وتطوير مواقع احترافية
         </span>
 
-        <h1 class="mt-6 text-4xl font-bold leading-tight sm:text-5xl lg:text-6xl">
-          موقع إلكتروني احترافي
-          <span class="text-cyan-400">يصنع حضورك الحقيقي</span>
-          على الإنترنت
-        </h1>
+        <div class="hero-text-box mt-6 rounded-[2rem] border border-white/10 bg-white/5 p-6 shadow-2xl">
+          <h1 class="text-4xl font-bold leading-tight sm:text-5xl lg:text-6xl">
+            موقع إلكتروني احترافي
+            <span class="text-cyan-400">يصنع حضورك الحقيقي</span>
+            على الإنترنت
+          </h1>
 
-        <p class="mt-6 max-w-2xl text-lg leading-8 text-white/75">
-          نصمم لك موقعًا احترافيًا يعرض خدماتك أو نشاطك أو مشروعك بشكل قوي وحديث،
-          مع سرعة في التنفيذ، توافق مع جميع الأجهزة، وإمكانية إضافة الحجز أو المتجر أو أي خصائص تحتاجها.
-        </p>
+          <p class="mt-6 max-w-2xl text-lg leading-8 text-white/75">
+            نصمم لك موقعًا احترافيًا يعرض خدماتك أو نشاطك أو مشروعك بشكل قوي وحديث،
+            مع سرعة في التنفيذ، توافق مع جميع الأجهزة، وإمكانية إضافة الحجز أو المتجر أو أي خصائص تحتاجها.
+          </p>
+        </div>
 
         <div class="mt-8 flex flex-wrap gap-4">
           <a
@@ -246,113 +418,156 @@
         </div>
 
         <div class="mt-10 grid gap-4 sm:grid-cols-3">
-          <div class="glass rounded-2xl border border-white/10 p-5 text-center">
+          <div class="stats-card glass rounded-2xl border border-white/10 p-5 text-center">
             <div class="text-2xl font-bold text-cyan-400">48H</div>
             <p class="mt-2 text-sm text-white/65">سرعة في التسليم</p>
           </div>
 
-          <div class="glass rounded-2xl border border-white/10 p-5 text-center">
+          <div class="stats-card glass rounded-2xl border border-white/10 p-5 text-center">
             <div class="text-2xl font-bold text-cyan-400">.de / .com</div>
             <p class="mt-2 text-sm text-white/65">دومين خاص</p>
           </div>
 
-          <div class="glass rounded-2xl border border-white/10 p-5 text-center">
+          <div class="stats-card glass rounded-2xl border border-white/10 p-5 text-center">
             <div class="text-2xl font-bold text-cyan-400">0€</div>
             <p class="mt-2 text-sm text-white/65">الدفع بعد الاستلام</p>
           </div>
         </div>
       </div>
 
-      <div class="video-frame min-h-[320px] lg:min-h-[520px]">
-        <div class="video-badge rounded-xl px-4 py-2 text-sm font-semibold text-cyan-300">
-          عرض بصري لموقعك
+      <div class="fade-up">
+        <div class="video-frame min-h-[320px] lg:min-h-[520px]">
+          <div class="video-badge rounded-xl px-4 py-2 text-sm font-semibold text-cyan-300">
+            عرض بصري لموقعك
+          </div>
+
+          <video
+            class="hero-video"
+            autoplay
+            muted
+            loop
+            playsinline
+            controls
+            poster="images/website-main.jpg"
+          >
+            <source src="images/laptop-showcase.mp4" type="video/mp4" />
+            المتصفح لديك لا يدعم تشغيل الفيديو.
+          </video>
         </div>
 
-        <video
-          class="hero-video"
-          autoplay
-          muted
-          loop
-          playsinline
-          controls
-          poster="images/website-main.jpg"
-        >
-          <source src="images/laptop-showcase.mp4" type="video/mp4" />
-          المتصفح لديك لا يدعم تشغيل الفيديو.
-        </video>
+        <div class="mt-8 text-center">
+          <h3 class="text-2xl font-bold text-white sm:text-3xl">
+            نحول فكرتك إلى
+            <span class="text-cyan-400">موقع احترافي يلفت الأنظار</span>
+          </h3>
+
+          <p class="mx-auto mt-4 max-w-3xl text-lg leading-8 text-white/75">
+            نصمم مواقع عصرية وسريعة تعكس قوة مشروعك وتمنحك حضورًا مميزًا على الإنترنت،
+            مع تجربة استخدام جذابة ومتوافقة مع جميع الأجهزة لتصل إلى عملائك بأفضل صورة.
+          </p>
+
+          <p class="mx-auto mt-3 max-w-2xl text-base leading-7 text-white/60">
+            موقعك ليس مجرد صفحة على الإنترنت، بل هو واجهتك الرقمية التي تبني الثقة وتعرض خدماتك بشكل أنيق واحترافي.
+          </p>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- ABOUT -->
-  <section id="about" class="mx-auto max-w-7xl px-6 py-24">
+  <section id="about" class="relative overflow-hidden mx-auto max-w-7xl px-6 py-24">
+    <div class="glow-orb top-16 right-8 h-72 w-72 bg-cyan-500/10"></div>
+    <div class="glow-orb bottom-10 left-10 h-80 w-80 bg-indigo-500/10"></div>
+
     <div class="grid items-center gap-14 lg:grid-cols-2">
-      <div>
-        <span class="inline-flex rounded-full border border-cyan-400/20 bg-cyan-400/10 px-4 py-1 text-sm font-semibold text-cyan-300">
+      <div class="fade-up">
+        <span class="inline-flex rounded-full border border-cyan-400/20 bg-cyan-400/10 px-4 py-1 text-sm font-semibold text-cyan-300 shadow-lg shadow-cyan-500/10">
           لماذا نحن؟
         </span>
 
-        <h2 class="mt-6 text-4xl font-bold leading-tight sm:text-5xl">
+        <h2 class="mt-6 text-4xl font-bold leading-tight sm:text-5xl lg:text-6xl">
           هل تفكر في إنشاء
-          <span class="underline decoration-cyan-400 underline-offset-8">موقع إلكتروني احترافي</span>
+          <span class="title-line">موقع إلكتروني احترافي</span>
           لنشاطك؟
         </h2>
 
-        <p class="mt-8 text-lg leading-8 text-white/80">
+        <p class="mt-8 text-lg leading-9 text-white/80">
           نحن نوفر لك خدمة متكاملة لإنشاء موقع يعكس نشاطك الحقيقي ويمنحك حضورًا قويًا على الإنترنت
           بطريقة احترافية تساعدك على كسب ثقة العملاء من أول زيارة.
         </p>
 
-        <p class="mt-5 text-lg leading-8 text-white/80">
+        <p class="mt-5 text-lg leading-9 text-white/80">
           سواء كنت طبيبًا، مهندسًا، صاحب مطعم، حلاقًا أو صاحب أي نشاط آخر،
           نقوم ببناء موقع يناسب طبيعة عملك ويخدم أهدافك بشكل واضح واحترافي.
         </p>
 
-        <p class="mt-5 text-lg leading-8 text-white/80">
+        <p class="mt-5 text-lg leading-9 text-white/80">
           يمكن أن يتضمن موقعك نظام حجز مواعيد، عرض خدمات أو منتجات، صفحات تعريفية، وسائل تواصل مباشرة،
           أو أي خصائص خاصة تريد إضافتها حسب طبيعة مشروعك.
         </p>
 
-        <p class="mt-5 text-lg leading-8 text-white/80">
+        <p class="mt-5 text-lg leading-9 text-white/80">
           كما نوفر لك دومين خاص باسم موقعك ينتهي بـ
-          <span class="font-bold text-white">.de</span>
+          <span class="font-bold text-cyan-300">.de</span>
           أو
-          <span class="font-bold text-white">.com</span>
+          <span class="font-bold text-cyan-300">.com</span>
           حسب رغبتك.
         </p>
 
-        <p class="mt-5 text-lg leading-8 text-white/80">
+        <p class="mt-5 text-lg leading-9 text-white/80">
           نلتزم بسرعة التنفيذ حيث يتم تسليم الموقع خلال أقل من 48 ساعة في معظم الحالات.
         </p>
 
-        <p class="mt-8 text-2xl font-bold text-cyan-400">
-          لا تدفع أي شيء حتى تستلم موقعك كاملًا وتكون راضيًا عنه.
-        </p>
+        <div class="mt-8 rounded-3xl border border-cyan-400/20 bg-gradient-to-l from-cyan-500/10 to-blue-500/10 p-6 shadow-xl shadow-cyan-500/10">
+          <p class="text-2xl font-bold leading-9 text-cyan-300">
+            لا تدفع أي شيء حتى تستلم موقعك كاملًا وتكون راضيًا عنه.
+          </p>
+        </div>
       </div>
 
       <div class="grid gap-5 sm:grid-cols-2">
-        <div class="image-hover border border-white/10 shadow-2xl sm:col-span-2">
+        <div class="group relative overflow-hidden rounded-3xl border border-white/10 bg-slate-900/60 shadow-2xl sm:col-span-2 fade-up">
           <img
             src="images/website-main.jpg"
             alt="عرض موقع رئيسي"
-            class="h-72"
+            class="h-72 w-full object-cover transition duration-700 group-hover:scale-105 group-hover:brightness-110"
           />
+          <div class="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-slate-900/10 to-transparent"></div>
+          <div class="absolute bottom-5 right-5 rounded-2xl border border-white/10 bg-slate-950/70 px-4 py-2 text-sm font-semibold text-cyan-300 backdrop-blur-md">
+            تصميم احترافي عصري
+          </div>
         </div>
 
-        <div class="image-hover border border-white/10 shadow-xl">
-          <img
-            src="images/booking-system.jpg"
-            alt="نظام حجز"
-            class="h-56"
-          />
+        <div class="group rounded-3xl border border-white/10 bg-slate-900/60 p-3 shadow-xl transition duration-300 hover:-translate-y-2 hover:shadow-cyan-500/10 fade-up">
+          <div class="overflow-hidden rounded-2xl">
+            <img
+              src="images/booking-system.jpg"
+              alt="نظام حجز"
+              class="h-56 w-full object-cover transition duration-700 group-hover:scale-110"
+            />
+          </div>
+          <div class="pt-4">
+            <h3 class="text-lg font-bold text-white">نظام حجز</h3>
+            <p class="mt-2 text-sm leading-6 text-white/65">
+              مناسب للعيادات، الحلاقين، والمشاريع التي تحتاج تنظيم مواعيد بشكل احترافي.
+            </p>
+          </div>
         </div>
 
-        <div class="image-hover border border-white/10 shadow-xl">
-          <img
-            src="images/website-mockup.png"
-            alt="موقع شركة"
-            class="h-56"
-          />
+        <div class="group rounded-3xl border border-white/10 bg-slate-900/60 p-3 shadow-xl transition duration-300 hover:-translate-y-2 hover:shadow-cyan-500/10 fade-up">
+          <div class="overflow-hidden rounded-2xl">
+            <img
+              src="images/website-mockup.png"
+              alt="موقع شركة"
+              class="h-56 w-full object-cover transition duration-700 group-hover:scale-110"
+            />
+          </div>
+          <div class="pt-4">
+            <h3 class="text-lg font-bold text-white">واجهة أعمال قوية</h3>
+            <p class="mt-2 text-sm leading-6 text-white/65">
+              عرض أنيق لخدماتك ومشروعك بطريقة تبني الثقة وتعطي انطباعًا احترافيًا من أول نظرة.
+            </p>
+          </div>
         </div>
       </div>
     </div>
@@ -361,34 +576,41 @@
   <!-- SERVICES -->
   <section id="services" class="border-y border-white/10 bg-white/5">
     <div class="mx-auto max-w-7xl px-6 py-24">
-      <div class="max-w-2xl">
+      <div class="max-w-2xl fade-up">
         <p class="text-sm font-semibold uppercase tracking-[0.2em] text-cyan-400">الخدمات</p>
         <h2 class="mt-3 text-3xl font-bold sm:text-4xl">كل ما تحتاجه لموقع قوي واحترافي</h2>
+        <p class="mt-4 text-white/70 leading-8">
+          نقدم لك حلولًا متكاملة لبناء حضور رقمي مميز يساعدك على الوصول إلى عملائك بطريقة حديثة وأنيقة.
+        </p>
       </div>
 
       <div class="mt-12 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
-        <div class="section-card rounded-3xl border border-white/10 bg-slate-900/70 p-6 shadow-xl">
+        <div class="section-card fade-up rounded-3xl border border-white/10 bg-slate-900/70 p-6 shadow-xl">
+          <div class="mb-5 inline-flex rounded-2xl bg-cyan-400/10 p-4 text-cyan-300">🌐</div>
           <h3 class="text-xl font-semibold">تصميم مواقع احترافية</h3>
           <p class="mt-3 text-sm leading-6 text-white/65">
             تصميم مواقع حديثة وسريعة ومتوافقة مع الجوال لتناسب نشاطك التجاري أو الشخصي.
           </p>
         </div>
 
-        <div class="section-card rounded-3xl border border-white/10 bg-slate-900/70 p-6 shadow-xl">
+        <div class="section-card fade-up rounded-3xl border border-white/10 bg-slate-900/70 p-6 shadow-xl">
+          <div class="mb-5 inline-flex rounded-2xl bg-cyan-400/10 p-4 text-cyan-300">🛒</div>
           <h3 class="text-xl font-semibold">متاجر إلكترونية</h3>
           <p class="mt-3 text-sm leading-6 text-white/65">
             إنشاء متجر منظم مع صفحات منتجات واضحة وتجربة استخدام سهلة وجذابة.
           </p>
         </div>
 
-        <div class="section-card rounded-3xl border border-white/10 bg-slate-900/70 p-6 shadow-xl">
+        <div class="section-card fade-up rounded-3xl border border-white/10 bg-slate-900/70 p-6 shadow-xl">
+          <div class="mb-5 inline-flex rounded-2xl bg-cyan-400/10 p-4 text-cyan-300">⚙️</div>
           <h3 class="text-xl font-semibold">تطوير مخصص</h3>
           <p class="mt-3 text-sm leading-6 text-white/65">
             إضافة خصائص خاصة مثل الحجز، الطلبات، النماذج، أو أي فكرة تريد تنفيذها لمشروعك.
           </p>
         </div>
 
-        <div class="section-card rounded-3xl border border-white/10 bg-slate-900/70 p-6 shadow-xl">
+        <div class="section-card fade-up rounded-3xl border border-white/10 bg-slate-900/70 p-6 shadow-xl">
+          <div class="mb-5 inline-flex rounded-2xl bg-cyan-400/10 p-4 text-cyan-300">🚀</div>
           <h3 class="text-xl font-semibold">تحسين الأداء والدعم</h3>
           <p class="mt-3 text-sm leading-6 text-white/65">
             تحسين سرعة الموقع، تجربة المستخدم، والتوافق مع مختلف الشاشات والأجهزة.
@@ -400,13 +622,16 @@
 
   <!-- PROJECTS -->
   <section id="projects" class="mx-auto max-w-7xl px-6 py-24">
-    <div>
+    <div class="fade-up">
       <p class="text-sm font-semibold uppercase tracking-[0.2em] text-cyan-400">نماذج</p>
       <h2 class="mt-3 text-3xl font-bold sm:text-4xl">أمثلة لأنواع المواقع الممكنة</h2>
+      <p class="mt-4 max-w-2xl text-white/70 leading-8">
+        هذه أمثلة لأفكار يمكن تنفيذها حسب طبيعة مشروعك، مع إمكانية تخصيص الألوان والأقسام والمميزات كما تريد.
+      </p>
     </div>
 
     <div class="mt-12 grid gap-6 md:grid-cols-3">
-      <div class="overflow-hidden rounded-3xl border border-white/10 bg-slate-900/70 shadow-xl">
+      <div class="zoom-in overflow-hidden rounded-3xl border border-white/10 bg-slate-900/70 shadow-xl transition duration-300 hover:-translate-y-2 hover:shadow-cyan-500/10">
         <div class="image-hover h-52">
           <img src="images/website-mockup.png" alt="موقع شركة" />
         </div>
@@ -421,7 +646,7 @@
         </div>
       </div>
 
-      <div class="overflow-hidden rounded-3xl border border-white/10 bg-slate-900/70 shadow-xl">
+      <div class="zoom-in overflow-hidden rounded-3xl border border-white/10 bg-slate-900/70 shadow-xl transition duration-300 hover:-translate-y-2 hover:shadow-cyan-500/10">
         <div class="image-hover h-52">
           <img src="images/website-main.jpg" alt="متجر إلكتروني" />
         </div>
@@ -436,7 +661,7 @@
         </div>
       </div>
 
-      <div class="overflow-hidden rounded-3xl border border-white/10 bg-slate-900/70 shadow-xl">
+      <div class="zoom-in overflow-hidden rounded-3xl border border-white/10 bg-slate-900/70 shadow-xl transition duration-300 hover:-translate-y-2 hover:shadow-cyan-500/10">
         <div class="image-hover h-52">
           <img src="images/booking-system.jpg" alt="موقع حجز مواعيد" />
         </div>
@@ -453,9 +678,86 @@
     </div>
   </section>
 
+  <!-- FEATURES / PRICING STYLE -->
+  <section id="pricing" class="border-y border-white/10 bg-white/5">
+    <div class="mx-auto max-w-7xl px-6 py-24">
+      <div class="max-w-2xl fade-up">
+        <p class="text-sm font-semibold uppercase tracking-[0.2em] text-cyan-400">مميزات الخدمة</p>
+        <h2 class="mt-3 text-3xl font-bold sm:text-4xl">كل ما يحتاجه موقعك في مكان واحد</h2>
+        <p class="mt-4 text-white/70 leading-8">
+          نركز على الجودة والسرعة والجمال البصري حتى تحصل على موقع يليق بنشاطك ويعطي عملاءك انطباعًا قويًا.
+        </p>
+      </div>
+
+      <div class="mt-12 grid gap-6 lg:grid-cols-2">
+        <div class="pricing-box zoom-in rounded-[2rem] p-[1px]">
+          <div class="pricing-inner rounded-[2rem] border border-white/10 p-8 shadow-2xl">
+            <div class="flex items-center justify-between gap-4">
+              <div>
+                <p class="text-sm font-semibold text-cyan-400">الخدمة الأساسية</p>
+                <h3 class="mt-2 text-3xl font-bold">موقع احترافي متكامل</h3>
+              </div>
+              <div class="rounded-2xl bg-cyan-400/10 px-4 py-2 text-cyan-300">جاهز خلال 48 ساعة</div>
+            </div>
+
+            <div class="mt-8 space-y-4">
+              <div class="flex items-start gap-3">
+                <span class="feature-check">✓</span>
+                <p class="text-white/80">تصميم احترافي ومتجاوب مع جميع الشاشات</p>
+              </div>
+              <div class="flex items-start gap-3">
+                <span class="feature-check">✓</span>
+                <p class="text-white/80">ربط واتساب وإيميل ووسائل تواصل مباشرة</p>
+              </div>
+              <div class="flex items-start gap-3">
+                <span class="feature-check">✓</span>
+                <p class="text-white/80">إمكانية إضافة حجز مواعيد أو متجر أو صفحات خدمات</p>
+              </div>
+              <div class="flex items-start gap-3">
+                <span class="feature-check">✓</span>
+                <p class="text-white/80">دومين خاص باسم نشاطك حسب التوفر</p>
+              </div>
+              <div class="flex items-start gap-3">
+                <span class="feature-check">✓</span>
+                <p class="text-white/80">ألوان عصرية وسرعة ممتازة وتجربة مستخدم جميلة</p>
+              </div>
+            </div>
+
+            <div class="mt-8 rounded-2xl border border-cyan-400/20 bg-cyan-400/5 p-5 text-center">
+              <p class="text-lg font-bold text-cyan-300">الدفع بعد الاستلام والرضا الكامل</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="grid gap-6">
+          <div class="section-card fade-up rounded-3xl border border-white/10 bg-slate-900/70 p-6 shadow-xl">
+            <h3 class="text-xl font-semibold">مناسب لمجالات كثيرة</h3>
+            <p class="mt-3 text-white/65 leading-7">
+              للأطباء، المهندسين، المطاعم، الحلاقين، الشركات، المتاجر، والمشاريع الشخصية.
+            </p>
+          </div>
+
+          <div class="section-card fade-up rounded-3xl border border-white/10 bg-slate-900/70 p-6 shadow-xl">
+            <h3 class="text-xl font-semibold">واجهة تبني الثقة</h3>
+            <p class="mt-3 text-white/65 leading-7">
+              تصميم أنيق يساعد العميل على فهم خدمتك بسرعة ويعطي انطباعًا احترافيًا من أول زيارة.
+            </p>
+          </div>
+
+          <div class="section-card fade-up rounded-3xl border border-white/10 bg-slate-900/70 p-6 shadow-xl">
+            <h3 class="text-xl font-semibold">مرونة كاملة بالتعديل</h3>
+            <p class="mt-3 text-white/65 leading-7">
+              يمكن تعديل الأقسام والصور والنصوص والخصائص بما يناسب نشاطك وأهدافك بدقة.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- CONTACT -->
-  <section id="contact" class="mx-auto max-w-5xl px-6 pb-24">
-    <div class="contact-box rounded-[2rem] p-10 text-center shadow-2xl">
+  <section id="contact" class="mx-auto max-w-5xl px-6 py-24">
+    <div class="contact-box rounded-[2rem] p-10 text-center shadow-2xl fade-in-section">
       <div class="contact-content">
         <h2 class="text-3xl font-bold sm:text-4xl">جاهز للبدء بموقعك الاحترافي؟</h2>
 
@@ -520,7 +822,7 @@
   </footer>
 
   <script>
-    const fadeItems = document.querySelectorAll('.fade-in-section');
+    const fadeItems = document.querySelectorAll('.fade-in-section, .fade-up, .zoom-in');
 
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
@@ -529,7 +831,7 @@
         }
       });
     }, {
-      threshold: 0.2
+      threshold: 0.15
     });
 
     fadeItems.forEach((item) => {
