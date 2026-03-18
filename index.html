@@ -1,21 +1,69 @@
-<div class="fade-up">
-  <div class="video-frame min-h-[320px] lg:min-h-[520px]">
-    <div class="video-badge rounded-xl px-4 py-2 text-sm font-semibold text-cyan-300" data-i18n="video_badge">
-      Visuelle Vorschau Ihrer Website
-    </div>
-    <video class="hero-video" autoplay muted loop playsinline controls poster="images/website-mockup.png">
-      <source src="images/laptop-showcase.mp4" type="video/mp4" />
-      Ihr Browser unterstützt kein Video.
-    </video>
-  </div>
+const typingElement = document.getElementById("typingText");
 
-  <div class="mt-8 text-center">
-    <h3 class="text-2xl font-bold text-white sm:text-3xl">
-      <span data-i18n="hero_bottom_title_1">Wir verwandeln Ihre Idee in eine</span>
-      <span class="text-cyan-400" data-i18n="hero_bottom_title_2">professionelle Website, die Aufmerksamkeit erzeugt</span>
-    </h3>
-    <p class="mx-auto mt-4 max-w-3xl text-lg leading-8 text-white/75" data-i18n="hero_bottom_desc">
-      Wir gestalten moderne und schnelle Websites, die die Stärke Ihres Projekts widerspiegeln und Ihnen eine besondere Online-Präsenz geben – mit attraktiver Benutzererfahrung und voller Kompatibilität auf allen Geräten.
-    </p>
-  </div>
-</div>
+const typingLines = [
+  { plain: 'name: "Modern Website",', html: 'name: <span class="text-cyan-300">"Modern Website"</span>,' },
+  { plain: 'speed: "Fast",', html: 'speed: <span class="text-cyan-300">"Fast"</span>,' },
+  { plain: 'responsive: true,', html: 'responsive: <span class="text-cyan-300">true</span>,' },
+  { plain: 'seo: "Optimized",', html: 'seo: <span class="text-cyan-300">"Optimized"</span>,' },
+  { plain: 'client: "Happy",', html: 'client: <span class="text-cyan-300">"Happy"</span>,' }
+];
+
+let typingLineIndex = 0;
+let typingCharIndex = 0;
+let deleting = false;
+
+function renderPartialHTML(fullHTML, visibleChars) {
+  const wrapper = document.createElement("div");
+  wrapper.innerHTML = fullHTML;
+
+  let count = 0;
+
+  function walk(node) {
+    if (node.nodeType === Node.TEXT_NODE) {
+      const text = node.textContent || "";
+      if (count >= visibleChars) {
+        node.textContent = "";
+      } else if (count + text.length > visibleChars) {
+        node.textContent = text.slice(0, visibleChars - count);
+        count = visibleChars;
+      } else {
+        count += text.length;
+      }
+    } else if (node.nodeType === Node.ELEMENT_NODE) {
+      [...node.childNodes].forEach(walk);
+    }
+  }
+
+  [...wrapper.childNodes].forEach(walk);
+  return wrapper.innerHTML;
+}
+
+function runTypingEffect() {
+  if (!typingElement) return;
+
+  const current = typingLines[typingLineIndex];
+  const plainText = current.plain;
+
+  if (!deleting) {
+    typingCharIndex++;
+    typingElement.innerHTML = renderPartialHTML(current.html, typingCharIndex);
+
+    if (typingCharIndex >= plainText.length) {
+      deleting = true;
+      setTimeout(runTypingEffect, 1200);
+      return;
+    }
+  } else {
+    typingCharIndex--;
+    typingElement.innerHTML = renderPartialHTML(current.html, typingCharIndex);
+
+    if (typingCharIndex <= 0) {
+      deleting = false;
+      typingLineIndex = (typingLineIndex + 1) % typingLines.length;
+    }
+  }
+
+  setTimeout(runTypingEffect, deleting ? 45 : 85);
+}
+
+runTypingEffect();
