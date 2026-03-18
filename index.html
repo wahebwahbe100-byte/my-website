@@ -237,21 +237,22 @@
     }
 
     .journey-label {
-      color: rgba(255,255,255,.55);
+      color: #67e8f9;
       font-size: .95rem;
       font-weight: 700;
       margin-bottom: .65rem;
     }
 
     .journey-title {
-      color: #e2e8f0;
+      color: #22d3ee;
       font-size: 2rem;
       line-height: 1.3;
       font-weight: 800;
+      text-shadow: 0 0 12px rgba(34,211,238,.22);
     }
 
     .journey-text {
-      color: rgba(255,255,255,.72);
+      color: rgba(255,255,255,.82);
       line-height: 2;
       font-size: 1.05rem;
       margin-top: 1rem;
@@ -285,6 +286,27 @@
     }
 
     .journey-center {
+      position: relative;
+      min-height: 980px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .journey-character {
+      position: absolute;
+      right: -120px;
+      top: 40%;
+      width: 170px;
+      transform: translateY(-50%);
+      filter: drop-shadow(0 10px 30px rgba(0,0,0,.4));
+      animation: floatChar 4s ease-in-out infinite;
+      transition: opacity .35s ease, transform .35s ease;
+    }
+
+    @keyframes floatChar {
+      0%,100% { transform: translateY(-50%) translateY(0); }
+      50% { transform: translateY(-50%) translateY(-10px); }
+    }
       position: relative;
       min-height: 980px;
       display: flex;
@@ -636,6 +658,7 @@
       </div>
 
       <div class="journey-center" aria-hidden="true">
+        <img id="journeyCharacter" src="images/step1.png" alt="programming character" class="journey-character" />
         <div class="journey-line"></div>
         <div id="journeyProgress" class="journey-progress"></div>
         <div id="journeyArrow" class="journey-arrow"></div>
@@ -794,6 +817,18 @@
     </div>
   </section>
 
+    <section class="mx-auto max-w-7xl px-6 pb-8">
+    <div class="glass rounded-[2rem] p-8">
+      <h3 class="text-2xl font-bold text-cyan-400" data-i18n="image_setup_title">Verwendete Bilder für die Scroll-Stufen</h3>
+      <p class="mt-3 text-white/75" data-i18n="image_setup_desc">Legen Sie diese 3 Bilder in den images-Ordner, damit die Figur je nach Scroll-Stufe wechselt.</p>
+      <div class="mt-5 grid gap-3 md:grid-cols-3 text-white/80">
+        <div class="rounded-2xl border border-white/10 bg-white/5 p-4"><strong>1.</strong> <span>images/step1.png</span></div>
+        <div class="rounded-2xl border border-white/10 bg-white/5 p-4"><strong>2.</strong> <span>images/step2.png</span></div>
+        <div class="rounded-2xl border border-white/10 bg-white/5 p-4"><strong>3.</strong> <span>images/step3.png</span></div>
+      </div>
+    </div>
+  </section>
+
   <footer class="border-t border-white/10 bg-slate-950">
     <div class="mx-auto max-w-7xl px-6 py-10 text-center text-sm text-white/70">
       <p>© 2026 <span data-i18n="footer_rights">Alle Rechte vorbehalten</span> <span class="font-semibold text-white">WahebSity</span></p>
@@ -815,6 +850,8 @@
     const journeyTrack = document.getElementById('journeyTrack');
     const journeyArrow = document.getElementById('journeyArrow');
     const journeyProgress = document.getElementById('journeyProgress');
+    const journeyCharacter = document.getElementById('journeyCharacter');
+    const journeyBlocks = Array.from(document.querySelectorAll('.journey-block'));
 
     function updateJourneyArrow() {
       if (!journeyTrack || !journeyArrow || !journeyProgress) return;
@@ -826,6 +863,26 @@
       const y = progress * centerHeight;
       journeyArrow.style.transform = `translate(-50%, ${y}px) rotate(45deg)`;
       journeyProgress.style.transform = `translateY(${Math.max(0, y - 120)}px)`;
+
+      if (journeyCharacter && journeyBlocks.length) {
+        let currentStep = 0;
+        journeyBlocks.forEach((block, index) => {
+          const blockRect = block.getBoundingClientRect();
+          if (blockRect.top < window.innerHeight * 0.58) currentStep = index;
+        });
+        const imageMap = ['images/step1.png', 'images/step2.png', 'images/step3.png', 'images/step3.png'];
+        const nextSrc = imageMap[Math.min(currentStep, imageMap.length - 1)];
+        const currentFile = journeyCharacter.getAttribute('src');
+        if (currentFile !== nextSrc) {
+          journeyCharacter.style.opacity = '0';
+          journeyCharacter.style.transform = 'translateY(-50%) scale(.92)';
+          setTimeout(() => {
+            journeyCharacter.setAttribute('src', nextSrc);
+            journeyCharacter.style.opacity = '1';
+            journeyCharacter.style.transform = 'translateY(-50%) scale(1)';
+          }, 180);
+        }
+      }
     }
 
     window.addEventListener('scroll', updateJourneyArrow, { passive: true });
@@ -940,7 +997,7 @@
         review_2_text: 'Die Website wirkt professionell und hilft sofort dabei, Vertrauen bei Kunden aufzubauen.', review_2_name: 'Praxis / Service',
         review_3_text: 'Klare Struktur, schönes Design und mobile Optimierung. Alles sieht hochwertig aus.', review_3_name: 'Shop / Unternehmen',
         contact_title: 'Bereit für Ihre professionelle Website?', contact_desc: 'Starten Sie jetzt mit einer modernen Website, die Ihnen eine starke Online-Präsenz gibt und passend zu Ihrem Projekt erweitert werden kann.', contact_whatsapp: 'Kontakt per WhatsApp', contact_email: 'Kontakt per E-Mail', contact_note: 'Sie zahlen nichts, bis Ihre Website vollständig fertig ist.',
-        footer_rights: 'Alle Rechte vorbehalten', footer_email: 'E-Mail:', footer_made: 'Made with', footer_in: 'in Germany'
+        image_setup_title: 'Verwendete Bilder für die Scroll-Stufen', image_setup_desc: 'Legen Sie diese 3 Bilder in den images-Ordner, damit die Figur je nach Scroll-Stufe wechselt.', footer_rights: 'Alle Rechte vorbehalten', footer_email: 'E-Mail:', footer_made: 'Made with', footer_in: 'in Germany'
       },
       en: {
         nav_home: 'Home', nav_about: 'About', nav_services: 'Services', nav_projects: 'Projects', nav_reviews: 'Reviews', nav_contact: 'Contact',
@@ -989,7 +1046,7 @@
         review_2_text: 'The website feels professional and instantly helps build trust with customers.', review_2_name: 'Clinic / Service',
         review_3_text: 'Clear structure, beautiful design, and mobile optimization. Everything feels premium.', review_3_name: 'Store / Company',
         contact_title: 'Ready for your professional website?', contact_desc: 'Start now with a modern website that gives you a strong online presence and can be expanded for your project.', contact_whatsapp: 'Contact via WhatsApp', contact_email: 'Contact via Email', contact_note: 'You pay nothing until your website is fully delivered.',
-        footer_rights: 'All rights reserved', footer_email: 'Email:', footer_made: 'Made with', footer_in: 'in Germany'
+        image_setup_title: 'Images used for the scroll steps', image_setup_desc: 'Place these 3 images inside the images folder so the character changes for each scroll step.', footer_rights: 'All rights reserved', footer_email: 'Email:', footer_made: 'Made with', footer_in: 'in Germany'
       }
     };
 
