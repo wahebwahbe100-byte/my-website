@@ -9,11 +9,35 @@
   <style>
     html { scroll-behavior: smooth; }
     body {
-      background:
-        radial-gradient(circle at 10% 10%, rgba(34,211,238,.10), transparent 20%),
-        radial-gradient(circle at 90% 0%, rgba(99,102,241,.12), transparent 25%),
-        linear-gradient(180deg, #020617 0%, #020617 100%);
+      background: #020617;
       overflow-x: hidden;
+      position: relative;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background:
+        radial-gradient(circle at 15% 18%, rgba(34,211,238,.14), transparent 22%),
+        radial-gradient(circle at 85% 10%, rgba(168,85,247,.14), transparent 28%),
+        radial-gradient(circle at 50% 85%, rgba(59,130,246,.12), transparent 26%),
+        linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,0));
+      z-index: -3;
+      pointer-events: none;
+    }
+
+    body::after {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(255,255,255,.025) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.025) 1px, transparent 1px);
+      background-size: 42px 42px;
+      mask-image: radial-gradient(circle at center, black 45%, transparent 100%);
+      z-index: -2;
+      pointer-events: none;
     }
 
     .glass {
@@ -112,9 +136,41 @@
     .glow-orb {
       position: absolute;
       border-radius: 999px;
-      filter: blur(80px);
+      filter: blur(90px);
       pointer-events: none;
       z-index: 0;
+      animation: glowMove 10s ease-in-out infinite;
+    }
+
+    @keyframes glowMove {
+      0%, 100% { transform: translateY(0) scale(1); }
+      50% { transform: translateY(-30px) scale(1.05); }
+    }
+
+    .code-rain {
+      position: fixed;
+      inset: 0;
+      overflow: hidden;
+      pointer-events: none;
+      z-index: -1;
+      opacity: .18;
+    }
+
+    .code-column {
+      position: absolute;
+      top: -120%;
+      color: rgba(103,232,249,.16);
+      font-family: Consolas, Monaco, 'Courier New', monospace;
+      font-size: 12px;
+      line-height: 1.8;
+      white-space: pre;
+      animation: codeFall linear infinite;
+      text-shadow: 0 0 12px rgba(34,211,238,.15);
+    }
+
+    @keyframes codeFall {
+      from { transform: translateY(0); }
+      to { transform: translateY(220vh); }
     }
 
     .card-hover {
@@ -483,6 +539,7 @@
   </style>
 </head>
 <body class="text-white">
+  <div class="code-rain" aria-hidden="true" id="codeRain"></div>
   <header class="sticky top-0 z-50 border-b border-white/10 bg-slate-950/75 backdrop-blur-xl">
     <div class="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
       <a href="#home" class="flex items-center gap-3">
@@ -831,6 +888,39 @@
 
   <script>
     const animatedItems = document.querySelectorAll('.fade-up, .zoom-in, .fade-in');
+
+    const codeRain = document.getElementById('codeRain');
+    if (codeRain) {
+      const snippets = [
+        'const ui = "premium";
+return fastLoading;',
+        'function convert(visitor) {
+  return trust + speed;
+}',
+        '<section class="hero">
+  modern design
+</section>',
+        'SEO + mobile + UX
+=> more clients',
+        'if (website.professional) {
+  business.grow();
+}',
+        'bookings: true;
+whatsapp: true;
+mobile: true;'
+      ];
+      const columns = 18;
+      for (let i = 0; i < columns; i++) {
+        const col = document.createElement('div');
+        col.className = 'code-column';
+        col.textContent = snippets[i % snippets.length];
+        col.style.left = `${(i / columns) * 100}%`;
+        col.style.animationDuration = `${12 + Math.random() * 12}s`;
+        col.style.animationDelay = `${-Math.random() * 12}s`;
+        col.style.opacity = `${0.45 + Math.random() * 0.4}`;
+        codeRain.appendChild(col);
+      }
+    }
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) entry.target.classList.add('show');
