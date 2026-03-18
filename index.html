@@ -177,7 +177,90 @@
       .ui-card.four { top: 30%; left: 12%; }
     }
 
+    .code-typing-box {
+      position: absolute;
+      top: 10%;
+      left: 6%;
+      width: 320px;
+      min-height: 180px;
+      border-radius: 20px;
+      overflow: hidden;
+      background: rgba(10, 14, 35, 0.55);
+      border: 1px solid rgba(103, 232, 249, 0.18);
+      box-shadow:
+        0 0 18px rgba(103, 232, 249, 0.10),
+        0 0 45px rgba(168, 85, 247, 0.12),
+        0 18px 40px rgba(0, 0, 0, 0.28);
+      backdrop-filter: blur(14px);
+      z-index: 4;
+      pointer-events: none;
+    }
+
+    .code-header {
+      display: flex;
+      gap: 8px;
+      padding: 14px 16px;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      background: rgba(255,255,255,0.03);
+    }
+
+    .code-header span {
+      width: 10px;
+      height: 10px;
+      border-radius: 999px;
+      display: inline-block;
+    }
+
+    .code-header span:nth-child(1) { background: #fb7185; }
+    .code-header span:nth-child(2) { background: #facc15; }
+    .code-header span:nth-child(3) { background: #4ade80; }
+
+    .code-typing-box pre {
+      margin: 0;
+      padding: 18px 18px 20px;
+      white-space: pre-wrap;
+      font-size: 14px;
+      line-height: 1.8;
+      color: #c4b5fd;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      text-shadow:
+        0 0 8px rgba(196, 181, 253, 0.35),
+        0 0 18px rgba(103, 232, 249, 0.18);
+    }
+
+    .code-cursor {
+      display: inline-block;
+      width: 10px;
+      height: 20px;
+      margin-left: 4px;
+      vertical-align: middle;
+      border-radius: 2px;
+      background: #67e8f9;
+      box-shadow:
+        0 0 8px rgba(103, 232, 249, 0.7),
+        0 0 18px rgba(103, 232, 249, 0.45);
+      animation: blinkCursor 0.9s infinite;
+    }
+
+    @keyframes blinkCursor {
+      0%, 49% { opacity: 1; }
+      50%, 100% { opacity: 0; }
+    }
+
     @media (max-width: 768px) {
+      .code-typing-box {
+        width: 230px;
+        min-height: 140px;
+        top: 4%;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+
+      .code-typing-box pre {
+        font-size: 12px;
+        line-height: 1.6;
+      }
+
       .hero-character { max-width: 420px; }
       .ui-card { transform: scale(0.88); }
       .hero-ring { width: 84%; height: 42px; }
@@ -306,6 +389,12 @@
           </div>
         </div>
 
+        <div class="code-typing-box">
+          <div class="code-header">
+            <span></span><span></span><span></span>
+          </div>
+          <pre><code id="typingCode"></code><span class="code-cursor"></span></pre>
+        </div>
         <img src="images/waheb-hero-design.png" alt="WahebSity Hero Character" class="hero-character" />
       </div>
     </div>
@@ -499,6 +588,68 @@
     }, { threshold: 0.14 });
 
     document.querySelectorAll('.fade-up').forEach((el) => observer.observe(el));
+
+    const codeLines = [
+`const site = {
+  brand: "WahebSity",
+  speed: "48h",
+  payment: "after delivery"
+};`,
+
+`function buildWebsite(client) {
+  return {
+    design: "modern",
+    mobile: true,
+    trusted: true
+  };
+}`,
+
+`<section class="hero">
+  <h1>Professional Websites</h1>
+  <p>0€ upfront payment</p>
+</section>`,
+
+`const features = [
+  "Webdesign",
+  "Shop",
+  "Booking",
+  "Performance"
+];`
+    ];
+
+    const typingCode = document.getElementById('typingCode');
+    let lineIndex = 0;
+    let charIndex = 0;
+    let isDeleting = false;
+
+    function typeCode() {
+      if (!typingCode) return;
+      const currentText = codeLines[lineIndex];
+
+      if (!isDeleting) {
+        typingCode.textContent = currentText.substring(0, charIndex + 1);
+        charIndex++;
+
+        if (charIndex === currentText.length) {
+          isDeleting = true;
+          setTimeout(typeCode, 1400);
+          return;
+        }
+      } else {
+        typingCode.textContent = currentText.substring(0, charIndex - 1);
+        charIndex--;
+
+        if (charIndex === 0) {
+          isDeleting = false;
+          lineIndex = (lineIndex + 1) % codeLines.length;
+        }
+      }
+
+      const speed = isDeleting ? 28 : 55;
+      setTimeout(typeCode, speed);
+    }
+
+    typeCode();
   </script>
 </body>
 </html>
