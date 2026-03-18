@@ -3,15 +3,18 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>WahebSity | Professionelles Webdesign</title>
-  <meta name="description" content="Professionelles Webdesign für Unternehmen, Ärzte, Ingenieure, Restaurants, Friseure und Onlineshops mit schneller Lieferung und modernem Design." />
+  <title>WahebSity | Premium Webdesign</title>
+  <meta name="description" content="Premium Webdesign für Unternehmen mit modernem Design, schneller Performance und starker Online-Präsenz." />
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
     html { scroll-behavior: smooth; }
+
     body {
       background: #020617;
+      color: white;
       overflow-x: hidden;
       position: relative;
+      font-family: Arial, sans-serif;
     }
 
     body::before {
@@ -19,11 +22,10 @@
       position: fixed;
       inset: 0;
       background:
-        radial-gradient(circle at 15% 18%, rgba(34,211,238,.14), transparent 22%),
-        radial-gradient(circle at 85% 10%, rgba(168,85,247,.14), transparent 28%),
-        radial-gradient(circle at 50% 85%, rgba(59,130,246,.12), transparent 26%),
-        linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,0));
-      z-index: -3;
+        radial-gradient(circle at 20% 20%, rgba(34,211,238,0.14), transparent 25%),
+        radial-gradient(circle at 80% 10%, rgba(168,85,247,0.14), transparent 30%),
+        radial-gradient(circle at 50% 90%, rgba(59,130,246,0.12), transparent 30%);
+      z-index: -2;
       pointer-events: none;
     }
 
@@ -32,62 +34,76 @@
       position: fixed;
       inset: 0;
       background-image:
-        linear-gradient(rgba(255,255,255,.025) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255,255,255,.025) 1px, transparent 1px);
-      background-size: 42px 42px;
-      mask-image: radial-gradient(circle at center, black 45%, transparent 100%);
-      z-index: -2;
+        linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+      background-size: 40px 40px;
+      z-index: -1;
       pointer-events: none;
     }
 
     .glass {
       background: rgba(255,255,255,0.05);
       backdrop-filter: blur(14px);
-      border: 1px solid rgba(255,255,255,0.09);
+      border: 1px solid rgba(255,255,255,0.10);
     }
 
-    .nav-link { position: relative; }
+    .nav-link {
+      position: relative;
+      transition: .3s;
+    }
+
     .nav-link::after {
       content: "";
       position: absolute;
       left: 0;
-      bottom: -7px;
+      bottom: -6px;
       width: 0;
       height: 2px;
-      border-radius: 999px;
       background: linear-gradient(to right, #22d3ee, #3b82f6);
-      transition: .3s ease;
+      transition: .3s;
     }
-    .nav-link:hover::after { width: 100%; }
 
-    .fade-up, .zoom-in, .fade-in {
-      opacity: 0;
-      transform: translateY(34px);
-      transition: opacity .8s ease, transform .8s ease;
+    .nav-link:hover::after {
+      width: 100%;
     }
-    .zoom-in { transform: translateY(20px) scale(.96); }
-    .fade-in { transform: translateY(0); }
-    .show {
-      opacity: 1 !important;
-      transform: translateY(0) scale(1) !important;
+
+    .btn-primary {
+      background: linear-gradient(90deg, #22d3ee, #3b82f6);
+      color: #020617;
+      font-weight: 700;
+      transition: .3s;
+      box-shadow: 0 0 24px rgba(34,211,238,0.25);
+    }
+
+    .btn-primary:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 35px rgba(34,211,238,0.35);
+    }
+
+    .btn-secondary {
+      transition: .3s;
+    }
+
+    .btn-secondary:hover {
+      background: rgba(255,255,255,0.10);
+      transform: translateY(-2px);
     }
 
     .hero-card {
       position: relative;
       overflow: hidden;
       border-radius: 28px;
-      border: 1px solid rgba(34, 211, 238, 0.20);
-      background: linear-gradient(180deg, rgba(10, 16, 40, 0.96), rgba(2, 6, 23, 0.98));
-      box-shadow: 0 25px 80px rgba(0, 0, 0, 0.45), 0 0 60px rgba(37, 99, 235, 0.10), inset 0 0 0 1px rgba(255,255,255,0.03);
+      border: 1px solid rgba(34,211,238,0.20);
+      background: linear-gradient(180deg, rgba(10,16,40,0.96), rgba(2,6,23,0.98));
+      box-shadow: 0 25px 80px rgba(0,0,0,0.45), 0 0 60px rgba(37,99,235,0.10);
     }
 
     .window-header {
       display: flex;
-      align-items: center;
       gap: 10px;
+      align-items: center;
       padding: 18px 22px;
-      border-bottom: 1px solid rgba(255,255,255,.06);
-      background: rgba(255,255,255,.02);
+      border-bottom: 1px solid rgba(255,255,255,0.06);
     }
 
     .dot {
@@ -96,6 +112,7 @@
       border-radius: 999px;
       display: inline-block;
     }
+
     .dot.red { background: #fb7185; }
     .dot.yellow { background: #facc15; }
     .dot.green { background: #4ade80; }
@@ -106,7 +123,7 @@
       font-size: 28px;
       line-height: 1.9;
       color: #dbeafe;
-      min-height: 420px;
+      min-height: 340px;
     }
 
     .line-static { color: #d8b4fe; }
@@ -115,68 +132,29 @@
     .code-key { color: #c4b5fd; }
     .code-value { color: #67e8f9; }
     .code-bracket { color: #cbd5e1; }
-    .typing-line { min-height: 54px; white-space: nowrap; }
 
     .typing-cursor {
       display: inline-block;
       width: 10px;
-      height: 1.15em;
+      height: 1.1em;
       margin-left: 4px;
-      vertical-align: middle;
       border-radius: 4px;
       background: #67e8f9;
-      box-shadow: 0 0 16px rgba(103,232,249,.85);
+      box-shadow: 0 0 16px rgba(103,232,249,0.85);
       animation: blinkCursor .9s infinite;
+      vertical-align: middle;
     }
+
     @keyframes blinkCursor {
       0%, 48% { opacity: 1; }
       49%, 100% { opacity: .18; }
     }
 
-    .glow-orb {
-      position: absolute;
-      border-radius: 999px;
-      filter: blur(90px);
-      pointer-events: none;
-      z-index: 0;
-      animation: glowMove 10s ease-in-out infinite;
-    }
-
-    @keyframes glowMove {
-      0%, 100% { transform: translateY(0) scale(1); }
-      50% { transform: translateY(-30px) scale(1.05); }
-    }
-
-    .code-rain {
-      position: fixed;
-      inset: 0;
-      overflow: hidden;
-      pointer-events: none;
-      z-index: -1;
-      opacity: .18;
-    }
-
-    .code-column {
-      position: absolute;
-      top: -120%;
-      color: rgba(103,232,249,.16);
-      font-family: Consolas, Monaco, 'Courier New', monospace;
-      font-size: 12px;
-      line-height: 1.8;
-      white-space: pre;
-      animation: codeFall linear infinite;
-      text-shadow: 0 0 12px rgba(34,211,238,.15);
-    }
-
-    @keyframes codeFall {
-      from { transform: translateY(0); }
-      to { transform: translateY(220vh); }
-    }
-
-    .card-hover {
+    .section-card {
       transition: .35s ease;
     }
-    .card-hover:hover {
+
+    .section-card:hover {
       transform: translateY(-6px);
       border-color: rgba(34,211,238,.22);
       box-shadow: 0 18px 40px rgba(0,0,0,.28);
@@ -186,6 +164,7 @@
       overflow: hidden;
       border-radius: 20px;
     }
+
     .image-wrap img {
       width: 100%;
       height: 100%;
@@ -193,74 +172,10 @@
       display: block;
       transition: transform .6s ease, filter .6s ease;
     }
+
     .image-wrap:hover img {
       transform: scale(1.05);
       filter: brightness(1.05);
-    }
-
-    .badge-soft {
-      background: rgba(34,211,238,.10);
-      border: 1px solid rgba(34,211,238,.18);
-      color: #67e8f9;
-    }
-
-    .btn-primary {
-      background: linear-gradient(90deg, #22d3ee, #38bdf8);
-      color: #082f49;
-      box-shadow: 0 0 24px rgba(34,211,238,.28);
-      transition: .3s ease;
-    }
-    .btn-primary:hover {
-      transform: translateY(-2px) scale(1.02);
-      box-shadow: 0 0 30px rgba(34,211,238,.42), 0 0 70px rgba(34,211,238,.18);
-    }
-
-    .btn-secondary {
-      transition: .3s ease;
-    }
-    .btn-secondary:hover {
-      transform: translateY(-2px);
-      background: rgba(255,255,255,.09);
-    }
-
-    .section-divider {
-      border-top: 1px solid rgba(255,255,255,.08);
-      border-bottom: 1px solid rgba(255,255,255,.04);
-      background: rgba(255,255,255,.03);
-    }
-
-    .logo-main {
-      height: 56px;
-      width: auto;
-      object-fit: contain;
-      filter: drop-shadow(0 0 14px rgba(34,211,238,.18));
-    }
-    .logo-footer {
-      height: 90px;
-      width: auto;
-      object-fit: contain;
-      margin: 20px auto 0;
-      filter: drop-shadow(0 0 14px rgba(34,211,238,.18));
-    }
-
-    .check {
-      width: 1.35rem;
-      height: 1.35rem;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      border-radius: 999px;
-      background: rgba(34,211,238,.14);
-      color: #67e8f9;
-      flex-shrink: 0;
-      font-size: .8rem;
-    }
-
-    .contact-panel {
-      background: linear-gradient(rgba(2, 6, 23, 0.74), rgba(2, 6, 23, 0.82)), url('images/imagesworld-bg.jpg');
-      background-size: cover;
-      background-position: center;
-      border: 1px solid rgba(34,211,238,.16);
     }
 
     .journey-section {
@@ -320,7 +235,9 @@
       align-items: center;
       justify-content: center;
       overflow: hidden;
-      background: radial-gradient(circle at center, rgba(168,85,247,.16), transparent 70%), radial-gradient(circle at 50% 60%, rgba(34,211,238,.12), transparent 72%);
+      background:
+        radial-gradient(circle at center, rgba(168,85,247,.16), transparent 70%),
+        radial-gradient(circle at 50% 60%, rgba(34,211,238,.12), transparent 72%);
     }
 
     .journey-image-bg::before {
@@ -341,6 +258,11 @@
       object-fit: contain;
       filter: drop-shadow(0 14px 26px rgba(0,0,0,.34));
       animation: floatChar 4s ease-in-out infinite;
+    }
+
+    @keyframes floatChar {
+      0%,100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
     }
 
     .journey-label {
@@ -475,9 +397,15 @@
       box-shadow: 0 0 0 4px rgba(248,113,113,.12), 0 0 22px rgba(248,113,113,.32);
     }
 
-    @keyframes floatChar {
-      0%,100% { transform: translateY(0); }
-      50% { transform: translateY(-10px); }
+    .fade-up {
+      opacity: 0;
+      transform: translateY(34px);
+      transition: opacity .8s ease, transform .8s ease;
+    }
+
+    .show {
+      opacity: 1 !important;
+      transform: translateY(0) !important;
     }
 
     @media (max-width: 1100px) {
@@ -510,17 +438,13 @@
     }
 
     @media (max-width: 768px) {
-      .logo-main { height: 46px; }
-      .logo-footer { height: 70px; }
       .code-body {
         font-size: 18px;
         line-height: 1.8;
-        min-height: 290px;
-        padding: 22px 16px 24px;
+        min-height: 260px;
       }
       .indent-1 { padding-left: 16px; }
       .indent-2 { padding-left: 32px; }
-      .typing-line { min-height: 36px; }
       .journey-shell { padding: 1rem; border-radius: 24px; }
       .journey-stage { padding-left: 3.3rem; }
       .journey-card { min-height: auto; padding: 1.2rem; }
@@ -539,72 +463,61 @@
   </style>
 </head>
 <body class="text-white">
-  <div class="code-rain" aria-hidden="true" id="codeRain"></div>
+
   <header class="sticky top-0 z-50 border-b border-white/10 bg-slate-950/75 backdrop-blur-xl">
     <div class="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
-      <a href="#home" class="flex items-center gap-3">
-        <img src="images/logo.png" alt="WahebSity Logo" class="logo-main" />
-      </a>
+      <a href="#home" class="text-2xl font-extrabold text-cyan-400">WahebSity</a>
 
       <nav class="hidden items-center gap-8 text-sm font-semibold text-white/80 md:flex">
-        <a href="#home" class="nav-link hover:text-cyan-400" data-i18n="nav_home">Startseite</a>
-        <a href="#about" class="nav-link hover:text-cyan-400" data-i18n="nav_about">Über uns</a>
-        <a href="#services" class="nav-link hover:text-cyan-400" data-i18n="nav_services">Leistungen</a>
-        <a href="#journey" class="nav-link hover:text-cyan-400" data-i18n="nav_journey">Warum Website</a>
-        <a href="#projects" class="nav-link hover:text-cyan-400" data-i18n="nav_projects">Projekte</a>
-        <a href="#contact" class="nav-link hover:text-cyan-400" data-i18n="nav_contact">Kontakt</a>
+        <a href="#home" class="nav-link hover:text-cyan-400">Startseite</a>
+        <a href="#about" class="nav-link hover:text-cyan-400">Über uns</a>
+        <a href="#services" class="nav-link hover:text-cyan-400">Leistungen</a>
+        <a href="#journey" class="nav-link hover:text-cyan-400">Warum Website</a>
+        <a href="#projects" class="nav-link hover:text-cyan-400">Projekte</a>
+        <a href="#contact" class="nav-link hover:text-cyan-400">Kontakt</a>
       </nav>
 
-      <div class="flex items-center gap-3">
-        <select id="langSwitcher" class="rounded-xl border border-white/10 bg-slate-900 px-3 py-2 text-sm text-white outline-none">
-          <option value="de">DE</option>
-          <option value="en">EN</option>
-        </select>
-        <a href="#contact" class="btn-primary rounded-xl px-5 py-2 text-sm font-bold" data-i18n="start_now">Jetzt starten</a>
-      </div>
+      <a href="#contact" class="btn-primary rounded-xl px-5 py-2 text-sm">Jetzt starten</a>
     </div>
   </header>
 
-  <section id="home" class="relative overflow-hidden border-b border-white/10">
-    <div class="glow-orb left-0 top-0 h-72 w-72 bg-cyan-500/10"></div>
-    <div class="glow-orb right-0 top-10 h-80 w-80 bg-indigo-500/10"></div>
-
+  <section id="home" class="border-b border-white/10">
     <div class="mx-auto grid max-w-7xl items-center gap-14 px-6 py-20 lg:grid-cols-2">
-      <div class="fade-up relative z-10">
-        <span class="badge-soft inline-flex rounded-full px-4 py-1 text-sm font-semibold" data-i18n="hero_badge">Professionelles Webdesign & Entwicklung</span>
+      <div class="fade-up">
+        <span class="inline-flex rounded-full border border-cyan-400/20 bg-cyan-400/10 px-4 py-1 text-sm font-semibold text-cyan-300">
+          Professionelles Webdesign & Entwicklung
+        </span>
 
         <h1 class="mt-6 text-4xl font-bold leading-tight sm:text-5xl lg:text-6xl">
-          <span data-i18n="hero_title_1">Websites, die</span>
-          <span class="text-cyan-400" data-i18n="hero_title_2">professionell aussehen</span>
-          <span data-i18n="hero_title_3">und Kunden überzeugen</span>
+          Websites, die <span class="text-cyan-400">professionell aussehen</span> und Kunden überzeugen
         </h1>
 
-        <p class="mt-6 max-w-2xl text-lg leading-8 text-white/75" data-i18n="hero_desc">
-          Wir erstellen moderne, schnelle und mobiloptimierte Websites für Unternehmen, Praxen, Restaurants, Shops und persönliche Projekte — klar, vertrauenswürdig und sofort einsatzbereit.
+        <p class="mt-6 max-w-2xl text-lg leading-8 text-white/75">
+          Wir erstellen moderne, schnelle und mobiloptimierte Websites für Unternehmen, Praxen, Restaurants, Shops und persönliche Projekte.
         </p>
 
         <div class="mt-8 flex flex-wrap gap-4">
-          <a href="#contact" class="btn-primary rounded-2xl px-6 py-3 font-semibold" data-i18n="hero_cta_1">Jetzt Website anfragen</a>
-          <a href="#projects" class="btn-secondary rounded-2xl border border-white/15 bg-white/5 px-6 py-3 font-semibold text-white" data-i18n="hero_cta_2">Beispiele ansehen</a>
+          <a href="#contact" class="btn-primary rounded-2xl px-6 py-3">Jetzt Website anfragen</a>
+          <a href="#projects" class="btn-secondary rounded-2xl border border-white/15 bg-white/5 px-6 py-3 font-semibold text-white">Beispiele ansehen</a>
         </div>
 
         <div class="mt-10 grid gap-4 sm:grid-cols-3">
           <div class="glass rounded-2xl p-5 text-center">
             <div class="text-2xl font-bold text-cyan-400">48H</div>
-            <p class="mt-2 text-sm text-white/65" data-i18n="hero_stat_1">Schnelle Lieferung</p>
+            <p class="mt-2 text-sm text-white/65">Schnelle Lieferung</p>
           </div>
           <div class="glass rounded-2xl p-5 text-center">
             <div class="text-2xl font-bold text-cyan-400">.de / .com</div>
-            <p class="mt-2 text-sm text-white/65" data-i18n="hero_stat_2">Eigene Domain</p>
+            <p class="mt-2 text-sm text-white/65">Eigene Domain</p>
           </div>
           <div class="glass rounded-2xl p-5 text-center">
             <div class="text-2xl font-bold text-cyan-400">0€</div>
-            <p class="mt-2 text-sm text-white/65" data-i18n="hero_stat_3">Zahlung nach Lieferung</p>
+            <p class="mt-2 text-sm text-white/65">Zahlung nach Lieferung</p>
           </div>
         </div>
       </div>
 
-      <div class="fade-up relative z-10">
+      <div class="fade-up">
         <div class="hero-card">
           <div class="window-header">
             <span class="dot red"></span>
@@ -614,101 +527,83 @@
           <div class="code-body">
             <div class="line-static"><span class="code-key">function</span> buildWebsite<span class="code-bracket">(client) {</span></div>
             <div class="line-static indent-1"><span class="code-key">return</span> <span class="code-bracket">{</span></div>
-            <div class="typing-line indent-2"><span id="typingText"></span><span class="typing-cursor"></span></div>
+            <div class="indent-2"><span id="typingText"></span><span class="typing-cursor"></span></div>
             <div class="line-static indent-1"><span class="code-bracket">}</span></div>
             <div class="line-static"><span class="code-bracket">}</span></div>
           </div>
         </div>
-
-        <div class="mt-8 text-center">
-          <h3 class="text-2xl font-bold text-white sm:text-3xl">
-            <span data-i18n="hero_bottom_title_1">Wir verwandeln Ihre Idee in eine</span>
-            <span class="text-cyan-400" data-i18n="hero_bottom_title_2">professionelle Website mit starker Wirkung</span>
-          </h3>
-          <p class="mx-auto mt-4 max-w-3xl text-lg leading-8 text-white/75" data-i18n="hero_bottom_desc">
-            Modernes Design, schnelle Performance und eine klare Struktur schaffen Vertrauen und helfen Ihren Kunden, Sie sofort zu verstehen.
-          </p>
-        </div>
       </div>
     </div>
   </section>
 
-  <section id="about" class="relative mx-auto max-w-7xl overflow-hidden px-6 py-24">
-    <div class="glow-orb right-10 top-10 h-72 w-72 bg-cyan-500/10"></div>
-    <div class="glow-orb bottom-10 left-10 h-72 w-72 bg-indigo-500/10"></div>
-
+  <section id="about" class="mx-auto max-w-7xl px-6 py-24">
     <div class="grid items-center gap-14 lg:grid-cols-2">
       <div class="fade-up">
-        <span class="badge-soft inline-flex rounded-full px-4 py-1 text-sm font-semibold" data-i18n="about_badge">Warum wir?</span>
+        <span class="inline-flex rounded-full border border-cyan-400/20 bg-cyan-400/10 px-4 py-1 text-sm font-semibold text-cyan-300">Warum wir?</span>
         <h2 class="mt-6 text-4xl font-bold leading-tight sm:text-5xl">
-          <span data-i18n="about_title_1">Eine Website, die</span>
-          <span class="text-cyan-400" data-i18n="about_title_2">Vertrauen aufbaut</span>
-          <span data-i18n="about_title_3">und Ihre Marke stärkt</span>
+          Eine Website, die <span class="text-cyan-400">Vertrauen aufbaut</span> und Ihre Marke stärkt
         </h2>
-        <p class="mt-8 text-lg leading-8 text-white/80" data-i18n="about_p1">
-          Wir entwickeln Websites, die modern aussehen, schnell laden und Ihre Leistungen klar präsentieren. So wird Ihr Unternehmen online professionell sichtbar.
+        <p class="mt-8 text-lg leading-8 text-white/80">
+          Wir entwickeln Websites, die modern aussehen, schnell laden und Ihre Leistungen klar präsentieren.
         </p>
-        <p class="mt-5 text-lg leading-8 text-white/80" data-i18n="about_p2">
-          Egal ob Arzt, Ingenieur, Restaurant, Friseur oder Shop — wir gestalten eine Website, die zu Ihrer Branche passt und Ihre Ziele unterstützt.
-        </p>
-        <p class="mt-5 text-lg leading-8 text-white/80" data-i18n="about_p3">
-          Ihre Website kann Buchungen, Produktseiten, Leistungsbereiche, Kontaktformulare, WhatsApp-Buttons und individuelle Funktionen enthalten.
+        <p class="mt-5 text-lg leading-8 text-white/80">
+          Egal ob Arzt, Ingenieur, Restaurant, Friseur oder Shop — wir gestalten eine Website, die zu Ihrer Branche passt.
         </p>
         <div class="mt-8 rounded-3xl border border-cyan-400/20 bg-gradient-to-r from-cyan-500/10 to-blue-500/10 p-6 shadow-xl">
-          <p class="text-2xl font-bold text-cyan-300" data-i18n="about_highlight">Sie zahlen erst, wenn Ihre Website vollständig fertig ist und Sie zufrieden sind.</p>
+          <p class="text-2xl font-bold text-cyan-300">Sie zahlen erst, wenn Ihre Website vollständig fertig ist.</p>
         </div>
       </div>
 
       <div class="grid gap-5 sm:grid-cols-2">
-        <div class="glass fade-up overflow-hidden rounded-3xl shadow-2xl sm:col-span-2">
-          <img src="images/website-mockup.png" alt="Professionelles Webdesign" class="h-72 w-full object-cover transition duration-700 hover:scale-105 hover:brightness-110" loading="lazy" />
+        <div class="glass overflow-hidden rounded-3xl shadow-2xl sm:col-span-2">
+          <img src="images/website-mockup.png" alt="Professionelles Webdesign" class="h-72 w-full object-cover" loading="lazy" />
         </div>
-        <div class="card-hover fade-up rounded-3xl border border-white/10 bg-slate-900/60 p-3 shadow-xl">
+        <div class="section-card rounded-3xl border border-white/10 bg-slate-900/60 p-3 shadow-xl">
           <div class="image-wrap">
             <img src="images/booking-system.jpg" alt="Buchungssystem" class="h-56" loading="lazy" />
           </div>
           <div class="pt-4">
-            <h3 class="text-lg font-bold text-white" data-i18n="booking_title">Buchungssystem</h3>
-            <p class="mt-2 text-sm leading-6 text-white/65" data-i18n="booking_desc">Ideal für Praxen, Friseure und Unternehmen, die Termine professionell organisieren möchten.</p>
+            <h3 class="text-lg font-bold text-white">Buchungssystem</h3>
+            <p class="mt-2 text-sm leading-6 text-white/65">Ideal für Praxen, Friseure und Unternehmen.</p>
           </div>
         </div>
-        <div class="card-hover fade-up flex flex-col justify-center rounded-3xl border border-cyan-400/15 bg-gradient-to-br from-cyan-400/10 to-blue-500/10 p-6 shadow-xl">
+        <div class="section-card flex flex-col justify-center rounded-3xl border border-cyan-400/15 bg-gradient-to-br from-cyan-400/10 to-blue-500/10 p-6 shadow-xl">
           <div class="mb-4 inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-cyan-400/15 text-2xl text-cyan-300">✨</div>
-          <h3 class="text-xl font-bold text-white" data-i18n="trust_title">Ein Auftritt, der Vertrauen schafft</h3>
-          <p class="mt-3 text-sm leading-7 text-white/70" data-i18n="trust_desc">Elegantes Design, starke Performance und klare Struktur helfen Ihren Kunden, Ihre Leistung schnell zu verstehen.</p>
+          <h3 class="text-xl font-bold text-white">Ein Auftritt, der Vertrauen schafft</h3>
+          <p class="mt-3 text-sm leading-7 text-white/70">Elegantes Design, starke Performance und klare Struktur helfen Ihren Kunden.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <section id="services" class="section-divider">
+  <section id="services" class="border-y border-white/10 bg-white/5">
     <div class="mx-auto max-w-7xl px-6 py-24">
       <div class="max-w-2xl fade-up">
-        <p class="text-sm font-semibold uppercase tracking-[0.2em] text-cyan-400" data-i18n="services_badge">Leistungen</p>
-        <h2 class="mt-3 text-3xl font-bold sm:text-4xl" data-i18n="services_title">Alles, was Sie für eine starke professionelle Website brauchen</h2>
-        <p class="mt-4 leading-8 text-white/70" data-i18n="services_desc">Komplette Lösungen für eine starke digitale Präsenz — modern, schnell und klar strukturiert.</p>
+        <p class="text-sm font-semibold uppercase tracking-[0.2em] text-cyan-400">Leistungen</p>
+        <h2 class="mt-3 text-3xl font-bold sm:text-4xl">Alles, was Sie für eine starke professionelle Website brauchen</h2>
+        <p class="mt-4 leading-8 text-white/70">Komplette Lösungen für eine starke digitale Präsenz.</p>
       </div>
 
       <div class="mt-12 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
-        <div class="card-hover fade-up rounded-3xl border border-white/10 bg-slate-900/70 p-6 shadow-xl">
+        <div class="section-card rounded-3xl border border-white/10 bg-slate-900/70 p-6 shadow-xl">
           <div class="mb-5 inline-flex rounded-2xl bg-cyan-400/10 p-4 text-cyan-300">🌐</div>
-          <h3 class="text-xl font-semibold" data-i18n="service_1_title">Professionelles Webdesign</h3>
-          <p class="mt-3 text-sm leading-6 text-white/65" data-i18n="service_1_desc">Moderne, schnelle und mobiloptimierte Websites für Unternehmen oder persönliche Projekte.</p>
+          <h3 class="text-xl font-semibold">Professionelles Webdesign</h3>
+          <p class="mt-3 text-sm leading-6 text-white/65">Moderne und mobiloptimierte Websites.</p>
         </div>
-        <div class="card-hover fade-up rounded-3xl border border-white/10 bg-slate-900/70 p-6 shadow-xl">
+        <div class="section-card rounded-3xl border border-white/10 bg-slate-900/70 p-6 shadow-xl">
           <div class="mb-5 inline-flex rounded-2xl bg-cyan-400/10 p-4 text-cyan-300">🛒</div>
-          <h3 class="text-xl font-semibold" data-i18n="service_2_title">Onlineshops</h3>
-          <p class="mt-3 text-sm leading-6 text-white/65" data-i18n="service_2_desc">Klare Produktseiten, gute Struktur und angenehme Kaufabwicklung.</p>
+          <h3 class="text-xl font-semibold">Onlineshops</h3>
+          <p class="mt-3 text-sm leading-6 text-white/65">Klare Produktseiten und angenehme Kaufabwicklung.</p>
         </div>
-        <div class="card-hover fade-up rounded-3xl border border-white/10 bg-slate-900/70 p-6 shadow-xl">
+        <div class="section-card rounded-3xl border border-white/10 bg-slate-900/70 p-6 shadow-xl">
           <div class="mb-5 inline-flex rounded-2xl bg-cyan-400/10 p-4 text-cyan-300">⚙️</div>
-          <h3 class="text-xl font-semibold" data-i18n="service_3_title">Individuelle Entwicklung</h3>
-          <p class="mt-3 text-sm leading-6 text-white/65" data-i18n="service_3_desc">Buchung, Bestellungen, Formulare oder individuelle Ideen für Ihr Projekt.</p>
+          <h3 class="text-xl font-semibold">Individuelle Entwicklung</h3>
+          <p class="mt-3 text-sm leading-6 text-white/65">Buchung, Formulare und individuelle Ideen.</p>
         </div>
-        <div class="card-hover fade-up rounded-3xl border border-white/10 bg-slate-900/70 p-6 shadow-xl">
+        <div class="section-card rounded-3xl border border-white/10 bg-slate-900/70 p-6 shadow-xl">
           <div class="mb-5 inline-flex rounded-2xl bg-cyan-400/10 p-4 text-cyan-300">🚀</div>
-          <h3 class="text-xl font-semibold" data-i18n="service_4_title">Performance & Support</h3>
-          <p class="mt-3 text-sm leading-6 text-white/65" data-i18n="service_4_desc">Optimierung für Geschwindigkeit, Benutzererfahrung und alle Geräte.</p>
+          <h3 class="text-xl font-semibold">Performance & Support</h3>
+          <p class="mt-3 text-sm leading-6 text-white/65">Optimierung für Geschwindigkeit und UX.</p>
         </div>
       </div>
     </div>
@@ -717,9 +612,11 @@
   <section id="journey" class="journey-section px-6 py-24">
     <div class="journey-shell">
       <div class="fade-up text-center">
-        <p class="text-sm font-semibold uppercase tracking-[0.2em] text-cyan-400" data-i18n="journey_badge">Warum eine Website?</p>
-        <h2 class="mt-3 text-3xl font-bold sm:text-4xl" data-i18n="journey_title">Von Sichtbarkeit bis mehr Umsatz — warum eine professionelle Website wichtig ist</h2>
-        <p class="mx-auto mt-4 max-w-3xl leading-8 text-white/70" data-i18n="journey_desc">Beim Scrollen folgt ein Pfeil dem Weg: erst Sichtbarkeit, dann Vertrauen, dann bessere Kommunikation — am Ende mehr Kunden und mehr Gewinn.</p>
+        <p class="text-sm font-semibold uppercase tracking-[0.2em] text-cyan-400">Warum eine Website?</p>
+        <h2 class="mt-3 text-3xl font-bold sm:text-4xl">Von Sichtbarkeit bis mehr Umsatz</h2>
+        <p class="mx-auto mt-4 max-w-3xl leading-8 text-white/70">
+          Beim Scrollen folgt ein Pfeil dem Weg: erst Sichtbarkeit, dann Vertrauen, dann bessere Kommunikation.
+        </p>
       </div>
 
       <div id="journeyTrack" class="journey-layout mt-16">
@@ -728,27 +625,27 @@
             <img src="images/step1.png" alt="Website visibility" class="journey-illustration" />
           </div>
           <div class="journey-card glass">
-            <p class="journey-label" data-i18n="journey_step_1_label">Schritt 1</p>
-            <h3 class="journey-title" data-i18n="journey_step_1_title">Warum Ihr Unternehmen eine Website braucht</h3>
-            <p class="journey-text" data-i18n="journey_step_1_text">Ihre Website ist Ihre digitale Visitenkarte. Viele Kunden suchen zuerst online — wenn Sie dort klar, professionell und modern erscheinen, gewinnen Sie schneller Aufmerksamkeit und Vertrauen.</p>
+            <p class="journey-label">Schritt 1</p>
+            <h3 class="journey-title">Warum Ihr Unternehmen eine Website braucht</h3>
+            <p class="journey-text">Ihre Website ist Ihre digitale Visitenkarte und bringt mehr Sichtbarkeit und Vertrauen.</p>
             <div class="journey-points">
-              <div class="journey-point"><span class="journey-icon">✓</span><span data-i18n="journey_step_1_point_1">Sie werden bei Kunden schneller gefunden</span></div>
-              <div class="journey-point"><span class="journey-icon">✓</span><span data-i18n="journey_step_1_point_2">Ihr Unternehmen wirkt seriöser und moderner</span></div>
-              <div class="journey-point"><span class="journey-icon">✓</span><span data-i18n="journey_step_1_point_3">Kunden verstehen sofort Ihre Leistungen</span></div>
+              <div class="journey-point"><span class="journey-icon">✓</span><span>Sie werden schneller gefunden</span></div>
+              <div class="journey-point"><span class="journey-icon">✓</span><span>Ihr Unternehmen wirkt moderner</span></div>
+              <div class="journey-point"><span class="journey-icon">✓</span><span>Kunden verstehen Ihre Leistungen</span></div>
             </div>
           </div>
         </div>
 
         <div class="journey-stage journey-stage-right fade-up">
           <div class="journey-card glass">
-            <p class="journey-label" data-i18n="journey_step_2_label">Schritt 2</p>
-            <h3 class="journey-title" data-i18n="journey_step_2_title">Was eine gute Website für Sie übernimmt</h3>
-            <p class="journey-text" data-i18n="journey_step_2_text">Sie beantwortet Fragen, zeigt Ihre Leistungen, sammelt Anfragen und macht den Kontakt einfacher. Dadurch sparen Sie Zeit und wirken professioneller — auch wenn Sie gerade nicht erreichbar sind.</p>
+            <p class="journey-label">Schritt 2</p>
+            <h3 class="journey-title">Was eine gute Website für Sie übernimmt</h3>
+            <p class="journey-text">Sie beantwortet Fragen, zeigt Ihre Leistungen und macht den Kontakt einfacher.</p>
             <div class="journey-chip-row">
-              <span class="journey-chip" data-i18n="journey_feature_1">24/7 erreichbar</span>
-              <span class="journey-chip" data-i18n="journey_feature_2">Buchungen möglich</span>
-              <span class="journey-chip" data-i18n="journey_feature_3">Mehr Anfragen</span>
-              <span class="journey-chip" data-i18n="journey_feature_4">Weniger Erklärungsaufwand</span>
+              <span class="journey-chip">24/7 erreichbar</span>
+              <span class="journey-chip">Buchungen möglich</span>
+              <span class="journey-chip">Mehr Anfragen</span>
+              <span class="journey-chip">Weniger Aufwand</span>
             </div>
           </div>
           <div class="journey-image-bg">
@@ -761,28 +658,27 @@
             <img src="images/step3.png" alt="Business growth" class="journey-illustration" />
           </div>
           <div class="journey-card glass">
-            <p class="journey-label" data-i18n="journey_step_3_label">Schritt 3</p>
-            <h3 class="journey-title" data-i18n="journey_step_3_title">Tipps für eine Website, die wirklich verkauft</h3>
-            <p class="journey-text" data-i18n="journey_step_3_text">Nicht nur schönes Design zählt. Eine gute Website braucht klare Texte, starke Kontaktmöglichkeiten, schnelle Ladezeit und einen einfachen Weg zur Anfrage oder Buchung.</p>
+            <p class="journey-label">Schritt 3</p>
+            <h3 class="journey-title">Tipps für eine Website, die verkauft</h3>
+            <p class="journey-text">Klare Texte, schnelle Ladezeit, mobile Optimierung und starke Kontaktmöglichkeiten.</p>
             <div class="journey-chip-row">
-              <span class="journey-chip" data-i18n="journey_tip_1">Klare Überschrift</span>
-              <span class="journey-chip" data-i18n="journey_tip_2">WhatsApp & E-Mail</span>
-              <span class="journey-chip" data-i18n="journey_tip_3">Mobile Optimierung</span>
-              <span class="journey-chip" data-i18n="journey_tip_4">Schnelle Ladezeit</span>
-              <span class="journey-chip" data-i18n="journey_tip_5">Vertrauensvolle Inhalte</span>
+              <span class="journey-chip">Klare Überschrift</span>
+              <span class="journey-chip">WhatsApp & E-Mail</span>
+              <span class="journey-chip">Mobile Optimierung</span>
+              <span class="journey-chip">Schnelle Ladezeit</span>
             </div>
           </div>
         </div>
 
         <div class="journey-stage journey-stage-right fade-up">
           <div class="journey-card glass journey-result">
-            <p class="journey-label" data-i18n="journey_step_4_label">Ergebnis</p>
-            <h3 class="journey-title" data-i18n="journey_step_4_title">Mehr Arbeit, mehr Kunden, mehr Gewinn</h3>
-            <p class="journey-text" data-i18n="journey_step_4_text">Wenn Ihre Website sichtbar, schnell und überzeugend ist, kontaktieren mehr Menschen Ihr Unternehmen. Das bedeutet mehr Buchungen, mehr Verkäufe und langfristig mehr Umsatz.</p>
+            <p class="journey-label">Ergebnis</p>
+            <h3 class="journey-title">Mehr Arbeit, mehr Kunden, mehr Gewinn</h3>
+            <p class="journey-text">Wenn Ihre Website sichtbar, schnell und überzeugend ist, kontaktieren mehr Menschen Ihr Unternehmen.</p>
             <div class="journey-points">
-              <div class="journey-point"><span class="journey-icon">↗</span><span data-i18n="journey_result_1">Mehr qualifizierte Kundenanfragen</span></div>
-              <div class="journey-point"><span class="journey-icon">↗</span><span data-i18n="journey_result_2">Mehr Vertrauen in Ihre Marke</span></div>
-              <div class="journey-point"><span class="journey-icon">↗</span><span data-i18n="journey_result_3">Mehr Umsatz und bessere Ergebnisse</span></div>
+              <div class="journey-point"><span class="journey-icon">↗</span><span>Mehr qualifizierte Kundenanfragen</span></div>
+              <div class="journey-point"><span class="journey-icon">↗</span><span>Mehr Vertrauen in Ihre Marke</span></div>
+              <div class="journey-point"><span class="journey-icon">↗</span><span>Mehr Umsatz und bessere Ergebnisse</span></div>
             </div>
           </div>
         </div>
@@ -802,125 +698,68 @@
 
   <section id="projects" class="mx-auto max-w-7xl px-6 py-24">
     <div class="fade-up">
-      <p class="text-sm font-semibold uppercase tracking-[0.2em] text-cyan-400" data-i18n="projects_badge">Beispiele</p>
-      <h2 class="mt-3 text-3xl font-bold sm:text-4xl" data-i18n="projects_title">Beispiele für Website-Typen</h2>
-      <p class="mt-4 max-w-2xl leading-8 text-white/70" data-i18n="projects_desc">Farben, Texte, Bereiche und Funktionen werden individuell an Ihr Projekt angepasst.</p>
+      <p class="text-sm font-semibold uppercase tracking-[0.2em] text-cyan-400">Beispiele</p>
+      <h2 class="mt-3 text-3xl font-bold sm:text-4xl">Beispiele für Website-Typen</h2>
+      <p class="mt-4 max-w-2xl leading-8 text-white/70">Farben, Texte und Funktionen werden individuell angepasst.</p>
     </div>
 
     <div class="mt-12 grid gap-6 md:grid-cols-3">
-      <div class="card-hover zoom-in overflow-hidden rounded-3xl border border-white/10 bg-slate-900/70 shadow-xl">
+      <div class="section-card overflow-hidden rounded-3xl border border-white/10 bg-slate-900/70 shadow-xl">
         <div class="image-wrap h-52"><img src="images/business-site.jpg" alt="Unternehmenswebsite" loading="lazy" /></div>
         <div class="p-6">
-          <span class="badge-soft rounded-full px-3 py-1 text-xs font-medium" data-i18n="project_1_badge">Business</span>
-          <h3 class="mt-5 text-2xl font-semibold" data-i18n="project_1_title">Unternehmenswebsite</h3>
-          <p class="mt-3 text-sm leading-6 text-white/65" data-i18n="project_1_desc">Präsentiert Ihr Unternehmen, Leistungen und Projekte klar und professionell.</p>
+          <h3 class="mt-2 text-2xl font-semibold">Unternehmenswebsite</h3>
+          <p class="mt-3 text-sm leading-6 text-white/65">Präsentiert Ihr Unternehmen klar und professionell.</p>
         </div>
       </div>
-      <div class="card-hover zoom-in overflow-hidden rounded-3xl border border-white/10 bg-slate-900/70 shadow-xl">
+      <div class="section-card overflow-hidden rounded-3xl border border-white/10 bg-slate-900/70 shadow-xl">
         <div class="image-wrap h-52"><img src="images/ecommerce-site.jpg" alt="Onlineshop" loading="lazy" /></div>
         <div class="p-6">
-          <span class="badge-soft rounded-full px-3 py-1 text-xs font-medium" data-i18n="project_2_badge">Shop</span>
-          <h3 class="mt-5 text-2xl font-semibold" data-i18n="project_2_title">Onlineshop</h3>
-          <p class="mt-3 text-sm leading-6 text-white/65" data-i18n="project_2_desc">Moderne Verkaufsoberfläche mit strukturierter Produktdarstellung.</p>
+          <h3 class="mt-2 text-2xl font-semibold">Onlineshop</h3>
+          <p class="mt-3 text-sm leading-6 text-white/65">Moderne Verkaufsoberfläche mit guter Struktur.</p>
         </div>
       </div>
-      <div class="card-hover zoom-in overflow-hidden rounded-3xl border border-white/10 bg-slate-900/70 shadow-xl">
+      <div class="section-card overflow-hidden rounded-3xl border border-white/10 bg-slate-900/70 shadow-xl">
         <div class="image-wrap h-52"><img src="images/booking-site.jpg" alt="Terminbuchungsseite" loading="lazy" /></div>
         <div class="p-6">
-          <span class="badge-soft rounded-full px-3 py-1 text-xs font-medium" data-i18n="project_3_badge">Buchung</span>
-          <h3 class="mt-5 text-2xl font-semibold" data-i18n="project_3_title">Terminbuchungs-Website</h3>
-          <p class="mt-3 text-sm leading-6 text-white/65" data-i18n="project_3_desc">Ideal für Ärzte, Praxen, Friseure und Unternehmen mit Terminen.</p>
+          <h3 class="mt-2 text-2xl font-semibold">Terminbuchungs-Website</h3>
+          <p class="mt-3 text-sm leading-6 text-white/65">Ideal für Praxen, Friseure und Unternehmen.</p>
         </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="reviews" class="mx-auto max-w-7xl px-6 py-24">
-    <div class="fade-up text-center">
-      <p class="text-sm font-semibold uppercase tracking-[0.2em] text-cyan-400" data-i18n="reviews_badge">Bewertungen</p>
-      <h2 class="mt-3 text-3xl font-bold sm:text-4xl" data-i18n="reviews_title">Was Kunden an einer professionellen Website schätzen</h2>
-      <p class="mx-auto mt-4 max-w-2xl leading-8 text-white/70" data-i18n="reviews_desc">Ein klarer Auftritt, schnelle Lieferung und einfache Kommunikation machen den Unterschied.</p>
-    </div>
-
-    <div class="mt-12 grid gap-6 md:grid-cols-3">
-      <div class="glass fade-up rounded-3xl p-6 shadow-xl">
-        <div class="text-cyan-300">★★★★★</div>
-        <p class="mt-4 text-white/80" data-i18n="review_1_text">Sehr modernes Design, schnelle Umsetzung und klare Kommunikation. Genau so soll eine Website sein.</p>
-        <p class="mt-5 text-sm font-semibold text-white/60" data-i18n="review_1_name">Business Kunde</p>
-      </div>
-      <div class="glass fade-up rounded-3xl p-6 shadow-xl">
-        <div class="text-cyan-300">★★★★★</div>
-        <p class="mt-4 text-white/80" data-i18n="review_2_text">Die Website wirkt professionell und hilft sofort dabei, Vertrauen bei Kunden aufzubauen.</p>
-        <p class="mt-5 text-sm font-semibold text-white/60" data-i18n="review_2_name">Praxis / Service</p>
-      </div>
-      <div class="glass fade-up rounded-3xl p-6 shadow-xl">
-        <div class="text-cyan-300">★★★★★</div>
-        <p class="mt-4 text-white/80" data-i18n="review_3_text">Klare Struktur, schönes Design und mobile Optimierung. Alles fühlt sich hochwertig an.</p>
-        <p class="mt-5 text-sm font-semibold text-white/60" data-i18n="review_3_name">Shop / Unternehmen</p>
       </div>
     </div>
   </section>
 
   <section id="contact" class="mx-auto max-w-5xl px-6 py-24">
-    <div class="contact-panel fade-in rounded-[2rem] p-10 text-center shadow-2xl">
-      <h2 class="text-3xl font-bold sm:text-4xl" data-i18n="contact_title">Bereit für Ihre professionelle Website?</h2>
-      <p class="mx-auto mt-4 max-w-2xl text-lg leading-8 text-white/80" data-i18n="contact_desc">Starten Sie jetzt mit einer modernen Website, die Ihnen eine starke Online-Präsenz gibt und passend zu Ihrem Projekt erweitert werden kann.</p>
+    <div class="glass rounded-[2rem] p-10 text-center shadow-2xl">
+      <h2 class="text-3xl font-bold sm:text-4xl">Bereit für Ihre professionelle Website?</h2>
+      <p class="mx-auto mt-4 max-w-2xl text-lg leading-8 text-white/80">
+        Starten Sie jetzt mit einer modernen Website, die Ihnen eine starke Online-Präsenz gibt.
+      </p>
 
       <div class="mx-auto mt-10 max-w-3xl rounded-[1.75rem] border border-white/10 bg-slate-950/35 p-8 backdrop-blur">
         <div class="flex flex-wrap justify-center gap-4">
-          <a href="https://wa.me/+4915213873166" target="_blank" rel="noreferrer" class="btn-primary inline-block rounded-2xl px-8 py-3 font-semibold" data-i18n="contact_whatsapp">Kontakt per WhatsApp</a>
-          <a href="mailto:wahebwahbe100@gmail.com" class="btn-secondary inline-block rounded-2xl border border-white/15 bg-white/5 px-8 py-3 font-semibold text-white" data-i18n="contact_email">Kontakt per E-Mail</a>
+          <a href="https://wa.me/+4915213873166" target="_blank" rel="noreferrer" class="btn-primary inline-block rounded-2xl px-8 py-3">
+            Kontakt per WhatsApp
+          </a>
+          <a href="mailto:wahebwahbe100@gmail.com" class="btn-secondary inline-block rounded-2xl border border-white/15 bg-white/5 px-8 py-3 font-semibold text-white">
+            Kontakt per E-Mail
+          </a>
         </div>
       </div>
 
-      <p class="mt-8 text-xl font-bold text-cyan-300" data-i18n="contact_note">Sie zahlen nichts, bis Ihre Website vollständig fertig ist.</p>
+      <p class="mt-8 text-xl font-bold text-cyan-300">Sie zahlen nichts, bis Ihre Website vollständig fertig ist.</p>
     </div>
   </section>
 
   <footer class="border-t border-white/10 bg-slate-950">
     <div class="mx-auto max-w-7xl px-6 py-10 text-center text-sm text-white/70">
-      <p>© 2026 <span data-i18n="footer_rights">Alle Rechte vorbehalten</span> <span class="font-semibold text-white">WahebSity</span></p>
-      <p class="mt-2"><span data-i18n="footer_email">E-Mail:</span> <a href="mailto:wahebwahbe100@gmail.com" class="text-cyan-400 hover:underline">wahebwahbe100@gmail.com</a></p>
-      <img src="images/logo.png" alt="WahebSity Logo" class="logo-footer" />
-      <p class="mt-4 text-white/60"><span data-i18n="footer_made">Made with</span> ❤️ <span data-i18n="footer_in">in Germany</span></p>
+      <p>© 2026 Alle Rechte vorbehalten <span class="font-semibold text-white">WahebSity</span></p>
+      <p class="mt-2">E-Mail: <a href="mailto:wahebwahbe100@gmail.com" class="text-cyan-400 hover:underline">wahebwahbe100@gmail.com</a></p>
+      <p class="mt-4 text-white/60">Made with ❤️ in Germany</p>
     </div>
   </footer>
 
   <script>
-    const animatedItems = document.querySelectorAll('.fade-up, .zoom-in, .fade-in');
-
-    const codeRain = document.getElementById('codeRain');
-    if (codeRain) {
-      const snippets = [
-        'const ui = "premium";
-return fastLoading;',
-        'function convert(visitor) {
-  return trust + speed;
-}',
-        '<section class="hero">
-  modern design
-</section>',
-        'SEO + mobile + UX
-=> more clients',
-        'if (website.professional) {
-  business.grow();
-}',
-        'bookings: true;
-whatsapp: true;
-mobile: true;'
-      ];
-      const columns = 18;
-      for (let i = 0; i < columns; i++) {
-        const col = document.createElement('div');
-        col.className = 'code-column';
-        col.textContent = snippets[i % snippets.length];
-        col.style.left = `${(i / columns) * 100}%`;
-        col.style.animationDuration = `${12 + Math.random() * 12}s`;
-        col.style.animationDelay = `${-Math.random() * 12}s`;
-        col.style.opacity = `${0.45 + Math.random() * 0.4}`;
-        codeRain.appendChild(col);
-      }
-    }
+    const animatedItems = document.querySelectorAll('.fade-up');
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) entry.target.classList.add('show');
@@ -933,8 +772,7 @@ mobile: true;'
       { plain: 'design: "modern",', html: '<span class="code-key">design</span>: <span class="code-value">"modern"</span>,' },
       { plain: 'speed: "fast",', html: '<span class="code-key">speed</span>: <span class="code-value">"fast"</span>,' },
       { plain: 'mobile: true,', html: '<span class="code-key">mobile</span>: <span class="code-value">true</span>,' },
-      { plain: 'trust: "high",', html: '<span class="code-key">trust</span>: <span class="code-value">"high"</span>,' },
-      { plain: 'clients: "happy",', html: '<span class="code-key">clients</span>: <span class="code-value">"happy"</span>,' }
+      { plain: 'trust: "high",', html: '<span class="code-key">trust</span>: <span class="code-value">"high"</span>,' }
     ];
 
     let typingLineIndex = 0;
@@ -945,6 +783,7 @@ mobile: true;'
       const wrapper = document.createElement('div');
       wrapper.innerHTML = fullHTML;
       let count = 0;
+
       function walk(node) {
         if (node.nodeType === Node.TEXT_NODE) {
           const text = node.textContent || '';
@@ -960,6 +799,7 @@ mobile: true;'
           [...node.childNodes].forEach(walk);
         }
       }
+
       [...wrapper.childNodes].forEach(walk);
       return wrapper.innerHTML;
     }
@@ -968,9 +808,11 @@ mobile: true;'
       if (!typingElement) return;
       const current = typingLines[typingLineIndex];
       const plainText = current.plain;
+
       if (!deleting) {
         typingCharIndex++;
         typingElement.innerHTML = renderPartialHTML(current.html, typingCharIndex);
+
         if (typingCharIndex >= plainText.length) {
           deleting = true;
           setTimeout(runTypingEffect, 1200);
@@ -979,13 +821,16 @@ mobile: true;'
       } else {
         typingCharIndex--;
         typingElement.innerHTML = renderPartialHTML(current.html, typingCharIndex);
+
         if (typingCharIndex <= 0) {
           deleting = false;
           typingLineIndex = (typingLineIndex + 1) % typingLines.length;
         }
       }
+
       setTimeout(runTypingEffect, deleting ? 45 : 85);
     }
+
     runTypingEffect();
 
     const journeyTrack = document.getElementById('journeyTrack');
@@ -1007,119 +852,6 @@ mobile: true;'
     window.addEventListener('scroll', updateJourneyArrow, { passive: true });
     window.addEventListener('resize', updateJourneyArrow);
     updateJourneyArrow();
-
-    const translations = {
-      de: {
-        nav_home: 'Startseite', nav_about: 'Über uns', nav_services: 'Leistungen', nav_journey: 'Warum Website', nav_projects: 'Projekte', nav_contact: 'Kontakt',
-        start_now: 'Jetzt starten',
-        hero_badge: 'Professionelles Webdesign & Entwicklung',
-        hero_title_1: 'Websites, die', hero_title_2: 'professionell aussehen', hero_title_3: 'und Kunden überzeugen',
-        hero_desc: 'Wir erstellen moderne, schnelle und mobiloptimierte Websites für Unternehmen, Praxen, Restaurants, Shops und persönliche Projekte — klar, vertrauenswürdig und sofort einsatzbereit.',
-        hero_cta_1: 'Jetzt Website anfragen', hero_cta_2: 'Beispiele ansehen',
-        hero_stat_1: 'Schnelle Lieferung', hero_stat_2: 'Eigene Domain', hero_stat_3: 'Zahlung nach Lieferung',
-        hero_bottom_title_1: 'Wir verwandeln Ihre Idee in eine', hero_bottom_title_2: 'professionelle Website mit starker Wirkung',
-        hero_bottom_desc: 'Modernes Design, schnelle Performance und eine klare Struktur schaffen Vertrauen und helfen Ihren Kunden, Sie sofort zu verstehen.',
-        about_badge: 'Warum wir?', about_title_1: 'Eine Website, die', about_title_2: 'Vertrauen aufbaut', about_title_3: 'und Ihre Marke stärkt',
-        about_p1: 'Wir entwickeln Websites, die modern aussehen, schnell laden und Ihre Leistungen klar präsentieren. So wird Ihr Unternehmen online professionell sichtbar.',
-        about_p2: 'Egal ob Arzt, Ingenieur, Restaurant, Friseur oder Shop — wir gestalten eine Website, die zu Ihrer Branche passt und Ihre Ziele unterstützt.',
-        about_p3: 'Ihre Website kann Buchungen, Produktseiten, Leistungsbereiche, Kontaktformulare, WhatsApp-Buttons und individuelle Funktionen enthalten.',
-        about_highlight: 'Sie zahlen erst, wenn Ihre Website vollständig fertig ist und Sie zufrieden sind.',
-        booking_title: 'Buchungssystem', booking_desc: 'Ideal für Praxen, Friseure und Unternehmen, die Termine professionell organisieren möchten.',
-        trust_title: 'Ein Auftritt, der Vertrauen schafft', trust_desc: 'Elegantes Design, starke Performance und klare Struktur helfen Ihren Kunden, Ihre Leistung schnell zu verstehen.',
-        services_badge: 'Leistungen', services_title: 'Alles, was Sie für eine starke professionelle Website brauchen', services_desc: 'Komplette Lösungen für eine starke digitale Präsenz — modern, schnell und klar strukturiert.',
-        service_1_title: 'Professionelles Webdesign', service_1_desc: 'Moderne, schnelle und mobiloptimierte Websites für Unternehmen oder persönliche Projekte.',
-        service_2_title: 'Onlineshops', service_2_desc: 'Klare Produktseiten, gute Struktur und angenehme Kaufabwicklung.',
-        service_3_title: 'Individuelle Entwicklung', service_3_desc: 'Buchung, Bestellungen, Formulare oder individuelle Ideen für Ihr Projekt.',
-        service_4_title: 'Performance & Support', service_4_desc: 'Optimierung für Geschwindigkeit, Benutzererfahrung und alle Geräte.',
-        journey_badge: 'Warum eine Website?', journey_title: 'Von Sichtbarkeit bis mehr Umsatz — warum eine professionelle Website wichtig ist',
-        journey_desc: 'Beim Scrollen folgt ein Pfeil dem Weg: erst Sichtbarkeit, dann Vertrauen, dann bessere Kommunikation — am Ende mehr Kunden und mehr Gewinn.',
-        journey_step_1_label: 'Schritt 1', journey_step_1_title: 'Warum Ihr Unternehmen eine Website braucht', journey_step_1_text: 'Ihre Website ist Ihre digitale Visitenkarte. Viele Kunden suchen zuerst online — wenn Sie dort klar, professionell und modern erscheinen, gewinnen Sie schneller Aufmerksamkeit und Vertrauen.',
-        journey_step_1_point_1: 'Sie werden bei Kunden schneller gefunden', journey_step_1_point_2: 'Ihr Unternehmen wirkt seriöser und moderner', journey_step_1_point_3: 'Kunden verstehen sofort Ihre Leistungen',
-        journey_step_2_label: 'Schritt 2', journey_step_2_title: 'Was eine gute Website für Sie übernimmt', journey_step_2_text: 'Sie beantwortet Fragen, zeigt Ihre Leistungen, sammelt Anfragen und macht den Kontakt einfacher. Dadurch sparen Sie Zeit und wirken professioneller — auch wenn Sie gerade nicht erreichbar sind.',
-        journey_feature_1: '24/7 erreichbar', journey_feature_2: 'Buchungen möglich', journey_feature_3: 'Mehr Anfragen', journey_feature_4: 'Weniger Erklärungsaufwand',
-        journey_step_3_label: 'Schritt 3', journey_step_3_title: 'Tipps für eine Website, die wirklich verkauft', journey_step_3_text: 'Nicht nur schönes Design zählt. Eine gute Website braucht klare Texte, starke Kontaktmöglichkeiten, schnelle Ladezeit und einen einfachen Weg zur Anfrage oder Buchung.',
-        journey_tip_1: 'Klare Überschrift', journey_tip_2: 'WhatsApp & E-Mail', journey_tip_3: 'Mobile Optimierung', journey_tip_4: 'Schnelle Ladezeit', journey_tip_5: 'Vertrauensvolle Inhalte',
-        journey_step_4_label: 'Ergebnis', journey_step_4_title: 'Mehr Arbeit, mehr Kunden, mehr Gewinn', journey_step_4_text: 'Wenn Ihre Website sichtbar, schnell und überzeugend ist, kontaktieren mehr Menschen Ihr Unternehmen. Das bedeutet mehr Buchungen, mehr Verkäufe und langfristig mehr Umsatz.',
-        journey_result_1: 'Mehr qualifizierte Kundenanfragen', journey_result_2: 'Mehr Vertrauen in Ihre Marke', journey_result_3: 'Mehr Umsatz und bessere Ergebnisse',
-        projects_badge: 'Beispiele', projects_title: 'Beispiele für Website-Typen', projects_desc: 'Farben, Texte, Bereiche und Funktionen werden individuell an Ihr Projekt angepasst.',
-        project_1_badge: 'Business', project_1_title: 'Unternehmenswebsite', project_1_desc: 'Präsentiert Ihr Unternehmen, Leistungen und Projekte klar und professionell.',
-        project_2_badge: 'Shop', project_2_title: 'Onlineshop', project_2_desc: 'Moderne Verkaufsoberfläche mit strukturierter Produktdarstellung.',
-        project_3_badge: 'Buchung', project_3_title: 'Terminbuchungs-Website', project_3_desc: 'Ideal für Ärzte, Praxen, Friseure und Unternehmen mit Terminen.',
-        reviews_badge: 'Bewertungen', reviews_title: 'Was Kunden an einer professionellen Website schätzen', reviews_desc: 'Ein klarer Auftritt, schnelle Lieferung und einfache Kommunikation machen den Unterschied.',
-        review_1_text: 'Sehr modernes Design, schnelle Umsetzung und klare Kommunikation. Genau so soll eine Website sein.', review_1_name: 'Business Kunde',
-        review_2_text: 'Die Website wirkt professionell und hilft sofort dabei, Vertrauen bei Kunden aufzubauen.', review_2_name: 'Praxis / Service',
-        review_3_text: 'Klare Struktur, schönes Design und mobile Optimierung. Alles fühlt sich hochwertig an.', review_3_name: 'Shop / Unternehmen',
-        contact_title: 'Bereit für Ihre professionelle Website?', contact_desc: 'Starten Sie jetzt mit einer modernen Website, die Ihnen eine starke Online-Präsenz gibt und passend zu Ihrem Projekt erweitert werden kann.', contact_whatsapp: 'Kontakt per WhatsApp', contact_email: 'Kontakt per E-Mail', contact_note: 'Sie zahlen nichts, bis Ihre Website vollständig fertig ist.',
-        footer_rights: 'Alle Rechte vorbehalten', footer_email: 'E-Mail:', footer_made: 'Made with', footer_in: 'in Germany'
-      },
-      en: {
-        nav_home: 'Home', nav_about: 'About', nav_services: 'Services', nav_journey: 'Why Website', nav_projects: 'Projects', nav_contact: 'Contact',
-        start_now: 'Start Now',
-        hero_badge: 'Professional Web Design & Development',
-        hero_title_1: 'Websites that', hero_title_2: 'look professional', hero_title_3: 'and convert visitors',
-        hero_desc: 'We create modern, fast, and mobile-optimized websites for businesses, clinics, restaurants, stores, and personal projects — clear, trustworthy, and ready to use.',
-        hero_cta_1: 'Request your website now', hero_cta_2: 'View examples',
-        hero_stat_1: 'Fast delivery', hero_stat_2: 'Custom domain', hero_stat_3: 'Pay after delivery',
-        hero_bottom_title_1: 'We turn your idea into a', hero_bottom_title_2: 'professional website with strong impact',
-        hero_bottom_desc: 'Modern design, fast performance, and clear structure build trust and help clients understand you instantly.',
-        about_badge: 'Why us?', about_title_1: 'A website that', about_title_2: 'builds trust', about_title_3: 'and strengthens your brand',
-        about_p1: 'We build websites that look modern, load quickly, and present your services clearly. This gives your business a strong professional online presence.',
-        about_p2: 'Whether you are a doctor, engineer, restaurant owner, barber, or shop owner — we design a website that fits your industry and supports your goals.',
-        about_p3: 'Your website can include bookings, product pages, service sections, contact forms, WhatsApp buttons, and custom features.',
-        about_highlight: 'You only pay when your website is fully finished and you are satisfied.',
-        booking_title: 'Booking System', booking_desc: 'Perfect for clinics, barbers, and businesses that need professional appointment management.',
-        trust_title: 'A look that builds trust', trust_desc: 'Elegant design, strong performance, and clear structure help customers understand your service quickly.',
-        services_badge: 'Services', services_title: 'Everything you need for a strong professional website', services_desc: 'Complete solutions for a powerful digital presence — modern, fast, and clearly structured.',
-        service_1_title: 'Professional Web Design', service_1_desc: 'Modern, fast, and mobile-friendly websites for businesses or personal projects.',
-        service_2_title: 'Online Stores', service_2_desc: 'Clear product pages, strong structure, and a smooth shopping experience.',
-        service_3_title: 'Custom Development', service_3_desc: 'Booking, orders, forms, or custom ideas for your project.',
-        service_4_title: 'Performance & Support', service_4_desc: 'Optimization for speed, user experience, and all devices.',
-        journey_badge: 'Why a website?', journey_title: 'From visibility to more revenue — why a professional website matters',
-        journey_desc: 'As visitors scroll, an arrow follows the path: first visibility, then trust, then better communication — and at the end, more clients and more profit.',
-        journey_step_1_label: 'Step 1', journey_step_1_title: 'Why your business needs a website', journey_step_1_text: 'Your website is your digital business card. Many customers search online first — if you appear there clearly and professionally, you gain attention and trust faster.',
-        journey_step_1_point_1: 'Customers find you faster', journey_step_1_point_2: 'Your business looks more professional and modern', journey_step_1_point_3: 'People instantly understand your services',
-        journey_step_2_label: 'Step 2', journey_step_2_title: 'What a good website does for you', journey_step_2_text: 'It answers questions, shows your services, collects inquiries, and makes contacting you easier. That saves time and makes you look more professional — even when you are unavailable.',
-        journey_feature_1: 'Available 24/7', journey_feature_2: 'Bookings possible', journey_feature_3: 'More inquiries', journey_feature_4: 'Less repeated explaining',
-        journey_step_3_label: 'Step 3', journey_step_3_title: 'Tips for a website that actually sells', journey_step_3_text: 'Beautiful design alone is not enough. A strong website needs clear copy, strong contact options, fast loading, and an easy path to inquiry or booking.',
-        journey_tip_1: 'Clear headline', journey_tip_2: 'WhatsApp & email', journey_tip_3: 'Mobile optimized', journey_tip_4: 'Fast loading', journey_tip_5: 'Trust-building content',
-        journey_step_4_label: 'Result', journey_step_4_title: 'More work, more clients, more profit', journey_step_4_text: 'When your website is visible, fast, and convincing, more people contact your business. That means more bookings, more sales, and more revenue over time.',
-        journey_result_1: 'More qualified leads', journey_result_2: 'More trust in your brand', journey_result_3: 'More revenue and better results',
-        projects_badge: 'Examples', projects_title: 'Examples of website types', projects_desc: 'Colors, text, sections, and features are customized to match your project.',
-        project_1_badge: 'Business', project_1_title: 'Company Website', project_1_desc: 'Presents your company, services, and projects in a clear professional way.',
-        project_2_badge: 'Store', project_2_title: 'Online Store', project_2_desc: 'Modern selling interface with structured product presentation.',
-        project_3_badge: 'Booking', project_3_title: 'Appointment Booking Website', project_3_desc: 'Ideal for doctors, clinics, barbers, and businesses with appointments.',
-        reviews_badge: 'Reviews', reviews_title: 'What customers value in a professional website', reviews_desc: 'A clear presentation, fast delivery, and easy communication make the difference.',
-        review_1_text: 'Very modern design, fast delivery, and clear communication. Exactly how a website should be.', review_1_name: 'Business Client',
-        review_2_text: 'The website feels professional and instantly helps build trust with customers.', review_2_name: 'Clinic / Service',
-        review_3_text: 'Clear structure, beautiful design, and mobile optimization. Everything feels premium.', review_3_name: 'Store / Company',
-        contact_title: 'Ready for your professional website?', contact_desc: 'Start now with a modern website that gives you a strong online presence and can be expanded for your project.', contact_whatsapp: 'Contact via WhatsApp', contact_email: 'Contact via Email', contact_note: 'You pay nothing until your website is fully delivered.',
-        footer_rights: 'All rights reserved', footer_email: 'Email:', footer_made: 'Made with', footer_in: 'in Germany'
-      }
-    };
-
-    function setLanguage(lang) {
-      document.documentElement.lang = lang;
-      document.querySelectorAll('[data-i18n]').forEach((el) => {
-        const key = el.getAttribute('data-i18n');
-        if (translations[lang] && translations[lang][key]) {
-          el.textContent = translations[lang][key];
-        }
-      });
-      localStorage.setItem('site-language', lang);
-      if (lang === 'de') {
-        document.title = 'WahebSity | Professionelles Webdesign';
-        document.querySelector('meta[name="description"]').setAttribute('content', 'Professionelles Webdesign für Unternehmen, Ärzte, Ingenieure, Restaurants, Friseure und Onlineshops mit schneller Lieferung und modernem Design.');
-      } else {
-        document.title = 'WahebSity | Professional Web Design';
-        document.querySelector('meta[name="description"]').setAttribute('content', 'Professional website design for companies, doctors, engineers, restaurants, barbers, and online stores with fast delivery and modern design.');
-      }
-    }
-
-    const langSwitcher = document.getElementById('langSwitcher');
-    const savedLanguage = localStorage.getItem('site-language') || 'de';
-    langSwitcher.value = savedLanguage;
-    setLanguage(savedLanguage);
-    langSwitcher.addEventListener('change', (e) => setLanguage(e.target.value));
   </script>
 </body>
 </html>
