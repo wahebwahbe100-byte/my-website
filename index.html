@@ -3,83 +3,184 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>WahebSity | Websites ohne Vorauszahlung</title>
-  <meta name="description" content="Moderne Websites für Unternehmen in Deutschland. 0€ Vorauszahlung – Sie zahlen erst nach Fertigstellung und Zufriedenheit." />
+  <title>WahebSity | Professionelle Websites ohne Vorauszahlung</title>
+  <meta name="description" content="Professionelle Websites für Unternehmen in Deutschland. Modern, schnell und ohne Vorauszahlung – Sie zahlen erst nach Fertigstellung." />
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
     html { scroll-behavior: smooth; }
     body {
-      background:
-        radial-gradient(circle at top left, rgba(34,211,238,0.08), transparent 30%),
-        radial-gradient(circle at top right, rgba(139,92,246,0.10), transparent 30%),
-        #020617;
+      background: #020617;
       overflow-x: hidden;
+      font-family: Inter, ui-sans-serif, system-ui, sans-serif;
     }
+
+    .hero-bg {
+      position: relative;
+      overflow: hidden;
+      background:
+        linear-gradient(rgba(2,6,23,0.60), rgba(2,6,23,0.78)),
+        url('images/hero-background.png');
+      background-size: cover;
+      background-position: center;
+    }
+
+    .hero-bg::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at 20% 25%, rgba(34,211,238,0.08), transparent 20%),
+        radial-gradient(circle at 80% 20%, rgba(168,85,247,0.14), transparent 20%),
+        linear-gradient(90deg, rgba(2,6,23,0.88) 0%, rgba(2,6,23,0.72) 38%, rgba(2,6,23,0.34) 100%);
+      pointer-events: none;
+    }
+
     .glass {
-      background: rgba(255,255,255,0.04);
+      background: rgba(255,255,255,0.05);
       backdrop-filter: blur(14px);
     }
+
     .nav-link {
       position: relative;
     }
+
     .nav-link::after {
       content: "";
       position: absolute;
       left: 0;
-      bottom: -7px;
+      bottom: -6px;
       width: 0;
       height: 2px;
       background: #22d3ee;
       transition: 0.3s ease;
     }
-    .nav-link:hover::after,
-    .nav-link.active::after {
+
+    .nav-link:hover::after {
       width: 100%;
     }
-    .hero-card {
+
+    .hero-image-wrap {
       position: relative;
-      overflow: hidden;
-      border-radius: 2rem;
-      border: 1px solid rgba(255,255,255,0.08);
-      background:
-        radial-gradient(circle at center, rgba(168,85,247,0.22), transparent 35%),
-        linear-gradient(135deg, rgba(15,23,42,0.92), rgba(30,41,59,0.82));
-      box-shadow: 0 25px 80px rgba(0,0,0,0.35);
+      min-height: 380px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 1;
     }
-    .hero-card::before {
-      content: "";
+
+    .hero-character {
+      width: 100%;
+      max-width: 620px;
+      height: auto;
+      object-fit: contain;
+      filter: drop-shadow(0 28px 40px rgba(139,92,246,0.28));
+      animation: floatY 4.5s ease-in-out infinite;
+    }
+
+    .hero-ring {
+      position: absolute;
+      bottom: 4%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 70%;
+      height: 58px;
+      border-radius: 9999px;
+      background: radial-gradient(circle, rgba(255,255,255,0.45) 0%, rgba(192,132,252,0.28) 35%, rgba(168,85,247,0.05) 72%, transparent 100%);
+      filter: blur(10px);
+      z-index: 0;
+    }
+
+    .floating-ui {
       position: absolute;
       inset: 0;
-      background:
-        radial-gradient(circle at 20% 20%, rgba(34,211,238,0.12), transparent 20%),
-        radial-gradient(circle at 80% 30%, rgba(168,85,247,0.14), transparent 18%);
       pointer-events: none;
+      z-index: 2;
     }
-    .float-soft {
-      animation: floatSoft 4.5s ease-in-out infinite;
+
+    .ui-card {
+      position: absolute;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 62px;
+      min-height: 52px;
+      padding: 12px 14px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.12);
+      box-shadow: 0 12px 30px rgba(0,0,0,0.18);
+      backdrop-filter: blur(14px);
+      animation: floatY 5s ease-in-out infinite;
     }
-    @keyframes floatSoft {
-      0%, 100% { transform: translateY(0px); }
-      50% { transform: translateY(-10px); }
+
+    .ui-card.small { min-width: 52px; min-height: 52px; }
+    .ui-card.one { top: 20%; left: 10%; }
+    .ui-card.two { top: 18%; right: 7%; animation-delay: .7s; }
+    .ui-card.three { top: 38%; right: 4%; animation-delay: 1.2s; }
+    .ui-card.four { top: 32%; left: 18%; animation-delay: .4s; }
+
+    .stat-card, .service-card, .feature-card, .contact-card {
+      transition: 0.35s ease;
     }
+
+    .stat-card:hover, .service-card:hover, .feature-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 20px 35px rgba(0,0,0,0.24);
+    }
+
     .fade-up {
       opacity: 0;
       transform: translateY(28px);
-      transition: opacity .8s ease, transform .8s ease;
+      transition: opacity .9s ease, transform .9s ease;
     }
+
     .fade-up.show {
       opacity: 1;
       transform: translateY(0);
     }
-    .glow {
-      box-shadow: 0 0 0 1px rgba(255,255,255,0.04), 0 18px 40px rgba(0,0,0,0.24);
+
+    .feature-check {
+      width: 1.6rem;
+      height: 1.6rem;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 9999px;
+      background: rgba(34,211,238,0.14);
+      color: #67e8f9;
+      font-size: 0.9rem;
+      flex-shrink: 0;
     }
-    .pricing-border {
-      border: 1px solid rgba(34,211,238,0.18);
-      box-shadow: 0 0 0 1px rgba(255,255,255,0.03), 0 20px 45px rgba(0,0,0,0.28);
+
+    .section-glow {
+      position: absolute;
+      border-radius: 9999px;
+      filter: blur(80px);
+      pointer-events: none;
+      z-index: 0;
     }
-    .badge-glow {
-      box-shadow: 0 0 24px rgba(34,211,238,0.16);
+
+    @keyframes floatY {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-10px); }
+    }
+
+    @media (max-width: 1024px) {
+      .hero-bg::before {
+        background:
+          linear-gradient(180deg, rgba(2,6,23,0.82) 0%, rgba(2,6,23,0.74) 55%, rgba(2,6,23,0.76) 100%);
+      }
+      .hero-image-wrap { min-height: 320px; }
+      .ui-card.one { top: 14%; left: 8%; }
+      .ui-card.two { top: 12%; right: 8%; }
+      .ui-card.three { top: 34%; right: 6%; }
+      .ui-card.four { top: 30%; left: 12%; }
+    }
+
+    @media (max-width: 768px) {
+      .hero-character { max-width: 420px; }
+      .ui-card { transform: scale(0.88); }
+      .hero-ring { width: 84%; height: 42px; }
     }
   </style>
 </head>
@@ -88,29 +189,29 @@
   <header class="sticky top-0 z-50 border-b border-white/10 bg-slate-950/80 backdrop-blur-xl">
     <div class="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
       <a href="#home" class="flex items-center gap-3">
-        <img src="images/logo.png" alt="WahebSity" class="h-12 w-auto object-contain" />
+        <img src="images/logo.png" alt="WahebSity Logo" class="h-12 w-auto object-contain" />
       </a>
 
       <nav class="hidden items-center gap-8 text-sm font-semibold text-white/80 md:flex">
-        <a href="#home" class="nav-link hover:text-cyan-400">Startseite</a>
-        <a href="#why" class="nav-link hover:text-cyan-400">Warum wir</a>
-        <a href="#services" class="nav-link hover:text-cyan-400">Leistungen</a>
-        <a href="#process" class="nav-link hover:text-cyan-400">Ablauf</a>
-        <a href="#contact" class="nav-link hover:text-cyan-400">Kontakt</a>
+        <a href="#home" class="nav-link transition hover:text-cyan-400">Startseite</a>
+        <a href="#about" class="nav-link transition hover:text-cyan-400">Warum wir</a>
+        <a href="#services" class="nav-link transition hover:text-cyan-400">Leistungen</a>
+        <a href="#features" class="nav-link transition hover:text-cyan-400">Vorteile</a>
+        <a href="#contact" class="nav-link transition hover:text-cyan-400">Kontakt</a>
       </nav>
 
-      <a href="#contact" class="rounded-2xl bg-cyan-400 px-5 py-3 text-sm font-bold text-slate-950 transition hover:scale-105">
+      <a href="#contact" class="rounded-xl bg-cyan-400 px-5 py-3 text-sm font-bold text-slate-950 transition hover:scale-105">
         Kostenlos anfragen
       </a>
     </div>
   </header>
 
-  <section id="home" class="border-b border-white/10">
-    <div class="mx-auto grid max-w-7xl items-center gap-14 px-6 py-16 lg:grid-cols-2 lg:py-24">
-      <div class="fade-up">
-        <div class="badge-glow inline-flex rounded-full border border-cyan-400/20 bg-cyan-400/10 px-4 py-1 text-sm font-semibold text-cyan-300">
-          0€ Vorauszahlung · Zahlung erst nach Fertigstellung
-        </div>
+  <section id="home" class="hero-bg border-b border-white/10">
+    <div class="relative mx-auto grid max-w-7xl items-center gap-12 px-6 py-16 lg:grid-cols-2 lg:py-24">
+      <div class="relative z-10 fade-up">
+        <span class="inline-flex rounded-full border border-cyan-400/20 bg-cyan-400/10 px-4 py-1 text-sm font-semibold text-cyan-300">
+          Professionelles Webdesign · 0€ Vorauszahlung
+        </span>
 
         <h1 class="mt-6 max-w-3xl text-4xl font-extrabold leading-tight sm:text-5xl lg:text-6xl">
           Professionelle <span class="text-cyan-400">Websites</span><br />
@@ -118,36 +219,38 @@
           <span class="text-cyan-300">modern, schnell und vertrauensstark</span>
         </h1>
 
-        <p class="mt-6 max-w-2xl text-lg leading-8 text-white/75">
-          Wir erstellen Ihre Website professionell und schnell. <span class="font-semibold text-white">Sie zahlen erst</span>, wenn alles fertig ist und Sie zufrieden sind.
+        <p class="mt-6 max-w-2xl text-lg leading-8 text-white/80">
+          Wir erstellen Ihre Website professionell und schnell. Sie zahlen erst, wenn alles fertig ist und Sie zufrieden sind.
         </p>
 
         <div class="mt-8 flex flex-wrap gap-4">
           <a href="#contact" class="rounded-2xl bg-cyan-400 px-6 py-3 font-bold text-slate-950 transition hover:scale-105">
-            Kostenlos anfragen
+            Jetzt Website anfragen
           </a>
-          <a href="#why" class="rounded-2xl border border-white/15 bg-white/5 px-6 py-3 font-semibold text-white transition hover:bg-white/10">
-            Warum wir?
+          <a href="#services" class="rounded-2xl border border-white/15 bg-white/5 px-6 py-3 font-semibold text-white transition hover:bg-white/10">
+            Leistungen ansehen
           </a>
         </div>
 
         <div class="mt-10 grid gap-4 sm:grid-cols-3">
-          <div class="glass glow rounded-3xl border border-cyan-400/20 p-5 text-center">
-            <div class="text-2xl font-bold text-cyan-300">48H</div>
+          <div class="stat-card glass rounded-2xl border border-white/10 p-5 text-center">
+            <div class="text-3xl font-bold text-cyan-400">48H</div>
             <p class="mt-2 text-sm text-white/70">Schnelle Umsetzung</p>
           </div>
-          <div class="glass glow rounded-3xl border border-cyan-400/20 p-5 text-center">
-            <div class="text-2xl font-bold text-cyan-300">100%</div>
+
+          <div class="stat-card glass rounded-2xl border border-white/10 p-5 text-center">
+            <div class="text-3xl font-bold text-cyan-400">100%</div>
             <p class="mt-2 text-sm text-white/70">Individuell für Ihr Unternehmen</p>
           </div>
-          <div class="glass glow rounded-3xl border border-cyan-400/20 p-5 text-center">
-            <div class="text-2xl font-bold text-cyan-300">0€</div>
+
+          <div class="stat-card glass rounded-2xl border border-white/10 p-5 text-center">
+            <div class="text-3xl font-bold text-cyan-400">0€</div>
             <p class="mt-2 text-sm text-white/70">Vorauszahlung</p>
             <p class="mt-1 text-xs text-white/50">Zahlung erst nach Fertigstellung</p>
           </div>
         </div>
 
-        <div class="mt-16">
+        <div class="mt-14">
           <h2 class="text-5xl font-extrabold leading-tight sm:text-6xl">
             <span class="text-cyan-300">0€</span> Vorauszahlung
           </h2>
@@ -155,69 +258,112 @@
 
           <div class="mt-8 space-y-4">
             <div class="flex items-center gap-3 text-lg text-white/85">
-              <span class="inline-flex h-8 w-8 items-center justify-center rounded-full bg-cyan-400/15 text-cyan-300">✓</span>
+              <span class="feature-check">✓</span>
               <span>Kostenlose Beratung</span>
             </div>
             <div class="flex items-center gap-3 text-lg text-white/85">
-              <span class="inline-flex h-8 w-8 items-center justify-center rounded-full bg-cyan-400/15 text-cyan-300">✓</span>
+              <span class="feature-check">✓</span>
               <span>Schnelle Fertigstellung</span>
             </div>
             <div class="flex items-center gap-3 text-lg text-white/85">
-              <span class="inline-flex h-8 w-8 items-center justify-center rounded-full bg-cyan-400/15 text-cyan-300">✓</span>
+              <span class="feature-check">✓</span>
               <span>Erst testen, dann zahlen</span>
             </div>
           </div>
         </div>
       </div>
 
-      <div class="fade-up">
-        <div class="hero-card min-h-[420px] p-4 lg:min-h-[760px] lg:p-0" style="background-image: linear-gradient(rgba(8,11,30,0.18), rgba(8,11,30,0.22)), url('images/hero-background.png'); background-size: cover; background-position: center;">
-          <div class="absolute left-0 right-0 top-0 z-20 flex items-center justify-between border-b border-white/10 bg-slate-950/35 px-5 py-4 backdrop-blur-md">
-            <div class="flex items-center gap-6 text-xs font-medium text-white/85 sm:text-sm">
-              <span>Startseite</span>
-              <span>Warum wir?</span>
-              <span>Kontakt</span>
-            </div>
-            <div class="flex items-center gap-3">
-              <div class="rounded-xl border border-white/10 bg-slate-950/50 px-3 py-2 text-xs text-white sm:text-sm">DE ▾</div>
-              <div class="rounded-xl bg-cyan-400 px-4 py-2 text-xs font-bold text-slate-950 sm:text-sm">Kostenlos anfragen</div>
-            </div>
-          </div>
+      <div class="hero-image-wrap fade-up">
+        <div class="hero-ring"></div>
 
-          <div class="relative z-10 flex h-full items-center justify-center pt-20 lg:pt-16">
-            <img src="images/waheb-hero-design.png" alt="WahebSity Hero" class="float-soft max-h-[620px] w-full max-w-[640px] object-contain drop-shadow-[0_30px_50px_rgba(168,85,247,0.38)]" />
+        <div class="floating-ui hidden md:block">
+          <div class="ui-card small one">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M8 18H8.01M12 18H12.01M16 18H16.01M7 8H17M7 12H13M6 4H18C19.1046 4 20 4.89543 20 6V18C20 19.1046 19.1046 20 18 20H9L4 20V6C4 4.89543 4.89543 4 6 4Z" stroke="#67E8F9" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <div class="ui-card two">
+            <svg width="30" height="20" viewBox="0 0 30 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="1" y="2" width="28" height="16" rx="5" fill="rgba(255,255,255,0.08)" stroke="#67E8F9"/>
+              <circle cx="8" cy="10" r="2" fill="#67E8F9"/>
+              <circle cx="14" cy="10" r="2" fill="#C084FC"/>
+              <path d="M20 8H25" stroke="#F0ABFC" stroke-width="2" stroke-linecap="round"/>
+              <path d="M20 12H25" stroke="#F0ABFC" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <div class="ui-card three">
+            <svg width="32" height="22" viewBox="0 0 32 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="1" y="3" width="24" height="14" rx="4" fill="rgba(255,255,255,0.08)" stroke="#C084FC"/>
+              <path d="M8 10H18" stroke="#67E8F9" stroke-width="2" stroke-linecap="round"/>
+              <path d="M28 6V16L24 13.5V8.5L28 6Z" fill="#fff" fill-opacity="0.35"/>
+            </svg>
+          </div>
+          <div class="ui-card small four">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12 15.5C15.0376 15.5 17.5 13.0376 17.5 10C17.5 6.96243 15.0376 4.5 12 4.5C8.96243 4.5 6.5 6.96243 6.5 10C6.5 13.0376 8.96243 15.5 12 15.5Z" stroke="#C084FC" stroke-width="1.7"/>
+              <path d="M12 2V4.5M12 15.5V18M4.93 4.93L6.7 6.7M17.3 17.3L19.07 19.07M2 10H4.5M19.5 10H22M4.93 19.07L6.7 17.3M17.3 6.7L19.07 4.93" stroke="#C084FC" stroke-width="1.7" stroke-linecap="round"/>
+            </svg>
           </div>
         </div>
+
+        <img src="images/waheb-hero-design.png" alt="WahebSity Hero Character" class="hero-character" />
       </div>
     </div>
   </section>
 
-  <section id="why" class="mx-auto max-w-7xl px-6 py-24">
-    <div class="max-w-3xl fade-up">
-      <p class="text-sm font-semibold uppercase tracking-[0.2em] text-cyan-400">Warum WahebSity</p>
-      <h2 class="mt-3 text-3xl font-bold sm:text-5xl">Ein starker Auftritt muss nicht kompliziert sein</h2>
-      <p class="mt-5 text-lg leading-8 text-white/75">
-        Unser Fokus ist einfach: eine starke Website für Ihr Unternehmen, ohne Stress, ohne komplizierte Prozesse und ohne Risiko bei der Vorauszahlung.
-      </p>
-    </div>
+  <section id="about" class="relative mx-auto max-w-7xl overflow-hidden px-6 py-24">
+    <div class="section-glow right-10 top-12 h-72 w-72 bg-cyan-500/10"></div>
+    <div class="section-glow bottom-10 left-10 h-72 w-72 bg-violet-500/10"></div>
 
-    <div class="mt-12 grid gap-6 md:grid-cols-3">
-      <div class="fade-up glow rounded-3xl border border-white/10 bg-slate-900/70 p-7">
-        <div class="mb-5 inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-cyan-400/10 text-2xl text-cyan-300">⚡</div>
-        <h3 class="text-xl font-bold">Schnell und modern</h3>
-        <p class="mt-3 leading-7 text-white/65">Ihre Website wird klar aufgebaut, mobiloptimiert und visuell modern umgesetzt.</p>
+    <div class="relative z-10 grid items-center gap-12 lg:grid-cols-2">
+      <div class="fade-up">
+        <span class="inline-flex rounded-full border border-cyan-400/20 bg-cyan-400/10 px-4 py-1 text-sm font-semibold text-cyan-300">
+          Warum WahebSity?
+        </span>
+
+        <h2 class="mt-6 text-4xl font-bold leading-tight sm:text-5xl">
+          Eine Website soll nicht nur schön sein – sie soll <span class="text-cyan-400">Vertrauen schaffen</span>
+        </h2>
+
+        <p class="mt-6 text-lg leading-8 text-white/80">
+          Wir entwickeln Websites für Unternehmen, Praxen, Restaurants, Friseure, Ingenieure und Onlineshops in Deutschland. Klar strukturiert, schnell geladen und professionell präsentiert.
+        </p>
+
+        <p class="mt-5 text-lg leading-8 text-white/80">
+          Unser Unterschied ist einfach: Wir kümmern uns zuerst um Ihre Zufriedenheit. Sie müssen nicht im Voraus zahlen.
+        </p>
+
+        <div class="mt-8 rounded-3xl border border-cyan-400/20 bg-gradient-to-r from-cyan-500/10 to-violet-500/10 p-6 shadow-xl">
+          <p class="text-2xl font-bold text-cyan-300">
+            Sie zahlen erst, wenn Ihre Website vollständig fertig ist und Sie zufrieden sind.
+          </p>
+        </div>
       </div>
 
-      <div class="fade-up glow rounded-3xl border border-cyan-400/20 bg-gradient-to-br from-cyan-400/10 to-blue-500/10 p-7">
-        <div class="mb-5 inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-white/10 text-2xl text-cyan-300">🤝</div>
-        <h3 class="text-xl font-bold">Kunde zuerst</h3>
-        <p class="mt-3 leading-7 text-white/70">Sie zahlen nicht im Voraus. Erst wenn alles fertig ist und Sie zufrieden sind, wird bezahlt.</p>
-      </div>
+      <div class="fade-up grid gap-5 sm:grid-cols-2">
+        <div class="service-card overflow-hidden rounded-3xl border border-white/10 bg-slate-900/60 p-6 shadow-2xl sm:col-span-2">
+          <div class="mb-4 inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-cyan-400/10 text-2xl text-cyan-300">✨</div>
+          <h3 class="text-2xl font-bold">Modernes professionelles Design</h3>
+          <p class="mt-3 leading-7 text-white/70">
+            Modern, übersichtlich und passend zu Ihrer Branche – damit Kunden sofort verstehen, was Sie anbieten.
+          </p>
+        </div>
 
-      <div class="fade-up glow rounded-3xl border border-white/10 bg-slate-900/70 p-7">
-        <div class="mb-5 inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-cyan-400/10 text-2xl text-cyan-300">🎯</div>
-        <h3 class="text-xl font-bold">Klarer Eindruck</h3>
-        <p class="mt-3 leading-7 text-white/65">Ihre Leistungen werden so präsentiert, dass Besucher schnell Vertrauen fassen und Kontakt aufnehmen.</p>
+        <div class="service-card rounded-3xl border border-white/10 bg-slate-900/60 p-6 shadow-xl">
+          <div class="mb-4 inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-cyan-400/10 text-2xl text-cyan-300">📅</div>
+          <h3 class="text-xl font-bold">Buchungssystem</h3>
+          <p class="mt-3 text-sm leading-7 text-white/70">
+            Ideal für Ärzte, Praxen, Friseure und Unternehmen mit Terminverwaltung.
+          </p>
+        </div>
+
+        <div class="service-card rounded-3xl border border-cyan-400/15 bg-gradient-to-br from-cyan-400/10 to-violet-500/10 p-6 shadow-xl">
+          <div class="mb-4 inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-white/10 text-2xl text-cyan-300">🤝</div>
+          <h3 class="text-xl font-bold">Kunde zuerst</h3>
+          <p class="mt-3 text-sm leading-7 text-white/75">
+            Kein Druck, keine Vorauszahlung. Erst Ergebnis, dann Bezahlung.
+          </p>
+        </div>
       </div>
     </div>
   </section>
@@ -227,94 +373,88 @@
       <div class="max-w-3xl fade-up">
         <p class="text-sm font-semibold uppercase tracking-[0.2em] text-cyan-400">Leistungen</p>
         <h2 class="mt-3 text-3xl font-bold sm:text-5xl">Alles, was Sie für eine starke Website brauchen</h2>
-        <p class="mt-5 text-lg leading-8 text-white/75">Wir erstellen Websites für Unternehmen, Praxen, Restaurants, Friseure, Onlineshops und andere Projekte in Deutschland.</p>
+        <p class="mt-5 text-lg leading-8 text-white/75">
+          Von der Unternehmenswebsite bis zum Onlineshop – wir bauen moderne Lösungen, die professionell aussehen und klar funktionieren.
+        </p>
       </div>
 
       <div class="mt-12 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
-        <div class="fade-up glow rounded-3xl border border-white/10 bg-slate-900/75 p-6">
-          <div class="mb-5 inline-flex rounded-2xl bg-cyan-400/10 p-4 text-cyan-300">🌐</div>
+        <div class="service-card fade-up rounded-3xl border border-white/10 bg-slate-900/70 p-6 shadow-xl">
+          <div class="mb-5 inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-cyan-400/10 text-2xl text-cyan-300">🌐</div>
           <h3 class="text-xl font-semibold">Professionelles Webdesign</h3>
-          <p class="mt-3 text-sm leading-6 text-white/65">Moderne Webseiten mit starkem ersten Eindruck und sauberer Struktur.</p>
+          <p class="mt-3 text-sm leading-6 text-white/65">Moderne, schnelle und mobiloptimierte Websites für Unternehmen.</p>
         </div>
 
-        <div class="fade-up glow rounded-3xl border border-white/10 bg-slate-900/75 p-6">
-          <div class="mb-5 inline-flex rounded-2xl bg-cyan-400/10 p-4 text-cyan-300">📱</div>
-          <h3 class="text-xl font-semibold">Mobiloptimierung</h3>
-          <p class="mt-3 text-sm leading-6 text-white/65">Ihre Website funktioniert sauber auf Handy, Tablet und Desktop.</p>
+        <div class="service-card fade-up rounded-3xl border border-white/10 bg-slate-900/70 p-6 shadow-xl">
+          <div class="mb-5 inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-cyan-400/10 text-2xl text-cyan-300">🛒</div>
+          <h3 class="text-xl font-semibold">Onlineshops</h3>
+          <p class="mt-3 text-sm leading-6 text-white/65">Klare Produktseiten und einfache Kaufabwicklung für Ihren Shop.</p>
         </div>
 
-        <div class="fade-up glow rounded-3xl border border-white/10 bg-slate-900/75 p-6">
-          <div class="mb-5 inline-flex rounded-2xl bg-cyan-400/10 p-4 text-cyan-300">🛒</div>
-          <h3 class="text-xl font-semibold">Shop oder Buchung</h3>
-          <p class="mt-3 text-sm leading-6 text-white/65">Online-Shop, Terminbuchung oder individuelle Funktionen für Ihr Projekt.</p>
+        <div class="service-card fade-up rounded-3xl border border-white/10 bg-slate-900/70 p-6 shadow-xl">
+          <div class="mb-5 inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-cyan-400/10 text-2xl text-cyan-300">⚙️</div>
+          <h3 class="text-xl font-semibold">Individuelle Entwicklung</h3>
+          <p class="mt-3 text-sm leading-6 text-white/65">Buchung, Formulare, besondere Funktionen oder individuelle Wünsche.</p>
         </div>
 
-        <div class="fade-up glow rounded-3xl border border-white/10 bg-slate-900/75 p-6">
-          <div class="mb-5 inline-flex rounded-2xl bg-cyan-400/10 p-4 text-cyan-300">🚀</div>
-          <h3 class="text-xl font-semibold">Schnelle Lieferung</h3>
-          <p class="mt-3 text-sm leading-6 text-white/65">Wir arbeiten schnell, klar und zielgerichtet, damit Sie zeitnah online gehen.</p>
+        <div class="service-card fade-up rounded-3xl border border-white/10 bg-slate-900/70 p-6 shadow-xl">
+          <div class="mb-5 inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-cyan-400/10 text-2xl text-cyan-300">🚀</div>
+          <h3 class="text-xl font-semibold">Performance & Support</h3>
+          <p class="mt-3 text-sm leading-6 text-white/65">Schnelle Ladezeiten, gute Nutzererfahrung und saubere Darstellung auf allen Geräten.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <section id="process" class="mx-auto max-w-7xl px-6 py-24">
-    <div class="grid gap-10 lg:grid-cols-[1.1fr_0.9fr]">
-      <div class="fade-up">
-        <p class="text-sm font-semibold uppercase tracking-[0.2em] text-cyan-400">Ablauf</p>
-        <h2 class="mt-3 text-3xl font-bold sm:text-5xl">So einfach arbeiten wir zusammen</h2>
-
-        <div class="mt-10 space-y-5">
-          <div class="glow rounded-3xl border border-white/10 bg-slate-900/70 p-6">
-            <div class="text-sm font-semibold text-cyan-400">01 · Anfrage</div>
-            <h3 class="mt-2 text-xl font-bold">Sie schreiben uns</h3>
-            <p class="mt-3 leading-7 text-white/70">Per WhatsApp oder E-Mail erzählen Sie uns kurz, was Sie brauchen.</p>
+  <section id="features" class="mx-auto max-w-7xl px-6 py-24">
+    <div class="grid gap-8 lg:grid-cols-2">
+      <div class="feature-card fade-up rounded-[2rem] border border-white/10 bg-slate-900/80 p-8 shadow-2xl">
+        <div class="flex items-center justify-between gap-4">
+          <div>
+            <p class="text-sm font-semibold text-cyan-400">Basisangebot</p>
+            <h3 class="mt-2 text-3xl font-bold">Komplette professionelle Website</h3>
           </div>
+          <div class="rounded-2xl bg-cyan-400/10 px-4 py-2 text-cyan-300">In 48 Stunden bereit</div>
+        </div>
 
-          <div class="glow rounded-3xl border border-white/10 bg-slate-900/70 p-6">
-            <div class="text-sm font-semibold text-cyan-400">02 · Umsetzung</div>
-            <h3 class="mt-2 text-xl font-bold">Wir bauen Ihre Website</h3>
-            <p class="mt-3 leading-7 text-white/70">Modern, übersichtlich und passend zu Ihrer Branche und Ihren Zielen.</p>
+        <div class="mt-8 space-y-4">
+          <div class="flex items-start gap-3">
+            <span class="feature-check">✓</span>
+            <p class="text-white/80">Professionelles responsives Design für alle Bildschirmgrößen</p>
           </div>
-
-          <div class="glow rounded-3xl border border-white/10 bg-slate-900/70 p-6">
-            <div class="text-sm font-semibold text-cyan-400">03 · Prüfung</div>
-            <h3 class="mt-2 text-xl font-bold">Sie sehen alles in Ruhe an</h3>
-            <p class="mt-3 leading-7 text-white/70">Sie prüfen die Website, geben Feedback und wir verbessern alles, bis es passt.</p>
+          <div class="flex items-start gap-3">
+            <span class="feature-check">✓</span>
+            <p class="text-white/80">WhatsApp-, E-Mail- und direkte Kontaktintegration</p>
           </div>
-
-          <div class="glow rounded-3xl border border-cyan-400/20 bg-gradient-to-r from-cyan-500/10 to-blue-500/10 p-6">
-            <div class="text-sm font-semibold text-cyan-400">04 · Zahlung</div>
-            <h3 class="mt-2 text-xl font-bold">Erst danach bezahlen</h3>
-            <p class="mt-3 leading-7 text-white/80">Sie zahlen erst, wenn Ihre Website fertig ist und Sie wirklich zufrieden sind.</p>
+          <div class="flex items-start gap-3">
+            <span class="feature-check">✓</span>
+            <p class="text-white/80">Buchungssystem, Shop oder Leistungsseiten möglich</p>
+          </div>
+          <div class="flex items-start gap-3">
+            <span class="feature-check">✓</span>
+            <p class="text-white/80">Eigene Domain passend zu Ihrem Unternehmen</p>
+          </div>
+          <div class="flex items-start gap-3">
+            <span class="feature-check">✓</span>
+            <p class="text-white/80">Zahlung erst nach Lieferung und voller Zufriedenheit</p>
           </div>
         </div>
       </div>
 
-      <div class="fade-up">
-        <div class="pricing-border rounded-[2rem] bg-slate-900/80 p-8">
-          <p class="text-sm font-semibold uppercase tracking-[0.18em] text-cyan-400">Unser Versprechen</p>
-          <h3 class="mt-3 text-3xl font-bold">0€ Risiko zu Beginn</h3>
-          <p class="mt-5 leading-8 text-white/75">Wir wollen, dass sich der Kunde sicher fühlt. Deshalb verlangen wir keine Vorauszahlung. Vertrauen entsteht durch saubere Arbeit – nicht durch Druck.</p>
+      <div class="grid gap-6">
+        <div class="feature-card fade-up rounded-3xl border border-white/10 bg-slate-900/70 p-6 shadow-xl">
+          <h3 class="text-xl font-semibold">Für viele Branchen geeignet</h3>
+          <p class="mt-3 leading-7 text-white/65">Für Ärzte, Ingenieure, Restaurants, Friseure, Unternehmen, Shops und persönliche Projekte.</p>
+        </div>
 
-          <div class="mt-8 space-y-4">
-            <div class="flex items-start gap-3 rounded-2xl border border-white/10 bg-white/5 p-4">
-              <span class="mt-1 inline-flex h-6 w-6 items-center justify-center rounded-full bg-cyan-400/15 text-cyan-300">✓</span>
-              <p class="text-white/80">Keine Vorauszahlung</p>
-            </div>
-            <div class="flex items-start gap-3 rounded-2xl border border-white/10 bg-white/5 p-4">
-              <span class="mt-1 inline-flex h-6 w-6 items-center justify-center rounded-full bg-cyan-400/15 text-cyan-300">✓</span>
-              <p class="text-white/80">Klare Kommunikation während des Projekts</p>
-            </div>
-            <div class="flex items-start gap-3 rounded-2xl border border-white/10 bg-white/5 p-4">
-              <span class="mt-1 inline-flex h-6 w-6 items-center justify-center rounded-full bg-cyan-400/15 text-cyan-300">✓</span>
-              <p class="text-white/80">Zahlung erst nach Fertigstellung und Zufriedenheit</p>
-            </div>
-          </div>
+        <div class="feature-card fade-up rounded-3xl border border-white/10 bg-slate-900/70 p-6 shadow-xl">
+          <h3 class="text-xl font-semibold">Ein Auftritt, der Vertrauen schafft</h3>
+          <p class="mt-3 leading-7 text-white/65">Ein elegantes Design hilft Kunden, Ihre Leistung schnell zu verstehen und vermittelt Professionalität.</p>
+        </div>
 
-          <a href="#contact" class="mt-8 inline-block w-full rounded-2xl bg-cyan-400 px-6 py-4 text-center font-bold text-slate-950 transition hover:scale-[1.02]">
-            Projekt kostenlos starten
-          </a>
+        <div class="feature-card fade-up rounded-3xl border border-cyan-400/15 bg-gradient-to-br from-cyan-400/10 to-violet-500/10 p-6 shadow-xl">
+          <h3 class="text-xl font-semibold">Volle Flexibilität bei Änderungen</h3>
+          <p class="mt-3 leading-7 text-white/70">Bereiche, Bilder, Texte und Funktionen können exakt an Ihr Unternehmen und Ihre Ziele angepasst werden.</p>
         </div>
       </div>
     </div>
@@ -322,15 +462,14 @@
 
   <section id="contact" class="border-t border-white/10 bg-white/5">
     <div class="mx-auto max-w-5xl px-6 py-24">
-      <div class="fade-up rounded-[2rem] border border-cyan-400/15 bg-gradient-to-br from-slate-900/90 to-slate-950 p-10 text-center shadow-2xl">
-        <p class="text-sm font-semibold uppercase tracking-[0.2em] text-cyan-400">Kontakt</p>
-        <h2 class="mt-3 text-3xl font-bold sm:text-5xl">Lassen Sie uns Ihre Website bauen</h2>
-        <p class="mx-auto mt-5 max-w-2xl text-lg leading-8 text-white/75">
-          Schreiben Sie uns jetzt. Wir kümmern uns zuerst um Ihr Projekt und Ihre Zufriedenheit. Bezahlt wird erst am Ende.
+      <div class="contact-card fade-up rounded-[2rem] border border-cyan-400/15 bg-gradient-to-br from-slate-900/92 to-slate-950 p-10 text-center shadow-2xl">
+        <h2 class="text-3xl font-bold sm:text-5xl">Bereit für Ihre professionelle Website?</h2>
+        <p class="mx-auto mt-5 max-w-2xl text-lg leading-8 text-white/78">
+          Schreiben Sie uns jetzt. Wir besprechen Ihr Projekt, gestalten Ihre Website professionell und Sie zahlen erst, wenn alles fertig ist.
         </p>
 
         <div class="mt-10 flex flex-wrap justify-center gap-4">
-          <a href="https://wa.me/4915213873166" target="_blank" rel="noreferrer" class="rounded-2xl bg-cyan-400 px-8 py-4 font-bold text-slate-950 transition hover:scale-105">
+          <a href="https://wa.me/+4915213873166" target="_blank" rel="noreferrer" class="rounded-2xl bg-cyan-400 px-8 py-4 font-bold text-slate-950 transition hover:scale-105">
             Kontakt per WhatsApp
           </a>
           <a href="mailto:wahebwahbe100@gmail.com" class="rounded-2xl border border-white/15 bg-white/5 px-8 py-4 font-semibold text-white transition hover:bg-white/10">
@@ -344,11 +483,11 @@
   </section>
 
   <footer class="border-t border-white/10 bg-slate-950">
-    <div class="mx-auto max-w-7xl px-6 py-10 text-center text-sm text-white/65">
-      <img src="images/logo.png" alt="WahebSity Logo" class="mx-auto h-16 w-auto object-contain" />
-      <p class="mt-4">© 2026 <span class="font-semibold text-white">WahebSity</span> · Alle Rechte vorbehalten</p>
+    <div class="mx-auto max-w-7xl px-6 py-10 text-center text-sm text-white/70">
+      <p>© 2026 <span class="font-semibold text-white">WahebSity</span> · Alle Rechte vorbehalten</p>
       <p class="mt-2">E-Mail: <a href="mailto:wahebwahbe100@gmail.com" class="text-cyan-400 hover:underline">wahebwahbe100@gmail.com</a></p>
-      <p class="mt-3 text-white/50">Made in Germany</p>
+      <img src="images/logo.png" alt="WahebSity Logo" class="mx-auto mt-5 h-16 w-auto object-contain" />
+      <p class="mt-4 text-white/55">Made in Germany</p>
     </div>
   </footer>
 
