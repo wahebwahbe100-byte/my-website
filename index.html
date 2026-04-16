@@ -117,7 +117,26 @@
       background: rgba(17,24,39,0.04);
       transform: translateY(-2px);
     }
-.hero-card {
+
+    .logo-wide {
+      height: 52px;
+      width: 320px;
+      object-fit: contain;
+      object-position: center;
+      transform: scaleX(1.22);
+      transform-origin: center;
+      filter: drop-shadow(0 8px 20px rgba(56,189,248,.22));
+    }
+
+    .logo-wide.footer-logo {
+      height: 46px;
+      width: 280px;
+      object-position: center;
+      transform: scaleX(1.18);
+      transform-origin: center;
+    }
+
+    .hero-card {
       position: relative;
       overflow: hidden;
       border-radius: 30px;
@@ -353,14 +372,14 @@
     }
 
     @media (max-width: 1024px) {
-      .header-logo {
-        width: 280px;
-        height: 42px;
+      .logo-wide {
+        width: 250px;
+        height: 48px;
       }
 
-      .footer-logo {
+      .logo-wide.footer-logo {
         width: 220px;
-        height: 38px;
+        height: 44px;
       }
     }
 
@@ -372,23 +391,25 @@
       .indent-1 { padding-left: 16px; }
       .indent-2 { padding-left: 30px; }
 
-      .header-logo {
-        width: 230px;
-        height: 40px;
+      .logo-wide {
+        width: 210px;
+        height: 42px;
+        transform: scaleX(1.14);
       }
 
-      .footer-logo {
-        width: 180px;
-        height: 34px;
+      .logo-wide.footer-logo {
+        width: 190px;
+        height: 40px;
+        transform: scaleX(1.12);
       }
-}
+    }
   </style>
 </head>
 <body>
   <header class="sticky top-0 z-50 border-b border-black/10 bg-white/75 backdrop-blur-xl">
     <div class="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
       <a href="#home" class="inline-flex items-center" aria-label="Home">
-        <img src="logo.png" alt="Logo" class="footer-logo">
+        <img src="images/logo.png" alt="Logo" class="logo-wide">
       </a>
 
       <nav class="hidden items-center gap-8 text-sm font-semibold md:flex">
@@ -740,7 +761,7 @@
 
   <footer class="border-t border-black/10 bg-white/70">
     <div class="mx-auto max-w-7xl px-6 py-10 text-center text-sm" style="color:#4b5563;">
-      <p class="flex flex-wrap items-center justify-center gap-3">© 2026 Alle Rechte vorbehalten <img src="logo.png" alt="Logo" class="footer-logo"></p>
+      <p class="flex flex-wrap items-center justify-center gap-3">© 2026 Alle Rechte vorbehalten <img src="images/logo.png" alt="Logo" class="logo-wide footer-logo align-middle"></p>
       <p class="mt-2">E-Mail: <a href="mailto:wahebwahbe100@gmail.com" style="color:#0ea5e9;">wahebwahbe100@gmail.com</a></p>
       <p class="mt-2">WhatsApp: <a href="https://wa.me/+4915213873166" style="color:#0ea5e9;">+49 1521 3873166</a></p>
       <p class="mt-4" style="color:#6b7280;">Made with ❤️ in Germany</p>
