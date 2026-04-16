@@ -115,7 +115,16 @@
     .logo-wrap {
       display: inline-flex;
       align-items: center;
-      gap: 12px;
+      gap: 4px;
+    }
+
+    .logo-wrap img {
+      height: 40px;
+      width: auto;
+      object-fit: contain;
+      display: block;
+      margin: 0;
+      padding: 0;
     }
 
     .logo-brand {
@@ -124,9 +133,11 @@
       align-items: center;
       line-height: 1;
       font-weight: 800;
-      letter-spacing: 0.4px;
+      letter-spacing: 0.2px;
       font-size: 1.6rem;
       transition: transform .35s ease;
+      margin: 0;
+      padding: 0;
     }
 
     .logo-waheb {
@@ -135,7 +146,7 @@
     }
 
     .logo-site {
-      margin-left: 4px;
+      margin-left: 2px;
       background: linear-gradient(90deg, #0ea5e9, #38bdf8);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
@@ -328,8 +339,20 @@
       .indent-1 { padding-left: 16px; }
       .indent-2 { padding-left: 30px; }
 
+      .logo-wrap {
+        gap: 3px;
+      }
+
+      .logo-wrap img {
+        height: 34px;
+      }
+
       .logo-brand {
         font-size: 1.2rem;
+      }
+
+      .logo-site {
+        margin-left: 1px;
       }
     }
   </style>
@@ -339,10 +362,9 @@
   <header class="sticky top-0 z-50 border-b border-black/10 bg-white/75 backdrop-blur-xl">
     <div class="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
       <a href="#home" class="logo-wrap" aria-label="Home">
-        <img src="images/logo.png" alt="Logo" class="h-12 w-auto object-contain drop-shadow-sm">
+        <img src="images/logo.png" alt="Logo">
         <span class="logo-brand">
-          <span class="logo-waheb">waheb</span>
-          <span class="logo-site">site</span>
+          <span class="logo-waheb">waheb</span><span class="logo-site">site</span>
         </span>
       </a>
 
