@@ -1,20 +1,23 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="ar" dir="rtl">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>WahebSite | Premium Webdesign</title>
-  <meta name="description" content="Premium Webdesign für Unternehmen mit modernem Design, schneller Performance und starker Online-Präsenz." />
+  <title>WahebSite | تصميم مواقع احترافي</title>
+  <meta name="description" content="موقع احترافي لتصميم وتطوير المواقع الحديثة للشركات والمتاجر والعيادات والمشاريع الشخصية." />
   <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
   <style>
     html { scroll-behavior: smooth; }
 
     body {
-      background: #020617;
+      background: #08111f;
       color: white;
       overflow-x: hidden;
+      font-family: 'Cairo', sans-serif;
       position: relative;
-      font-family: Arial, sans-serif;
     }
 
     body::before {
@@ -22,8 +25,8 @@
       position: fixed;
       inset: 0;
       background:
-        radial-gradient(circle at 20% 20%, rgba(34,211,238,0.14), transparent 25%),
-        radial-gradient(circle at 80% 10%, rgba(168,85,247,0.14), transparent 30%),
+        radial-gradient(circle at 15% 15%, rgba(34,211,238,0.12), transparent 25%),
+        radial-gradient(circle at 85% 10%, rgba(168,85,247,0.14), transparent 28%),
         radial-gradient(circle at 50% 90%, rgba(59,130,246,0.12), transparent 30%);
       z-index: -2;
       pointer-events: none;
@@ -34,12 +37,14 @@
       position: fixed;
       inset: 0;
       background-image:
-        linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
-      background-size: 40px 40px;
+        linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
+      background-size: 36px 36px;
       z-index: -1;
       pointer-events: none;
     }
+
+    .font-display { font-family: 'Playfair Display', serif; }
 
     .glass {
       background: rgba(255,255,255,0.05);
@@ -55,28 +60,29 @@
     .nav-link::after {
       content: "";
       position: absolute;
-      left: 0;
+      right: 0;
       bottom: -6px;
       width: 0;
       height: 2px;
-      background: linear-gradient(to right, #22d3ee, #3b82f6);
+      background: linear-gradient(to left, #22d3ee, #3b82f6);
       transition: .3s;
     }
 
-    .nav-link:hover::after {
+    .nav-link:hover::after,
+    .nav-link.active::after {
       width: 100%;
     }
 
     .btn-primary {
       background: linear-gradient(90deg, #22d3ee, #3b82f6);
-      color: #020617;
-      font-weight: 700;
+      color: #04101b;
+      font-weight: 800;
       transition: .3s;
       box-shadow: 0 0 24px rgba(34,211,238,0.25);
     }
 
     .btn-primary:hover {
-      transform: scale(1.05);
+      transform: scale(1.04);
       box-shadow: 0 0 35px rgba(34,211,238,0.35);
     }
 
@@ -92,7 +98,7 @@
     .hero-card {
       position: relative;
       overflow: hidden;
-      border-radius: 28px;
+      border-radius: 30px;
       border: 1px solid rgba(34,211,238,0.20);
       background: linear-gradient(180deg, rgba(10,16,40,0.96), rgba(2,6,23,0.98));
       box-shadow: 0 25px 80px rgba(0,0,0,0.45), 0 0 60px rgba(37,99,235,0.10);
@@ -104,6 +110,7 @@
       align-items: center;
       padding: 18px 22px;
       border-bottom: 1px solid rgba(255,255,255,0.06);
+      direction: ltr;
     }
 
     .dot {
@@ -118,17 +125,19 @@
     .dot.green { background: #4ade80; }
 
     .code-body {
-      padding: 26px 24px 30px;
+      padding: 24px;
       font-family: Consolas, Monaco, 'Courier New', monospace;
-      font-size: 28px;
-      line-height: 1.9;
+      font-size: 22px;
+      line-height: 2;
       color: #dbeafe;
-      min-height: 340px;
+      min-height: 300px;
+      direction: ltr;
+      text-align: left;
     }
 
     .line-static { color: #d8b4fe; }
-    .indent-1 { padding-left: 24px; }
-    .indent-2 { padding-left: 48px; }
+    .indent-1 { padding-left: 22px; }
+    .indent-2 { padding-left: 44px; }
     .code-key { color: #c4b5fd; }
     .code-value { color: #67e8f9; }
     .code-bracket { color: #cbd5e1; }
@@ -163,6 +172,7 @@
     .image-wrap {
       overflow: hidden;
       border-radius: 20px;
+      background: linear-gradient(135deg, rgba(34,211,238,.13), rgba(59,130,246,.08));
     }
 
     .image-wrap img {
@@ -178,223 +188,18 @@
       filter: brightness(1.05);
     }
 
-    .journey-section {
-      position: relative;
-      overflow: hidden;
-    }
-
-    .journey-shell {
-      position: relative;
-      max-width: 1080px;
-      margin: 0 auto;
-      border-radius: 34px;
-      padding: 2.5rem;
-      background: linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));
-      border: 1px solid rgba(255,255,255,.08);
-      box-shadow: 0 30px 80px rgba(0,0,0,.28);
-    }
-
-    .journey-layout {
-      position: relative;
-      display: grid;
-      gap: 2.6rem;
-    }
-
-    .journey-stage {
-      position: relative;
-      z-index: 2;
-      display: grid;
-      align-items: center;
-      gap: 1.4rem;
-      width: calc(50% - 70px);
-    }
-
-    .journey-stage-left {
-      grid-template-columns: 240px minmax(0,1fr);
-      justify-self: start;
-    }
-
-    .journey-stage-right {
-      grid-template-columns: minmax(0,1fr) 240px;
-      justify-self: end;
-    }
-
-    .journey-card {
-      border-radius: 28px;
-      padding: 1.55rem;
-      box-shadow: 0 18px 40px rgba(0,0,0,.24);
-      min-height: 220px;
-    }
-
-    .journey-image-bg {
-      position: relative;
-      width: 240px;
-      height: 240px;
-      border-radius: 34px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      overflow: hidden;
-      background:
-        radial-gradient(circle at center, rgba(168,85,247,.16), transparent 70%),
-        radial-gradient(circle at 50% 60%, rgba(34,211,238,.12), transparent 72%);
-    }
-
-    .journey-image-bg::before {
-      content: "";
-      position: absolute;
-      width: 180px;
-      height: 180px;
-      border-radius: 999px;
-      background: radial-gradient(circle, rgba(168,85,247,.40), transparent 70%);
-      filter: blur(40px);
-    }
-
-    .journey-illustration {
-      position: relative;
-      z-index: 1;
-      width: 88%;
-      height: auto;
-      object-fit: contain;
-      filter: drop-shadow(0 14px 26px rgba(0,0,0,.34));
-      animation: floatChar 4s ease-in-out infinite;
-    }
-
-    @keyframes floatChar {
-      0%,100% { transform: translateY(0); }
-      50% { transform: translateY(-10px); }
-    }
-
-    .journey-label {
-      color: #67e8f9;
-      font-size: .95rem;
-      font-weight: 700;
-      margin-bottom: .65rem;
-    }
-
-    .journey-title {
-      color: #22d3ee;
-      font-size: 2rem;
-      line-height: 1.3;
-      font-weight: 800;
-      text-shadow: 0 0 12px rgba(34,211,238,.22);
-    }
-
-    .journey-text {
-      color: rgba(255,255,255,.82);
-      line-height: 2;
-      font-size: 1.02rem;
-      margin-top: 1rem;
-    }
-
-    .journey-points {
-      display: grid;
-      gap: 1rem;
-      margin-top: 1.4rem;
-    }
-
-    .journey-point {
-      display: flex;
-      align-items: flex-start;
-      gap: .9rem;
-      color: rgba(255,255,255,.8);
-      font-size: 1rem;
-    }
-
-    .journey-icon {
-      width: 2rem;
-      height: 2rem;
-      border-radius: 999px;
+    .feature-icon,
+    .service-icon {
+      width: 3.5rem;
+      height: 3.5rem;
+      border-radius: 1.2rem;
       display: inline-flex;
       align-items: center;
       justify-content: center;
       background: rgba(34,211,238,.12);
       color: #67e8f9;
       border: 1px solid rgba(34,211,238,.18);
-      flex-shrink: 0;
-    }
-
-    .journey-chip-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: .8rem;
-      margin-top: 1.35rem;
-    }
-
-    .journey-chip {
-      border-radius: 999px;
-      padding: .8rem 1.1rem;
-      background: rgba(255,255,255,.05);
-      border: 1px solid rgba(255,255,255,.08);
-      color: rgba(255,255,255,.83);
-      font-weight: 600;
-    }
-
-    .journey-result {
-      border: 1px solid rgba(34,211,238,.18);
-      background: linear-gradient(135deg, rgba(34,211,238,.10), rgba(59,130,246,.08));
-    }
-
-    .journey-line-area {
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      left: 50%;
-      width: 120px;
-      transform: translateX(-50%);
-      z-index: 1;
-      pointer-events: none;
-    }
-
-    .journey-line-path {
-      position: absolute;
-      left: 50%;
-      top: 0;
-      bottom: 0;
-      width: 4px;
-      transform: translateX(-50%);
-      border-radius: 999px;
-      background: linear-gradient(to bottom, rgba(248,113,113,.2), rgba(248,113,113,.75), rgba(248,113,113,.25));
-      box-shadow: 0 0 26px rgba(248,113,113,.22);
-    }
-
-    .journey-progress {
-      position: absolute;
-      left: 50%;
-      top: 0;
-      width: 6px;
-      height: 150px;
-      transform: translate(-50%, 0);
-      border-radius: 999px;
-      background: linear-gradient(to bottom, #fca5a5, #f87171);
-      box-shadow: 0 0 18px rgba(248,113,113,.45);
-      transition: transform .18s linear;
-    }
-
-    .journey-arrow {
-      position: absolute;
-      left: 50%;
-      top: 0;
-      width: 24px;
-      height: 24px;
-      transform: translate(-50%, 0) rotate(45deg);
-      border-right: 4px solid #f87171;
-      border-bottom: 4px solid #f87171;
-      border-radius: 3px;
-      box-shadow: 0 0 20px rgba(248,113,113,.3);
-      transition: transform .18s linear;
-    }
-
-    .journey-dot {
-      position: absolute;
-      left: 50%;
-      width: 14px;
-      height: 14px;
-      transform: translateX(-50%);
-      border-radius: 999px;
-      background: #f87171;
-      border: 4px solid #020617;
-      box-shadow: 0 0 0 4px rgba(248,113,113,.12), 0 0 22px rgba(248,113,113,.32);
+      font-size: 1.5rem;
     }
 
     .fade-up {
@@ -408,76 +213,91 @@
       transform: translateY(0) !important;
     }
 
-    @media (max-width: 1100px) {
-      .journey-shell { padding: 1.5rem; }
-      .journey-stage,
-      .journey-stage-left,
-      .journey-stage-right {
-        width: 100%;
-        grid-template-columns: 1fr;
-        justify-self: start;
-      }
-      .journey-line-area {
-        left: 26px;
-        transform: none;
-        width: 40px;
-      }
-      .journey-line-path,
-      .journey-progress,
-      .journey-arrow,
-      .journey-dot {
-        left: 22px;
-      }
-      .journey-stage {
-        padding-left: 4.2rem;
-      }
-      .journey-image-bg {
-        width: 220px;
-        height: 220px;
-      }
+    .pricing-card.popular {
+      border-color: rgba(34,211,238,.30);
+      box-shadow: 0 20px 50px rgba(34,211,238,.10);
+      transform: translateY(-4px);
+    }
+
+    .badge-popular {
+      background: linear-gradient(90deg, #22d3ee, #3b82f6);
+      color: #031019;
+      font-weight: 800;
+    }
+
+    .contact-input {
+      width: 100%;
+      border-radius: 18px;
+      border: 1px solid rgba(255,255,255,.1);
+      background: rgba(255,255,255,.05);
+      padding: 14px 18px;
+      color: white;
+      outline: none;
+      transition: .25s;
+    }
+
+    .contact-input:focus {
+      border-color: rgba(34,211,238,.45);
+      box-shadow: 0 0 0 4px rgba(34,211,238,.08);
+    }
+
+    .journey-step {
+      position: relative;
+      padding-right: 2rem;
+    }
+
+    .journey-step::before {
+      content: "";
+      position: absolute;
+      right: 0;
+      top: .8rem;
+      width: 14px;
+      height: 14px;
+      border-radius: 999px;
+      background: #22d3ee;
+      box-shadow: 0 0 0 8px rgba(34,211,238,.10);
+    }
+
+    .journey-step::after {
+      content: "";
+      position: absolute;
+      right: 6px;
+      top: 2.2rem;
+      bottom: -2rem;
+      width: 2px;
+      background: linear-gradient(to bottom, rgba(34,211,238,.5), transparent);
+    }
+
+    .journey-step:last-child::after {
+      display: none;
     }
 
     @media (max-width: 768px) {
       .code-body {
-        font-size: 18px;
-        line-height: 1.8;
-        min-height: 260px;
+        font-size: 16px;
+        min-height: 240px;
       }
       .indent-1 { padding-left: 16px; }
-      .indent-2 { padding-left: 32px; }
-      .journey-shell { padding: 1rem; border-radius: 24px; }
-      .journey-stage { padding-left: 3.3rem; }
-      .journey-card { min-height: auto; padding: 1.2rem; }
-      .journey-title { font-size: 1.45rem; }
-      .journey-text { font-size: .95rem; }
-      .journey-image-bg {
-        width: 180px;
-        height: 180px;
-      }
-      .journey-line-area { left: 18px; }
-      .journey-line-path,
-      .journey-progress,
-      .journey-arrow,
-      .journey-dot { left: 18px; }
+      .indent-2 { padding-left: 30px; }
     }
   </style>
 </head>
-<body class="text-white">
-
+<body>
   <header class="sticky top-0 z-50 border-b border-white/10 bg-slate-950/75 backdrop-blur-xl">
     <div class="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
       <a href="#home" class="text-2xl font-extrabold text-cyan-400">WahebSite</a>
 
       <nav class="hidden items-center gap-8 text-sm font-semibold text-white/80 md:flex">
-        <a href="#home" class="nav-link hover:text-cyan-400">Startseite</a>
-        <a href="#about" class="nav-link hover:text-cyan-400">Über uns</a>
-        <a href="#services" class="nav-link hover:text-cyan-400">Leistungen</a>
-        <a href="#journey" class="nav-link hover:text-cyan-400">Warum Website</a>
-        <a href="#projects" class="nav-link hover:text-cyan-400">Projekte</a>
-        <a href="#contact" class="nav-link hover:text-cyan-400">Kontakt</a>
+        <a href="#home" class="nav-link">الرئيسية</a>
+        <a href="#about" class="nav-link">من نحن</a>
+        <a href="#services" class="nav-link">الخدمات</a>
+        <a href="#why" class="nav-link">لماذا موقع؟</a>
+        <a href="#projects" class="nav-link">الأعمال</a>
+        <a href="#pricing" class="nav-link">الأسعار</a>
+        <a href="#contact" class="nav-link">التواصل</a>
       </nav>
 
-      <a href="#contact" class="btn-primary rounded-xl px-5 py-2 text-sm">Jetzt starten</a>
+      <a href="#contact" class="btn-primary rounded-xl px-5 py-2 text-sm">ابدأ الآن</a>
     </div>
   </header>
 
@@ -485,34 +305,34 @@
     <div class="mx-auto grid max-w-7xl items-center gap-14 px-6 py-20 lg:grid-cols-2">
       <div class="fade-up">
         <span class="inline-flex rounded-full border border-cyan-400/20 bg-cyan-400/10 px-4 py-1 text-sm font-semibold text-cyan-300">
-          Professionelles Webdesign & Entwicklung
+          تصميم مواقع احترافي وتطوير سريع
         </span>
 
         <h1 class="mt-6 text-4xl font-bold leading-tight sm:text-5xl lg:text-6xl">
-          Websites, die <span class="text-cyan-400">professionell aussehen</span> und Kunden überzeugen
+          نصمم مواقع <span class="text-cyan-400">احترافية</span> ترفع ثقة العملاء وتزيد طلباتك
         </h1>
 
         <p class="mt-6 max-w-2xl text-lg leading-8 text-white/75">
-          Wir erstellen moderne, schnelle und mobiloptimierte Websites für Unternehmen, Praxen, Restaurants, Shops und persönliche Projekte.
+          نصمم مواقع حديثة وسريعة ومتجاوبة مع الجوال للشركات، العيادات، المطاعم، المتاجر الإلكترونية والمشاريع الشخصية.
         </p>
 
         <div class="mt-8 flex flex-wrap gap-4">
-          <a href="#contact" class="btn-primary rounded-2xl px-6 py-3">Jetzt Website anfragen</a>
-          <a href="#projects" class="btn-secondary rounded-2xl border border-white/15 bg-white/5 px-6 py-3 font-semibold text-white">Beispiele ansehen</a>
+          <a href="#contact" class="btn-primary rounded-2xl px-6 py-3">اطلب موقعك الآن</a>
+          <a href="#projects" class="btn-secondary rounded-2xl border border-white/15 bg-white/5 px-6 py-3 font-semibold text-white">شاهد النماذج</a>
         </div>
 
         <div class="mt-10 grid gap-4 sm:grid-cols-3">
           <div class="glass rounded-2xl p-5 text-center">
             <div class="text-2xl font-bold text-cyan-400">48H</div>
-            <p class="mt-2 text-sm text-white/65">Schnelle Lieferung</p>
+            <p class="mt-2 text-sm text-white/65">تنفيذ سريع</p>
           </div>
           <div class="glass rounded-2xl p-5 text-center">
-            <div class="text-2xl font-bold text-cyan-400">.de / .com</div>
-            <p class="mt-2 text-sm text-white/65">Eigene Domain</p>
+            <div class="text-2xl font-bold text-cyan-400">.com / .de</div>
+            <p class="mt-2 text-sm text-white/65">دومين خاص</p>
           </div>
           <div class="glass rounded-2xl p-5 text-center">
             <div class="text-2xl font-bold text-cyan-400">0€</div>
-            <p class="mt-2 text-sm text-white/65">Zahlung nach Lieferung</p>
+            <p class="mt-2 text-sm text-white/65">الدفع بعد الإنجاز</p>
           </div>
         </div>
       </div>
@@ -525,7 +345,7 @@
             <span class="dot green"></span>
           </div>
           <div class="code-body">
-            <div class="line-static"><span class="code-key">function</span> buildWebsite<span class="code-bracket">(client) {</span></div>
+            <div class="line-static"><span class="code-key">function</span> buildWebsite<span class="code-bracket">(brand) {</span></div>
             <div class="line-static indent-1"><span class="code-key">return</span> <span class="code-bracket">{</span></div>
             <div class="indent-2"><span id="typingText"></span><span class="typing-cursor"></span></div>
             <div class="line-static indent-1"><span class="code-bracket">}</span></div>
@@ -539,38 +359,50 @@
   <section id="about" class="mx-auto max-w-7xl px-6 py-24">
     <div class="grid items-center gap-14 lg:grid-cols-2">
       <div class="fade-up">
-        <span class="inline-flex rounded-full border border-cyan-400/20 bg-cyan-400/10 px-4 py-1 text-sm font-semibold text-cyan-300">Warum wir?</span>
+        <span class="inline-flex rounded-full border border-cyan-400/20 bg-cyan-400/10 px-4 py-1 text-sm font-semibold text-cyan-300">من نحن</span>
         <h2 class="mt-6 text-4xl font-bold leading-tight sm:text-5xl">
-          Eine Website, die <span class="text-cyan-400">Vertrauen aufbaut</span> und Ihre Marke stärkt
+          موقع يعكس <span class="text-cyan-400">قيمة مشروعك</span> ويمنحك حضورًا أقوى
         </h2>
         <p class="mt-8 text-lg leading-8 text-white/80">
-          Wir entwickeln Websites, die modern aussehen, schnell laden und Ihre Leistungen klar präsentieren.
+          نصمم صفحات واضحة وأنيقة تشرح خدماتك بسرعة وتساعد الزائر على الوثوق بك من أول نظرة.
         </p>
         <p class="mt-5 text-lg leading-8 text-white/80">
-          Egal ob Arzt, Ingenieur, Restaurant, Friseur oder Shop — wir gestalten eine Website, die zu Ihrer Branche passt.
+          سواء كنت طبيبًا أو مهندسًا أو صاحب مطعم أو متجرًا إلكترونيًا، نجهز لك موقعًا مناسبًا لطبيعة نشاطك.
         </p>
         <div class="mt-8 rounded-3xl border border-cyan-400/20 bg-gradient-to-r from-cyan-500/10 to-blue-500/10 p-6 shadow-xl">
-          <p class="text-2xl font-bold text-cyan-300">Sie zahlen erst, wenn Ihre Website vollständig fertig ist.</p>
+          <p class="text-2xl font-bold text-cyan-300">لا تدفع شيئًا حتى يصبح موقعك جاهزًا بالكامل.</p>
         </div>
       </div>
 
       <div class="grid gap-5 sm:grid-cols-2">
-        <div class="glass overflow-hidden rounded-3xl shadow-2xl sm:col-span-2">
-          <img src="images/website-mockup.png" alt="Professionelles Webdesign" class="h-72 w-full object-cover" loading="lazy" />
-        </div>
-        <div class="section-card rounded-3xl border border-white/10 bg-slate-900/60 p-3 shadow-xl">
-          <div class="image-wrap">
-            <img src="images/booking-system.jpg" alt="Buchungssystem" class="h-56" loading="lazy" />
+        <div class="glass rounded-3xl p-8 shadow-2xl sm:col-span-2">
+          <div class="grid gap-6 md:grid-cols-3">
+            <div class="rounded-2xl border border-white/10 bg-white/5 p-5 text-center">
+              <div class="feature-icon mx-auto">⚡</div>
+              <h3 class="mt-4 text-lg font-bold">سرعة ممتازة</h3>
+              <p class="mt-2 text-sm text-white/65">تجربة أسرع لزوارك على كل الأجهزة.</p>
+            </div>
+            <div class="rounded-2xl border border-white/10 bg-white/5 p-5 text-center">
+              <div class="feature-icon mx-auto">📱</div>
+              <h3 class="mt-4 text-lg font-bold">متوافق مع الجوال</h3>
+              <p class="mt-2 text-sm text-white/65">واجهة متجاوبة ومرتبة على الهاتف والتابلت.</p>
+            </div>
+            <div class="rounded-2xl border border-white/10 bg-white/5 p-5 text-center">
+              <div class="feature-icon mx-auto">🎯</div>
+              <h3 class="mt-4 text-lg font-bold">تركيز على التحويل</h3>
+              <p class="mt-2 text-sm text-white/65">زر تواصل واضح ورسائل مقنعة لزيادة الطلبات.</p>
+            </div>
           </div>
-          <div class="pt-4">
-            <h3 class="text-lg font-bold text-white">Buchungssystem</h3>
-            <p class="mt-2 text-sm leading-6 text-white/65">Ideal für Praxen, Friseure und Unternehmen.</p>
-          </div>
         </div>
-        <div class="section-card flex flex-col justify-center rounded-3xl border border-cyan-400/15 bg-gradient-to-br from-cyan-400/10 to-blue-500/10 p-6 shadow-xl">
-          <div class="mb-4 inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-cyan-400/15 text-2xl text-cyan-300">✨</div>
-          <h3 class="text-xl font-bold text-white">Ein Auftritt, der Vertrauen schafft</h3>
-          <p class="mt-3 text-sm leading-7 text-white/70">Elegantes Design, starke Performance und klare Struktur helfen Ihren Kunden.</p>
+        <div class="section-card rounded-3xl border border-white/10 bg-slate-900/60 p-6 shadow-xl">
+          <div class="service-icon">🗓️</div>
+          <h3 class="mt-4 text-xl font-bold text-white">أنظمة حجز</h3>
+          <p class="mt-3 text-sm leading-7 text-white/70">مناسب للعيادات، الصالونات، الاستشارات والخدمات.</p>
+        </div>
+        <div class="section-card rounded-3xl border border-cyan-400/15 bg-gradient-to-br from-cyan-400/10 to-blue-500/10 p-6 shadow-xl">
+          <div class="service-icon">✨</div>
+          <h3 class="mt-4 text-xl font-bold text-white">انطباع أول قوي</h3>
+          <p class="mt-3 text-sm leading-7 text-white/70">تصميم أنيق مع تنظيم واضح يوصل قيمة مشروعك مباشرة.</p>
         </div>
       </div>
     </div>
@@ -579,118 +411,74 @@
   <section id="services" class="border-y border-white/10 bg-white/5">
     <div class="mx-auto max-w-7xl px-6 py-24">
       <div class="max-w-2xl fade-up">
-        <p class="text-sm font-semibold uppercase tracking-[0.2em] text-cyan-400">Leistungen</p>
-        <h2 class="mt-3 text-3xl font-bold sm:text-4xl">Alles, was Sie für eine starke professionelle Website brauchen</h2>
-        <p class="mt-4 leading-8 text-white/70">Komplette Lösungen für eine starke digitale Präsenz.</p>
+        <p class="text-sm font-semibold uppercase tracking-[0.2em] text-cyan-400">الخدمات</p>
+        <h2 class="mt-3 text-3xl font-bold sm:text-4xl">كل ما تحتاجه لبناء حضور رقمي محترف</h2>
+        <p class="mt-4 leading-8 text-white/70">حلول متكاملة من التصميم وحتى الإطلاق والدعم.</p>
       </div>
 
       <div class="mt-12 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
         <div class="section-card rounded-3xl border border-white/10 bg-slate-900/70 p-6 shadow-xl">
-          <div class="mb-5 inline-flex rounded-2xl bg-cyan-400/10 p-4 text-cyan-300">🌐</div>
-          <h3 class="text-xl font-semibold">Professionelles Webdesign</h3>
-          <p class="mt-3 text-sm leading-6 text-white/65">Moderne und mobiloptimierte Websites.</p>
+          <div class="service-icon">🌐</div>
+          <h3 class="mt-5 text-xl font-semibold">تصميم مواقع احترافي</h3>
+          <p class="mt-3 text-sm leading-7 text-white/65">تصميم حديث واضح وسهل الاستخدام ويعكس هوية مشروعك.</p>
         </div>
         <div class="section-card rounded-3xl border border-white/10 bg-slate-900/70 p-6 shadow-xl">
-          <div class="mb-5 inline-flex rounded-2xl bg-cyan-400/10 p-4 text-cyan-300">🛒</div>
-          <h3 class="text-xl font-semibold">Onlineshops</h3>
-          <p class="mt-3 text-sm leading-6 text-white/65">Klare Produktseiten und angenehme Kaufabwicklung.</p>
+          <div class="service-icon">🛒</div>
+          <h3 class="mt-5 text-xl font-semibold">متاجر إلكترونية</h3>
+          <p class="mt-3 text-sm leading-7 text-white/65">صفحات منتجات مرتبة وتجربة شراء سهلة وسريعة.</p>
         </div>
         <div class="section-card rounded-3xl border border-white/10 bg-slate-900/70 p-6 shadow-xl">
-          <div class="mb-5 inline-flex rounded-2xl bg-cyan-400/10 p-4 text-cyan-300">⚙️</div>
-          <h3 class="text-xl font-semibold">Individuelle Entwicklung</h3>
-          <p class="mt-3 text-sm leading-6 text-white/65">Buchung, Formulare und individuelle Ideen.</p>
+          <div class="service-icon">⚙️</div>
+          <h3 class="mt-5 text-xl font-semibold">تطوير مخصص</h3>
+          <p class="mt-3 text-sm leading-7 text-white/65">نماذج، صفحات خاصة، أقسام مخصصة ووظائف حسب طلبك.</p>
         </div>
         <div class="section-card rounded-3xl border border-white/10 bg-slate-900/70 p-6 shadow-xl">
-          <div class="mb-5 inline-flex rounded-2xl bg-cyan-400/10 p-4 text-cyan-300">🚀</div>
-          <h3 class="text-xl font-semibold">Performance & Support</h3>
-          <p class="mt-3 text-sm leading-6 text-white/65">Optimierung für Geschwindigkeit und UX.</p>
+          <div class="service-icon">🚀</div>
+          <h3 class="mt-5 text-xl font-semibold">تحسين الأداء والدعم</h3>
+          <p class="mt-3 text-sm leading-7 text-white/65">سرعة عالية وتجربة مستخدم أفضل مع دعم بعد التسليم.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <section id="journey" class="journey-section px-6 py-24">
-    <div class="journey-shell">
-      <div class="fade-up text-center">
-        <p class="text-sm font-semibold uppercase tracking-[0.2em] text-cyan-400">Warum eine Website?</p>
-        <h2 class="mt-3 text-3xl font-bold sm:text-4xl">Von Sichtbarkeit bis mehr Umsatz</h2>
-        <p class="mx-auto mt-4 max-w-3xl leading-8 text-white/70">
-          Beim Scrollen folgt ein Pfeil dem Weg: erst Sichtbarkeit, dann Vertrauen, dann bessere Kommunikation.
-        </p>
+  <section id="why" class="mx-auto max-w-6xl px-6 py-24">
+    <div class="fade-up text-center">
+      <p class="text-sm font-semibold uppercase tracking-[0.2em] text-cyan-400">لماذا تحتاج موقعًا؟</p>
+      <h2 class="mt-3 text-3xl font-bold sm:text-4xl">الموقع ليس شكلًا فقط، بل أداة للنمو</h2>
+      <p class="mx-auto mt-4 max-w-3xl leading-8 text-white/70">
+        عندما يكون لديك موقع واضح وسريع ومقنع، يصبح الوصول إليك أسهل وتزداد ثقة العملاء بخدماتك.
+      </p>
+    </div>
+
+    <div class="mt-16 grid gap-8 lg:grid-cols-2">
+      <div class="glass rounded-[2rem] p-8 shadow-xl">
+        <div class="journey-step pb-10">
+          <h3 class="text-2xl font-bold text-cyan-300">ظهور أفضل</h3>
+          <p class="mt-3 leading-8 text-white/75">يساعدك الموقع على الظهور أمام العملاء الذين يبحثون عن خدماتك في أي وقت.</p>
+        </div>
+        <div class="journey-step pb-10">
+          <h3 class="text-2xl font-bold text-cyan-300">ثقة أعلى</h3>
+          <p class="mt-3 leading-8 text-white/75">الموقع الاحترافي يعطي انطباعًا أن نشاطك جاد ومنظم ويهتم بالتفاصيل.</p>
+        </div>
+        <div class="journey-step">
+          <h3 class="text-2xl font-bold text-cyan-300">طلبات أكثر</h3>
+          <p class="mt-3 leading-8 text-white/75">أزرار التواصل الواضحة والعرض الجيد للخدمة يحول الزائر إلى عميل محتمل.</p>
+        </div>
       </div>
 
-      <div id="journeyTrack" class="journey-layout mt-16">
-        <div class="journey-stage journey-stage-left fade-up">
-          <div class="journey-image-bg">
-            <img src="images/step1.png" alt="Website visibility" class="journey-illustration" />
-          </div>
-          <div class="journey-card glass">
-            <p class="journey-label">Schritt 1</p>
-            <h3 class="journey-title">Warum Ihr Unternehmen eine Website braucht</h3>
-            <p class="journey-text">Ihre Website ist Ihre digitale Visitenkarte und bringt mehr Sichtbarkeit und Vertrauen.</p>
-            <div class="journey-points">
-              <div class="journey-point"><span class="journey-icon">✓</span><span>Sie werden schneller gefunden</span></div>
-              <div class="journey-point"><span class="journey-icon">✓</span><span>Ihr Unternehmen wirkt moderner</span></div>
-              <div class="journey-point"><span class="journey-icon">✓</span><span>Kunden verstehen Ihre Leistungen</span></div>
-            </div>
-          </div>
+      <div class="grid gap-6">
+        <div class="section-card rounded-3xl border border-white/10 bg-slate-900/70 p-6 shadow-xl">
+          <h3 class="text-2xl font-bold">ماذا يقدم لك الموقع؟</h3>
+          <ul class="mt-5 space-y-3 text-white/75">
+            <li>• عرض واضح للخدمات والأسعار والمميزات</li>
+            <li>• استقبال الطلبات والحجوزات والاستفسارات</li>
+            <li>• ربط مباشر مع واتساب والبريد ووسائل التواصل</li>
+            <li>• دعم صورة علامتك التجارية بشكل احترافي</li>
+          </ul>
         </div>
-
-        <div class="journey-stage journey-stage-right fade-up">
-          <div class="journey-card glass">
-            <p class="journey-label">Schritt 2</p>
-            <h3 class="journey-title">Was eine gute Website für Sie übernimmt</h3>
-            <p class="journey-text">Sie beantwortet Fragen, zeigt Ihre Leistungen und macht den Kontakt einfacher.</p>
-            <div class="journey-chip-row">
-              <span class="journey-chip">24/7 erreichbar</span>
-              <span class="journey-chip">Buchungen möglich</span>
-              <span class="journey-chip">Mehr Anfragen</span>
-              <span class="journey-chip">Weniger Aufwand</span>
-            </div>
-          </div>
-          <div class="journey-image-bg">
-            <img src="images/step2.png" alt="Website tips" class="journey-illustration" />
-          </div>
-        </div>
-
-        <div class="journey-stage journey-stage-left fade-up">
-          <div class="journey-image-bg">
-            <img src="images/step3.png" alt="Business growth" class="journey-illustration" />
-          </div>
-          <div class="journey-card glass">
-            <p class="journey-label">Schritt 3</p>
-            <h3 class="journey-title">Tipps für eine Website, die verkauft</h3>
-            <p class="journey-text">Klare Texte, schnelle Ladezeit, mobile Optimierung und starke Kontaktmöglichkeiten.</p>
-            <div class="journey-chip-row">
-              <span class="journey-chip">Klare Überschrift</span>
-              <span class="journey-chip">WhatsApp & E-Mail</span>
-              <span class="journey-chip">Mobile Optimierung</span>
-              <span class="journey-chip">Schnelle Ladezeit</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="journey-stage journey-stage-right fade-up">
-          <div class="journey-card glass journey-result">
-            <p class="journey-label">Ergebnis</p>
-            <h3 class="journey-title">Mehr Arbeit, mehr Kunden, mehr Gewinn</h3>
-            <p class="journey-text">Wenn Ihre Website sichtbar, schnell und überzeugend ist, kontaktieren mehr Menschen Ihr Unternehmen.</p>
-            <div class="journey-points">
-              <div class="journey-point"><span class="journey-icon">↗</span><span>Mehr qualifizierte Kundenanfragen</span></div>
-              <div class="journey-point"><span class="journey-icon">↗</span><span>Mehr Vertrauen in Ihre Marke</span></div>
-              <div class="journey-point"><span class="journey-icon">↗</span><span>Mehr Umsatz und bessere Ergebnisse</span></div>
-            </div>
-          </div>
-        </div>
-
-        <div class="journey-line-area" aria-hidden="true">
-          <div class="journey-line-path"></div>
-          <div id="journeyProgress" class="journey-progress"></div>
-          <div id="journeyArrow" class="journey-arrow"></div>
-          <span class="journey-dot" style="top: 13%;"></span>
-          <span class="journey-dot" style="top: 37%;"></span>
-          <span class="journey-dot" style="top: 63%;"></span>
-          <span class="journey-dot" style="top: 87%;"></span>
+        <div class="section-card rounded-3xl border border-cyan-400/15 bg-gradient-to-br from-cyan-400/10 to-blue-500/10 p-6 shadow-xl">
+          <h3 class="text-2xl font-bold text-white">النتيجة</h3>
+          <p class="mt-4 leading-8 text-white/80">موقع منظم + سرعة + رسالة واضحة = فرص أكثر للعملاء والمبيعات والانتشار.</p>
         </div>
       </div>
     </div>
@@ -698,62 +486,149 @@
 
   <section id="projects" class="mx-auto max-w-7xl px-6 py-24">
     <div class="fade-up">
-      <p class="text-sm font-semibold uppercase tracking-[0.2em] text-cyan-400">Beispiele</p>
-      <h2 class="mt-3 text-3xl font-bold sm:text-4xl">Beispiele für Website-Typen</h2>
-      <p class="mt-4 max-w-2xl leading-8 text-white/70">Farben, Texte und Funktionen werden individuell angepasst.</p>
+      <p class="text-sm font-semibold uppercase tracking-[0.2em] text-cyan-400">نماذج أعمال</p>
+      <h2 class="mt-3 text-3xl font-bold sm:text-4xl">أنواع المواقع التي نصممها</h2>
+      <p class="mt-4 max-w-2xl leading-8 text-white/70">الألوان والمحتوى والهيكل يتم تخصيصها بما يناسب كل مشروع.</p>
     </div>
 
     <div class="mt-12 grid gap-6 md:grid-cols-3">
       <div class="section-card overflow-hidden rounded-3xl border border-white/10 bg-slate-900/70 shadow-xl">
-        <div class="image-wrap h-52"><img src="images/business-site.jpg" alt="Unternehmenswebsite" loading="lazy" /></div>
+        <div class="image-wrap h-52 flex items-center justify-center text-6xl">🏢</div>
         <div class="p-6">
-          <h3 class="mt-2 text-2xl font-semibold">Unternehmenswebsite</h3>
-          <p class="mt-3 text-sm leading-6 text-white/65">Präsentiert Ihr Unternehmen klar und professionell.</p>
+          <h3 class="mt-2 text-2xl font-semibold">موقع شركة</h3>
+          <p class="mt-3 text-sm leading-7 text-white/65">عرض احترافي للخدمات، نبذة عن الشركة، ونموذج تواصل مباشر.</p>
         </div>
       </div>
       <div class="section-card overflow-hidden rounded-3xl border border-white/10 bg-slate-900/70 shadow-xl">
-        <div class="image-wrap h-52"><img src="images/ecommerce-site.jpg" alt="Onlineshop" loading="lazy" /></div>
+        <div class="image-wrap h-52 flex items-center justify-center text-6xl">🛍️</div>
         <div class="p-6">
-          <h3 class="mt-2 text-2xl font-semibold">Onlineshop</h3>
-          <p class="mt-3 text-sm leading-6 text-white/65">Moderne Verkaufsoberfläche mit guter Struktur.</p>
+          <h3 class="mt-2 text-2xl font-semibold">متجر إلكتروني</h3>
+          <p class="mt-3 text-sm leading-7 text-white/65">واجهة مريحة للبيع مع منتجات مرتبة وتصميم يساعد على الشراء.</p>
         </div>
       </div>
       <div class="section-card overflow-hidden rounded-3xl border border-white/10 bg-slate-900/70 shadow-xl">
-        <div class="image-wrap h-52"><img src="images/booking-site.jpg" alt="Terminbuchungsseite" loading="lazy" /></div>
+        <div class="image-wrap h-52 flex items-center justify-center text-6xl">📅</div>
         <div class="p-6">
-          <h3 class="mt-2 text-2xl font-semibold">Terminbuchungs-Website</h3>
-          <p class="mt-3 text-sm leading-6 text-white/65">Ideal für Praxen, Friseure und Unternehmen.</p>
+          <h3 class="mt-2 text-2xl font-semibold">موقع حجوزات</h3>
+          <p class="mt-3 text-sm leading-7 text-white/65">مثالي للعيادات والصالونات والخدمات التي تعتمد على المواعيد.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <section id="contact" class="mx-auto max-w-5xl px-6 py-24">
-    <div class="glass rounded-[2rem] p-10 text-center shadow-2xl">
-      <h2 class="text-3xl font-bold sm:text-4xl">Bereit für Ihre professionelle Website?</h2>
-      <p class="mx-auto mt-4 max-w-2xl text-lg leading-8 text-white/80">
-        Starten Sie jetzt mit einer modernen Website, die Ihnen eine starke Online-Präsenz gibt.
-      </p>
+  <section id="pricing" class="border-y border-white/10 bg-white/5">
+    <div class="mx-auto max-w-7xl px-6 py-24">
+      <div class="fade-up text-center">
+        <p class="text-sm font-semibold uppercase tracking-[0.2em] text-cyan-400">الأسعار</p>
+        <h2 class="mt-3 text-3xl font-bold sm:text-4xl">باقات مناسبة حسب احتياجك</h2>
+        <p class="mx-auto mt-4 max-w-2xl leading-8 text-white/70">يمكن تعديل الباقات أو عمل عرض خاص حسب نوع مشروعك.</p>
+      </div>
 
-      <div class="mx-auto mt-10 max-w-3xl rounded-[1.75rem] border border-white/10 bg-slate-950/35 p-8 backdrop-blur">
-        <div class="flex flex-wrap justify-center gap-4">
+      <div class="mt-14 grid gap-6 lg:grid-cols-3">
+        <div class="pricing-card rounded-3xl border border-white/10 bg-slate-900/70 p-8 shadow-xl">
+          <h3 class="text-2xl font-bold">الباقة الأساسية</h3>
+          <p class="mt-3 text-white/65">للأفراد والمشاريع الصغيرة</p>
+          <div class="mt-6 text-4xl font-extrabold text-cyan-400">€299</div>
+          <ul class="mt-8 space-y-3 text-white/75">
+            <li>• صفحة رئيسية احترافية</li>
+            <li>• تصميم متجاوب</li>
+            <li>• ربط واتساب وبريد</li>
+            <li>• نموذج تواصل</li>
+          </ul>
+          <a href="#contact" class="btn-secondary mt-8 inline-block rounded-2xl border border-white/15 bg-white/5 px-6 py-3 font-semibold text-white">اطلب الباقة</a>
+        </div>
+
+        <div class="pricing-card popular rounded-3xl border bg-slate-900/80 p-8 shadow-xl">
+          <span class="badge-popular inline-flex rounded-full px-4 py-1 text-sm">الأكثر طلبًا</span>
+          <h3 class="mt-5 text-2xl font-bold">الباقة الاحترافية</h3>
+          <p class="mt-3 text-white/65">للشركات والأنشطة الجادة</p>
+          <div class="mt-6 text-4xl font-extrabold text-cyan-400">€599</div>
+          <ul class="mt-8 space-y-3 text-white/75">
+            <li>• حتى 5 صفحات</li>
+            <li>• تصميم مخصص كامل</li>
+            <li>• تحسين سرعة وتجربة المستخدم</li>
+            <li>• أقسام خدمات ومميزات وآراء</li>
+            <li>• دعم بعد التسليم</li>
+          </ul>
+          <a href="#contact" class="btn-primary mt-8 inline-block rounded-2xl px-6 py-3">ابدأ بهذه الباقة</a>
+        </div>
+
+        <div class="pricing-card rounded-3xl border border-white/10 bg-slate-900/70 p-8 shadow-xl">
+          <h3 class="text-2xl font-bold">الباقة المخصصة</h3>
+          <p class="mt-3 text-white/65">للمتاجر والأنظمة الخاصة</p>
+          <div class="mt-6 text-4xl font-extrabold text-cyan-400">حسب الطلب</div>
+          <ul class="mt-8 space-y-3 text-white/75">
+            <li>• متجر أو نظام حجز</li>
+            <li>• صفحات ومنتجات غير محدودة</li>
+            <li>• وظائف خاصة حسب المشروع</li>
+            <li>• تطوير مخصص وربط الخدمات</li>
+          </ul>
+          <a href="#contact" class="btn-secondary mt-8 inline-block rounded-2xl border border-white/15 bg-white/5 px-6 py-3 font-semibold text-white">اطلب عرض سعر</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="mx-auto max-w-6xl px-6 py-24">
+    <div class="grid gap-8 lg:grid-cols-2">
+      <div class="glass rounded-[2rem] p-10 shadow-2xl">
+        <h2 class="text-3xl font-bold sm:text-4xl">جاهز تطلق موقعك؟</h2>
+        <p class="mt-4 text-lg leading-8 text-white/80">
+          ابدأ الآن بموقع حديث وسريع يمنح مشروعك حضورًا قويًا على الإنترنت.
+        </p>
+
+        <div class="mt-8 space-y-4 text-white/75">
+          <p>✓ استشارة أولية مجانية</p>
+          <p>✓ تصميم مخصص حسب نشاطك</p>
+          <p>✓ الدفع بعد اكتمال العمل</p>
+        </div>
+
+        <div class="mt-8 flex flex-wrap gap-4">
           <a href="https://wa.me/+4915213873166" target="_blank" rel="noreferrer" class="btn-primary inline-block rounded-2xl px-8 py-3">
-            Kontakt per WhatsApp
+            تواصل عبر واتساب
           </a>
           <a href="mailto:wahebwahbe100@gmail.com" class="btn-secondary inline-block rounded-2xl border border-white/15 bg-white/5 px-8 py-3 font-semibold text-white">
-            Kontakt per E-Mail
+            تواصل عبر البريد
           </a>
         </div>
       </div>
 
-      <p class="mt-8 text-xl font-bold text-cyan-300">Sie zahlen nichts, bis Ihre Website vollständig fertig ist.</p>
+      <div class="glass rounded-[2rem] p-8 shadow-2xl">
+        <form class="space-y-4" onsubmit="submitForm(event)">
+          <div>
+            <label class="mb-2 block text-sm text-white/70">الاسم</label>
+            <input type="text" class="contact-input" placeholder="اكتب اسمك" required>
+          </div>
+          <div>
+            <label class="mb-2 block text-sm text-white/70">البريد الإلكتروني</label>
+            <input type="email" class="contact-input" placeholder="name@example.com" required>
+          </div>
+          <div>
+            <label class="mb-2 block text-sm text-white/70">نوع المشروع</label>
+            <select class="contact-input" required>
+              <option value="">اختر نوع المشروع</option>
+              <option>موقع شركة</option>
+              <option>متجر إلكتروني</option>
+              <option>موقع حجوزات</option>
+              <option>تصميم مخصص</option>
+            </select>
+          </div>
+          <div>
+            <label class="mb-2 block text-sm text-white/70">تفاصيل المشروع</label>
+            <textarea class="contact-input min-h-[140px] resize-none" placeholder="اكتب تفاصيل مشروعك هنا" required></textarea>
+          </div>
+          <button class="btn-primary w-full rounded-2xl px-6 py-3">إرسال الطلب</button>
+          <p id="formMessage" class="hidden text-center font-semibold text-cyan-300">تم استلام طلبك بنجاح. سنرد عليك قريبًا.</p>
+        </form>
+      </div>
     </div>
   </section>
 
   <footer class="border-t border-white/10 bg-slate-950">
     <div class="mx-auto max-w-7xl px-6 py-10 text-center text-sm text-white/70">
-      <p>© 2026 Alle Rechte vorbehalten <span class="font-semibold text-white">WahebSite</span></p>
-      <p class="mt-2">E-Mail: <a href="mailto:wahebwahbe100@gmail.com" class="text-cyan-400 hover:underline">wahebwahbe100@gmail.com</a></p>
+      <p>© 2026 جميع الحقوق محفوظة <span class="font-semibold text-white">WahebSite</span></p>
+      <p class="mt-2">البريد الإلكتروني: <a href="mailto:wahebwahbe100@gmail.com" class="text-cyan-400 hover:underline">wahebwahbe100@gmail.com</a></p>
+      <p class="mt-2">واتساب: <a href="https://wa.me/+4915213873166" class="text-cyan-400 hover:underline">+49 1521 3873166</a></p>
       <p class="mt-4 text-white/60">Made with ❤️ in Germany</p>
     </div>
   </footer>
@@ -769,10 +644,10 @@
 
     const typingElement = document.getElementById('typingText');
     const typingLines = [
-      { plain: 'design: "modern",', html: '<span class="code-key">design</span>: <span class="code-value">"modern"</span>,' },
+      { plain: 'design: "premium",', html: '<span class="code-key">design</span>: <span class="code-value">"premium"</span>,' },
       { plain: 'speed: "fast",', html: '<span class="code-key">speed</span>: <span class="code-value">"fast"</span>,' },
       { plain: 'mobile: true,', html: '<span class="code-key">mobile</span>: <span class="code-value">true</span>,' },
-      { plain: 'trust: "high",', html: '<span class="code-key">trust</span>: <span class="code-value">"high"</span>,' }
+      { plain: 'conversions: "high",', html: '<span class="code-key">conversions</span>: <span class="code-value">"high"</span>,' }
     ];
 
     let typingLineIndex = 0;
@@ -828,30 +703,36 @@
         }
       }
 
-      setTimeout(runTypingEffect, deleting ? 45 : 85);
+      setTimeout(runTypingEffect, deleting ? 40 : 80);
     }
 
     runTypingEffect();
 
-    const journeyTrack = document.getElementById('journeyTrack');
-    const journeyArrow = document.getElementById('journeyArrow');
-    const journeyProgress = document.getElementById('journeyProgress');
-
-    function updateJourneyArrow() {
-      if (!journeyTrack || !journeyArrow || !journeyProgress) return;
-      const rect = journeyTrack.getBoundingClientRect();
-      const viewport = window.innerHeight;
-      const raw = (viewport * 0.72 - rect.top) / (rect.height + viewport * 0.2);
-      const progress = Math.max(0, Math.min(1, raw));
-      const travel = Math.max(0, journeyTrack.offsetHeight - 170);
-      const y = progress * travel;
-      journeyArrow.style.transform = `translate(-50%, ${y}px) rotate(45deg)`;
-      journeyProgress.style.transform = `translate(-50%, ${Math.max(0, y - 126)}px)`;
+    function submitForm(event) {
+      event.preventDefault();
+      const message = document.getElementById('formMessage');
+      message.classList.remove('hidden');
+      event.target.reset();
     }
 
-    window.addEventListener('scroll', updateJourneyArrow, { passive: true });
-    window.addEventListener('resize', updateJourneyArrow);
-    updateJourneyArrow();
+    const navLinks = document.querySelectorAll('.nav-link');
+    const sections = [...navLinks].map(link => document.querySelector(link.getAttribute('href')));
+
+    window.addEventListener('scroll', () => {
+      let currentId = '';
+      sections.forEach(section => {
+        if (!section) return;
+        const top = section.offsetTop - 140;
+        const height = section.offsetHeight;
+        if (window.scrollY >= top && window.scrollY < top + height) {
+          currentId = section.id;
+        }
+      });
+
+      navLinks.forEach(link => {
+        link.classList.toggle('active', link.getAttribute('href') === '#' + currentId);
+      });
+    });
   </script>
 </body>
 </html>
