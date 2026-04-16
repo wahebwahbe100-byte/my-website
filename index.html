@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>WahebSite | Professionelles Webdesign</title>
+  <title>Professionelles Webdesign</title>
   <meta name="description" content="Professionelles Webdesign und moderne Website-Entwicklung für Unternehmen, Praxen, Restaurants, Onlineshops und persönliche Projekte." />
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -12,9 +12,22 @@
   <style>
     html { scroll-behavior: smooth; }
 
+    :root {
+      --bg: #f7f5f1;
+      --surface: rgba(255,255,255,0.82);
+      --surface-strong: #ffffff;
+      --text: #111827;
+      --muted: #5b6472;
+      --border: rgba(17,24,39,.10);
+      --accent: #38bdf8;
+      --accent-dark: #0ea5e9;
+      --accent-soft: rgba(56,189,248,.12);
+      --shadow: 0 20px 60px rgba(17,24,39,.08);
+    }
+
     body {
-      background: #08111f;
-      color: white;
+      background: var(--bg);
+      color: var(--text);
       overflow-x: hidden;
       font-family: 'Playfair Display', serif;
       position: relative;
@@ -25,9 +38,9 @@
       position: fixed;
       inset: 0;
       background:
-        radial-gradient(circle at 15% 15%, rgba(34,211,238,0.12), transparent 25%),
-        radial-gradient(circle at 85% 10%, rgba(168,85,247,0.14), transparent 28%),
-        radial-gradient(circle at 50% 90%, rgba(59,130,246,0.12), transparent 30%);
+        radial-gradient(circle at 12% 16%, rgba(56,189,248,.10), transparent 24%),
+        radial-gradient(circle at 86% 10%, rgba(17,24,39,.05), transparent 28%),
+        radial-gradient(circle at 50% 92%, rgba(56,189,248,.08), transparent 28%);
       z-index: -2;
       pointer-events: none;
     }
@@ -37,22 +50,24 @@
       position: fixed;
       inset: 0;
       background-image:
-        linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
-      background-size: 36px 36px;
+        linear-gradient(rgba(17,24,39,0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(17,24,39,0.03) 1px, transparent 1px);
+      background-size: 38px 38px;
       z-index: -1;
       pointer-events: none;
     }
 
     .glass {
-      background: rgba(255,255,255,0.05);
+      background: linear-gradient(180deg, rgba(255,255,255,0.92), rgba(240,249,255,0.88));
       backdrop-filter: blur(14px);
-      border: 1px solid rgba(255,255,255,0.10);
+      border: 1px solid rgba(56,189,248,0.22);
+      box-shadow: 0 18px 46px rgba(14,165,233,0.12);
     }
 
     .nav-link {
       position: relative;
       transition: .3s;
+      color: rgba(17,24,39,.85);
     }
 
     .nav-link::after {
@@ -62,8 +77,13 @@
       bottom: -6px;
       width: 0;
       height: 2px;
-      background: linear-gradient(to right, #22d3ee, #3b82f6);
+      background: linear-gradient(to right, var(--accent), var(--accent-dark));
       transition: .3s;
+    }
+
+    .nav-link:hover,
+    .nav-link.active {
+      color: var(--text);
     }
 
     .nav-link:hover::after,
@@ -72,34 +92,39 @@
     }
 
     .btn-primary {
-      background: linear-gradient(90deg, #22d3ee, #3b82f6);
-      color: #04101b;
+      background: linear-gradient(90deg, var(--accent), var(--accent-dark));
+      color: #ffffff;
       font-weight: 800;
       transition: .3s;
-      box-shadow: 0 0 24px rgba(34,211,238,0.25);
+      box-shadow: 0 12px 28px rgba(14,165,233,.24);
     }
 
     .btn-primary:hover {
-      transform: scale(1.04);
-      box-shadow: 0 0 35px rgba(34,211,238,0.35);
+      transform: translateY(-2px) scale(1.02);
+      box-shadow: 0 16px 34px rgba(14,165,233,.28);
     }
 
     .btn-secondary {
       transition: .3s;
+      color: var(--text);
     }
 
     .btn-secondary:hover {
-      background: rgba(255,255,255,0.10);
+      background: rgba(17,24,39,0.04);
       transform: translateY(-2px);
+    }
+
+    header img, footer img {
+      filter: drop-shadow(0 6px 18px rgba(56,189,248,.18));
     }
 
     .hero-card {
       position: relative;
       overflow: hidden;
       border-radius: 30px;
-      border: 1px solid rgba(34,211,238,0.20);
-      background: linear-gradient(180deg, rgba(10,16,40,0.96), rgba(2,6,23,0.98));
-      box-shadow: 0 25px 80px rgba(0,0,0,0.45), 0 0 60px rgba(37,99,235,0.10);
+      border: 1px solid rgba(56,189,248,.20);
+      background: linear-gradient(180deg, rgba(255,255,255,0.96), rgba(239,249,255,0.98));
+      box-shadow: 0 25px 80px rgba(17,24,39,0.12), 0 0 40px rgba(56,189,248,0.16);
     }
 
     .window-header {
@@ -107,7 +132,8 @@
       gap: 10px;
       align-items: center;
       padding: 18px 22px;
-      border-bottom: 1px solid rgba(255,255,255,0.06);
+      border-bottom: 1px solid rgba(17,24,39,0.08);
+      background: rgba(255,255,255,.75);
     }
 
     .dot {
@@ -117,27 +143,27 @@
       display: inline-block;
     }
 
-    .dot.red { background: #fb7185; }
-    .dot.yellow { background: #facc15; }
-    .dot.green { background: #4ade80; }
+    .dot.red { background: #ef4444; }
+    .dot.yellow { background: #f59e0b; }
+    .dot.green { background: #22c55e; }
 
     .code-body {
       padding: 24px;
       font-family: Consolas, Monaco, 'Courier New', monospace;
       font-size: 22px;
       line-height: 2;
-      color: #dbeafe;
+      color: #111827;
       min-height: 300px;
       text-align: left;
       direction: ltr;
     }
 
-    .line-static { color: #d8b4fe; }
+    .line-static { color: #374151; }
     .indent-1 { padding-left: 22px; }
     .indent-2 { padding-left: 44px; }
-    .code-key { color: #c4b5fd; }
-    .code-value { color: #67e8f9; }
-    .code-bracket { color: #cbd5e1; }
+    .code-key { color: var(--accent-dark); }
+    .code-value { color: #111827; font-weight: 700; }
+    .code-bracket { color: #6b7280; }
 
     .typing-cursor {
       display: inline-block;
@@ -145,8 +171,8 @@
       height: 1.1em;
       margin-left: 4px;
       border-radius: 4px;
-      background: #67e8f9;
-      box-shadow: 0 0 16px rgba(103,232,249,0.85);
+      background: var(--accent);
+      box-shadow: 0 0 16px rgba(56,189,248,0.45);
       animation: blinkCursor .9s infinite;
       vertical-align: middle;
     }
@@ -158,31 +184,94 @@
 
     .section-card {
       transition: .35s ease;
+      border-color: rgba(56,189,248,0.18) !important;
+      box-shadow: 0 14px 36px rgba(14,165,233,0.08);
     }
 
     .section-card:hover {
       transform: translateY(-6px);
-      border-color: rgba(34,211,238,.22);
-      box-shadow: 0 18px 40px rgba(0,0,0,.28);
+      border-color: rgba(14,165,233,.34) !important;
+      box-shadow: 0 20px 44px rgba(14,165,233,.16);
     }
 
-    .image-wrap {
-      overflow: hidden;
-      border-radius: 20px;
-      background: linear-gradient(135deg, rgba(34,211,238,.13), rgba(59,130,246,.08));
-    }
-
-    .image-wrap img {
-      width: 100%;
+    .project-art {
       height: 100%;
-      object-fit: cover;
-      display: block;
-      transition: transform .6s ease, filter .6s ease;
+      min-height: 208px;
+      border-radius: 20px 20px 0 0;
+      background:
+        linear-gradient(135deg, rgba(255,255,255,.98), rgba(224,242,254,.96)),
+        linear-gradient(135deg, rgba(56,189,248,.24), rgba(17,24,39,.04));
+      position: relative;
+      overflow: hidden;
     }
 
-    .image-wrap:hover img {
-      transform: scale(1.05);
-      filter: brightness(1.05);
+    .project-art::before {
+      content: "";
+      position: absolute;
+      inset: 18px;
+      border-radius: 18px;
+      border: 1px solid rgba(17,24,39,.08);
+      background:
+        linear-gradient(rgba(17,24,39,.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(17,24,39,.03) 1px, transparent 1px);
+      background-size: 22px 22px;
+    }
+
+    .mini-ui {
+      position: absolute;
+      inset: 34px;
+      border-radius: 18px;
+      background: linear-gradient(180deg, #ffffff, #f0f9ff);
+      box-shadow: 0 18px 36px rgba(14,165,233,.14);
+      border: 1px solid rgba(56,189,248,.20);
+      padding: 14px;
+      display: grid;
+      gap: 10px;
+      z-index: 1;
+    }
+
+    .mini-ui-top {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+    }
+
+    .mini-pill {
+      height: 12px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, rgba(14,165,233,.28), rgba(56,189,248,.46));
+      box-shadow: 0 6px 14px rgba(56,189,248,.18);
+    }
+
+    .mini-pill.wide { width: 42%; }
+    .mini-pill.mid { width: 28%; }
+    .mini-pill.small { width: 18%; }
+
+    .mini-hero {
+      display: grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap: 10px;
+      flex: 1;
+    }
+
+    .mini-col {
+      border-radius: 14px;
+      background: rgba(17,24,39,.04);
+      padding: 12px;
+      display: grid;
+      gap: 8px;
+      align-content: start;
+    }
+
+    .mini-line {
+      height: 10px;
+      border-radius: 999px;
+      background: rgba(17,24,39,.08);
+    }
+
+    .mini-line.gold {
+      background: linear-gradient(90deg, rgba(14,165,233,.78), rgba(56,189,248,.55));
+      box-shadow: 0 6px 14px rgba(56,189,248,.16);
     }
 
     .feature-icon,
@@ -193,9 +282,10 @@
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      background: rgba(34,211,238,.12);
-      color: #67e8f9;
-      border: 1px solid rgba(34,211,238,.18);
+      background: linear-gradient(180deg, rgba(224,242,254,.96), rgba(186,230,253,.72));
+      color: #0284c7;
+      border: 1px solid rgba(56,189,248,.24);
+      box-shadow: 0 10px 24px rgba(14,165,233,.12);
       font-size: 1.5rem;
     }
 
@@ -213,17 +303,18 @@
     .contact-input {
       width: 100%;
       border-radius: 18px;
-      border: 1px solid rgba(255,255,255,.1);
-      background: rgba(255,255,255,.05);
+      border: 1px solid rgba(17,24,39,.10);
+      background: rgba(255,255,255,.85);
       padding: 14px 18px;
-      color: white;
+      color: var(--text);
       outline: none;
       transition: .25s;
     }
 
     .contact-input:focus {
-      border-color: rgba(34,211,238,.45);
-      box-shadow: 0 0 0 4px rgba(34,211,238,.08);
+      border-color: rgba(14,165,233,.62);
+      box-shadow: 0 0 0 4px rgba(56,189,248,.18);
+      background: #ffffff;
     }
 
     .journey-step {
@@ -239,8 +330,8 @@
       width: 14px;
       height: 14px;
       border-radius: 999px;
-      background: #22d3ee;
-      box-shadow: 0 0 0 8px rgba(34,211,238,.10);
+      background: var(--accent);
+      box-shadow: 0 0 0 8px rgba(56,189,248,.10);
     }
 
     .journey-step::after {
@@ -250,7 +341,7 @@
       top: 2.2rem;
       bottom: -2rem;
       width: 2px;
-      background: linear-gradient(to bottom, rgba(34,211,238,.5), transparent);
+      background: linear-gradient(to bottom, rgba(56,189,248,.50), transparent);
     }
 
     .journey-step:last-child::after {
@@ -264,15 +355,18 @@
       }
       .indent-1 { padding-left: 16px; }
       .indent-2 { padding-left: 30px; }
+      .mini-hero { grid-template-columns: 1fr; }
     }
   </style>
 </head>
 <body>
-  <header class="sticky top-0 z-50 border-b border-white/10 bg-slate-950/75 backdrop-blur-xl">
+  <header class="sticky top-0 z-50 border-b border-black/5 bg-white/75 backdrop-blur-xl">
     <div class="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
-      <a href="#home" class="text-2xl font-extrabold text-cyan-400">WahebSite</a>
+      <a href="#home" class="inline-flex items-center" aria-label="Home">
+        <img src="images/logo.png" alt="Logo" class="h-12 w-auto object-contain drop-shadow-sm">
+      </a>
 
-      <nav class="hidden items-center gap-8 text-sm font-semibold text-white/80 md:flex">
+      <nav class="hidden items-center gap-8 text-sm font-semibold md:flex">
         <a href="#home" class="nav-link">Startseite</a>
         <a href="#about" class="nav-link">Über uns</a>
         <a href="#services" class="nav-link">Leistungen</a>
@@ -285,38 +379,38 @@
     </div>
   </header>
 
-  <section id="home" class="border-b border-white/10">
+  <section id="home" class="border-b border-black/5">
     <div class="mx-auto grid max-w-7xl items-center gap-14 px-6 py-20 lg:grid-cols-2">
       <div class="fade-up">
-        <span class="inline-flex rounded-full border border-cyan-400/20 bg-cyan-400/10 px-4 py-1 text-sm font-semibold text-cyan-300">
+        <span class="inline-flex rounded-full border px-4 py-1 text-sm font-semibold" style="border-color:rgba(56,189,248,.20); background:rgba(56,189,248,.10); color:#0ea5e9;">
           Professionelles Webdesign & schnelle Entwicklung
         </span>
 
         <h1 class="mt-6 text-4xl font-bold leading-tight sm:text-5xl lg:text-6xl">
-          Wir erstellen <span class="text-cyan-400">professionelle Websites</span>, die Vertrauen schaffen und mehr Anfragen bringen
+          Wir erstellen <span style="color:#0ea5e9;">professionelle Websites</span>, die Vertrauen schaffen und mehr Anfragen bringen
         </h1>
 
-        <p class="mt-6 max-w-2xl text-lg leading-8 text-white/75">
+        <p class="mt-6 max-w-2xl text-lg leading-8" style="color:#4b5563;">
           Moderne, schnelle und mobiloptimierte Websites für Unternehmen, Praxen, Restaurants, Onlineshops und persönliche Projekte.
         </p>
 
         <div class="mt-8 flex flex-wrap gap-4">
           <a href="#contact" class="btn-primary rounded-2xl px-6 py-3">Website jetzt anfragen</a>
-          <a href="#projects" class="btn-secondary rounded-2xl border border-white/15 bg-white/5 px-6 py-3 font-semibold text-white">Beispiele ansehen</a>
+          <a href="#projects" class="btn-secondary rounded-2xl border border-black/10 bg-white/60 px-6 py-3 font-semibold">Beispiele ansehen</a>
         </div>
 
         <div class="mt-10 grid gap-4 sm:grid-cols-3">
           <div class="glass rounded-2xl p-5 text-center">
-            <div class="text-2xl font-bold text-cyan-400">48H</div>
-            <p class="mt-2 text-sm text-white/65">Schnelle Umsetzung</p>
+            <div class="text-2xl font-bold" style="color:#0ea5e9;">48H</div>
+            <p class="mt-2 text-sm" style="color:#6b7280;">Schnelle Umsetzung</p>
           </div>
           <div class="glass rounded-2xl p-5 text-center">
-            <div class="text-2xl font-bold text-cyan-400">.com / .de</div>
-            <p class="mt-2 text-sm text-white/65">Eigene Domain</p>
+            <div class="text-2xl font-bold" style="color:#0ea5e9;">.com / .de</div>
+            <p class="mt-2 text-sm" style="color:#6b7280;">Eigene Domain</p>
           </div>
           <div class="glass rounded-2xl p-5 text-center">
-            <div class="text-2xl font-bold text-cyan-400">0€</div>
-            <p class="mt-2 text-sm text-white/65">Zahlung nach Fertigstellung</p>
+            <div class="text-2xl font-bold" style="color:#0ea5e9;">0€</div>
+            <p class="mt-2 text-sm" style="color:#6b7280;">Zahlung nach Fertigstellung</p>
           </div>
         </div>
       </div>
@@ -343,83 +437,83 @@
   <section id="about" class="mx-auto max-w-7xl px-6 py-24">
     <div class="grid items-center gap-14 lg:grid-cols-2">
       <div class="fade-up">
-        <span class="inline-flex rounded-full border border-cyan-400/20 bg-cyan-400/10 px-4 py-1 text-sm font-semibold text-cyan-300">Über uns</span>
+        <span class="inline-flex rounded-full border px-4 py-1 text-sm font-semibold" style="border-color:rgba(56,189,248,.20); background:rgba(56,189,248,.10); color:#0ea5e9;">Über uns</span>
         <h2 class="mt-6 text-4xl font-bold leading-tight sm:text-5xl">
-          Eine Website, die den <span class="text-cyan-400">Wert Ihres Projekts</span> sichtbar macht
+          Eine Website, die den <span style="color:#0ea5e9;">Wert Ihres Projekts</span> sichtbar macht
         </h2>
-        <p class="mt-8 text-lg leading-8 text-white/80">
+        <p class="mt-8 text-lg leading-8" style="color:#4b5563;">
           Wir gestalten klare und elegante Seiten, die Ihre Leistungen schnell erklären und schon auf den ersten Blick Vertrauen schaffen.
         </p>
-        <p class="mt-5 text-lg leading-8 text-white/80">
+        <p class="mt-5 text-lg leading-8" style="color:#4b5563;">
           Ob Arztpraxis, Ingenieurbüro, Restaurant oder Onlineshop – wir entwickeln eine Website, die perfekt zu Ihrer Branche passt.
         </p>
-        <div class="mt-8 rounded-3xl border border-cyan-400/20 bg-gradient-to-r from-cyan-500/10 to-blue-500/10 p-6 shadow-xl">
-          <p class="text-2xl font-bold text-cyan-300">Sie zahlen erst, wenn Ihre Website vollständig fertig ist.</p>
+        <div class="mt-8 rounded-3xl border p-6 shadow-xl" style="border-color:rgba(56,189,248,.20); background:linear-gradient(to right, rgba(56,189,248,.10), rgba(255,255,255,.92));">
+          <p class="text-2xl font-bold" style="color:#0ea5e9;">Sie zahlen erst, wenn Ihre Website vollständig fertig ist.</p>
         </div>
       </div>
 
       <div class="grid gap-5 sm:grid-cols-2">
         <div class="glass rounded-3xl p-8 shadow-2xl sm:col-span-2">
           <div class="grid gap-6 md:grid-cols-3">
-            <div class="rounded-2xl border border-white/10 bg-white/5 p-5 text-center">
+            <div class="rounded-2xl border border-black/5 bg-white/70 p-5 text-center">
               <div class="feature-icon mx-auto">⚡</div>
               <h3 class="mt-4 text-lg font-bold">Hohe Geschwindigkeit</h3>
-              <p class="mt-2 text-sm text-white/65">Eine schnellere Erfahrung für Ihre Besucher auf allen Geräten.</p>
+              <p class="mt-2 text-sm" style="color:#6b7280;">Eine schnellere Erfahrung für Ihre Besucher auf allen Geräten.</p>
             </div>
-            <div class="rounded-2xl border border-white/10 bg-white/5 p-5 text-center">
+            <div class="rounded-2xl border border-black/5 bg-white/70 p-5 text-center">
               <div class="feature-icon mx-auto">📱</div>
               <h3 class="mt-4 text-lg font-bold">Mobil optimiert</h3>
-              <p class="mt-2 text-sm text-white/65">Saubere und responsive Darstellung auf Smartphone und Tablet.</p>
+              <p class="mt-2 text-sm" style="color:#6b7280;">Saubere und responsive Darstellung auf Smartphone und Tablet.</p>
             </div>
-            <div class="rounded-2xl border border-white/10 bg-white/5 p-5 text-center">
+            <div class="rounded-2xl border border-black/5 bg-white/70 p-5 text-center">
               <div class="feature-icon mx-auto">🎯</div>
               <h3 class="mt-4 text-lg font-bold">Mehr Anfragen</h3>
-              <p class="mt-2 text-sm text-white/65">Klare Kontaktbuttons und überzeugende Inhalte steigern die Conversion.</p>
+              <p class="mt-2 text-sm" style="color:#6b7280;">Klare Kontaktbuttons und überzeugende Inhalte steigern die Conversion.</p>
             </div>
           </div>
         </div>
-        <div class="section-card rounded-3xl border border-white/10 bg-slate-900/60 p-6 shadow-xl">
+        <div class="section-card rounded-3xl border border-black/5 bg-white/70 p-6 shadow-xl">
           <div class="service-icon">🗓️</div>
-          <h3 class="mt-4 text-xl font-bold text-white">Buchungssysteme</h3>
-          <p class="mt-3 text-sm leading-7 text-white/70">Ideal für Praxen, Salons, Beratungen und Dienstleister.</p>
+          <h3 class="mt-4 text-xl font-bold">Buchungssysteme</h3>
+          <p class="mt-3 text-sm leading-7" style="color:#6b7280;">Ideal für Praxen, Salons, Beratungen und Dienstleister.</p>
         </div>
-        <div class="section-card rounded-3xl border border-cyan-400/15 bg-gradient-to-br from-cyan-400/10 to-blue-500/10 p-6 shadow-xl">
+        <div class="section-card rounded-3xl border p-6 shadow-xl" style="border-color:rgba(56,189,248,.15); background:linear-gradient(to bottom right, rgba(56,189,248,.10), rgba(255,255,255,.94));">
           <div class="service-icon">✨</div>
-          <h3 class="mt-4 text-xl font-bold text-white">Starker erster Eindruck</h3>
-          <p class="mt-3 text-sm leading-7 text-white/70">Elegantes Design und klare Struktur zeigen direkt die Stärke Ihrer Marke.</p>
+          <h3 class="mt-4 text-xl font-bold">Starker erster Eindruck</h3>
+          <p class="mt-3 text-sm leading-7" style="color:#6b7280;">Elegantes Design und klare Struktur zeigen direkt die Stärke Ihrer Marke.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <section id="services" class="border-y border-white/10 bg-white/5">
+  <section id="services" class="border-y border-black/5 bg-white/35">
     <div class="mx-auto max-w-7xl px-6 py-24">
       <div class="max-w-2xl fade-up">
-        <p class="text-sm font-semibold uppercase tracking-[0.2em] text-cyan-400">Leistungen</p>
+        <p class="text-sm font-semibold uppercase tracking-[0.2em]" style="color:#0ea5e9;">Leistungen</p>
         <h2 class="mt-3 text-3xl font-bold sm:text-4xl">Alles, was Sie für eine starke Online-Präsenz brauchen</h2>
-        <p class="mt-4 leading-8 text-white/70">Komplette Lösungen vom Design bis zum Launch und Support.</p>
+        <p class="mt-4 leading-8" style="color:#6b7280;">Komplette Lösungen vom Design bis zum Launch und Support.</p>
       </div>
 
       <div class="mt-12 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
-        <div class="section-card rounded-3xl border border-white/10 bg-slate-900/70 p-6 shadow-xl">
+        <div class="section-card rounded-3xl border border-black/5 bg-white/80 p-6 shadow-xl">
           <div class="service-icon">🌐</div>
           <h3 class="mt-5 text-xl font-semibold">Professionelles Webdesign</h3>
-          <p class="mt-3 text-sm leading-7 text-white/65">Modernes Design, klarer Aufbau und starke Markenwirkung.</p>
+          <p class="mt-3 text-sm leading-7" style="color:#6b7280;">Modernes Design, klarer Aufbau und starke Markenwirkung.</p>
         </div>
-        <div class="section-card rounded-3xl border border-white/10 bg-slate-900/70 p-6 shadow-xl">
+        <div class="section-card rounded-3xl border border-black/5 bg-white/80 p-6 shadow-xl">
           <div class="service-icon">🛒</div>
           <h3 class="mt-5 text-xl font-semibold">Onlineshops</h3>
-          <p class="mt-3 text-sm leading-7 text-white/65">Strukturierte Produktseiten und ein angenehmer Kaufprozess.</p>
+          <p class="mt-3 text-sm leading-7" style="color:#6b7280;">Strukturierte Produktseiten und ein angenehmer Kaufprozess.</p>
         </div>
-        <div class="section-card rounded-3xl border border-white/10 bg-slate-900/70 p-6 shadow-xl">
+        <div class="section-card rounded-3xl border border-black/5 bg-white/80 p-6 shadow-xl">
           <div class="service-icon">⚙️</div>
           <h3 class="mt-5 text-xl font-semibold">Individuelle Entwicklung</h3>
-          <p class="mt-3 text-sm leading-7 text-white/65">Formulare, Spezialseiten und Funktionen nach Ihrem Bedarf.</p>
+          <p class="mt-3 text-sm leading-7" style="color:#6b7280;">Formulare, Spezialseiten und Funktionen nach Ihrem Bedarf.</p>
         </div>
-        <div class="section-card rounded-3xl border border-white/10 bg-slate-900/70 p-6 shadow-xl">
+        <div class="section-card rounded-3xl border border-black/5 bg-white/80 p-6 shadow-xl">
           <div class="service-icon">🚀</div>
           <h3 class="mt-5 text-xl font-semibold">Performance & Support</h3>
-          <p class="mt-3 text-sm leading-7 text-white/65">Hohe Geschwindigkeit, bessere Nutzererfahrung und Support nach der Fertigstellung.</p>
+          <p class="mt-3 text-sm leading-7" style="color:#6b7280;">Hohe Geschwindigkeit, bessere Nutzererfahrung und Support nach der Fertigstellung.</p>
         </div>
       </div>
     </div>
@@ -427,9 +521,9 @@
 
   <section id="why" class="mx-auto max-w-6xl px-6 py-24">
     <div class="fade-up text-center">
-      <p class="text-sm font-semibold uppercase tracking-[0.2em] text-cyan-400">Warum eine Website?</p>
+      <p class="text-sm font-semibold uppercase tracking-[0.2em]" style="color:#0ea5e9;">Warum eine Website?</p>
       <h2 class="mt-3 text-3xl font-bold sm:text-4xl">Eine Website ist nicht nur Design – sie ist ein Werkzeug für Wachstum</h2>
-      <p class="mx-auto mt-4 max-w-3xl leading-8 text-white/70">
+      <p class="mx-auto mt-4 max-w-3xl leading-8" style="color:#6b7280;">
         Mit einer klaren, schnellen und überzeugenden Website werden Sie einfacher gefunden und gewinnen mehr Vertrauen bei Ihren Kunden.
       </p>
     </div>
@@ -437,32 +531,32 @@
     <div class="mt-16 grid gap-8 lg:grid-cols-2">
       <div class="glass rounded-[2rem] p-8 shadow-xl">
         <div class="journey-step pb-10">
-          <h3 class="text-2xl font-bold text-cyan-300">Bessere Sichtbarkeit</h3>
-          <p class="mt-3 leading-8 text-white/75">Ihre Website hilft Ihnen, jederzeit von Menschen gefunden zu werden, die nach Ihren Leistungen suchen.</p>
+          <h3 class="text-2xl font-bold" style="color:#0ea5e9;">Bessere Sichtbarkeit</h3>
+          <p class="mt-3 leading-8" style="color:#4b5563;">Ihre Website hilft Ihnen, jederzeit von Menschen gefunden zu werden, die nach Ihren Leistungen suchen.</p>
         </div>
         <div class="journey-step pb-10">
-          <h3 class="text-2xl font-bold text-cyan-300">Mehr Vertrauen</h3>
-          <p class="mt-3 leading-8 text-white/75">Ein professioneller Webauftritt zeigt, dass Ihr Unternehmen organisiert, modern und seriös ist.</p>
+          <h3 class="text-2xl font-bold" style="color:#0ea5e9;">Mehr Vertrauen</h3>
+          <p class="mt-3 leading-8" style="color:#4b5563;">Ein professioneller Webauftritt zeigt, dass Ihr Unternehmen organisiert, modern und seriös ist.</p>
         </div>
         <div class="journey-step">
-          <h3 class="text-2xl font-bold text-cyan-300">Mehr Anfragen</h3>
-          <p class="mt-3 leading-8 text-white/75">Klare Kontaktwege und ein überzeugendes Angebot machen aus Besuchern potenzielle Kunden.</p>
+          <h3 class="text-2xl font-bold" style="color:#0ea5e9;">Mehr Anfragen</h3>
+          <p class="mt-3 leading-8" style="color:#4b5563;">Klare Kontaktwege und ein überzeugendes Angebot machen aus Besuchern potenzielle Kunden.</p>
         </div>
       </div>
 
       <div class="grid gap-6">
-        <div class="section-card rounded-3xl border border-white/10 bg-slate-900/70 p-6 shadow-xl">
+        <div class="section-card rounded-3xl border border-black/5 bg-white/80 p-6 shadow-xl">
           <h3 class="text-2xl font-bold">Was bringt Ihnen eine Website?</h3>
-          <ul class="mt-5 space-y-3 text-white/75">
+          <ul class="mt-5 space-y-3" style="color:#4b5563;">
             <li>• Klare Darstellung Ihrer Leistungen, Vorteile und Kontaktmöglichkeiten</li>
             <li>• Mehr Anfragen, Buchungen und Kundenkontakte</li>
             <li>• Direkte Verbindung zu WhatsApp, E-Mail und Social Media</li>
             <li>• Ein professionelles Erscheinungsbild für Ihre Marke</li>
           </ul>
         </div>
-        <div class="section-card rounded-3xl border border-cyan-400/15 bg-gradient-to-br from-cyan-400/10 to-blue-500/10 p-6 shadow-xl">
-          <h3 class="text-2xl font-bold text-white">Das Ergebnis</h3>
-          <p class="mt-4 leading-8 text-white/80">Starke Struktur + Geschwindigkeit + klare Botschaft = mehr Kunden, mehr Umsatz und mehr Reichweite.</p>
+        <div class="section-card rounded-3xl border p-6 shadow-xl" style="border-color:rgba(56,189,248,.16); background:linear-gradient(to bottom right, rgba(56,189,248,.10), rgba(255,255,255,.92));">
+          <h3 class="text-2xl font-bold">Das Ergebnis</h3>
+          <p class="mt-4 leading-8" style="color:#4b5563;">Starke Struktur + Geschwindigkeit + klare Botschaft = mehr Kunden, mehr Umsatz und mehr Reichweite.</p>
         </div>
       </div>
     </div>
@@ -470,37 +564,91 @@
 
   <section id="projects" class="mx-auto max-w-7xl px-6 py-24">
     <div class="fade-up">
-      <p class="text-sm font-semibold uppercase tracking-[0.2em] text-cyan-400">Projekte</p>
+      <p class="text-sm font-semibold uppercase tracking-[0.2em]" style="color:#0ea5e9;">Projekte</p>
       <h2 class="mt-3 text-3xl font-bold sm:text-4xl">Beispiele für Websites, die wir erstellen</h2>
-      <p class="mt-4 max-w-2xl leading-8 text-white/70">Die Inhalte, Farben und Funktionen werden individuell an Ihr Projekt angepasst.</p>
+      <p class="mt-4 max-w-2xl leading-8" style="color:#6b7280;">Die Inhalte, Farben und Funktionen werden individuell an Ihr Projekt angepasst.</p>
     </div>
 
     <div class="mt-12 grid gap-6 md:grid-cols-3">
-      <div class="section-card overflow-hidden rounded-3xl border border-white/10 bg-slate-900/70 shadow-xl">
-        <div class="image-wrap h-52">
-          <img src="images/business-site.jpg" alt="Business Website" loading="lazy" />
+      <div class="section-card overflow-hidden rounded-3xl border border-black/5 bg-white/85 shadow-xl">
+        <div class="project-art">
+          <div class="mini-ui">
+            <div class="mini-ui-top">
+              <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
+            </div>
+            <div class="mini-pill wide"></div>
+            <div class="mini-hero">
+              <div class="mini-col">
+                <div class="mini-line gold" style="width:80%;"></div>
+                <div class="mini-line" style="width:100%;"></div>
+                <div class="mini-line" style="width:74%;"></div>
+                <div class="mini-line gold" style="width:54%; height:32px; border-radius:12px;"></div>
+              </div>
+              <div class="mini-col">
+                <div class="mini-line" style="height:100%; min-height:96px;"></div>
+              </div>
+            </div>
+          </div>
         </div>
         <div class="p-6">
           <h3 class="mt-2 text-2xl font-semibold">Business Website</h3>
-          <p class="mt-3 text-sm leading-7 text-white/65">Professionelle Präsentation für Firmen, Dienstleistungen und starke Markenauftritte.</p>
+          <p class="mt-3 text-sm leading-7" style="color:#6b7280;">Professionelle Präsentation für Firmen, Dienstleistungen und starke Markenauftritte.</p>
         </div>
       </div>
-      <div class="section-card overflow-hidden rounded-3xl border border-white/10 bg-slate-900/70 shadow-xl">
-        <div class="image-wrap h-52">
-          <img src="images/booking-site.jpg" alt="Booking Website" loading="lazy" />
+
+      <div class="section-card overflow-hidden rounded-3xl border border-black/5 bg-white/85 shadow-xl">
+        <div class="project-art">
+          <div class="mini-ui">
+            <div class="mini-ui-top">
+              <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
+            </div>
+            <div class="mini-pill mid"></div>
+            <div class="mini-hero">
+              <div class="mini-col">
+                <div class="mini-line gold" style="width:72%;"></div>
+                <div class="mini-line" style="width:92%;"></div>
+                <div class="mini-line" style="width:88%;"></div>
+                <div class="mini-line" style="width:64%;"></div>
+              </div>
+              <div class="mini-col">
+                <div class="mini-line gold" style="height:44px; border-radius:12px;"></div>
+                <div class="mini-line" style="width:86%;"></div>
+                <div class="mini-line" style="width:72%;"></div>
+                <div class="mini-line gold" style="width:50%;"></div>
+              </div>
+            </div>
+          </div>
         </div>
         <div class="p-6">
           <h3 class="mt-2 text-2xl font-semibold">Booking Website</h3>
-          <p class="mt-3 text-sm leading-7 text-white/65">Ideal für Terminbuchungen, Reservierungen und dienstleistungsorientierte Angebote.</p>
+          <p class="mt-3 text-sm leading-7" style="color:#6b7280;">Ideal für Terminbuchungen, Reservierungen und dienstleistungsorientierte Angebote.</p>
         </div>
       </div>
-      <div class="section-card overflow-hidden rounded-3xl border border-white/10 bg-slate-900/70 shadow-xl">
-        <div class="image-wrap h-52">
-          <img src="images/ecommerce-site.jpg" alt="Ecommerce Website" loading="lazy" />
+
+      <div class="section-card overflow-hidden rounded-3xl border border-black/5 bg-white/85 shadow-xl">
+        <div class="project-art">
+          <div class="mini-ui">
+            <div class="mini-ui-top">
+              <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
+            </div>
+            <div class="mini-pill small"></div>
+            <div class="mini-hero">
+              <div class="mini-col">
+                <div class="mini-line gold" style="width:62%;"></div>
+                <div class="mini-line" style="width:98%;"></div>
+                <div class="mini-line" style="width:76%;"></div>
+              </div>
+              <div class="mini-col">
+                <div class="mini-line" style="height:48px; border-radius:12px;"></div>
+                <div class="mini-line gold" style="width:68%;"></div>
+                <div class="mini-line" style="width:80%;"></div>
+              </div>
+            </div>
+          </div>
         </div>
         <div class="p-6">
           <h3 class="mt-2 text-2xl font-semibold">Ecommerce Website</h3>
-          <p class="mt-3 text-sm leading-7 text-white/65">Perfekt für Online-Verkauf, Produktpräsentation und moderne digitale Einkaufserlebnisse.</p>
+          <p class="mt-3 text-sm leading-7" style="color:#6b7280;">Perfekt für Online-Verkauf, Produktpräsentation und moderne digitale Einkaufserlebnisse.</p>
         </div>
       </div>
     </div>
@@ -510,11 +658,11 @@
     <div class="grid gap-8 lg:grid-cols-2">
       <div class="glass rounded-[2rem] p-10 shadow-2xl">
         <h2 class="text-3xl font-bold sm:text-4xl">Bereit für Ihre neue Website?</h2>
-        <p class="mt-4 text-lg leading-8 text-white/80">
+        <p class="mt-4 text-lg leading-8" style="color:#4b5563;">
           Starten Sie jetzt mit einer modernen, schnellen Website, die Ihrem Projekt eine starke Online-Präsenz gibt.
         </p>
 
-        <div class="mt-8 space-y-4 text-white/75">
+        <div class="mt-8 space-y-4" style="color:#4b5563;">
           <p>✓ Kostenlose Erstberatung</p>
           <p>✓ Individuelles Design passend zu Ihrem Unternehmen</p>
           <p>✓ Zahlung erst nach vollständiger Fertigstellung</p>
@@ -524,7 +672,7 @@
           <a href="https://wa.me/+4915213873166" target="_blank" rel="noreferrer" class="btn-primary inline-block rounded-2xl px-8 py-3">
             Kontakt über WhatsApp
           </a>
-          <a href="mailto:wahebwahbe100@gmail.com" class="btn-secondary inline-block rounded-2xl border border-white/15 bg-white/5 px-8 py-3 font-semibold text-white">
+          <a href="mailto:wahebwahbe100@gmail.com" class="btn-secondary inline-block rounded-2xl border border-black/10 bg-white/70 px-8 py-3 font-semibold">
             Kontakt per E-Mail
           </a>
         </div>
@@ -533,15 +681,15 @@
       <div class="glass rounded-[2rem] p-8 shadow-2xl">
         <form class="space-y-4" onsubmit="submitForm(event)">
           <div>
-            <label class="mb-2 block text-sm text-white/70">Name</label>
+            <label class="mb-2 block text-sm" style="color:#6b7280;">Name</label>
             <input type="text" class="contact-input" placeholder="Ihr Name" required>
           </div>
           <div>
-            <label class="mb-2 block text-sm text-white/70">E-Mail</label>
+            <label class="mb-2 block text-sm" style="color:#6b7280;">E-Mail</label>
             <input type="email" class="contact-input" placeholder="name@example.com" required>
           </div>
           <div>
-            <label class="mb-2 block text-sm text-white/70">Projektart</label>
+            <label class="mb-2 block text-sm" style="color:#6b7280;">Projektart</label>
             <select class="contact-input" required>
               <option value="">Bitte wählen</option>
               <option>Business Website</option>
@@ -551,22 +699,22 @@
             </select>
           </div>
           <div>
-            <label class="mb-2 block text-sm text-white/70">Projektbeschreibung</label>
+            <label class="mb-2 block text-sm" style="color:#6b7280;">Projektbeschreibung</label>
             <textarea class="contact-input min-h-[140px] resize-none" placeholder="Beschreiben Sie Ihr Projekt" required></textarea>
           </div>
           <button class="btn-primary w-full rounded-2xl px-6 py-3">Anfrage senden</button>
-          <p id="formMessage" class="hidden text-center font-semibold text-cyan-300">Ihre Anfrage wurde erfolgreich gesendet. Wir melden uns bald bei Ihnen.</p>
+          <p id="formMessage" class="hidden text-center font-semibold" style="color:#0ea5e9;">Ihre Anfrage wurde erfolgreich gesendet. Wir melden uns bald bei Ihnen.</p>
         </form>
       </div>
     </div>
   </section>
 
-  <footer class="border-t border-white/10 bg-slate-950">
-    <div class="mx-auto max-w-7xl px-6 py-10 text-center text-sm text-white/70">
-      <p>© 2026 Alle Rechte vorbehalten <span class="font-semibold text-white">WahebSite</span></p>
-      <p class="mt-2">E-Mail: <a href="mailto:wahebwahbe100@gmail.com" class="text-cyan-400 hover:underline">wahebwahbe100@gmail.com</a></p>
-      <p class="mt-2">WhatsApp: <a href="https://wa.me/+4915213873166" class="text-cyan-400 hover:underline">+49 1521 3873166</a></p>
-      <p class="mt-4 text-white/60">Made with ❤️ in Germany</p>
+  <footer class="border-t border-black/5 bg-white/70">
+    <div class="mx-auto max-w-7xl px-6 py-10 text-center text-sm" style="color:#4b5563;">
+      <p class="flex items-center justify-center gap-3">© 2026 Alle Rechte vorbehalten <img src="images/logo.png" alt="Logo" class="h-10 w-auto object-contain align-middle"></p>
+      <p class="mt-2">E-Mail: <a href="mailto:wahebwahbe100@gmail.com" style="color:#0ea5e9;">wahebwahbe100@gmail.com</a></p>
+      <p class="mt-2">WhatsApp: <a href="https://wa.me/+4915213873166" style="color:#0ea5e9;">+49 1521 3873166</a></p>
+      <p class="mt-4" style="color:#6b7280;">Made with ❤️ in Germany</p>
     </div>
   </footer>
 
@@ -581,10 +729,10 @@
 
     const typingElement = document.getElementById('typingText');
     const typingLines = [
-      { plain: 'design: "premium",', html: '<span class="code-key">design</span>: <span class="code-value">"premium"</span>,' },
+      { plain: 'design: "elegant",', html: '<span class="code-key">design</span>: <span class="code-value">"elegant"</span>,' },
       { plain: 'speed: "fast",', html: '<span class="code-key">speed</span>: <span class="code-value">"fast"</span>,' },
       { plain: 'mobile: true,', html: '<span class="code-key">mobile</span>: <span class="code-value">true</span>,' },
-      { plain: 'conversions: "high",', html: '<span class="code-key">conversions</span>: <span class="code-value">"high"</span>,' }
+      { plain: 'trust: "strong",', html: '<span class="code-key">trust</span>: <span class="code-value">"strong"</span>,' }
     ];
 
     let typingLineIndex = 0;
