@@ -8,7 +8,7 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
     html { scroll-behavior: smooth; }
 
@@ -29,8 +29,12 @@
       background: var(--bg);
       color: var(--text);
       overflow-x: hidden;
-      font-family: 'Playfair Display', serif;
+      font-family: 'Inter', sans-serif;
       position: relative;
+    }
+
+    h1, h2, h3, h4 {
+      font-family: 'Playfair Display', serif;
     }
 
     body::before {
@@ -114,8 +118,16 @@
       transform: translateY(-2px);
     }
 
-    header img, footer img {
-      filter: drop-shadow(0 6px 18px rgba(56,189,248,.18));
+    .logo-wide {
+      height: 52px;
+      width: 200px;
+      object-fit: contain;
+      filter: drop-shadow(0 8px 20px rgba(56,189,248,.22));
+    }
+
+    .logo-wide.footer-logo {
+      height: 46px;
+      width: 180px;
     }
 
     .hero-card {
@@ -199,14 +211,74 @@
       border-radius: 20px 20px 0 0;
       overflow: hidden;
       position: relative;
-      background: #f3f4f6;
+      background: linear-gradient(135deg, #e0f2fe 0%, #ffffff 50%, #f3f4f6 100%);
+      display: grid;
+      place-items: center;
     }
 
-    .project-art img {
+    .project-frame {
+      width: 88%;
+      height: 80%;
+      border-radius: 20px;
+      border: 1px solid rgba(17,24,39,.08);
+      background: rgba(255,255,255,.9);
+      box-shadow: 0 16px 38px rgba(17,24,39,.12);
+      overflow: hidden;
+    }
+
+    .project-topbar {
+      height: 38px;
+      border-bottom: 1px solid rgba(17,24,39,.08);
+      background: rgba(248,250,252,.95);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 0 14px;
+    }
+
+    .project-mini {
+      padding: 14px;
+      display: grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap: 12px;
+      height: calc(100% - 38px);
+    }
+
+    .mini-left, .mini-right {
+      border-radius: 14px;
+      background: linear-gradient(180deg, rgba(240,249,255,.95), rgba(255,255,255,.98));
+      border: 1px solid rgba(56,189,248,.14);
+    }
+
+    .mini-left {
+      padding: 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .mini-line {
+      height: 10px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, rgba(56,189,248,.35), rgba(15,23,42,.08));
+    }
+
+    .mini-line.short { width: 56%; }
+    .mini-line.medium { width: 72%; }
+    .mini-line.long { width: 88%; }
+
+    .mini-right {
+      display: grid;
+      place-items: center;
+      padding: 10px;
+    }
+
+    .mini-card {
       width: 100%;
       height: 100%;
-      object-fit: cover;
-      display: block;
+      border-radius: 12px;
+      background: linear-gradient(135deg, rgba(186,230,253,.8), rgba(255,255,255,1));
+      border: 1px solid rgba(56,189,248,.18);
     }
 
     .feature-icon,
@@ -283,6 +355,23 @@
       display: none;
     }
 
+    .mobile-menu {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height .35s ease;
+    }
+
+    .mobile-menu.open {
+      max-height: 500px;
+    }
+
+    @media (max-width: 1024px) {
+      .logo-wide {
+        width: 170px;
+        height: 48px;
+      }
+    }
+
     @media (max-width: 768px) {
       .code-body {
         font-size: 16px;
@@ -290,6 +379,16 @@
       }
       .indent-1 { padding-left: 16px; }
       .indent-2 { padding-left: 30px; }
+
+      .logo-wide {
+        width: 150px;
+        height: 42px;
+      }
+
+      .logo-wide.footer-logo {
+        width: 150px;
+        height: 40px;
+      }
     }
   </style>
 </head>
@@ -297,7 +396,7 @@
   <header class="sticky top-0 z-50 border-b border-black/10 bg-white/75 backdrop-blur-xl">
     <div class="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
       <a href="#home" class="inline-flex items-center" aria-label="Home">
-        <img src="images/logo.png" alt="Logo" class="h-12 w-auto object-contain drop-shadow-sm">
+        <img src="images/logo.png" alt="Logo" class="logo-wide">
       </a>
 
       <nav class="hidden items-center gap-8 text-sm font-semibold md:flex">
@@ -309,7 +408,24 @@
         <a href="#contact" class="nav-link">Kontakt</a>
       </nav>
 
-      <a href="#contact" class="btn-primary rounded-xl px-5 py-2 text-sm">Jetzt starten</a>
+      <div class="flex items-center gap-3">
+        <a href="#contact" class="hidden btn-primary rounded-xl px-5 py-2 text-sm md:inline-block">Jetzt starten</a>
+        <button id="menuBtn" class="inline-flex h-11 w-11 items-center justify-center rounded-xl border border-black/10 bg-white/70 md:hidden" aria-label="Menü öffnen">
+          ☰
+        </button>
+      </div>
+    </div>
+
+    <div id="mobileMenu" class="mobile-menu border-t border-black/10 bg-white/90 md:hidden">
+      <div class="mx-auto flex max-w-7xl flex-col px-6 py-4 text-sm font-semibold">
+        <a href="#home" class="py-3">Startseite</a>
+        <a href="#about" class="py-3">Über uns</a>
+        <a href="#services" class="py-3">Leistungen</a>
+        <a href="#why" class="py-3">Warum eine Website?</a>
+        <a href="#projects" class="py-3">Projekte</a>
+        <a href="#contact" class="py-3">Kontakt</a>
+        <a href="#contact" class="btn-primary mt-3 rounded-xl px-5 py-3 text-center">Jetzt starten</a>
+      </div>
     </div>
   </header>
 
@@ -506,7 +622,20 @@
     <div class="mt-12 grid gap-6 md:grid-cols-3">
       <div class="section-card overflow-hidden rounded-3xl border border-black/10 bg-white/85 shadow-xl">
         <div class="project-art">
-          <img src="images/business-site.jpg" alt="Business Website Beispiel">
+          <div class="project-frame">
+            <div class="project-topbar">
+              <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
+            </div>
+            <div class="project-mini">
+              <div class="mini-left">
+                <div class="mini-line long"></div>
+                <div class="mini-line medium"></div>
+                <div class="mini-line short"></div>
+                <div class="mini-line long"></div>
+              </div>
+              <div class="mini-right"><div class="mini-card"></div></div>
+            </div>
+          </div>
         </div>
         <div class="p-6">
           <h3 class="mt-2 text-2xl font-semibold">Business Website</h3>
@@ -516,7 +645,20 @@
 
       <div class="section-card overflow-hidden rounded-3xl border border-black/10 bg-white/85 shadow-xl">
         <div class="project-art">
-          <img src="images/booking-site.png" alt="Booking Website Beispiel">
+          <div class="project-frame">
+            <div class="project-topbar">
+              <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
+            </div>
+            <div class="project-mini">
+              <div class="mini-left">
+                <div class="mini-line medium"></div>
+                <div class="mini-line long"></div>
+                <div class="mini-line medium"></div>
+                <div class="mini-line short"></div>
+              </div>
+              <div class="mini-right"><div class="mini-card"></div></div>
+            </div>
+          </div>
         </div>
         <div class="p-6">
           <h3 class="mt-2 text-2xl font-semibold">Booking Website</h3>
@@ -526,7 +668,20 @@
 
       <div class="section-card overflow-hidden rounded-3xl border border-black/10 bg-white/85 shadow-xl">
         <div class="project-art">
-          <img src="images/ecommerce-site.jpg" alt="Ecommerce Website Beispiel">
+          <div class="project-frame">
+            <div class="project-topbar">
+              <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
+            </div>
+            <div class="project-mini">
+              <div class="mini-left">
+                <div class="mini-line long"></div>
+                <div class="mini-line long"></div>
+                <div class="mini-line medium"></div>
+                <div class="mini-line short"></div>
+              </div>
+              <div class="mini-right"><div class="mini-card"></div></div>
+            </div>
+          </div>
         </div>
         <div class="p-6">
           <h3 class="mt-2 text-2xl font-semibold">Ecommerce Website</h3>
@@ -593,7 +748,7 @@
 
   <footer class="border-t border-black/10 bg-white/70">
     <div class="mx-auto max-w-7xl px-6 py-10 text-center text-sm" style="color:#4b5563;">
-      <p class="flex items-center justify-center gap-3">© 2026 Alle Rechte vorbehalten <img src="images/logo.png" alt="Logo" class="h-10 w-auto object-contain align-middle"></p>
+      <p class="flex flex-wrap items-center justify-center gap-3">© 2026 Alle Rechte vorbehalten <img src="images/logo.png" alt="Logo" class="logo-wide footer-logo align-middle"></p>
       <p class="mt-2">E-Mail: <a href="mailto:wahebwahbe100@gmail.com" style="color:#0ea5e9;">wahebwahbe100@gmail.com</a></p>
       <p class="mt-2">WhatsApp: <a href="https://wa.me/+4915213873166" style="color:#0ea5e9;">+49 1521 3873166</a></p>
       <p class="mt-4" style="color:#6b7280;">Made with ❤️ in Germany</p>
@@ -698,6 +853,21 @@
 
       navLinks.forEach(link => {
         link.classList.toggle('active', link.getAttribute('href') === '#' + currentId);
+      });
+    });
+
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+
+    menuBtn?.addEventListener('click', () => {
+      mobileMenu.classList.toggle('open');
+      menuBtn.textContent = mobileMenu.classList.contains('open') ? '✕' : '☰';
+    });
+
+    mobileMenu?.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.remove('open');
+        menuBtn.textContent = '☰';
       });
     });
   </script>
