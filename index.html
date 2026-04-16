@@ -117,30 +117,6 @@
       background: rgba(17,24,39,0.04);
       transform: translateY(-2px);
     }
-
-    .header-logo {
-      height: 44px;
-      width: 300px;
-      object-fit: contain;
-      object-position: center;
-      display: block;
-      image-rendering: -webkit-optimize-contrast;
-      image-rendering: crisp-edges;
-      filter: drop-shadow(0 6px 16px rgba(56,189,248,.20));
-    }
-
-    .footer-logo {
-      height: 40px;
-      width: 220px;
-      object-fit: contain;
-      object-position: center;
-      display: inline-block;
-      image-rendering: -webkit-optimize-contrast;
-      image-rendering: crisp-edges;
-      filter: drop-shadow(0 6px 14px rgba(56,189,248,.16));
-      vertical-align: middle;
-    }
-
 .hero-card {
       position: relative;
       overflow: hidden;
@@ -378,12 +354,12 @@
 
     @media (max-width: 1024px) {
       .header-logo {
-        width: 260px;
+        width: 280px;
         height: 42px;
       }
 
       .footer-logo {
-        width: 200px;
+        width: 220px;
         height: 38px;
       }
     }
@@ -396,29 +372,15 @@
       .indent-1 { padding-left: 16px; }
       .indent-2 { padding-left: 30px; }
 
-    .header-logo {
-      height: 44px;
-      width: 300px;
-      object-fit: contain;
-      object-position: center;
-      display: block;
-      image-rendering: -webkit-optimize-contrast;
-      image-rendering: crisp-edges;
-      filter: drop-shadow(0 6px 16px rgba(56,189,248,.20));
-    }
+      .header-logo {
+        width: 230px;
+        height: 40px;
+      }
 
-    .footer-logo {
-      height: 40px;
-      width: 220px;
-      object-fit: contain;
-      object-position: center;
-      display: inline-block;
-      image-rendering: -webkit-optimize-contrast;
-      image-rendering: crisp-edges;
-      filter: drop-shadow(0 6px 14px rgba(56,189,248,.16));
-      vertical-align: middle;
-    }
-
+      .footer-logo {
+        width: 180px;
+        height: 34px;
+      }
 }
   </style>
 </head>
@@ -426,7 +388,7 @@
   <header class="sticky top-0 z-50 border-b border-black/10 bg-white/75 backdrop-blur-xl">
     <div class="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
       <a href="#home" class="inline-flex items-center" aria-label="Home">
-        <img src="images/logo.png" alt="Logo" class="header-logo">
+        <img src="logo.png" alt="Logo" class="footer-logo">
       </a>
 
       <nav class="hidden items-center gap-8 text-sm font-semibold md:flex">
@@ -778,7 +740,7 @@
 
   <footer class="border-t border-black/10 bg-white/70">
     <div class="mx-auto max-w-7xl px-6 py-10 text-center text-sm" style="color:#4b5563;">
-      <p class="flex flex-wrap items-center justify-center gap-3">© 2026 Alle Rechte vorbehalten <img src="images/logo.png" alt="Logo" class="footer-logo"></p>
+      <p class="flex flex-wrap items-center justify-center gap-3">© 2026 Alle Rechte vorbehalten <img src="logo.png" alt="Logo" class="footer-logo"></p>
       <p class="mt-2">E-Mail: <a href="mailto:wahebwahbe100@gmail.com" style="color:#0ea5e9;">wahebwahbe100@gmail.com</a></p>
       <p class="mt-2">WhatsApp: <a href="https://wa.me/+4915213873166" style="color:#0ea5e9;">+49 1521 3873166</a></p>
       <p class="mt-4" style="color:#6b7280;">Made with ❤️ in Germany</p>
