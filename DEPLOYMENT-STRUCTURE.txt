@@ -1,0 +1,20 @@
+Richtige Struktur im Hauptverzeichnis des Servers:
+/
+├── index.html
+├── favicon.ico
+├── favicon.png
+├── robots.txt
+├── sitemap.xml
+├── README.md
+├── images/
+├── pages/
+│   ├── standorte.html
+│   ├── ueber-uns.html
+│   ├── cities/
+│   └── legal/
+└── seo/   (optional, nur interne Ablage)
+
+Wichtig:
+- favicon.ico und favicon.png müssen im Root liegen.
+- robots.txt und sitemap.xml sollten ebenfalls im Root liegen.
+- In allen HTML-Dateien wurden absolute Pfade für das Favicon gesetzt.
