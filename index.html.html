@@ -1,0 +1,1009 @@
+<!DOCTYPE html>
+
+<html lang="de">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-18130743239"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'AW-18130743239');
+</script>
+
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><link href="/favicon.ico" rel="icon" sizes="any"/><link href="/favicon.png" rel="icon" sizes="32x32" type="image/png"/><link href="/favicon.ico" rel="shortcut icon"/><link href="/favicon.png" rel="apple-touch-icon"/>
+
+<title>Webdesign Deutschland | SEO &amp; moderne Websites | WahebSite</title>
+<meta content="Professionelles Webdesign und SEO für Unternehmen in Deutschland. Moderne Websites mit klarer Struktur, schneller Nutzerführung und Fokus auf Anfragen." name="description"/>
+<link href="https://wahebsite.de/" rel="canonical"/>
+<meta content="index, follow" name="robots"/>
+<meta content="website" property="og:type"/>
+<meta content="Webdesign Deutschland | SEO &amp; moderne Websites | WahebSite" property="og:title"/>
+<meta content="Professionelles Webdesign und SEO für Unternehmen in Deutschland. Moderne Websites mit klarer Struktur, schneller Nutzerführung und Fokus auf Anfragen." property="og:description"/>
+<meta content="https://wahebsite.de/" property="og:url"/>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "ProfessionalService", "name": "WahebSite", "description": "Professionelles Webdesign und SEO in ganz Deutschland. Moderne Websites für Unternehmen, Restaurants, Praxen, Onlineshops und lokale Geschäfte.", "areaServed": "Deutschland", "serviceType": ["Webdesign", "SEO", "Website-Erstellung", "Lokale Suchmaschinenoptimierung"], "telephone": "+49 1521 3873166", "email": "wahebwahbe100@gmail.com", "url": "https://wahebsite.de/"}</script>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<style>
+    html { scroll-behavior: smooth; }
+
+    :root {
+      --bg: #f7f5f1;
+      --surface: rgba(255,255,255,0.82);
+      --surface-strong: #ffffff;
+      --text: #111827;
+      --muted: #5b6472;
+      --border: rgba(17,24,39,.10);
+      --accent: #38bdf8;
+      --accent-dark: #0ea5e9;
+      --accent-soft: rgba(56,189,248,.12);
+      --shadow: 0 20px 60px rgba(17,24,39,.08);
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      overflow-x: hidden;
+      font-family: 'Playfair Display', serif;
+      position: relative;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background:
+        radial-gradient(circle at 12% 16%, rgba(56,189,248,.10), transparent 24%),
+        radial-gradient(circle at 86% 10%, rgba(17,24,39,.05), transparent 28%),
+        radial-gradient(circle at 50% 92%, rgba(56,189,248,.08), transparent 28%);
+      z-index: -2;
+      pointer-events: none;
+    }
+
+    body::after {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(17,24,39,0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(17,24,39,0.03) 1px, transparent 1px);
+      background-size: 38px 38px;
+      z-index: -1;
+      pointer-events: none;
+    }
+
+    .glass {
+      background: linear-gradient(180deg, rgba(255,255,255,0.92), rgba(240,249,255,0.88));
+      backdrop-filter: blur(14px);
+      border: 1px solid rgba(56,189,248,0.22);
+      box-shadow: 0 18px 46px rgba(14,165,233,0.12);
+    }
+
+    .nav-link {
+      position: relative;
+      transition: .3s;
+      color: rgba(17,24,39,.85);
+    }
+
+    .nav-link::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -6px;
+      width: 0;
+      height: 2px;
+      background: linear-gradient(to right, var(--accent), var(--accent-dark));
+      transition: .3s;
+    }
+
+    .nav-link:hover, .nav-link.active { color: var(--text); }
+    .nav-link:hover::after, .nav-link.active::after { width: 100%; }
+
+    .btn-primary {
+      background: linear-gradient(90deg, var(--accent), var(--accent-dark));
+      color: #ffffff;
+      font-weight: 800;
+      transition: .3s;
+      box-shadow: 0 12px 28px rgba(14,165,233,.24);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px) scale(1.02);
+      box-shadow: 0 16px 34px rgba(14,165,233,.28);
+    }
+
+    .btn-secondary {
+      transition: .3s;
+      color: var(--text);
+    }
+
+    .btn-secondary:hover {
+      background: rgba(17,24,39,0.04);
+      transform: translateY(-2px);
+    }
+
+    header img, footer img {
+      filter: drop-shadow(0 6px 18px rgba(56,189,248,.18));
+    }
+
+    .logo-wrap {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .logo-wrap img {
+      height: 40px;
+      width: auto;
+      object-fit: contain;
+      display: block;
+      margin: 0;
+      padding: 0;
+    }
+
+    .logo-brand {
+      font-family: 'Playfair Display', serif;
+      display: inline-flex;
+      align-items: center;
+      line-height: 1;
+      font-weight: 800;
+      letter-spacing: 0.2px;
+      font-size: 1.6rem;
+      transition: transform .35s ease;
+      margin: 0;
+      padding: 0;
+    }
+
+    .logo-waheb {
+      color: #111827;
+      transition: all .35s ease;
+    }
+
+    .logo-site {
+      margin-left: 2px;
+      background: linear-gradient(90deg, #0ea5e9, #38bdf8);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      filter: drop-shadow(0 0 8px rgba(56,189,248,.18));
+      transition: all .35s ease;
+    }
+
+    .logo-wrap:hover .logo-brand {
+      transform: translateY(-1px);
+    }
+
+    .logo-wrap:hover .logo-waheb {
+      color: #000000;
+      text-shadow: 0 0 1px rgba(0,0,0,0.08);
+    }
+
+    .logo-wrap:hover .logo-site {
+      filter: drop-shadow(0 0 14px rgba(56,189,248,.40));
+      transform: scale(1.04);
+    }
+
+    .hero-card {
+      position: relative;
+      overflow: hidden;
+      border-radius: 30px;
+      border: 1px solid rgba(56,189,248,.20);
+      background: linear-gradient(180deg, rgba(255,255,255,0.96), rgba(239,249,255,0.98));
+      box-shadow: 0 25px 80px rgba(17,24,39,0.12), 0 0 40px rgba(56,189,248,0.16);
+    }
+
+    .window-header {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      padding: 18px 22px;
+      border-bottom: 1px solid rgba(17,24,39,0.08);
+      background: rgba(255,255,255,.75);
+    }
+
+    .dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 999px;
+      display: inline-block;
+    }
+
+    .dot.red { background: #ef4444; }
+    .dot.yellow { background: #f59e0b; }
+    .dot.green { background: #22c55e; }
+
+    .code-body {
+      padding: 24px;
+      font-family: Consolas, Monaco, 'Courier New', monospace;
+      font-size: 22px;
+      line-height: 2;
+      color: #111827;
+      min-height: 300px;
+      text-align: left;
+      direction: ltr;
+    }
+
+    .line-static { color: #374151; }
+    .indent-1 { padding-left: 22px; }
+    .indent-2 { padding-left: 44px; }
+    .code-key { color: var(--accent-dark); }
+    .code-value { color: #111827; font-weight: 700; }
+    .code-bracket { color: #6b7280; }
+
+    .typing-cursor {
+      display: inline-block;
+      width: 10px;
+      height: 1.1em;
+      margin-left: 4px;
+      border-radius: 4px;
+      background: var(--accent);
+      box-shadow: 0 0 16px rgba(56,189,248,0.45);
+      animation: blinkCursor .9s infinite;
+      vertical-align: middle;
+    }
+
+    @keyframes blinkCursor {
+      0%, 48% { opacity: 1; }
+      49%, 100% { opacity: .18; }
+    }
+
+    .section-card {
+      transition: .35s ease;
+      border-color: rgba(56,189,248,0.18) !important;
+      box-shadow: 0 14px 36px rgba(14,165,233,0.08);
+    }
+
+    .section-card:hover {
+      transform: translateY(-6px);
+      border-color: rgba(14,165,233,.34) !important;
+      box-shadow: 0 20px 44px rgba(14,165,233,.16);
+    }
+
+    .project-art {
+      height: 260px;
+      border-radius: 20px 20px 0 0;
+      overflow: hidden;
+      position: relative;
+      background: #f3f4f6;
+    }
+
+    .project-art img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .feature-icon, .service-icon {
+      width: 3.5rem;
+      height: 3.5rem;
+      border-radius: 1.2rem;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(180deg, rgba(224,242,254,.96), rgba(186,230,253,.72));
+      color: #0284c7;
+      border: 1px solid rgba(56,189,248,.24);
+      box-shadow: 0 10px 24px rgba(14,165,233,.12);
+      font-size: 1.5rem;
+    }
+
+    .fade-up {
+      opacity: 0;
+      transform: translateY(34px);
+      transition: opacity .8s ease, transform .8s ease;
+    }
+
+    .show {
+      opacity: 1 !important;
+      transform: translateY(0) !important;
+    }
+
+    .contact-input {
+      width: 100%;
+      border-radius: 18px;
+      border: 1px solid rgba(17,24,39,.10);
+      background: rgba(255,255,255,.85);
+      padding: 14px 18px;
+      color: var(--text);
+      outline: none;
+      transition: .25s;
+    }
+
+    .contact-input:focus {
+      border-color: rgba(14,165,233,.62);
+      box-shadow: 0 0 0 4px rgba(56,189,248,.18);
+      background: #ffffff;
+    }
+
+    .journey-step {
+      position: relative;
+      padding-left: 2rem;
+    }
+
+    .journey-step::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: .8rem;
+      width: 14px;
+      height: 14px;
+      border-radius: 999px;
+      background: var(--accent);
+      box-shadow: 0 0 0 8px rgba(56,189,248,.10);
+    }
+
+    .journey-step::after {
+      content: "";
+      position: absolute;
+      left: 6px;
+      top: 2.2rem;
+      bottom: -2rem;
+      width: 2px;
+      background: linear-gradient(to bottom, rgba(56,189,248,.50), transparent);
+    }
+
+    .journey-step:last-child::after { display: none; }
+
+    @media (max-width: 900px) {
+      .desktop-nav { display: none; }
+      .mobile-nav-button { display: inline-flex; }
+    }
+
+    @media (min-width: 901px) {
+      .mobile-nav-button,
+      .mobile-menu { display: none !important; }
+    }
+
+    @media (max-width: 768px) {
+      .code-body {
+        font-size: 16px;
+        min-height: 240px;
+      }
+
+      .indent-1 { padding-left: 16px; }
+      .indent-2 { padding-left: 30px; }
+
+      .logo-wrap {
+        gap: 3px;
+      }
+
+      .logo-wrap img {
+        height: 34px;
+      }
+
+      .logo-brand {
+        font-size: 1.2rem;
+      }
+
+      .logo-site {
+        margin-left: 1px;
+      }
+    }
+  
+
+    .breadcrumb-pill { background: rgba(255,255,255,.78); border:1px solid rgba(17,24,39,.08); backdrop-filter: blur(8px); }
+    .faq-item summary { cursor:pointer; list-style:none; }
+    .faq-item summary::-webkit-details-marker { display:none; }
+    .faq-item[open] { box-shadow: 0 20px 40px rgba(17,24,39,.06); }
+    .city-chip:hover { transform: translateY(-2px); }
+    
+    .standorte-accordion summary::-webkit-details-marker { display: none; }
+    .standorte-accordion[open] .standorte-chevron { transform: rotate(180deg); }
+
+
+    .whatsapp-side-button {
+      position: fixed;
+      right: 18px;
+      bottom: 18px;
+      z-index: 9999;
+      display: inline-flex;
+      align-items: center;
+      gap: 14px;
+      text-decoration: none;
+      transition: transform .25s ease;
+    }
+
+    .whatsapp-side-button:hover {
+      transform: translateY(-2px);
+    }
+
+    .whatsapp-side-button .whatsapp-label {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 50px;
+      padding: 0 20px;
+      border-radius: 999px;
+      background: #1f2940;
+      color: #ffffff;
+      font-weight: 700;
+      font-size: 14px;
+      line-height: 1;
+      box-shadow: 0 12px 28px rgba(17, 24, 39, .20);
+      white-space: nowrap;
+    }
+
+    .whatsapp-side-button .whatsapp-icon-wrap {
+      width: 50px;
+      height: 50px;
+      border-radius: 999px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: #25D366;
+      box-shadow: 0 14px 34px rgba(37, 211, 102, .32);
+      flex-shrink: 0;
+    }
+
+    .whatsapp-side-button img {
+      width: 24px;
+      height: 24px;
+      object-fit: contain;
+    }
+
+    @media (max-width: 768px) {
+      .whatsapp-side-button {
+        right: 10px;
+        bottom: 10px;
+        gap: 12px;
+      }
+
+      .whatsapp-side-button .whatsapp-label {
+        min-height: 46px;
+        padding: 0 18px;
+        font-size: 12px;
+      }
+
+      .whatsapp-side-button .whatsapp-icon-wrap {
+        width: 46px;
+        height: 46px;
+      }
+
+      .whatsapp-side-button img {
+        width: 22px;
+        height: 22px;
+      }
+    }
+
+</style>
+<meta content="summary_large_image" name="twitter:card"/><script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebSite", "name": "WahebSite", "url": "https://wahebsite.de/", "inLanguage": "de-DE"}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Startseite", "item": "https://wahebsite.de/"}]}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Arbeitet WahebSite nur lokal oder deutschlandweit?", "acceptedAnswer": {"@type": "Answer", "text": "WahebSite ist deutschlandweit ausgerichtet. Neben der zentralen Startseite können zusätzliche Standortseiten helfen, Leistungen regional verständlich zu präsentieren."}}, {"@type": "Question", "name": "Was ist bei SEO-Landingpages für Städte wichtig?", "acceptedAnswer": {"@type": "Answer", "text": "Wichtig sind echte Relevanz, klare Nutzerführung, eigenständige Inhalte und saubere interne Verlinkung. Reine Kopien mit ausgetauschtem Ortsnamen sind langfristig deutlich schwächer."}}, {"@type": "Question", "name": "Ist eine neue Website automatisch suchmaschinenoptimiert?", "acceptedAnswer": {"@type": "Answer", "text": "Nicht automatisch. Design, Technik, Struktur, Inhalte und lokale Signale sollten gemeinsam aufgebaut werden, damit die Website nicht nur modern aussieht, sondern auch besser gefunden werden kann."}}]}</script></head>
+<body>
+<header class="sticky top-0 z-50 border-b border-black/10 bg-white/75 backdrop-blur-xl">
+<div class="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
+<a aria-label="Home" class="logo-wrap" href="#home">
+<img alt="Logo" src="images/logo.png"/>
+<span class="logo-brand">
+<span class="logo-waheb">waheb</span><span class="logo-site">site</span>
+</span>
+</a>
+<nav class="desktop-nav hidden items-center gap-8 text-sm font-semibold md:flex">
+<a class="nav-link" href="#home">Startseite</a>
+<a class="nav-link" href="#about">Über uns</a>
+<a class="nav-link" href="#services">Leistungen</a>
+<a class="nav-link" href="#why">Warum eine Website?</a>
+<a class="nav-link" href="#projects">Projekte</a>
+<a class="nav-link" href="pages/standorte.html">Standorte</a>
+<a class="nav-link" href="#faq">FAQ</a><a class="nav-link" href="#contact">Kontakt</a><a class="nav-link" href="pages/ueber-uns.html">Über uns</a>
+</nav>
+<div class="flex items-center gap-3">
+<a class="btn-primary rounded-xl px-5 py-2 text-sm" href="#contact">Jetzt starten</a>
+<button class="mobile-nav-button hidden rounded-xl border border-black/10 bg-white/80 px-3 py-2 text-lg font-bold" onclick="toggleMobileMenu()">☰</button>
+</div>
+</div>
+<div class="mobile-menu hidden border-t border-black/10 bg-white/90 px-6 py-4" id="mobileMenu">
+<div class="flex flex-col gap-4 text-sm font-semibold">
+<a href="#home" onclick="toggleMobileMenu()">Startseite</a>
+<a href="#about" onclick="toggleMobileMenu()">Über uns</a>
+<a href="#services" onclick="toggleMobileMenu()">Leistungen</a>
+<a href="#why" onclick="toggleMobileMenu()">Warum eine Website?</a>
+<a href="#projects" onclick="toggleMobileMenu()">Projekte</a>
+<a href="pages/standorte.html" onclick="toggleMobileMenu()">Standorte</a>
+<a href="#contact" onclick="toggleMobileMenu()">Kontakt</a>
+<a href="pages/ueber-uns.html" onclick="toggleMobileMenu()">Über uns</a>
+<a href="pages/legal/impressum.html" onclick="toggleMobileMenu()">Impressum</a>
+<a href="pages/legal/datenschutz.html" onclick="toggleMobileMenu()">Datenschutz</a>
+</div>
+</div>
+</header>
+<section class="mx-auto max-w-7xl px-6 pt-8" id="breadcrumb"><div class="breadcrumb-pill inline-flex flex-wrap items-center gap-2 rounded-2xl px-4 py-3 text-sm shadow-sm"><a class="font-semibold transition hover:opacity-70" href="index.html">Startseite</a><span style="color:#94a3b8;">›</span><span style="color:#0f172a;">Webdesign in Deutschland</span></div></section><section class="border-b border-black/10" id="home">
+<div class="mx-auto grid max-w-7xl items-center gap-14 px-6 py-20 lg:grid-cols-2">
+<div class="fade-up">
+<span class="inline-flex rounded-full border px-4 py-1 text-sm font-semibold" style="border-color:rgba(56,189,248,.20); background:rgba(56,189,248,.10); color:#0ea5e9;">
+          Professionelles Webdesign, lokale SEO &amp; schnelle Entwicklung
+        </span>
+<h1 class="mt-6 text-4xl font-bold leading-tight sm:text-5xl lg:text-6xl">Professionelles <span style="color:#0ea5e9;">Webdesign in ganz Deutschland</span> – moderne Websites &amp; SEO für mehr Kunden</h1>
+<p class="mt-6 max-w-2xl text-lg leading-8" style="color:#4b5563;">Moderne, schnelle und mobiloptimierte Websites für Unternehmen, Praxen, Restaurants, Onlineshops und lokale Dienstleister in ganz Deutschland.</p>
+<div class="mt-8 flex flex-wrap gap-4">
+<a class="btn-primary rounded-2xl px-6 py-3" href="#contact">Website jetzt anfragen</a>
+<a class="btn-secondary rounded-2xl border border-black/10 bg-white/60 px-6 py-3 font-semibold" href="#projects">Beispiele ansehen</a>
+</div>
+<div class="mt-10 grid gap-4 sm:grid-cols-3">
+<div class="glass rounded-2xl p-5 text-center">
+<img src="setup/setup1.png" alt="setup1" class="mx-auto h-20 w-20 object-contain"/>
+<p class="mt-2 text-sm" style="color:#6b7280;">Schnelle Umsetzung</p>
+</div>
+<div class="glass rounded-2xl p-5 text-center">
+<img src="setup/setup2.png" alt="setup2" class="mx-auto h-20 w-20 object-contain"/>
+<p class="mt-2 text-sm" style="color:#6b7280;">Eigene Domain</p>
+</div>
+<div class="glass rounded-2xl p-5 text-center">
+<img src="setup/setup3.png" alt="setup3" class="mx-auto h-20 w-20 object-contain"/>
+<p class="mt-2 text-sm" style="color:#6b7280;">Zahlung nach Fertigstellung</p>
+</div>
+</div>
+</div>
+<div class="fade-up">
+<div class="hero-card">
+<div class="window-header">
+<span class="dot red"></span>
+<span class="dot yellow"></span>
+<span class="dot green"></span>
+</div>
+<div class="code-body">
+<div class="line-static"><span class="code-key">function</span> buildWebsite<span class="code-bracket">(brand) {</span></div>
+<div class="line-static indent-1"><span class="code-key">return</span> <span class="code-bracket">{</span></div>
+<div class="indent-2"><span id="typingText"></span><span class="typing-cursor"></span></div>
+<div class="line-static indent-1"><span class="code-bracket">}</span></div>
+<div class="line-static"><span class="code-bracket">}</span></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="mx-auto max-w-7xl px-6 py-24" id="about">
+<div class="grid items-center gap-14 lg:grid-cols-2">
+<div class="fade-up">
+<span class="inline-flex rounded-full border px-4 py-1 text-sm font-semibold" style="border-color:rgba(56,189,248,.20); background:rgba(56,189,248,.10); color:#0ea5e9;">Über uns</span>
+<h2 class="mt-6 text-4xl font-bold leading-tight sm:text-5xl">
+          Eine Website, die den <span style="color:#0ea5e9;">Wert Ihres Unternehmens in Deutschland</span> sichtbar macht
+        </h2>
+<p class="mt-8 text-lg leading-8" style="color:#4b5563;">
+          Wir gestalten klare und elegante Seiten, die Ihre Leistungen schnell erklären und schon auf den ersten Blick Vertrauen schaffen.
+        </p>
+<p class="mt-5 text-lg leading-8" style="color:#4b5563;">
+          Ob Arztpraxis, Ingenieurbüro, Restaurant oder Onlineshop – wir entwickeln eine Website, die perfekt zu Ihrer Branche passt.
+        </p>
+<div class="mt-8 rounded-3xl border p-6 shadow-xl" style="border-color:rgba(56,189,248,.20); background:linear-gradient(to right, rgba(56,189,248,.10), rgba(255,255,255,.92));">
+<p class="text-2xl font-bold" style="color:#0ea5e9;">Sie zahlen erst, wenn Ihre Website vollständig fertig ist.</p>
+</div>
+</div>
+<div class="grid gap-5 sm:grid-cols-2">
+<div class="glass rounded-3xl p-8 shadow-2xl sm:col-span-2">
+<div class="grid gap-6 md:grid-cols-3">
+<div class="rounded-2xl border border-black/10 bg-white/70 p-5 text-center">
+<img src="setup/setup4.png" alt="setup4" class="mx-auto h-20 w-20 object-contain"/>
+<h3 class="mt-4 text-lg font-bold">Hohe Geschwindigkeit</h3>
+<p class="mt-2 text-sm" style="color:#6b7280;">Eine schnellere Erfahrung für Ihre Besucher auf allen Geräten.</p>
+</div>
+<div class="rounded-2xl border border-black/10 bg-white/70 p-5 text-center">
+<img src="setup/setup5.png" alt="setup5" class="mx-auto h-20 w-20 object-contain"/>
+<h3 class="mt-4 text-lg font-bold">Mobil optimiert</h3>
+<p class="mt-2 text-sm" style="color:#6b7280;">Saubere und responsive Darstellung auf Smartphone und Tablet.</p>
+</div>
+<div class="rounded-2xl border border-black/10 bg-white/70 p-5 text-center">
+<img src="setup/setup6.png" alt="setup6" class="mx-auto h-20 w-20 object-contain"/>
+<h3 class="mt-4 text-lg font-bold">Mehr Anfragen</h3>
+<p class="mt-2 text-sm" style="color:#6b7280;">Klare Kontaktbuttons und überzeugende Inhalte steigern die Conversion.</p>
+</div>
+</div>
+</div>
+<div class="section-card rounded-3xl border border-black/10 bg-white/70 p-6 shadow-xl">
+<img src="setup/setup7.png" alt="setup7" class="h-20 w-20 object-contain"/>
+<h3 class="mt-4 text-xl font-bold">Buchungssysteme</h3>
+<p class="mt-3 text-sm leading-7" style="color:#6b7280;">Ideal für Praxen, Salons, Beratungen und Dienstleister.</p>
+</div>
+<div class="section-card rounded-3xl border p-6 shadow-xl" style="border-color:rgba(56,189,248,.15); background:linear-gradient(to bottom right, rgba(56,189,248,.10), rgba(255,255,255,.94));">
+<img src="setup/setup8.png" alt="setup8" class="h-20 w-20 object-contain"/>
+<h3 class="mt-4 text-xl font-bold">Starker erster Eindruck</h3>
+<p class="mt-3 text-sm leading-7" style="color:#6b7280;">Elegantes Design und klare Struktur zeigen direkt die Stärke Ihrer Marke.</p>
+</div>
+</div>
+</div>
+</section>
+<section class="border-y border-black/10 bg-white/35" id="services">
+<div class="mx-auto max-w-7xl px-6 py-24">
+<div class="max-w-2xl fade-up">
+<p class="text-sm font-semibold uppercase tracking-[0.2em]" style="color:#0ea5e9;">Leistungen</p>
+<h2 class="mt-3 text-3xl font-bold sm:text-4xl">Alles, was Sie für eine starke Online-Präsenz brauchen</h2>
+<p class="mt-4 leading-8" style="color:#6b7280;">Komplette Lösungen vom Design bis zum Launch und Support.</p>
+</div>
+<div class="mt-12 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
+<div class="section-card rounded-3xl border border-black/10 bg-white/80 p-6 shadow-xl">
+<img src="setup/setup9.png" alt="setup9" class="h-20 w-20 object-contain"/>
+<h3 class="mt-5 text-xl font-semibold">Professionelles Webdesign</h3>
+<p class="mt-3 text-sm leading-7" style="color:#6b7280;">Modernes Design, klarer Aufbau und starke Markenwirkung.</p>
+</div>
+<div class="section-card rounded-3xl border border-black/10 bg-white/80 p-6 shadow-xl">
+<img src="setup/setup10.png" alt="setup10" class="h-20 w-20 object-contain"/>
+<h3 class="mt-5 text-xl font-semibold">Onlineshops</h3>
+<p class="mt-3 text-sm leading-7" style="color:#6b7280;">Strukturierte Produktseiten und ein angenehmer Kaufprozess.</p>
+</div>
+<div class="section-card rounded-3xl border border-black/10 bg-white/80 p-6 shadow-xl">
+<img src="setup/setup11.png" alt="setup11" class="h-20 w-20 object-contain"/>
+<h3 class="mt-5 text-xl font-semibold">Individuelle Entwicklung</h3>
+<p class="mt-3 text-sm leading-7" style="color:#6b7280;">Formulare, Spezialseiten und Funktionen nach Ihrem Bedarf.</p>
+</div>
+<div class="section-card rounded-3xl border border-black/10 bg-white/80 p-6 shadow-xl">
+<img src="setup/setup12.png" alt="setup12" class="h-20 w-20 object-contain"/>
+<h3 class="mt-5 text-xl font-semibold">Performance &amp; Support</h3>
+<p class="mt-3 text-sm leading-7" style="color:#6b7280;">Hohe Geschwindigkeit, bessere Nutzererfahrung und Support nach der Fertigstellung.</p>
+</div>
+</div>
+</div>
+</section>
+<section class="mx-auto max-w-6xl px-6 py-24" id="why">
+<div class="fade-up text-center">
+<p class="text-sm font-semibold uppercase tracking-[0.2em]" style="color:#0ea5e9;">Warum eine Website?</p>
+<h2 class="mt-3 text-3xl font-bold sm:text-4xl">Eine Website ist nicht nur Design – sie ist ein Werkzeug für Wachstum</h2>
+<p class="mx-auto mt-4 max-w-3xl leading-8" style="color:#6b7280;">
+        Mit einer klaren, schnellen und überzeugenden Website werden Sie einfacher gefunden und gewinnen mehr Vertrauen bei Ihren Kunden.
+      </p>
+</div>
+<div class="mt-16 grid gap-8 lg:grid-cols-2">
+<div class="glass rounded-[2rem] p-8 shadow-xl">
+<div class="journey-step pb-10">
+<h3 class="text-2xl font-bold" style="color:#0ea5e9;">Bessere Sichtbarkeit</h3>
+<p class="mt-3 leading-8" style="color:#4b5563;">Ihre Website hilft Ihnen, jederzeit von Menschen gefunden zu werden, die nach Ihren Leistungen suchen.</p>
+</div>
+<div class="journey-step pb-10">
+<h3 class="text-2xl font-bold" style="color:#0ea5e9;">Mehr Vertrauen</h3>
+<p class="mt-3 leading-8" style="color:#4b5563;">Ein professioneller Webauftritt zeigt, dass Ihr Unternehmen organisiert, modern und seriös ist.</p>
+</div>
+<div class="journey-step">
+<h3 class="text-2xl font-bold" style="color:#0ea5e9;">Mehr Anfragen</h3>
+<p class="mt-3 leading-8" style="color:#4b5563;">Klare Kontaktwege und ein überzeugendes Angebot machen aus Besuchern potenzielle Kunden.</p>
+</div>
+</div>
+<div class="grid gap-6">
+<div class="section-card rounded-3xl border border-black/10 bg-white/80 p-6 shadow-xl">
+<h3 class="text-2xl font-bold">Was bringt Ihnen eine Website?</h3>
+<ul class="mt-5 space-y-3" style="color:#4b5563;">
+<li>• Klare Darstellung Ihrer Leistungen, Vorteile und Kontaktmöglichkeiten</li>
+<li>• Mehr Anfragen, Buchungen und Kundenkontakte</li>
+<li>• Direkte Verbindung zu WhatsApp, E-Mail und Social Media</li>
+<li>• Ein professionelles Erscheinungsbild für Ihre Marke</li>
+</ul>
+</div>
+<div class="section-card rounded-3xl border p-6 shadow-xl" style="border-color:rgba(56,189,248,.16); background:linear-gradient(to bottom right, rgba(56,189,248,.10), rgba(255,255,255,.92));">
+<h3 class="text-2xl font-bold">Das Ergebnis</h3>
+<p class="mt-4 leading-8" style="color:#4b5563;">Starke Struktur + Geschwindigkeit + klare Botschaft = mehr Kunden, mehr Umsatz und mehr Reichweite.</p>
+</div>
+</div>
+</div>
+</section>
+<section class="mx-auto max-w-7xl px-6 py-24" id="projects">
+<div class="fade-up">
+<p class="text-sm font-semibold uppercase tracking-[0.2em]" style="color:#0ea5e9;">Projekte</p>
+<h2 class="mt-3 text-3xl font-bold sm:text-4xl">Beispiele für Websites, die wir erstellen</h2>
+<p class="mt-4 max-w-2xl leading-8" style="color:#6b7280;">Die Inhalte, Farben und Funktionen werden individuell an Ihr Projekt angepasst.</p>
+</div>
+<div class="mt-12 grid gap-6 md:grid-cols-3">
+<div class="section-card overflow-hidden rounded-3xl border border-black/10 bg-white/85 shadow-xl">
+<div class="project-art">
+<img alt="Business Website Beispiel" src="images/business-site.png"/>
+</div>
+<div class="p-6">
+<h3 class="mt-2 text-2xl font-semibold">Business Website</h3>
+<p class="mt-3 text-sm leading-7" style="color:#6b7280;">Professionelle Präsentation für Firmen, Dienstleistungen und starke Markenauftritte.</p>
+</div>
+</div>
+<div class="section-card overflow-hidden rounded-3xl border border-black/10 bg-white/85 shadow-xl">
+<div class="project-art">
+<img alt="Booking Website Beispiel" src="images/booking-site.png"/>
+</div>
+<div class="p-6">
+<h3 class="mt-2 text-2xl font-semibold">Booking Website</h3>
+<p class="mt-3 text-sm leading-7" style="color:#6b7280;">Ideal für Terminbuchungen, Reservierungen und dienstleistungsorientierte Angebote.</p>
+</div>
+</div>
+<div class="section-card overflow-hidden rounded-3xl border border-black/10 bg-white/85 shadow-xl">
+<div class="project-art">
+<img alt="Ecommerce Website Beispiel" src="images/ecommerce-site.png"/>
+</div>
+<div class="p-6">
+<h3 class="mt-2 text-2xl font-semibold">Dienstleistungswebsite</h3>
+<p class="mt-3 text-sm leading-7" style="color:#6b7280;">Ideal für Reinigungsdienste oder Umzugsservices, mit professioneller Präsentation der Leistungen und einfacher Anfrage- sowie Kontaktmöglichkeit für Kunden..</p>
+</div>
+</div>
+</div>
+</section>
+<section class="border-y border-black/10 bg-white/35" id="seo-cities">
+<div class="mx-auto max-w-7xl px-6 py-24">
+<div class="max-w-3xl fade-up">
+<p class="text-sm font-semibold uppercase tracking-[0.2em]" style="color:#0ea5e9;">Deutschlandweit sichtbar</p>
+<h2 class="mt-3 text-3xl font-bold sm:text-4xl">Webdesign &amp; SEO für Unternehmen in ganz Deutschland</h2>
+<p class="mt-4 leading-8" style="color:#6b7280;">Wir erstellen professionelle Websites für Restaurants, Arztpraxen, Handwerksbetriebe, Kanzleien, Onlineshops und lokale Unternehmen. Durch klare Struktur, schnelle Ladezeiten und lokale SEO helfen wir dabei, bei Google besser gefunden zu werden und mehr Anfragen zu gewinnen.</p>
+</div>
+<div class="mt-12 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
+<div class="section-card rounded-3xl border border-black/10 bg-white/80 p-6 shadow-xl">
+<img src="setup/setup13.png" alt="setup13" class="h-20 w-20 object-contain"/>
+<h3 class="mt-5 text-xl font-semibold">Lokale SEO</h3>
+<p class="mt-3 text-sm leading-7" style="color:#6b7280;">Bessere Sichtbarkeit bei Suchanfragen wie Webdesign Berlin, SEO Köln oder Website Hamburg.</p>
+</div>
+<div class="section-card rounded-3xl border border-black/10 bg-white/80 p-6 shadow-xl">
+<img src="setup/setup14.png" alt="setup14" class="h-20 w-20 object-contain"/>
+<h3 class="mt-5 text-xl font-semibold">Für lokale Geschäfte</h3>
+<p class="mt-3 text-sm leading-7" style="color:#6b7280;">Ideal für Restaurants, Stores, Salons, Praxen, Dienstleister und wachsende Unternehmen.</p>
+</div>
+<div class="section-card rounded-3xl border border-black/10 bg-white/80 p-6 shadow-xl">
+<img src="setup/setup15.png" alt="setup15" class="h-20 w-20 object-contain"/>
+<h3 class="mt-5 text-xl font-semibold">SEO-Struktur</h3>
+<p class="mt-3 text-sm leading-7" style="color:#6b7280;">Saubere Titel, Meta-Daten, interne Links, Standortseiten und starke Keyword-Relevanz.</p>
+</div>
+<div class="section-card rounded-3xl border border-black/10 bg-white/80 p-6 shadow-xl">
+<img src="setup/setup16.png" alt="setup16" class="h-20 w-20 object-contain"/>
+<h3 class="mt-5 text-xl font-semibold">Mehr Anfragen</h3>
+<p class="mt-3 text-sm leading-7" style="color:#6b7280;">Klare Botschaften, starke CTAs und einfache Kontaktwege per WhatsApp und E-Mail.</p>
+</div>
+</div>
+</div>
+</section>
+<section class="mx-auto max-w-6xl px-6 py-24" id="contact">
+<div class="grid gap-8 lg:grid-cols-2">
+<div class="glass rounded-[2rem] p-10 shadow-2xl">
+<h2 class="text-3xl font-bold sm:text-4xl">Bereit für Ihre neue Website?</h2>
+<p class="mt-4 text-lg leading-8" style="color:#4b5563;">
+          Starten Sie jetzt mit einer modernen, schnellen Website, die Ihrem Projekt eine starke Online-Präsenz gibt.
+        </p>
+<div class="mt-8 space-y-4" style="color:#4b5563;">
+<p>✓ Kostenlose Erstberatung</p>
+<p>✓ Individuelles Design passend zu Ihrem Unternehmen</p>
+<p>✓ Zahlung erst nach vollständiger Fertigstellung</p>
+</div>
+<div class="mt-8 flex flex-wrap gap-4">
+<a class="btn-primary inline-block rounded-2xl px-8 py-3" href="https://wa.me/4915778739720?text=Hallo%20WahebSite%2C%20ich%20w%C3%BCrde%20gerne%20mit%20Ihnen%20sprechen." rel="noreferrer" target="_blank">
+            Kontakt über WhatsApp
+          </a>
+<a class="btn-secondary inline-block rounded-2xl border border-black/10 bg-white/70 px-8 py-3 font-semibold" href="mailto:wahebwahbe100@gmail.com">
+            Kontakt per E-Mail
+          </a>
+</div>
+</div>
+<div class="glass rounded-[2rem] p-8 shadow-2xl">
+<iframe name="hiddenSubmitFrame" id="hiddenSubmitFrame" style="display:none;"></iframe>
+<form class="space-y-4" action="https://formsubmit.co/wahebwahbe100@gmail.com" method="POST" target="hiddenSubmitFrame" onsubmit="return submitForm(event)">
+<input type="hidden" name="_subject" value="Neue Website-Anfrage über WahebSite"/>
+<input type="hidden" name="_captcha" value="false"/>
+<input type="hidden" name="_template" value="table"/>
+<div>
+<label class="mb-2 block text-sm" style="color:#6b7280;">Name</label>
+<input class="contact-input" name="Name" placeholder="Ihr Name" required="" type="text"/>
+</div>
+<div>
+<label class="mb-2 block text-sm" style="color:#6b7280;">E-Mail</label>
+<input class="contact-input" name="E-Mail" placeholder="name@example.com" required="" type="email"/>
+</div>
+<div>
+<label class="mb-2 block text-sm" style="color:#6b7280;">Projektart</label>
+<select class="contact-input" name="Projektart" required="">
+<option value="">Bitte wählen</option>
+<option>Business Website</option>
+<option>Onlineshop</option>
+<option>Booking Website</option>
+<option>Individuelles Design</option>
+</select>
+</div>
+<div>
+<label class="mb-2 block text-sm" style="color:#6b7280;">Projektbeschreibung</label>
+<textarea class="contact-input min-h-[140px] resize-none" name="Projektbeschreibung" placeholder="Beschreiben Sie Ihr Projekt" required=""></textarea>
+</div>
+<div>
+<label class="flex items-start gap-3 text-sm" style="color:#6b7280;">
+<input class="mt-1" required="" type="checkbox"/>
+<span>Ich habe die <a href="pages/legal/datenschutz.html" style="color:#0ea5e9; font-weight:700;">Datenschutzerklärung</a> gelesen und stimme der Verarbeitung meiner Angaben zur Bearbeitung meiner Anfrage zu.</span>
+</label>
+</div>
+<button id="submitButton" class="btn-primary w-full rounded-2xl px-6 py-3" type="submit">Anfrage senden</button>
+<p class="hidden text-center font-semibold" id="formMessage" style="color:#0ea5e9;">Vielen Dank für Ihre Anfrage! Wir haben Ihre Nachricht erhalten und melden uns so schnell wie möglich bei Ihnen.</p>
+</form>
+</div>
+</div>
+</section>
+
+<a class="whatsapp-side-button" href="https://wa.me/4915778739720?text=Hallo%20WahebSite%2C%20ich%20w%C3%BCrde%20gerne%20mit%20Ihnen%20sprechen." rel="noreferrer" target="_blank" aria-label="WhatsApp Kontakt öffnen">
+<span class="whatsapp-label">Lass uns auf WhatsApp sprechen</span>
+<span class="whatsapp-icon-wrap"><img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp Icon"/></span>
+</a>
+<footer class="border-t border-white/10 bg-[#0b1120]">
+<div class="mx-auto max-w-7xl px-6 py-12">
+<div class="rounded-[2rem] border border-white/10 bg-white/5 p-8 shadow-xl backdrop-blur-sm">
+<div class="grid gap-8 md:grid-cols-[1.2fr_1fr_1fr_1fr] md:items-center">
+<div class="flex items-center gap-4">
+<img alt="WahebSite Logo" class="h-16 w-16 rounded-2xl object-contain bg-white p-2 shadow-md" src="images/logo.png"/>
+<div>
+<h3 class="text-2xl font-bold text-white">WahebSite</h3>
+<p class="mt-2 text-sm leading-6" style="color:rgba(255,255,255,0.70);">Professionelles Webdesign für moderne Unternehmen, Praxen, Restaurants und Onlineshops.</p>
+</div>
+</div>
+<a class="flex items-center gap-4 rounded-2xl border border-white/10 bg-white/10 p-4 transition hover:-translate-y-1 hover:bg-white/15 hover:shadow-lg" href="https://wa.me/4915778739720?text=Hallo%20WahebSite%2C%20ich%20w%C3%BCrde%20gerne%20mit%20Ihnen%20sprechen." rel="noreferrer" target="_blank">
+<img alt="WhatsApp Icon" class="h-12 w-12 rounded-2xl object-contain bg-white p-2 shadow-sm" src="https://cdn-icons-png.flaticon.com/512/733/733585.png"/>
+<div>
+<p class="text-sm font-semibold" style="color:rgba(255,255,255,0.65);">WhatsApp</p>
+<p class="text-sm font-bold" style="color:#7dd3fc;">+49 1577 8739720</p>
+</div>
+</a>
+<a class="flex items-center gap-4 rounded-2xl border border-white/10 bg-white/10 p-4 transition hover:-translate-y-1 hover:bg-white/15 hover:shadow-lg" href="mailto:wahebwahbe100@gmail.com">
+<img alt="Email Icon" class="h-12 w-12 rounded-2xl object-contain bg-white p-2 shadow-sm" src="https://cdn-icons-png.flaticon.com/512/561/561127.png"/>
+<div>
+<p class="text-sm font-semibold" style="color:rgba(255,255,255,0.65);">E-Mail</p>
+<p class="text-sm font-bold break-all" style="color:#7dd3fc;">wahebwahbe100@gmail.com</p>
+</div>
+</a>
+<a class="flex items-center gap-4 rounded-2xl border border-white/10 bg-white/10 p-4 transition hover:-translate-y-1 hover:bg-white/15 hover:shadow-lg" href="https://www.instagram.com/_laxl7/" rel="noreferrer" target="_blank">
+<img alt="Instagram Icon" class="h-12 w-12 rounded-2xl object-contain bg-white p-2 shadow-sm" src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png"/>
+<div>
+<p class="text-sm font-semibold" style="color:rgba(255,255,255,0.65);">Instagram</p>
+<p class="text-sm font-bold" style="color:#7dd3fc;">@_laxl7</p>
+</div>
+</a>
+</div>
+<div class="mt-8 border-t border-white/10 pt-5">
+<details class="standorte-accordion rounded-3xl border border-white/10 bg-white/5 p-4">
+<summary class="flex cursor-pointer list-none items-center justify-between gap-4 text-left">
+<div>
+<p class="text-sm font-semibold uppercase tracking-[0.18em]" style="color:rgba(255,255,255,0.55);">Standorte</p>
+<p class="mt-1 text-sm" style="color:rgba(255,255,255,0.78);">Städte anzeigen und passende Standortseite öffnen</p>
+</div>
+<span class="standorte-chevron text-xl font-bold" style="color:#7dd3fc; transition:transform .25s ease;">⌄</span>
+</summary>
+<div class="mt-4 flex flex-wrap justify-center gap-x-5 gap-y-2 border-t border-white/10 pt-4"><a class="text-sm" href="pages/cities/webdesign-berlin.html" style="color:rgba(255,255,255,0.70);">Berlin</a> <a class="text-sm" href="pages/cities/webdesign-hamburg.html" style="color:rgba(255,255,255,0.70);">Hamburg</a> <a class="text-sm" href="pages/cities/webdesign-muenchen.html" style="color:rgba(255,255,255,0.70);">München</a> <a class="text-sm" href="pages/cities/webdesign-koeln.html" style="color:rgba(255,255,255,0.70);">Köln</a> <a class="text-sm" href="pages/cities/webdesign-frankfurt.html" style="color:rgba(255,255,255,0.70);">Frankfurt</a> <a class="text-sm" href="pages/cities/webdesign-stuttgart.html" style="color:rgba(255,255,255,0.70);">Stuttgart</a> <a class="text-sm" href="pages/cities/webdesign-duesseldorf.html" style="color:rgba(255,255,255,0.70);">Düsseldorf</a> <a class="text-sm" href="pages/cities/webdesign-dortmund.html" style="color:rgba(255,255,255,0.70);">Dortmund</a> <a class="text-sm" href="pages/cities/webdesign-essen.html" style="color:rgba(255,255,255,0.70);">Essen</a> <a class="text-sm" href="pages/cities/webdesign-leipzig.html" style="color:rgba(255,255,255,0.70);">Leipzig</a> <a class="text-sm" href="pages/cities/webdesign-bremen.html" style="color:rgba(255,255,255,0.70);">Bremen</a> <a class="text-sm" href="pages/cities/webdesign-dresden.html" style="color:rgba(255,255,255,0.70);">Dresden</a> <a class="text-sm" href="pages/cities/webdesign-hannover.html" style="color:rgba(255,255,255,0.70);">Hannover</a> <a class="text-sm" href="pages/cities/webdesign-nuernberg.html" style="color:rgba(255,255,255,0.70);">Nürnberg</a> <a class="text-sm" href="pages/cities/webdesign-duisburg.html" style="color:rgba(255,255,255,0.70);">Duisburg</a> <a class="text-sm" href="pages/cities/webdesign-bochum.html" style="color:rgba(255,255,255,0.70);">Bochum</a> <a class="text-sm" href="pages/cities/webdesign-wuppertal.html" style="color:rgba(255,255,255,0.70);">Wuppertal</a> <a class="text-sm" href="pages/cities/webdesign-bielefeld.html" style="color:rgba(255,255,255,0.70);">Bielefeld</a> <a class="text-sm" href="pages/cities/webdesign-bonn.html" style="color:rgba(255,255,255,0.70);">Bonn</a> <a class="text-sm" href="pages/cities/webdesign-muenster.html" style="color:rgba(255,255,255,0.70);">Münster</a></div>
+</details>
+<div class="mt-6 flex flex-wrap justify-center gap-x-5 gap-y-2 border-t border-white/10 pt-5">
+<a class="text-sm font-semibold" href="pages/ueber-uns.html" style="color:#7dd3fc;">Über uns</a>
+<a class="text-sm font-semibold" href="pages/legal/impressum.html" style="color:#7dd3fc;">Impressum</a>
+<a class="text-sm font-semibold" href="pages/legal/datenschutz.html" style="color:#7dd3fc;">Datenschutz</a>
+<a class="text-sm font-semibold" href="pages/standorte.html" style="color:#7dd3fc;">Standorte</a>
+</div>
+<p class="mt-5 text-center text-sm" style="color:rgba(255,255,255,0.55);">© 2026 Alle Rechte vorbehalten · Made with ❤️ in Germany</p>
+</div>
+</div>
+</div>
+</footer>
+<script>
+    const animatedItems = document.querySelectorAll('.fade-up');
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) entry.target.classList.add('show');
+      });
+    }, { threshold: 0.15 });
+
+    animatedItems.forEach((item) => observer.observe(item));
+
+    const typingElement = document.getElementById('typingText');
+
+    const typingLines = [
+      {
+        plain: 'design: "elegant",',
+        html: '<span class="code-key">design</span>: <span class="code-value">"elegant"</span>,'
+      },
+      {
+        plain: 'speed: "fast",',
+        html: '<span class="code-key">speed</span>: <span class="code-value">"fast"</span>,'
+      },
+      {
+        plain: 'mobile: true,',
+        html: '<span class="code-key">mobile</span>: <span class="code-value">true</span>,'
+      },
+      {
+        plain: 'trust: "strong",',
+        html: '<span class="code-key">trust</span>: <span class="code-value">"strong"</span>,'
+      }
+    ];
+
+    let typingLineIndex = 0;
+    let typingCharIndex = 0;
+    let deleting = false;
+
+    function renderPartialHTML(fullHTML, visibleChars) {
+      const wrapper = document.createElement('div');
+      wrapper.innerHTML = fullHTML;
+      let count = 0;
+
+      function walk(node) {
+        if (node.nodeType === Node.TEXT_NODE) {
+          const text = node.textContent || '';
+          if (count >= visibleChars) {
+            node.textContent = '';
+          } else if (count + text.length > visibleChars) {
+            node.textContent = text.slice(0, visibleChars - count);
+            count = visibleChars;
+          } else {
+            count += text.length;
+          }
+        } else if (node.nodeType === Node.ELEMENT_NODE) {
+          [...node.childNodes].forEach(walk);
+        }
+      }
+
+      [...wrapper.childNodes].forEach(walk);
+      return wrapper.innerHTML;
+    }
+
+    function runTypingEffect() {
+      if (!typingElement) return;
+      const current = typingLines[typingLineIndex];
+      const plainText = current.plain;
+
+      if (!deleting) {
+        typingCharIndex++;
+        typingElement.innerHTML = renderPartialHTML(current.html, typingCharIndex);
+
+        if (typingCharIndex >= plainText.length) {
+          deleting = true;
+          setTimeout(runTypingEffect, 1200);
+          return;
+        }
+      } else {
+        typingCharIndex--;
+        typingElement.innerHTML = renderPartialHTML(current.html, typingCharIndex);
+
+        if (typingCharIndex <= 0) {
+          deleting = false;
+          typingLineIndex = (typingLineIndex + 1) % typingLines.length;
+        }
+      }
+
+      setTimeout(runTypingEffect, deleting ? 40 : 80);
+    }
+
+    runTypingEffect();
+
+    function submitForm(event) {
+      const form = event.target;
+      const message = document.getElementById('formMessage');
+      const button = document.getElementById('submitButton');
+
+      if (message) {
+        message.classList.remove('hidden');
+        message.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }
+
+      if (button) {
+        button.disabled = true;
+        button.textContent = 'Wird gesendet...';
+      }
+
+      setTimeout(() => {
+        form.reset();
+        if (button) {
+          button.disabled = false;
+          button.textContent = 'Anfrage senden';
+        }
+      }, 800);
+
+      return true;
+    }
+
+    function toggleMobileMenu() {
+      const menu = document.getElementById('mobileMenu');
+      menu.classList.toggle('hidden');
+    }
+
+    const navLinks = [...document.querySelectorAll('.nav-link')].filter(link => (link.getAttribute('href') || '').startsWith('#'));
+    const sections = navLinks.map(link => document.querySelector(link.getAttribute('href')));
+
+    window.addEventListener('scroll', () => {
+      let currentId = '';
+
+      sections.forEach(section => {
+        if (!section) return;
+        const top = section.offsetTop - 140;
+        const height = section.offsetHeight;
+
+        if (window.scrollY >= top && window.scrollY < top + height) {
+          currentId = section.id;
+        }
+      });
+
+      navLinks.forEach(link => {
+        link.classList.toggle('active', link.getAttribute('href') === '#' + currentId);
+      });
+    });
+  </script>
+</body>
+</html>
