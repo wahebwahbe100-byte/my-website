@@ -577,7 +577,9 @@
 
       .startseite-video-shell {
         border-radius: 34px;
-        max-width: 285px;
+        width: min(285px, 100%);
+        aspect-ratio: 9 / 16;
+        height: auto;
         margin: 0 auto;
         border: 10px solid #111827;
         background: #111827;
@@ -585,7 +587,8 @@
       }
 
       .startseite-video-shell::before {
-        padding-top: 216.67%;
+        display: none;
+        padding-top: 0;
       }
 
       .startseite-video-shell::after {
@@ -599,11 +602,18 @@
         border-radius: 999px;
         background: rgba(17,24,39,.92);
         z-index: 2;
+        pointer-events: none;
       }
 
       .startseite-video-shell video {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
         border-radius: 24px;
         object-fit: cover;
+        display: block;
+        z-index: 1;
       }
     }
 
@@ -699,7 +709,7 @@
         <p>Sehen Sie in diesem Video, wie eine moderne Website schnell, responsive und professionell auf Smartphones, Tablets und Desktop-Computern wirkt.</p>
       </div>
       <div class="startseite-video-shell">
-        <video controls preload="metadata" playsinline>
+        <video controls preload="metadata" playsinline webkit-playsinline>
           <source src="Startseite.mp4" type="video/mp4"/>
           Ihr Browser unterstützt das Video-Format nicht.
         </video>
