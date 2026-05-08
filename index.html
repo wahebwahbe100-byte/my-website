@@ -535,6 +535,53 @@
       display: block;
     }
 
+
+    .startseite-video-play {
+      display: none;
+    }
+
+    @media (max-width: 768px) {
+      .startseite-video-shell.mobile-clean-controls {
+        cursor: pointer;
+        -webkit-tap-highlight-color: transparent;
+      }
+
+      .startseite-video-shell.mobile-clean-controls video::-webkit-media-controls {
+        display: none !important;
+      }
+
+      .startseite-video-shell.mobile-clean-controls video::-webkit-media-controls-enclosure {
+        display: none !important;
+      }
+
+      .startseite-video-play {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        z-index: 4;
+        width: 68px;
+        height: 68px;
+        transform: translate(-50%, -50%);
+        border: 0;
+        border-radius: 999px;
+        background: linear-gradient(90deg, var(--accent), var(--accent-dark));
+        color: #ffffff;
+        font-size: 28px;
+        line-height: 1;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 14px 34px rgba(14,165,233,.34);
+        transition: opacity .2s ease, transform .2s ease;
+      }
+
+      .startseite-video-shell.is-playing .startseite-video-play {
+        opacity: 0;
+        pointer-events: none;
+        transform: translate(-50%, -50%) scale(.92);
+      }
+    }
+
     @media (min-width: 1024px) {
       .startseite-video-card {
         padding: 1.35rem;
@@ -709,10 +756,11 @@
         <p>Sehen Sie in diesem Video, wie eine moderne Website schnell, responsive und professionell auf Smartphones, Tablets und Desktop-Computern wirkt.</p>
       </div>
       <div class="startseite-video-shell">
-        <video controls preload="metadata" playsinline webkit-playsinline>
+        <video controls preload="metadata" playsinline webkit-playsinline controlslist="nodownload noplaybackrate">
           <source src="Startseite.mp4" type="video/mp4"/>
           Ihr Browser unterstützt das Video-Format nicht.
         </video>
+        <button class="startseite-video-play" type="button" aria-label="Video abspielen">▶</button>
       </div>
     </div>
   </div>
@@ -1168,6 +1216,45 @@
         link.classList.toggle('active', link.getAttribute('href') === '#' + currentId);
       });
     });
+
+    function setupMobileVideoControls() {
+      const shell = document.querySelector('.startseite-video-shell');
+      const video = shell ? shell.querySelector('video') : null;
+      const playButton = shell ? shell.querySelector('.startseite-video-play') : null;
+      if (!shell || !video || !playButton) return;
+
+      const isMobile = window.matchMedia('(max-width: 768px)').matches;
+      if (!isMobile) return;
+
+      shell.classList.add('mobile-clean-controls');
+      video.removeAttribute('controls');
+      video.controls = false;
+
+      const updateState = () => {
+        shell.classList.toggle('is-playing', !video.paused && !video.ended);
+        playButton.textContent = video.paused || video.ended ? '▶' : '❚❚';
+        playButton.setAttribute('aria-label', video.paused || video.ended ? 'Video abspielen' : 'Video pausieren');
+      };
+
+      const toggleVideo = (event) => {
+        event.preventDefault();
+        if (video.paused || video.ended) {
+          video.play().catch(() => {});
+        } else {
+          video.pause();
+        }
+        updateState();
+      };
+
+      shell.addEventListener('click', toggleVideo);
+      video.addEventListener('play', updateState);
+      video.addEventListener('pause', updateState);
+      video.addEventListener('ended', updateState);
+      updateState();
+    }
+
+    setupMobileVideoControls();
+
   </script>
 </body>
 </html>
