@@ -469,6 +469,117 @@
       }
     }
 
+
+    .startseite-video-wrap {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 0 1.5rem 6rem;
+    }
+
+    .startseite-video-card {
+      position: relative;
+      overflow: hidden;
+      border-radius: 34px;
+      border: 1px solid rgba(56,189,248,.24);
+      background:
+        radial-gradient(circle at 18% 0%, rgba(56,189,248,.18), transparent 32%),
+        linear-gradient(180deg, rgba(255,255,255,.96), rgba(239,249,255,.92));
+      box-shadow: 0 26px 80px rgba(17,24,39,.12), 0 0 42px rgba(56,189,248,.12);
+      padding: 1.1rem;
+    }
+
+    .startseite-video-inner {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.25rem;
+      align-items: center;
+    }
+
+    .startseite-video-text {
+      border-radius: 26px;
+      border: 1px solid rgba(17,24,39,.08);
+      background: rgba(255,255,255,.72);
+      padding: 1.5rem;
+      text-align: center;
+      direction: rtl;
+    }
+
+    .startseite-video-text p {
+      margin: 0;
+      color: #334155;
+      font-size: 1.12rem;
+      line-height: 2;
+      font-weight: 700;
+    }
+
+    .startseite-video-shell {
+      position: relative;
+      overflow: hidden;
+      border-radius: 28px;
+      background: #0b1120;
+      box-shadow: inset 0 0 0 1px rgba(255,255,255,.10), 0 22px 60px rgba(17,24,39,.22);
+    }
+
+    .startseite-video-shell::before {
+      content: "";
+      display: block;
+      padding-top: 56.25%;
+    }
+
+    .startseite-video-shell video {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    @media (min-width: 1024px) {
+      .startseite-video-card {
+        padding: 1.35rem;
+      }
+
+      .startseite-video-inner {
+        grid-template-columns: .85fr 1.35fr;
+        gap: 1.35rem;
+      }
+
+      .startseite-video-text {
+        text-align: right;
+        padding: 2rem;
+      }
+
+      .startseite-video-text p {
+        font-size: 1.25rem;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .startseite-video-wrap {
+        padding: 0 1rem 4rem;
+      }
+
+      .startseite-video-card {
+        border-radius: 26px;
+        padding: .65rem;
+      }
+
+      .startseite-video-text {
+        border-radius: 20px;
+        padding: 1.1rem;
+      }
+
+      .startseite-video-text p {
+        font-size: 1rem;
+        line-height: 1.9;
+      }
+
+      .startseite-video-shell {
+        border-radius: 22px;
+      }
+    }
+
 </style>
 <meta content="summary_large_image" name="twitter:card"/><script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebSite", "name": "WahebSite", "url": "https://wahebsite.de/", "inLanguage": "de-DE"}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Startseite", "item": "https://wahebsite.de/"}]}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Arbeitet WahebSite nur lokal oder deutschlandweit?", "acceptedAnswer": {"@type": "Answer", "text": "WahebSite ist deutschlandweit ausgerichtet. Neben der zentralen Startseite können zusätzliche Standortseiten helfen, Leistungen regional verständlich zu präsentieren."}}, {"@type": "Question", "name": "Was ist bei SEO-Landingpages für Städte wichtig?", "acceptedAnswer": {"@type": "Answer", "text": "Wichtig sind echte Relevanz, klare Nutzerführung, eigenständige Inhalte und saubere interne Verlinkung. Reine Kopien mit ausgetauschtem Ortsnamen sind langfristig deutlich schwächer."}}, {"@type": "Question", "name": "Ist eine neue Website automatisch suchmaschinenoptimiert?", "acceptedAnswer": {"@type": "Answer", "text": "Nicht automatisch. Design, Technik, Struktur, Inhalte und lokale Signale sollten gemeinsam aufgebaut werden, damit die Website nicht nur modern aussieht, sondern auch besser gefunden werden kann."}}]}</script></head>
 <body>
@@ -554,6 +665,22 @@
 </div>
 </div>
 </section>
+<div class="startseite-video-wrap fade-up">
+  <div class="startseite-video-card">
+    <div class="startseite-video-inner">
+      <div class="startseite-video-text">
+        <p>Sehen Sie in diesem Video, wie eine moderne Website schnell, responsive und professionell auf Smartphones, Tablets und Desktop-Computern wirkt.</p>
+      </div>
+      <div class="startseite-video-shell">
+        <video controls preload="metadata" playsinline>
+          <source src="Startseite.mp4" type="video/mp4"/>
+          Ihr Browser unterstützt das Video-Format nicht.
+        </video>
+      </div>
+    </div>
+  </div>
+</div>
+
 <section class="mx-auto max-w-7xl px-6 py-24" id="about">
 <div class="grid items-center gap-14 lg:grid-cols-2">
 <div class="fade-up">
