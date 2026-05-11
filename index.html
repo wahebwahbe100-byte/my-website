@@ -1621,6 +1621,111 @@
       display: flex;
     }
 
+
+    /* ===== Direct image visibility + mobile background fix ===== */
+    html,
+    body {
+      min-height: 100%;
+      background-color: #07111f !important;
+      overflow-x: hidden !important;
+    }
+
+    body {
+      background:
+        radial-gradient(circle at 14% 8%, rgba(56,189,248,.16), transparent 25%),
+        radial-gradient(circle at 86% 16%, rgba(37,99,235,.14), transparent 28%),
+        linear-gradient(135deg, #07111f 0%, #0b1628 48%, #050816 100%) !important;
+      background-attachment: scroll !important;
+    }
+
+    body::before,
+    body::after {
+      position: absolute !important;
+      min-height: 100%;
+    }
+
+    .website-preview-card {
+      background: #07111f !important;
+      overflow: hidden !important;
+      cursor: default !important;
+      pointer-events: none;
+      transform: translateZ(0);
+      -webkit-transform: translateZ(0);
+    }
+
+    .website-preview-card img {
+      display: block !important;
+      opacity: 1 !important;
+      visibility: visible !important;
+      width: 100% !important;
+      height: 100% !important;
+      min-width: 100%;
+      min-height: 100%;
+      object-fit: cover !important;
+      object-position: top center !important;
+      background: #07111f !important;
+      pointer-events: none;
+      transform: translateZ(0);
+      -webkit-transform: translateZ(0);
+      backface-visibility: hidden;
+      -webkit-backface-visibility: hidden;
+    }
+
+    .website-preview-track {
+      pointer-events: none;
+      transform: translateZ(0);
+      -webkit-transform: translateZ(0);
+    }
+
+    .website-preview-grid,
+    .website-preview-showcase {
+      -webkit-transform: translateZ(0);
+      transform: translateZ(0);
+    }
+
+    .page-step,
+    .page-step:not(.page-show),
+    .page-step.page-show {
+      opacity: 1 !important;
+      visibility: visible !important;
+      filter: none !important;
+    }
+
+    @media (max-width: 640px) {
+      body {
+        background:
+          radial-gradient(circle at 18% 5%, rgba(56,189,248,.18), transparent 28%),
+          radial-gradient(circle at 90% 20%, rgba(37,99,235,.16), transparent 30%),
+          linear-gradient(180deg, #07111f 0%, #0b1628 42%, #050816 100%) !important;
+        background-attachment: scroll !important;
+      }
+
+      #home {
+        background:
+          radial-gradient(circle at 20% 10%, rgba(56,189,248,.24), transparent 28%),
+          radial-gradient(circle at 88% 16%, rgba(14,165,233,.18), transparent 32%),
+          linear-gradient(180deg, #08314d 0%, #0b2744 55%, #07111f 100%) !important;
+      }
+
+      .website-preview-showcase {
+        background:
+          linear-gradient(rgba(125,211,252,.08) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(125,211,252,.08) 1px, transparent 1px),
+          linear-gradient(180deg, #07111f, #0b1d36 56%, #050816) !important;
+        background-size: 48px 48px !important;
+      }
+
+      .website-preview-card,
+      .website-preview-card img {
+        opacity: 1 !important;
+        visibility: visible !important;
+      }
+
+      section::before {
+        opacity: .55 !important;
+      }
+    }
+
 </style>
 <meta content="summary_large_image" name="twitter:card"/><script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebSite", "name": "WahebSite", "url": "https://wahebsite.de/", "inLanguage": "de-DE"}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Startseite", "item": "https://wahebsite.de/"}]}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Arbeitet WahebSite nur lokal oder deutschlandweit?", "acceptedAnswer": {"@type": "Answer", "text": "WahebSite ist deutschlandweit ausgerichtet. Neben der zentralen Startseite können zusätzliche Standortseiten helfen, Leistungen regional verständlich zu präsentieren."}}, {"@type": "Question", "name": "Was ist bei SEO-Landingpages für Städte wichtig?", "acceptedAnswer": {"@type": "Answer", "text": "Wichtig sind echte Relevanz, klare Nutzerführung, eigenständige Inhalte und saubere interne Verlinkung. Reine Kopien mit ausgetauschtem Ortsnamen sind langfristig deutlich schwächer."}}, {"@type": "Question", "name": "Ist eine neue Website automatisch suchmaschinenoptimiert?", "acceptedAnswer": {"@type": "Answer", "text": "Nicht automatisch. Design, Technik, Struktur, Inhalte und lokale Signale sollten gemeinsam aufgebaut werden, damit die Website nicht nur modern aussieht, sondern auch besser gefunden werden kann."}}]}</script></head>
 <body>
@@ -1681,50 +1786,50 @@
   <div class="website-preview-grid">
     <div class="website-preview-column">
       <div class="website-preview-track">
-        <div class="website-preview-card" data-title="Website 1"><img src="images/website1.png" alt="Website Beispiel 1" width="1920" height="1900"/></div>
-        <div class="website-preview-card" data-title="Website 2"><img src="images/website2.png" alt="Website Beispiel 2" width="1920" height="1900"/></div>
-        <div class="website-preview-card" data-title="Website 3"><img src="images/website3.png" alt="Website Beispiel 3" width="1920" height="1900"/></div>
-        <div class="website-preview-card" data-title="Website 4"><img src="images/website4.png" alt="Website Beispiel 4" width="1920" height="1900"/></div>
-        <div class="website-preview-card" data-title="Website 1"><img src="images/website1.png" alt="Website Beispiel 1" width="1920" height="1900"/></div>
-        <div class="website-preview-card" data-title="Website 2"><img src="images/website2.png" alt="Website Beispiel 2" width="1920" height="1900"/></div>
-        <div class="website-preview-card" data-title="Website 3"><img src="images/website3.png" alt="Website Beispiel 3" width="1920" height="1900"/></div>
-        <div class="website-preview-card" data-title="Website 4"><img src="images/website4.png" alt="Website Beispiel 4" width="1920" height="1900"/></div>
+        <div class="website-preview-card"><img src="images/business-site.png" alt="Website Beispiel 1" width="1920" height="1900" loading="eager" decoding="sync" fetchpriority="high"/></div>
+        <div class="website-preview-card"><img src="images/booking-site.png" alt="Website Beispiel 2" width="1920" height="1900" loading="eager" decoding="sync" fetchpriority="high"/></div>
+        <div class="website-preview-card"><img src="images/ecommerce-site.png" alt="Website Beispiel 3" width="1920" height="1900" loading="eager" decoding="sync" fetchpriority="high"/></div>
+        <div class="website-preview-card"><img src="images/business-site.png" alt="Website Beispiel 4" width="1920" height="1900" loading="eager" decoding="sync" fetchpriority="high"/></div>
+        <div class="website-preview-card"><img src="images/business-site.png" alt="Website Beispiel 1" width="1920" height="1900" loading="eager" decoding="sync" fetchpriority="high"/></div>
+        <div class="website-preview-card"><img src="images/booking-site.png" alt="Website Beispiel 2" width="1920" height="1900" loading="eager" decoding="sync" fetchpriority="high"/></div>
+        <div class="website-preview-card"><img src="images/ecommerce-site.png" alt="Website Beispiel 3" width="1920" height="1900" loading="eager" decoding="sync" fetchpriority="high"/></div>
+        <div class="website-preview-card"><img src="images/business-site.png" alt="Website Beispiel 4" width="1920" height="1900" loading="eager" decoding="sync" fetchpriority="high"/></div>
       </div>
     </div>
     <div class="website-preview-column">
       <div class="website-preview-track">
-        <div class="website-preview-card" data-title="Website 3"><img src="images/website3.png" alt="Website Beispiel 3" width="1920" height="1900"/></div>
-        <div class="website-preview-card" data-title="Website 4"><img src="images/website4.png" alt="Website Beispiel 4" width="1920" height="1900"/></div>
-        <div class="website-preview-card" data-title="Website 1"><img src="images/website1.png" alt="Website Beispiel 1" width="1920" height="1900"/></div>
-        <div class="website-preview-card" data-title="Website 2"><img src="images/website2.png" alt="Website Beispiel 2" width="1920" height="1900"/></div>
-        <div class="website-preview-card" data-title="Website 3"><img src="images/website3.png" alt="Website Beispiel 3" width="1920" height="1900"/></div>
-        <div class="website-preview-card" data-title="Website 4"><img src="images/website4.png" alt="Website Beispiel 4" width="1920" height="1900"/></div>
-        <div class="website-preview-card" data-title="Website 1"><img src="images/website1.png" alt="Website Beispiel 1" width="1920" height="1900"/></div>
-        <div class="website-preview-card" data-title="Website 2"><img src="images/website2.png" alt="Website Beispiel 2" width="1920" height="1900"/></div>
+        <div class="website-preview-card"><img src="images/ecommerce-site.png" alt="Website Beispiel 3" width="1920" height="1900" loading="eager" decoding="sync" fetchpriority="high"/></div>
+        <div class="website-preview-card"><img src="images/business-site.png" alt="Website Beispiel 4" width="1920" height="1900" loading="eager" decoding="sync" fetchpriority="high"/></div>
+        <div class="website-preview-card"><img src="images/business-site.png" alt="Website Beispiel 1" width="1920" height="1900" loading="eager" decoding="sync" fetchpriority="high"/></div>
+        <div class="website-preview-card"><img src="images/booking-site.png" alt="Website Beispiel 2" width="1920" height="1900" loading="eager" decoding="sync" fetchpriority="high"/></div>
+        <div class="website-preview-card"><img src="images/ecommerce-site.png" alt="Website Beispiel 3" width="1920" height="1900" loading="eager" decoding="sync" fetchpriority="high"/></div>
+        <div class="website-preview-card"><img src="images/business-site.png" alt="Website Beispiel 4" width="1920" height="1900" loading="eager" decoding="sync" fetchpriority="high"/></div>
+        <div class="website-preview-card"><img src="images/business-site.png" alt="Website Beispiel 1" width="1920" height="1900" loading="eager" decoding="sync" fetchpriority="high"/></div>
+        <div class="website-preview-card"><img src="images/booking-site.png" alt="Website Beispiel 2" width="1920" height="1900" loading="eager" decoding="sync" fetchpriority="high"/></div>
       </div>
     </div>
     <div class="website-preview-column">
       <div class="website-preview-track">
-        <div class="website-preview-card" data-title="Website 2"><img src="images/website2.png" alt="Website Beispiel 2" width="1920" height="1900"/></div>
-        <div class="website-preview-card" data-title="Website 1"><img src="images/website1.png" alt="Website Beispiel 1" width="1920" height="1900"/></div>
-        <div class="website-preview-card" data-title="Website 4"><img src="images/website4.png" alt="Website Beispiel 4" width="1920" height="1900"/></div>
-        <div class="website-preview-card" data-title="Website 3"><img src="images/website3.png" alt="Website Beispiel 3" width="1920" height="1900"/></div>
-        <div class="website-preview-card" data-title="Website 2"><img src="images/website2.png" alt="Website Beispiel 2" width="1920" height="1900"/></div>
-        <div class="website-preview-card" data-title="Website 1"><img src="images/website1.png" alt="Website Beispiel 1" width="1920" height="1900"/></div>
-        <div class="website-preview-card" data-title="Website 4"><img src="images/website4.png" alt="Website Beispiel 4" width="1920" height="1900"/></div>
-        <div class="website-preview-card" data-title="Website 3"><img src="images/website3.png" alt="Website Beispiel 3" width="1920" height="1900"/></div>
+        <div class="website-preview-card"><img src="images/booking-site.png" alt="Website Beispiel 2" width="1920" height="1900" loading="eager" decoding="sync" fetchpriority="high"/></div>
+        <div class="website-preview-card"><img src="images/business-site.png" alt="Website Beispiel 1" width="1920" height="1900" loading="eager" decoding="sync" fetchpriority="high"/></div>
+        <div class="website-preview-card"><img src="images/business-site.png" alt="Website Beispiel 4" width="1920" height="1900" loading="eager" decoding="sync" fetchpriority="high"/></div>
+        <div class="website-preview-card"><img src="images/ecommerce-site.png" alt="Website Beispiel 3" width="1920" height="1900" loading="eager" decoding="sync" fetchpriority="high"/></div>
+        <div class="website-preview-card"><img src="images/booking-site.png" alt="Website Beispiel 2" width="1920" height="1900" loading="eager" decoding="sync" fetchpriority="high"/></div>
+        <div class="website-preview-card"><img src="images/business-site.png" alt="Website Beispiel 1" width="1920" height="1900" loading="eager" decoding="sync" fetchpriority="high"/></div>
+        <div class="website-preview-card"><img src="images/business-site.png" alt="Website Beispiel 4" width="1920" height="1900" loading="eager" decoding="sync" fetchpriority="high"/></div>
+        <div class="website-preview-card"><img src="images/ecommerce-site.png" alt="Website Beispiel 3" width="1920" height="1900" loading="eager" decoding="sync" fetchpriority="high"/></div>
       </div>
     </div>
     <div class="website-preview-column">
       <div class="website-preview-track">
-        <div class="website-preview-card" data-title="Website 4"><img src="images/website4.png" alt="Website Beispiel 4" width="1920" height="1900"/></div>
-        <div class="website-preview-card" data-title="Website 3"><img src="images/website3.png" alt="Website Beispiel 3" width="1920" height="1900"/></div>
-        <div class="website-preview-card" data-title="Website 2"><img src="images/website2.png" alt="Website Beispiel 2" width="1920" height="1900"/></div>
-        <div class="website-preview-card" data-title="Website 1"><img src="images/website1.png" alt="Website Beispiel 1" width="1920" height="1900"/></div>
-        <div class="website-preview-card" data-title="Website 4"><img src="images/website4.png" alt="Website Beispiel 4" width="1920" height="1900"/></div>
-        <div class="website-preview-card" data-title="Website 3"><img src="images/website3.png" alt="Website Beispiel 3" width="1920" height="1900"/></div>
-        <div class="website-preview-card" data-title="Website 2"><img src="images/website2.png" alt="Website Beispiel 2" width="1920" height="1900"/></div>
-        <div class="website-preview-card" data-title="Website 1"><img src="images/website1.png" alt="Website Beispiel 1" width="1920" height="1900"/></div>
+        <div class="website-preview-card"><img src="images/business-site.png" alt="Website Beispiel 4" width="1920" height="1900" loading="eager" decoding="sync" fetchpriority="high"/></div>
+        <div class="website-preview-card"><img src="images/ecommerce-site.png" alt="Website Beispiel 3" width="1920" height="1900" loading="eager" decoding="sync" fetchpriority="high"/></div>
+        <div class="website-preview-card"><img src="images/booking-site.png" alt="Website Beispiel 2" width="1920" height="1900" loading="eager" decoding="sync" fetchpriority="high"/></div>
+        <div class="website-preview-card"><img src="images/business-site.png" alt="Website Beispiel 1" width="1920" height="1900" loading="eager" decoding="sync" fetchpriority="high"/></div>
+        <div class="website-preview-card"><img src="images/business-site.png" alt="Website Beispiel 4" width="1920" height="1900" loading="eager" decoding="sync" fetchpriority="high"/></div>
+        <div class="website-preview-card"><img src="images/ecommerce-site.png" alt="Website Beispiel 3" width="1920" height="1900" loading="eager" decoding="sync" fetchpriority="high"/></div>
+        <div class="website-preview-card"><img src="images/booking-site.png" alt="Website Beispiel 2" width="1920" height="1900" loading="eager" decoding="sync" fetchpriority="high"/></div>
+        <div class="website-preview-card"><img src="images/business-site.png" alt="Website Beispiel 1" width="1920" height="1900" loading="eager" decoding="sync" fetchpriority="high"/></div>
       </div>
     </div>
   </div>
@@ -1909,7 +2014,7 @@
 <div class="mt-12 grid gap-6 md:grid-cols-3">
 <div class="section-card overflow-hidden rounded-3xl border border-black/10 bg-white/85 shadow-xl">
 <div class="project-art">
-<img alt="Business Website Beispiel" src="images/website1.png" width="1920" height="1900"/>
+<img alt="Business Website Beispiel" src="images/business-site.png" width="1920" height="1900" loading="eager" decoding="sync" fetchpriority="high"/>
 </div>
 <div class="p-6">
 <h3 class="mt-2 text-2xl font-semibold">Business Website</h3>
@@ -1918,7 +2023,7 @@
 </div>
 <div class="section-card overflow-hidden rounded-3xl border border-black/10 bg-white/85 shadow-xl">
 <div class="project-art">
-<img alt="Booking Website Beispiel" src="images/website2.png" width="1920" height="1900"/>
+<img alt="Booking Website Beispiel" src="images/booking-site.png" width="1920" height="1900" loading="eager" decoding="sync" fetchpriority="high"/>
 </div>
 <div class="p-6">
 <h3 class="mt-2 text-2xl font-semibold">Booking Website</h3>
@@ -1927,7 +2032,7 @@
 </div>
 <div class="section-card overflow-hidden rounded-3xl border border-black/10 bg-white/85 shadow-xl">
 <div class="project-art">
-<img alt="Ecommerce Website Beispiel" src="images/website3.png" width="1920" height="1900"/>
+<img alt="Ecommerce Website Beispiel" src="images/ecommerce-site.png" width="1920" height="1900" loading="eager" decoding="sync" fetchpriority="high"/>
 </div>
 <div class="p-6">
 <h3 class="mt-2 text-2xl font-semibold">Dienstleistungswebsite</h3>
@@ -2293,44 +2398,6 @@
     setIphoneViewportHeight();
     window.addEventListener('resize', setIphoneViewportHeight);
     window.addEventListener('orientationchange', setIphoneViewportHeight);
-
-
-    function fixWebsiteImageFallbacks() {
-      const websiteImages = document.querySelectorAll('img[src*="website1."], img[src*="website2."], img[src*="website3."], img[src*="website4."]');
-
-      websiteImages.forEach((img) => {
-        const match = img.getAttribute('src').match(/(.*website[1-4])\.(png|jpg|jpeg|webp)$/i);
-        if (!match) return;
-
-        const base = match[1];
-        const extensions = ['png', 'jpg', 'jpeg', 'webp'];
-        let currentIndex = extensions.indexOf(match[2].toLowerCase());
-        if (currentIndex < 0) currentIndex = 0;
-
-        img.onerror = () => {
-          currentIndex += 1;
-
-          if (currentIndex < extensions.length) {
-            img.src = `${base}.${extensions[currentIndex]}`;
-            return;
-          }
-
-          const card = img.closest('.website-preview-card');
-          if (card) {
-            card.classList.add('image-missing');
-            img.classList.add('is-missing');
-
-            const numberMatch = base.match(/website([1-4])$/);
-            if (numberMatch && !card.getAttribute('data-title')) {
-              card.setAttribute('data-title', `Website ${numberMatch[1]}`);
-            }
-          }
-        };
-      });
-    }
-
-    fixWebsiteImageFallbacks();
-
   </script>
 </body>
 </html>
