@@ -1778,25 +1778,7 @@
 <a class="btn-primary rounded-2xl px-6 py-3" href="#contact">Website jetzt anfragen</a>
 <a class="btn-secondary rounded-2xl border border-black/10 bg-white/60 px-6 py-3 font-semibold" href="#projects">Beispiele ansehen</a>
 </div>
-<div class="website-preview-showcase" aria-label="Website Beispiele Vorschau">
-  <div class="website-preview-logos">
-    <span>Webdesign</span>
-    <span>SEO</span>
-  </div>
-  <div class="website-preview-grid">
-    <div class="website-preview-column">
-      <div class="website-preview-track">
-        <div class="website-preview-card"><img src="images/website1.png" alt="Website Beispiel 1" width="1920" height="1900" loading="eager" decoding="sync" fetchpriority="high"/></div>
-        <div class="website-preview-card"><img src="images/website2.png" alt="Website Beispiel 2" width="1920" height="1900" loading="eager" decoding="sync" fetchpriority="high"/></div>
-        <div class="website-preview-card"><img src="images/website3.png" alt="Website Beispiel 3" width="1920" height="1900" loading="eager" decoding="sync" fetchpriority="high"/></div>
-        <div class="website-preview-card"><img src="images/website4.png" alt="Website Beispiel 4" width="1920" height="1900" loading="eager" decoding="sync" fetchpriority="high"/></div>
-        <div class="website-preview-card"><img src="images/website1.png" alt="Website Beispiel 1" width="1920" height="1900" loading="eager" decoding="sync" fetchpriority="high"/></div>
-        <div class="website-preview-card"><img src="images/website2.png" alt="Website Beispiel 2" width="1920" height="1900" loading="eager" decoding="sync" fetchpriority="high"/></div>
-        <div class="website-preview-card"><img src="images/website3.png" alt="Website Beispiel 3" width="1920" height="1900" loading="eager" decoding="sync" fetchpriority="high"/></div>
-        <div class="website-preview-card"><img src="images/website4.png" alt="Website Beispiel 4" width="1920" height="1900" loading="eager" decoding="sync" fetchpriority="high"/></div>
-      </div>
-    </div>
-    <div class="website-preview-column">
+<div class="website-preview-column">
       <div class="website-preview-track">
         <div class="website-preview-card"><img src="images/ecommerce-site.png" alt="Website Beispiel 3" width="1920" height="1900" loading="eager" decoding="sync" fetchpriority="high"/></div>
         <div class="website-preview-card"><img src="images/business-site.png" alt="Website Beispiel 4" width="1920" height="1900" loading="eager" decoding="sync" fetchpriority="high"/></div>
@@ -2398,27 +2380,6 @@
     setIphoneViewportHeight();
     window.addEventListener('resize', setIphoneViewportHeight);
     window.addEventListener('orientationchange', setIphoneViewportHeight);
-
-    function showWebsiteImagesImmediately() {
-      const images = document.querySelectorAll('img[src*="website1."], img[src*="website2."], img[src*="website3."], img[src*="website4."], img[src*="business-site."], img[src*="booking-site."], img[src*="ecommerce-site."]');
-
-      images.forEach((img) => {
-        img.loading = 'eager';
-        img.decoding = 'sync';
-        img.fetchPriority = 'high';
-        img.style.opacity = '1';
-        img.style.visibility = 'visible';
-        img.style.display = 'block';
-      });
-    }
-
-    if (document.readyState === 'loading') {
-      document.addEventListener('DOMContentLoaded', showWebsiteImagesImmediately);
-    } else {
-      showWebsiteImagesImmediately();
-    }
-
-    window.addEventListener('pageshow', showWebsiteImagesImmediately);
 
   </script>
 </body>
