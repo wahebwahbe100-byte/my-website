@@ -277,6 +277,190 @@
       display: block;
     }
 
+    .website-preview-showcase {
+      position: relative;
+      margin-top: 2rem;
+      width: min(100%, 760px);
+      height: 430px;
+      border-radius: 28px;
+      overflow: hidden;
+      background:
+        linear-gradient(rgba(255,255,255,.06) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.06) 1px, transparent 1px),
+        #050816;
+      background-size: 54px 54px;
+      border: 1px solid rgba(56,189,248,.20);
+      box-shadow: 0 24px 70px rgba(17,24,39,.24), 0 0 36px rgba(56,189,248,.14);
+      padding: 1rem;
+      isolation: isolate;
+    }
+
+    .website-preview-showcase::before,
+    .website-preview-showcase::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      z-index: 5;
+      height: 115px;
+      pointer-events: none;
+    }
+
+    .website-preview-showcase::before {
+      top: 0;
+      background: linear-gradient(to bottom, #050816 8%, rgba(5,8,22,.80) 42%, transparent);
+    }
+
+    .website-preview-showcase::after {
+      bottom: 0;
+      background: linear-gradient(to top, #050816 8%, rgba(5,8,22,.80) 42%, transparent);
+    }
+
+    .website-preview-logos {
+      position: absolute;
+      top: 1.05rem;
+      left: 50%;
+      z-index: 8;
+      transform: translateX(-50%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 2rem;
+      color: rgba(255,255,255,.36);
+      font-size: clamp(1.05rem, 2.4vw, 1.65rem);
+      font-weight: 900;
+      letter-spacing: .03em;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    .website-preview-grid {
+      position: absolute;
+      inset: 0;
+      z-index: 2;
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: .9rem;
+      padding: 0 1rem;
+      transform: rotate(-2deg) scale(1.04);
+    }
+
+    .website-preview-column {
+      height: 100%;
+      overflow: hidden;
+      transform: translateY(0);
+    }
+
+    .website-preview-column:nth-child(2) { transform: translateY(-42px); }
+    .website-preview-column:nth-child(3) { transform: translateY(26px); }
+    .website-preview-column:nth-child(4) { transform: translateY(-18px); }
+
+    .website-preview-track {
+      display: flex;
+      flex-direction: column;
+      gap: .9rem;
+      animation: websiteScrollUp 18s linear infinite;
+      will-change: transform;
+    }
+
+    .website-preview-column:nth-child(2) .website-preview-track { animation-duration: 20s; }
+    .website-preview-column:nth-child(3) .website-preview-track { animation-duration: 17s; }
+    .website-preview-column:nth-child(4) .website-preview-track { animation-duration: 19s; }
+
+    .website-preview-card {
+      flex: 0 0 auto;
+      height: 190px;
+      border-radius: 18px;
+      overflow: hidden;
+      background: #ffffff;
+      border: 1px solid rgba(255,255,255,.18);
+      box-shadow: 0 18px 42px rgba(0,0,0,.28);
+    }
+
+    .website-preview-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    @keyframes websiteScrollUp {
+      0% {
+        transform: translateY(0);
+      }
+      100% {
+        transform: translateY(calc(-50% - .45rem));
+      }
+    }
+
+    @media (max-width: 768px) {
+      .website-preview-showcase {
+        width: 100%;
+        height: 360px;
+        margin-top: 1.5rem;
+        padding: .75rem;
+        border-radius: 22px;
+        background-size: 44px 44px;
+      }
+
+      .website-preview-logos {
+        top: .85rem;
+        gap: 1rem;
+        font-size: 1rem;
+      }
+
+      .website-preview-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: .65rem;
+        padding: 0 .7rem;
+        transform: rotate(-2deg) scale(1.06);
+      }
+
+      .website-preview-column:nth-child(4) {
+        display: none;
+      }
+
+      .website-preview-track {
+        gap: .65rem;
+        animation-duration: 16s;
+      }
+
+      .website-preview-column:nth-child(2) .website-preview-track { animation-duration: 18s; }
+      .website-preview-column:nth-child(3) .website-preview-track { animation-duration: 15s; }
+
+      .website-preview-card {
+        height: 145px;
+        border-radius: 14px;
+      }
+    }
+
+      .website-preview-logos {
+        gap: 1rem;
+        min-height: 42px;
+        margin-bottom: .8rem;
+      }
+
+      .website-preview-grid {
+        gap: .75rem;
+      }
+
+      .website-preview-card {
+        border-radius: 14px;
+      }
+
+      .website-preview-card img {
+        min-height: 115px;
+      }
+
+      .website-preview-card.large img {
+        min-height: 190px;
+      }
+
+      .website-preview-card.small img {
+        min-height: 90px;
+      }
+    }
+
     .feature-icon, .service-icon {
       width: 3.5rem;
       height: 3.5rem;
@@ -716,6 +900,62 @@
 <a class="btn-primary rounded-2xl px-6 py-3" href="#contact">Website jetzt anfragen</a>
 <a class="btn-secondary rounded-2xl border border-black/10 bg-white/60 px-6 py-3 font-semibold" href="#projects">Beispiele ansehen</a>
 </div>
+<div class="website-preview-showcase" aria-label="Website Beispiele Vorschau">
+  <div class="website-preview-logos">
+    <span>Webdesign</span>
+    <span>SEO</span>
+  </div>
+  <div class="website-preview-grid">
+    <div class="website-preview-column">
+      <div class="website-preview-track">
+        <div class="website-preview-card"><img src="images/website1.png" alt="Website Beispiel 1"/></div>
+        <div class="website-preview-card"><img src="images/website2.png" alt="Website Beispiel 2"/></div>
+        <div class="website-preview-card"><img src="images/website3.png" alt="Website Beispiel 3"/></div>
+        <div class="website-preview-card"><img src="images/website4.png" alt="Website Beispiel 4"/></div>
+        <div class="website-preview-card"><img src="images/website1.png" alt="Website Beispiel 1"/></div>
+        <div class="website-preview-card"><img src="images/website2.png" alt="Website Beispiel 2"/></div>
+        <div class="website-preview-card"><img src="images/website3.png" alt="Website Beispiel 3"/></div>
+        <div class="website-preview-card"><img src="images/website4.png" alt="Website Beispiel 4"/></div>
+      </div>
+    </div>
+    <div class="website-preview-column">
+      <div class="website-preview-track">
+        <div class="website-preview-card"><img src="images/website3.png" alt="Website Beispiel 3"/></div>
+        <div class="website-preview-card"><img src="images/website4.png" alt="Website Beispiel 4"/></div>
+        <div class="website-preview-card"><img src="images/website1.png" alt="Website Beispiel 1"/></div>
+        <div class="website-preview-card"><img src="images/website2.png" alt="Website Beispiel 2"/></div>
+        <div class="website-preview-card"><img src="images/website3.png" alt="Website Beispiel 3"/></div>
+        <div class="website-preview-card"><img src="images/website4.png" alt="Website Beispiel 4"/></div>
+        <div class="website-preview-card"><img src="images/website1.png" alt="Website Beispiel 1"/></div>
+        <div class="website-preview-card"><img src="images/website2.png" alt="Website Beispiel 2"/></div>
+      </div>
+    </div>
+    <div class="website-preview-column">
+      <div class="website-preview-track">
+        <div class="website-preview-card"><img src="images/website2.png" alt="Website Beispiel 2"/></div>
+        <div class="website-preview-card"><img src="images/website1.png" alt="Website Beispiel 1"/></div>
+        <div class="website-preview-card"><img src="images/website4.png" alt="Website Beispiel 4"/></div>
+        <div class="website-preview-card"><img src="images/website3.png" alt="Website Beispiel 3"/></div>
+        <div class="website-preview-card"><img src="images/website2.png" alt="Website Beispiel 2"/></div>
+        <div class="website-preview-card"><img src="images/website1.png" alt="Website Beispiel 1"/></div>
+        <div class="website-preview-card"><img src="images/website4.png" alt="Website Beispiel 4"/></div>
+        <div class="website-preview-card"><img src="images/website3.png" alt="Website Beispiel 3"/></div>
+      </div>
+    </div>
+    <div class="website-preview-column">
+      <div class="website-preview-track">
+        <div class="website-preview-card"><img src="images/website4.png" alt="Website Beispiel 4"/></div>
+        <div class="website-preview-card"><img src="images/website3.png" alt="Website Beispiel 3"/></div>
+        <div class="website-preview-card"><img src="images/website2.png" alt="Website Beispiel 2"/></div>
+        <div class="website-preview-card"><img src="images/website1.png" alt="Website Beispiel 1"/></div>
+        <div class="website-preview-card"><img src="images/website4.png" alt="Website Beispiel 4"/></div>
+        <div class="website-preview-card"><img src="images/website3.png" alt="Website Beispiel 3"/></div>
+        <div class="website-preview-card"><img src="images/website2.png" alt="Website Beispiel 2"/></div>
+        <div class="website-preview-card"><img src="images/website1.png" alt="Website Beispiel 1"/></div>
+      </div>
+    </div>
+  </div>
+</div>
 <div class="mt-10 grid gap-4 sm:grid-cols-3">
 <div class="glass rounded-2xl p-5 text-center">
 <img src="setup/setup1.png" alt="setup1" class="mx-auto h-20 w-20 object-contain"/>
@@ -896,7 +1136,7 @@
 <div class="mt-12 grid gap-6 md:grid-cols-3">
 <div class="section-card overflow-hidden rounded-3xl border border-black/10 bg-white/85 shadow-xl">
 <div class="project-art">
-<img alt="Business Website Beispiel" src="images/business-site.png"/>
+<img alt="Business Website Beispiel" src="images/website1.png"/>
 </div>
 <div class="p-6">
 <h3 class="mt-2 text-2xl font-semibold">Business Website</h3>
@@ -905,7 +1145,7 @@
 </div>
 <div class="section-card overflow-hidden rounded-3xl border border-black/10 bg-white/85 shadow-xl">
 <div class="project-art">
-<img alt="Booking Website Beispiel" src="images/booking-site.png"/>
+<img alt="Booking Website Beispiel" src="images/website2.png"/>
 </div>
 <div class="p-6">
 <h3 class="mt-2 text-2xl font-semibold">Booking Website</h3>
@@ -914,7 +1154,7 @@
 </div>
 <div class="section-card overflow-hidden rounded-3xl border border-black/10 bg-white/85 shadow-xl">
 <div class="project-art">
-<img alt="Ecommerce Website Beispiel" src="images/ecommerce-site.png"/>
+<img alt="Ecommerce Website Beispiel" src="images/website3.png"/>
 </div>
 <div class="p-6">
 <h3 class="mt-2 text-2xl font-semibold">Dienstleistungswebsite</h3>
@@ -1254,6 +1494,7 @@
     }
 
     setupMobileVideoControls();
+
 
   </script>
 </body>
