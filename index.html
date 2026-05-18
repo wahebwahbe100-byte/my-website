@@ -1874,7 +1874,7 @@
         <p>Sehen Sie in diesem Video, wie eine moderne Website schnell, responsive und professionell auf Smartphones, Tablets und Desktop-Computern wirkt.</p>
       </div>
       <div class="startseite-video-shell">
-        <video controls preload="metadata" playsinline webkit-playsinline controlslist="nodownload noplaybackrate">
+        <video autoplay muted loop preload="auto" playsinline webkit-playsinline controlslist="nodownload noplaybackrate" aria-label="Automatisch abgespieltes Website-Video">
           <source src="Startseite.mp4" type="video/mp4"/>
           Ihr Browser unterstützt das Video-Format nicht.
         </video>
@@ -2106,6 +2106,10 @@
 <div>
 <label class="mb-2 block text-sm" style="color:#6b7280;">E-Mail</label>
 <input class="contact-input" name="email" placeholder="name@example.com" required="" type="email"/>
+</div>
+<div>
+<label class="mb-2 block text-sm" style="color:#6b7280;">Telefonnummer</label>
+<input class="contact-input" name="phone" placeholder="Ihre Telefonnummer" required="" type="tel" inputmode="tel" autocomplete="tel"/>
 </div>
 <div>
 <label class="mb-2 block text-sm" style="color:#6b7280;">Projektart</label>
@@ -2380,43 +2384,53 @@
       });
     });
 
-    function setupMobileVideoControls() {
+    function setupWebsiteVideo() {
       const shell = document.querySelector('.startseite-video-shell');
       const video = shell ? shell.querySelector('video') : null;
       const playButton = shell ? shell.querySelector('.startseite-video-play') : null;
       if (!shell || !video || !playButton) return;
 
-      const isMobile = window.matchMedia('(max-width: 768px)').matches;
-      if (!isMobile) return;
-
       shell.classList.add('mobile-clean-controls');
+      video.muted = true;
+      video.loop = true;
+      video.autoplay = true;
+      video.playsInline = true;
       video.removeAttribute('controls');
       video.controls = false;
 
-      const updateState = () => {
-        shell.classList.toggle('is-playing', !video.paused && !video.ended);
-        playButton.textContent = video.paused || video.ended ? '▶' : '❚❚';
-        playButton.setAttribute('aria-label', video.paused || video.ended ? 'Video abspielen' : 'Video pausieren');
+      const startMutedAutoplay = () => {
+        video.muted = true;
+        video.loop = true;
+        video.play().catch(() => {});
       };
 
-      const toggleVideo = (event) => {
+      const updateState = () => {
+        shell.classList.toggle('is-playing', !video.paused && !video.ended);
+        playButton.textContent = '▶';
+        playButton.setAttribute('aria-label', 'Video mit Ton von vorne starten');
+      };
+
+      const restartWithSound = (event) => {
         event.preventDefault();
-        if (video.paused || video.ended) {
-          video.play().catch(() => {});
-        } else {
-          video.pause();
-        }
+        video.pause();
+        video.currentTime = 0;
+        video.muted = false;
+        video.loop = false;
+        video.controls = true;
+        video.play().catch(() => {});
         updateState();
       };
 
-      shell.addEventListener('click', toggleVideo);
+      shell.addEventListener('click', restartWithSound);
+      video.addEventListener('canplay', startMutedAutoplay, { once: true });
       video.addEventListener('play', updateState);
       video.addEventListener('pause', updateState);
       video.addEventListener('ended', updateState);
+      startMutedAutoplay();
       updateState();
     }
 
-    setupMobileVideoControls();
+    setupWebsiteVideo();
 
 
 
