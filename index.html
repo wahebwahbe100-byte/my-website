@@ -1726,6 +1726,327 @@
       }
     }
 
+
+    /* ===== Hero desktop: stack visual cards beside the text ===== */
+    @media (min-width: 1024px) {
+      .hero-side-stack {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+      }
+
+      .hero-side-stack .hero-card,
+      .hero-side-stack .website-preview-showcase {
+        width: 100%;
+        margin-top: 0;
+      }
+
+      .hero-side-stack .website-preview-showcase {
+        height: 390px;
+      }
+
+      .hero-side-stack .code-body {
+        min-height: 250px;
+      }
+    }
+
+
+
+    /* ===== Ritt-style projects section replacement - blue/black WahebSite colors ===== */
+    #projects.ritt-projects {
+      max-width: none !important;
+      width: 100% !important;
+      margin: 0 !important;
+      padding: 0 !important;
+      overflow: hidden !important;
+      background:
+        radial-gradient(circle at 15% 0%, rgba(56,189,248,.16), transparent 30%),
+        radial-gradient(circle at 86% 24%, rgba(37,99,235,.14), transparent 34%),
+        linear-gradient(135deg, #07111f 0%, #0b1628 48%, #050816 100%) !important;
+      color: #f8fbff !important;
+      border-top: 1px solid rgba(125,211,252,.18) !important;
+      border-bottom: 1px solid rgba(125,211,252,.18) !important;
+    }
+
+    #projects.ritt-projects::before { display: none !important; }
+
+    .ritt-projects-inner {
+      padding: 5.5rem 0 6.5rem 0;
+      overflow: hidden;
+      background: transparent !important;
+      color: #f8fbff;
+    }
+
+    .ritt-projects-head {
+      max-width: 1440px;
+      margin: 0 auto;
+      padding: 0 clamp(1.25rem, 7vw, 8rem);
+    }
+
+    .ritt-kicker {
+      margin: 0 0 1.5rem 0 !important;
+      color: #7dd3fc !important;
+      font-family: Arial, sans-serif !important;
+      font-size: .86rem !important;
+      font-weight: 900 !important;
+      letter-spacing: .42em !important;
+      text-transform: uppercase !important;
+      line-height: 1.2 !important;
+    }
+
+    #projects.ritt-projects h2 {
+      margin: 0 !important;
+      max-width: 1120px;
+      color: #ffffff !important;
+      text-shadow: none !important;
+      font-family: 'Playfair Display', serif !important;
+      font-size: clamp(2.7rem, 5.4vw, 5.05rem) !important;
+      line-height: .98 !important;
+      letter-spacing: -.055em !important;
+      font-weight: 900 !important;
+    }
+
+    #projects.ritt-projects h2 span {
+      background: linear-gradient(90deg, #67e8f9, #38bdf8, #60a5fa) !important;
+      -webkit-background-clip: text !important;
+      -webkit-text-fill-color: transparent !important;
+      color: #38bdf8 !important;
+    }
+
+    .ritt-marquee {
+      position: relative;
+      width: 100%;
+      margin-top: 4.4rem;
+      overflow: visible;
+    }
+
+    .ritt-marquee-track {
+      display: flex;
+      width: max-content;
+      gap: 1.7rem;
+      align-items: stretch;
+      animation: rittProjectsScroll 42s linear infinite;
+      will-change: transform;
+    }
+
+    @keyframes rittProjectsScroll {
+      from { transform: translateX(0); }
+      to { transform: translateX(calc(-50% - .85rem)); }
+    }
+
+    .ritt-work-card {
+      flex: 0 0 clamp(285px, 27vw, 430px);
+      display: block;
+      border-radius: 16px;
+      overflow: hidden;
+      background: linear-gradient(180deg, rgba(15,30,52,.96), rgba(8,18,34,.94)) !important;
+      border: 1px solid rgba(125,211,252,.25);
+      text-decoration: none !important;
+      color: #f8fbff !important;
+      box-shadow: 0 18px 48px rgba(0,0,0,.30), 0 0 28px rgba(56,189,248,.08);
+      transition: transform .3s ease, border-color .3s ease, box-shadow .3s ease;
+    }
+
+    .ritt-work-card:hover {
+      transform: translateY(-8px);
+      border-color: rgba(56,189,248,.55);
+      box-shadow: 0 24px 60px rgba(0,0,0,.36), 0 0 38px rgba(56,189,248,.16);
+    }
+
+    .ritt-work-image {
+      width: 100%;
+      height: clamp(175px, 18vw, 255px);
+      border-radius: 16px 16px 0 0;
+      overflow: hidden;
+      background: #07111f;
+    }
+
+    .ritt-work-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top center;
+      display: block;
+      filter: none !important;
+      opacity: 1 !important;
+    }
+
+    .ritt-work-info {
+      padding: 1.15rem 1.15rem 1.25rem 1.15rem;
+      background: transparent !important;
+    }
+
+    .ritt-work-info h3 {
+      margin: 0 !important;
+      color: #ffffff !important;
+      text-shadow: none !important;
+      font-family: 'Playfair Display', serif !important;
+      font-size: 1.4rem !important;
+      line-height: 1.2 !important;
+      font-weight: 900 !important;
+    }
+
+    .ritt-work-info p {
+      margin: .28rem 0 0 0 !important;
+      color: #cfe0f3 !important;
+      font-family: Arial, sans-serif !important;
+      font-size: .92rem !important;
+      line-height: 1.6 !important;
+      font-weight: 600 !important;
+    }
+
+    .ritt-work-info span {
+      display: inline-flex;
+      margin-top: .8rem;
+      color: #7dd3fc !important;
+      font-family: Arial, sans-serif !important;
+      font-size: .86rem !important;
+      font-weight: 800 !important;
+    }
+
+    @media (max-width: 768px) {
+      .ritt-projects-inner { padding: 4.25rem 0 4.75rem 0; }
+      .ritt-projects-head { padding: 0 1.25rem; }
+      #projects.ritt-projects h2 { font-size: clamp(2.2rem, 11vw, 3.4rem) !important; line-height: 1.03 !important; }
+      .ritt-marquee { margin-top: 2.5rem; }
+      .ritt-marquee-track { gap: 1rem; animation-duration: 38s; }
+      .ritt-work-card { flex-basis: 78vw; }
+      .ritt-work-image { height: 48vw; min-height: 190px; }
+    }
+
+
+
+    /* ===== Hero mobile table edge correction ===== */
+    @media (max-width: 640px) {
+      #home .hero-mobile-table {
+        display: grid !important;
+        grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+        gap: 0 !important;
+        overflow: hidden !important;
+        border-radius: 22px !important;
+        border: 1px solid rgba(186,230,253,.32) !important;
+        background: linear-gradient(180deg, rgba(7,47,82,.94), rgba(8,20,38,.94)) !important;
+      }
+
+      #home .hero-mobile-table > .glass {
+        border-radius: 0 !important;
+        border: 0 !important;
+        border-left: 1px solid rgba(186,230,253,.22) !important;
+        box-shadow: none !important;
+        padding: .85rem .45rem !important;
+        background: transparent !important;
+        min-width: 0 !important;
+      }
+
+      #home .hero-mobile-table > .glass:first-child {
+        border-left: 0 !important;
+      }
+
+      #home .hero-mobile-table > .glass img {
+        width: 52px !important;
+        height: 52px !important;
+      }
+
+      #home .hero-mobile-table > .glass p {
+        font-size: .72rem !important;
+        line-height: 1.35 !important;
+        margin-top: .45rem !important;
+      }
+    }
+
+    /* ===== Correct hero preview borders on phones ===== */
+    @media (max-width: 640px) {
+      #home .hero-side-stack {
+        width: 100% !important;
+        max-width: 100% !important;
+        gap: 1.35rem !important;
+      }
+
+      #home .hero-side-stack .hero-card,
+      #home .hero-side-stack .website-preview-showcase {
+        width: 100% !important;
+        max-width: 100% !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        box-sizing: border-box !important;
+      }
+
+      #home .website-preview-showcase {
+        height: 430px !important;
+        padding: 0 !important;
+        overflow: hidden !important;
+        border-radius: 24px !important;
+      }
+
+      #home .website-preview-logos {
+        top: 1rem !important;
+        left: 0 !important;
+        right: 0 !important;
+        width: 100% !important;
+        transform: none !important;
+        z-index: 9 !important;
+        justify-content: center !important;
+        gap: 1rem !important;
+        pointer-events: none !important;
+      }
+
+      #home .website-preview-grid {
+        inset: 0 !important;
+        width: 100% !important;
+        height: 100% !important;
+        box-sizing: border-box !important;
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+        gap: .75rem !important;
+        padding: 4.25rem .75rem .9rem .75rem !important;
+        transform: none !important;
+      }
+
+      #home .website-preview-column,
+      #home .website-preview-column:nth-child(1),
+      #home .website-preview-column:nth-child(2),
+      #home .website-preview-column:nth-child(3),
+      #home .website-preview-column:nth-child(4) {
+        height: 100% !important;
+        min-width: 0 !important;
+        transform: none !important;
+        overflow: hidden !important;
+      }
+
+      #home .website-preview-column:nth-child(3),
+      #home .website-preview-column:nth-child(4) {
+        display: none !important;
+      }
+
+      #home .website-preview-track {
+        gap: .75rem !important;
+        transform: translateY(0);
+      }
+
+      #home .website-preview-card {
+        width: 100% !important;
+        height: 165px !important;
+        min-height: 0 !important;
+        aspect-ratio: auto !important;
+        border-radius: 14px !important;
+        box-sizing: border-box !important;
+      }
+
+      #home .website-preview-card img {
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: cover !important;
+        object-position: top center !important;
+      }
+
+      #home .website-preview-showcase::before {
+        height: 70px !important;
+      }
+
+      #home .website-preview-showcase::after {
+        height: 42px !important;
+      }
+    }
+
 </style>
 <meta content="summary_large_image" name="twitter:card"/><script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebSite", "name": "WahebSite", "url": "https://wahebsite.de/", "inLanguage": "de-DE"}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Startseite", "item": "https://wahebsite.de/"}]}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Arbeitet WahebSite nur lokal oder deutschlandweit?", "acceptedAnswer": {"@type": "Answer", "text": "WahebSite ist deutschlandweit ausgerichtet. Neben der zentralen Startseite können zusätzliche Standortseiten helfen, Leistungen regional verständlich zu präsentieren."}}, {"@type": "Question", "name": "Was ist bei SEO-Landingpages für Städte wichtig?", "acceptedAnswer": {"@type": "Answer", "text": "Wichtig sind echte Relevanz, klare Nutzerführung, eigenständige Inhalte und saubere interne Verlinkung. Reine Kopien mit ausgetauschtem Ortsnamen sind langfristig deutlich schwächer."}}, {"@type": "Question", "name": "Ist eine neue Website automatisch suchmaschinenoptimiert?", "acceptedAnswer": {"@type": "Answer", "text": "Nicht automatisch. Design, Technik, Struktur, Inhalte und lokale Signale sollten gemeinsam aufgebaut werden, damit die Website nicht nur modern aussieht, sondern auch besser gefunden werden kann."}}]}</script></head>
 <body>
@@ -1767,7 +2088,7 @@
 </div>
 </header>
 <section class="page-step page-show border-b border-black/10" id="home">
-<div class="mx-auto grid max-w-7xl items-center gap-14 px-6 py-20 lg:grid-cols-2">
+<div class="mx-auto grid max-w-7xl items-start gap-14 px-6 py-20 lg:grid-cols-2">
 <div class="fade-up">
 <span class="inline-flex rounded-full border px-4 py-1 text-sm font-semibold" style="border-color:rgba(56,189,248,.20); background:rgba(56,189,248,.10); color:#0ea5e9;">
           Professionelles Webdesign, lokale SEO &amp; schnelle Entwicklung
@@ -1777,6 +2098,37 @@
 <div class="mt-8 flex flex-wrap gap-4">
 <a class="btn-primary rounded-2xl px-6 py-3" href="#contact">Website jetzt anfragen</a>
 <a class="btn-secondary rounded-2xl border border-black/10 bg-white/60 px-6 py-3 font-semibold" href="#projects">Beispiele ansehen</a>
+</div>
+
+<div class="mt-10 grid gap-4 sm:grid-cols-3 hero-mobile-table">
+<div class="glass rounded-2xl p-5 text-center">
+<img src="setup/setup1.png" alt="setup1" class="mx-auto h-20 w-20 object-contain"/>
+<p class="mt-2 text-sm" style="color:#6b7280;">Schnelle Umsetzung</p>
+</div>
+<div class="glass rounded-2xl p-5 text-center">
+<img src="setup/setup2.png" alt="setup2" class="mx-auto h-20 w-20 object-contain"/>
+<p class="mt-2 text-sm" style="color:#6b7280;">Eigene Domain</p>
+</div>
+<div class="glass rounded-2xl p-5 text-center">
+<img src="setup/setup3.png" alt="setup3" class="mx-auto h-20 w-20 object-contain"/>
+<p class="mt-2 text-sm" style="color:#6b7280;">Zahlung nach Fertigstellung</p>
+</div>
+</div>
+</div>
+<div class="fade-up hero-side-stack">
+<div class="hero-card">
+<div class="window-header">
+<span class="dot red"></span>
+<span class="dot yellow"></span>
+<span class="dot green"></span>
+</div>
+<div class="code-body">
+<div class="line-static"><span class="code-key">function</span> buildWebsite<span class="code-bracket">(brand) {</span></div>
+<div class="line-static indent-1"><span class="code-key">return</span> <span class="code-bracket">{</span></div>
+<div class="indent-2"><span id="typingText"></span><span class="typing-cursor"></span></div>
+<div class="line-static indent-1"><span class="code-bracket">}</span></div>
+<div class="line-static"><span class="code-bracket">}</span></div>
+</div>
 </div>
 <div class="website-preview-showcase" aria-label="Website Beispiele Vorschau">
   <div class="website-preview-logos">
@@ -1834,36 +2186,7 @@
     </div>
   </div>
 </div>
-<div class="mt-10 grid gap-4 sm:grid-cols-3">
-<div class="glass rounded-2xl p-5 text-center">
-<img src="setup/setup1.png" alt="setup1" class="mx-auto h-20 w-20 object-contain"/>
-<p class="mt-2 text-sm" style="color:#6b7280;">Schnelle Umsetzung</p>
-</div>
-<div class="glass rounded-2xl p-5 text-center">
-<img src="setup/setup2.png" alt="setup2" class="mx-auto h-20 w-20 object-contain"/>
-<p class="mt-2 text-sm" style="color:#6b7280;">Eigene Domain</p>
-</div>
-<div class="glass rounded-2xl p-5 text-center">
-<img src="setup/setup3.png" alt="setup3" class="mx-auto h-20 w-20 object-contain"/>
-<p class="mt-2 text-sm" style="color:#6b7280;">Zahlung nach Fertigstellung</p>
-</div>
-</div>
-</div>
-<div class="fade-up">
-<div class="hero-card">
-<div class="window-header">
-<span class="dot red"></span>
-<span class="dot yellow"></span>
-<span class="dot green"></span>
-</div>
-<div class="code-body">
-<div class="line-static"><span class="code-key">function</span> buildWebsite<span class="code-bracket">(brand) {</span></div>
-<div class="line-static indent-1"><span class="code-key">return</span> <span class="code-bracket">{</span></div>
-<div class="indent-2"><span id="typingText"></span><span class="typing-cursor"></span></div>
-<div class="line-static indent-1"><span class="code-bracket">}</span></div>
-<div class="line-static"><span class="code-bracket">}</span></div>
-</div>
-</div>
+
 </div>
 </div>
 </section>
@@ -2005,38 +2328,174 @@
 </div>
 </div>
 </section>
-<section class="page-step mx-auto max-w-7xl px-6 py-24" id="projects">
-<div class="fade-up">
-<p class="text-sm font-semibold uppercase tracking-[0.2em]" style="color:#0ea5e9;">Projekte</p>
-<h2 class="mt-3 text-3xl font-bold sm:text-4xl">Beispiele für Websites, die wir erstellen</h2>
-<p class="mt-4 max-w-2xl leading-8" style="color:#6b7280;">Die Inhalte, Farben und Funktionen werden individuell an Ihr Projekt angepasst.</p>
+<section class="page-step ritt-projects" id="projects">
+<div class="ritt-projects-inner">
+<div class="ritt-projects-head fade-up">
+<p class="ritt-kicker">Echte Projekte</p>
+<h2><span>Meine aktuellen Arbeiten.</span></h2>
 </div>
-<div class="mt-12 grid gap-6 md:grid-cols-3">
-<div class="section-card overflow-hidden rounded-3xl border border-black/10 bg-white/85 shadow-xl">
-<div class="project-art">
-<img alt="Business Website Beispiel" src="images/business-site.png" width="1920" height="1900" loading="eager" decoding="sync" fetchpriority="high"/>
+<div class="ritt-marquee" aria-label="Aktuelle Website-Projekte">
+<div class="ritt-marquee-track">
+<a class="ritt-work-card" href="https://ritt-happens.de/" target="_blank" rel="noopener">
+<div class="ritt-work-image"><img src="https://ritt-happens.de/wp-content/uploads/2026/04/03-bogner-schaedlingsbekaempfung.jpg" alt="Bogner Schädlingsbekämpfung" loading="lazy" decoding="async"/></div>
+<div class="ritt-work-info">
+<h3>Bogner Schädlingsbekämpfung</h3>
+<p>Kammerjäger</p>
+<span>Zur Website →</span>
 </div>
-<div class="p-6">
-<h3 class="mt-2 text-2xl font-semibold">Business Website</h3>
-<p class="mt-3 text-sm leading-7" style="color:#6b7280;">Professionelle Präsentation für Firmen, Dienstleistungen und starke Markenauftritte.</p>
+</a>
+<a class="ritt-work-card" href="https://ritt-happens.de/" target="_blank" rel="noopener">
+<div class="ritt-work-image"><img src="https://ritt-happens.de/wp-content/uploads/2026/06/volena-website-design-scaled.png" alt="Voléna" loading="lazy" decoding="async"/></div>
+<div class="ritt-work-info">
+<h3>Voléna</h3>
+<p>Haar Extensions</p>
+<span>Zur Website →</span>
 </div>
+</a>
+<a class="ritt-work-card" href="https://ritt-happens.de/" target="_blank" rel="noopener">
+<div class="ritt-work-image"><img src="https://ritt-happens.de/wp-content/uploads/2026/04/01-108-yoga-studio.jpg" alt="108 Yoga Studio" loading="lazy" decoding="async"/></div>
+<div class="ritt-work-info">
+<h3>108 Yoga Studio</h3>
+<p>Yoga Studio</p>
+<span>Zur Website →</span>
 </div>
-<div class="section-card overflow-hidden rounded-3xl border border-black/10 bg-white/85 shadow-xl">
-<div class="project-art">
-<img alt="Booking Website Beispiel" src="images/booking-site.png" width="1920" height="1900" loading="eager" decoding="sync" fetchpriority="high"/>
+</a>
+<a class="ritt-work-card" href="https://ritt-happens.de/" target="_blank" rel="noopener">
+<div class="ritt-work-image"><img src="https://ritt-happens.de/wp-content/uploads/2026/04/04-delroy-leasing.jpg" alt="Delroy Leasing" loading="lazy" decoding="async"/></div>
+<div class="ritt-work-info">
+<h3>Delroy Leasing</h3>
+<p>Leasing Unternehmensberatung</p>
+<span>Zur Website →</span>
 </div>
-<div class="p-6">
-<h3 class="mt-2 text-2xl font-semibold">Booking Website</h3>
-<p class="mt-3 text-sm leading-7" style="color:#6b7280;">Ideal für Terminbuchungen, Reservierungen und dienstleistungsorientierte Angebote.</p>
+</a>
+<a class="ritt-work-card" href="https://ritt-happens.de/" target="_blank" rel="noopener">
+<div class="ritt-work-image"><img src="https://ritt-happens.de/wp-content/uploads/2026/04/05-heilpraktiker-knetzgau.jpg" alt="Heilpraktiker Knetzgau" loading="lazy" decoding="async"/></div>
+<div class="ritt-work-info">
+<h3>Heilpraktiker Knetzgau</h3>
+<p>Naturheilpraxis</p>
+<span>Zur Website →</span>
 </div>
+</a>
+<a class="ritt-work-card" href="https://ritt-happens.de/" target="_blank" rel="noopener">
+<div class="ritt-work-image"><img src="https://ritt-happens.de/wp-content/uploads/2026/05/screencapture-engel-erbenheim-de-2026-05-06-12_11_15-scaled.png" alt="Der Engel in Erbenheim" loading="lazy" decoding="async"/></div>
+<div class="ritt-work-info">
+<h3>Der Engel in Erbenheim</h3>
+<p>Restaurant</p>
+<span>Zur Website →</span>
 </div>
-<div class="section-card overflow-hidden rounded-3xl border border-black/10 bg-white/85 shadow-xl">
-<div class="project-art">
-<img alt="Ecommerce Website Beispiel" src="images/ecommerce-site.png" width="1920" height="1900" loading="eager" decoding="sync" fetchpriority="high"/>
+</a>
+<a class="ritt-work-card" href="https://ritt-happens.de/" target="_blank" rel="noopener">
+<div class="ritt-work-image"><img src="https://ritt-happens.de/wp-content/uploads/2026/04/02-banana-split.jpg" alt="Banana Split" loading="lazy" decoding="async"/></div>
+<div class="ritt-work-info">
+<h3>Banana Split</h3>
+<p>Online Sport Studio</p>
+<span>Zur Website →</span>
 </div>
-<div class="p-6">
-<h3 class="mt-2 text-2xl font-semibold">Dienstleistungswebsite</h3>
-<p class="mt-3 text-sm leading-7" style="color:#6b7280;">Ideal für Reinigungsdienste oder Umzugsservices, mit professioneller Präsentation der Leistungen und einfacher Anfrage- sowie Kontaktmöglichkeit für Kunden..</p>
+</a>
+<a class="ritt-work-card" href="https://ritt-happens.de/" target="_blank" rel="noopener">
+<div class="ritt-work-image"><img src="https://ritt-happens.de/wp-content/uploads/2026/04/08-voigt-diallo-aesthetic.jpg" alt="Voigt Diallo Aesthetic" loading="lazy" decoding="async"/></div>
+<div class="ritt-work-info">
+<h3>Voigt Diallo Aesthetic</h3>
+<p>Praxis für ästhetische Medizin</p>
+<span>Zur Website →</span>
+</div>
+</a>
+<a class="ritt-work-card" href="https://ritt-happens.de/" target="_blank" rel="noopener">
+<div class="ritt-work-image"><img src="https://ritt-happens.de/wp-content/uploads/2026/04/06-r2r-recycling.jpg" alt="R2R Recycling" loading="lazy" decoding="async"/></div>
+<div class="ritt-work-info">
+<h3>R2R Recycling</h3>
+<p>Recycling Unternehmen</p>
+<span>Zur Website →</span>
+</div>
+</a>
+<a class="ritt-work-card" href="https://ritt-happens.de/" target="_blank" rel="noopener">
+<div class="ritt-work-image"><img src="https://ritt-happens.de/wp-content/uploads/2026/04/09-haushaltsaufloesung-jungk.jpg" alt="Jungk Haushaltsauflösungen" loading="lazy" decoding="async"/></div>
+<div class="ritt-work-info">
+<h3>Jungk Haushaltsauflösungen</h3>
+<p>Haushaltsauflösungen & Umzüge</p>
+<span>Zur Website →</span>
+</div>
+</a>
+<a class="ritt-work-card" href="https://ritt-happens.de/" target="_blank" rel="noopener">
+<div class="ritt-work-image"><img src="https://ritt-happens.de/wp-content/uploads/2026/04/03-bogner-schaedlingsbekaempfung.jpg" alt="Bogner Schädlingsbekämpfung" loading="lazy" decoding="async"/></div>
+<div class="ritt-work-info">
+<h3>Bogner Schädlingsbekämpfung</h3>
+<p>Kammerjäger</p>
+<span>Zur Website →</span>
+</div>
+</a>
+<a class="ritt-work-card" href="https://ritt-happens.de/" target="_blank" rel="noopener">
+<div class="ritt-work-image"><img src="https://ritt-happens.de/wp-content/uploads/2026/06/volena-website-design-scaled.png" alt="Voléna" loading="lazy" decoding="async"/></div>
+<div class="ritt-work-info">
+<h3>Voléna</h3>
+<p>Haar Extensions</p>
+<span>Zur Website →</span>
+</div>
+</a>
+<a class="ritt-work-card" href="https://ritt-happens.de/" target="_blank" rel="noopener">
+<div class="ritt-work-image"><img src="https://ritt-happens.de/wp-content/uploads/2026/04/01-108-yoga-studio.jpg" alt="108 Yoga Studio" loading="lazy" decoding="async"/></div>
+<div class="ritt-work-info">
+<h3>108 Yoga Studio</h3>
+<p>Yoga Studio</p>
+<span>Zur Website →</span>
+</div>
+</a>
+<a class="ritt-work-card" href="https://ritt-happens.de/" target="_blank" rel="noopener">
+<div class="ritt-work-image"><img src="https://ritt-happens.de/wp-content/uploads/2026/04/04-delroy-leasing.jpg" alt="Delroy Leasing" loading="lazy" decoding="async"/></div>
+<div class="ritt-work-info">
+<h3>Delroy Leasing</h3>
+<p>Leasing Unternehmensberatung</p>
+<span>Zur Website →</span>
+</div>
+</a>
+<a class="ritt-work-card" href="https://ritt-happens.de/" target="_blank" rel="noopener">
+<div class="ritt-work-image"><img src="https://ritt-happens.de/wp-content/uploads/2026/04/05-heilpraktiker-knetzgau.jpg" alt="Heilpraktiker Knetzgau" loading="lazy" decoding="async"/></div>
+<div class="ritt-work-info">
+<h3>Heilpraktiker Knetzgau</h3>
+<p>Naturheilpraxis</p>
+<span>Zur Website →</span>
+</div>
+</a>
+<a class="ritt-work-card" href="https://ritt-happens.de/" target="_blank" rel="noopener">
+<div class="ritt-work-image"><img src="https://ritt-happens.de/wp-content/uploads/2026/05/screencapture-engel-erbenheim-de-2026-05-06-12_11_15-scaled.png" alt="Der Engel in Erbenheim" loading="lazy" decoding="async"/></div>
+<div class="ritt-work-info">
+<h3>Der Engel in Erbenheim</h3>
+<p>Restaurant</p>
+<span>Zur Website →</span>
+</div>
+</a>
+<a class="ritt-work-card" href="https://ritt-happens.de/" target="_blank" rel="noopener">
+<div class="ritt-work-image"><img src="https://ritt-happens.de/wp-content/uploads/2026/04/02-banana-split.jpg" alt="Banana Split" loading="lazy" decoding="async"/></div>
+<div class="ritt-work-info">
+<h3>Banana Split</h3>
+<p>Online Sport Studio</p>
+<span>Zur Website →</span>
+</div>
+</a>
+<a class="ritt-work-card" href="https://ritt-happens.de/" target="_blank" rel="noopener">
+<div class="ritt-work-image"><img src="https://ritt-happens.de/wp-content/uploads/2026/04/08-voigt-diallo-aesthetic.jpg" alt="Voigt Diallo Aesthetic" loading="lazy" decoding="async"/></div>
+<div class="ritt-work-info">
+<h3>Voigt Diallo Aesthetic</h3>
+<p>Praxis für ästhetische Medizin</p>
+<span>Zur Website →</span>
+</div>
+</a>
+<a class="ritt-work-card" href="https://ritt-happens.de/" target="_blank" rel="noopener">
+<div class="ritt-work-image"><img src="https://ritt-happens.de/wp-content/uploads/2026/04/06-r2r-recycling.jpg" alt="R2R Recycling" loading="lazy" decoding="async"/></div>
+<div class="ritt-work-info">
+<h3>R2R Recycling</h3>
+<p>Recycling Unternehmen</p>
+<span>Zur Website →</span>
+</div>
+</a>
+<a class="ritt-work-card" href="https://ritt-happens.de/" target="_blank" rel="noopener">
+<div class="ritt-work-image"><img src="https://ritt-happens.de/wp-content/uploads/2026/04/09-haushaltsaufloesung-jungk.jpg" alt="Jungk Haushaltsauflösungen" loading="lazy" decoding="async"/></div>
+<div class="ritt-work-info">
+<h3>Jungk Haushaltsauflösungen</h3>
+<p>Haushaltsauflösungen & Umzüge</p>
+<span>Zur Website →</span>
+</div>
+</a>
 </div>
 </div>
 </div>
