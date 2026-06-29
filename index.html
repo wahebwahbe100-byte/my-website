@@ -2917,5 +2917,657 @@
     window.addEventListener('pageshow', showWebsiteImagesImmediately);
 
   </script>
+
+<!-- ===== WahebSite KI Chat Assistant ===== -->
+<style>
+  .waheb-ai-widget {
+    position: fixed;
+    right: 22px;
+    bottom: 22px;
+    z-index: 100000;
+    font-family: 'Playfair Display', serif;
+    color: #eaf6ff;
+  }
+
+  .waheb-ai-panel {
+    width: min(430px, calc(100vw - 28px));
+    height: min(650px, calc(100vh - 110px));
+    max-height: 650px;
+    border-radius: 28px;
+    overflow: hidden;
+    display: none;
+    flex-direction: column;
+    border: 1px solid rgba(125,211,252,.28);
+    background: linear-gradient(180deg, rgba(12,30,54,.98), rgba(5,13,26,.98));
+    box-shadow: 0 26px 80px rgba(0,0,0,.48), 0 0 44px rgba(56,189,248,.16);
+    backdrop-filter: blur(18px);
+  }
+
+  .waheb-ai-widget.is-open .waheb-ai-panel { display: flex; }
+
+  .waheb-ai-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 14px;
+    padding: 16px 18px;
+    background: linear-gradient(90deg, #0ea5e9, #2563eb);
+    color: #ffffff;
+  }
+
+  .waheb-ai-brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    min-width: 0;
+  }
+
+  .waheb-ai-avatar {
+    position: relative;
+    width: 54px;
+    height: 54px;
+    border-radius: 999px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 auto;
+    background: radial-gradient(circle at 30% 20%, #ffffff, #bae6fd 50%, #0ea5e9);
+    border: 3px solid rgba(255,255,255,.72);
+    box-shadow: 0 12px 26px rgba(0,0,0,.24);
+    overflow: hidden;
+  }
+
+  .waheb-ai-avatar img {
+    width: 78%;
+    height: 78%;
+    object-fit: contain;
+    display: block;
+    filter: drop-shadow(0 4px 10px rgba(0,0,0,.18));
+  }
+
+  .waheb-ai-status-dot {
+    position: absolute;
+    right: -1px;
+    bottom: 4px;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: #22c55e;
+    border: 2px solid #ffffff;
+  }
+
+  .waheb-ai-title {
+    min-width: 0;
+  }
+
+  .waheb-ai-title strong {
+    display: block;
+    font-size: 1.15rem;
+    line-height: 1.1;
+    color: #ffffff !important;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .waheb-ai-title span {
+    display: block;
+    margin-top: 3px;
+    font-family: Arial, sans-serif;
+    font-size: .78rem;
+    font-weight: 700;
+    color: rgba(255,255,255,.82) !important;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .waheb-ai-close {
+    width: 42px;
+    height: 42px;
+    border: 0;
+    border-radius: 999px;
+    background: rgba(2,6,23,.25);
+    color: #ffffff;
+    font-size: 24px;
+    line-height: 1;
+    cursor: pointer;
+    transition: transform .2s ease, background .2s ease;
+  }
+
+  .waheb-ai-close:hover {
+    transform: rotate(90deg) scale(1.04);
+    background: rgba(2,6,23,.38);
+  }
+
+  .waheb-ai-note {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 11px 18px;
+    border-bottom: 1px solid rgba(125,211,252,.16);
+    background: rgba(255,255,255,.055);
+    font-family: Arial, sans-serif;
+    font-size: .82rem;
+    color: #cfe0f3 !important;
+  }
+
+  .waheb-ai-messages {
+    flex: 1;
+    min-height: 0;
+    overflow-y: auto;
+    padding: 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    scroll-behavior: smooth;
+  }
+
+  .waheb-ai-messages::-webkit-scrollbar { width: 8px; }
+  .waheb-ai-messages::-webkit-scrollbar-thumb {
+    background: rgba(56,189,248,.35);
+    border-radius: 999px;
+  }
+
+  .waheb-ai-row {
+    display: flex;
+    gap: 10px;
+    align-items: flex-end;
+  }
+
+  .waheb-ai-row.user {
+    justify-content: flex-end;
+  }
+
+  .waheb-ai-mini-avatar {
+    width: 31px;
+    height: 31px;
+    border-radius: 50%;
+    flex: 0 0 auto;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #bae6fd, #0ea5e9);
+    color: #061223;
+    font-weight: 900;
+    border: 1px solid rgba(255,255,255,.45);
+    font-family: Arial, sans-serif;
+  }
+
+  .waheb-ai-bubble {
+    max-width: 82%;
+    border-radius: 22px;
+    padding: 13px 15px;
+    font-family: Arial, sans-serif;
+    font-size: .95rem;
+    line-height: 1.65;
+    color: #eaf6ff !important;
+    border: 1px solid rgba(125,211,252,.20);
+    background: rgba(15,30,52,.92);
+    box-shadow: 0 12px 26px rgba(0,0,0,.20);
+  }
+
+  .waheb-ai-row.user .waheb-ai-bubble {
+    color: #ffffff !important;
+    background: linear-gradient(90deg, #0ea5e9, #2563eb);
+    border-color: rgba(255,255,255,.18);
+    border-bottom-right-radius: 8px;
+  }
+
+  .waheb-ai-row.bot .waheb-ai-bubble {
+    border-bottom-left-radius: 8px;
+  }
+
+  .waheb-ai-bubble a {
+    color: #7dd3fc !important;
+    font-weight: 800;
+    text-decoration: none;
+  }
+
+  .waheb-ai-bubble a:hover { text-decoration: underline; }
+
+  .waheb-ai-quick {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    padding: 0 18px 14px;
+    border-bottom: 1px solid rgba(125,211,252,.13);
+  }
+
+  .waheb-ai-chip {
+    border: 1px solid rgba(125,211,252,.24);
+    background: rgba(56,189,248,.10);
+    color: #dff6ff;
+    border-radius: 999px;
+    padding: 8px 11px;
+    font-family: Arial, sans-serif;
+    font-weight: 800;
+    font-size: .78rem;
+    cursor: pointer;
+    transition: transform .2s ease, background .2s ease, border-color .2s ease;
+  }
+
+  .waheb-ai-chip:hover {
+    transform: translateY(-2px);
+    background: rgba(56,189,248,.18);
+    border-color: rgba(125,211,252,.42);
+  }
+
+  .waheb-ai-inputbar {
+    padding: 14px;
+    border-top: 1px solid rgba(125,211,252,.16);
+    background: rgba(2,6,23,.38);
+  }
+
+  .waheb-ai-form {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .waheb-ai-input {
+    flex: 1;
+    min-width: 0;
+    height: 52px;
+    border-radius: 999px;
+    border: 1px solid rgba(125,211,252,.24);
+    background: rgba(255,255,255,.08);
+    color: #ffffff;
+    outline: none;
+    padding: 0 18px;
+    font-family: Arial, sans-serif;
+    font-size: .95rem;
+  }
+
+  .waheb-ai-input::placeholder { color: rgba(207,224,243,.65); }
+
+  .waheb-ai-input:focus {
+    border-color: rgba(56,189,248,.72);
+    box-shadow: 0 0 0 4px rgba(56,189,248,.13);
+  }
+
+  .waheb-ai-send {
+    width: 52px;
+    height: 52px;
+    border: 0;
+    border-radius: 999px;
+    cursor: pointer;
+    color: #ffffff;
+    font-size: 20px;
+    background: linear-gradient(90deg, #0ea5e9, #2563eb);
+    box-shadow: 0 12px 24px rgba(14,165,233,.26);
+    transition: transform .2s ease;
+  }
+
+  .waheb-ai-send:hover { transform: translateY(-2px) scale(1.03); }
+
+  .waheb-ai-footer-links {
+    margin-top: 10px;
+    text-align: center;
+    font-family: Arial, sans-serif;
+    font-size: .78rem;
+    color: rgba(207,224,243,.70) !important;
+  }
+
+  .waheb-ai-footer-links a {
+    color: #7dd3fc !important;
+    font-weight: 800;
+    text-decoration: none;
+  }
+
+  .waheb-ai-launcher {
+    width: 66px;
+    height: 66px;
+    border: 0;
+    border-radius: 999px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    float: right;
+    margin-top: 14px;
+    cursor: pointer;
+    color: #ffffff;
+    background:
+      radial-gradient(circle at 30% 20%, rgba(255,255,255,.24), transparent 28%),
+      linear-gradient(135deg, #0ea5e9, #2563eb);
+    box-shadow: 0 18px 42px rgba(14,165,233,.36), 0 0 0 6px rgba(56,189,248,.10);
+    transition: transform .25s ease, box-shadow .25s ease;
+  }
+
+  .waheb-ai-launcher:hover {
+    transform: translateY(-4px) scale(1.04);
+    box-shadow: 0 22px 52px rgba(14,165,233,.44), 0 0 0 9px rgba(56,189,248,.12);
+  }
+
+  .waheb-ai-widget.is-open .waheb-ai-launcher { display: none; }
+
+  .waheb-ai-launcher svg {
+    width: 30px;
+    height: 30px;
+  }
+
+  .waheb-ai-typing {
+    display: inline-flex;
+    gap: 5px;
+    align-items: center;
+    padding: 4px 0;
+  }
+
+  .waheb-ai-typing span {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: #7dd3fc;
+    opacity: .45;
+    animation: wahebAiTyping 1s infinite ease-in-out;
+  }
+
+  .waheb-ai-typing span:nth-child(2) { animation-delay: .15s; }
+  .waheb-ai-typing span:nth-child(3) { animation-delay: .3s; }
+
+  @keyframes wahebAiTyping {
+    0%, 80%, 100% { transform: translateY(0); opacity: .35; }
+    40% { transform: translateY(-5px); opacity: 1; }
+  }
+
+  body .whatsapp-side-button {
+    bottom: 104px !important;
+    transition: opacity .22s ease, transform .22s ease, bottom .22s ease;
+  }
+
+  body.waheb-ai-opened .whatsapp-side-button {
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(8px);
+  }
+
+  @media (max-width: 640px) {
+    .waheb-ai-widget {
+      right: 10px;
+      bottom: calc(10px + env(safe-area-inset-bottom));
+      left: 10px;
+    }
+
+    .waheb-ai-panel {
+      width: 100%;
+      height: min(640px, calc(100vh - 88px));
+      border-radius: 24px;
+    }
+
+    .waheb-ai-header { padding: 14px 14px; }
+    .waheb-ai-avatar { width: 50px; height: 50px; }
+    .waheb-ai-title strong { font-size: 1.06rem; }
+    .waheb-ai-title span { font-size: .72rem; }
+    .waheb-ai-messages { padding: 14px; }
+    .waheb-ai-bubble { max-width: 86%; font-size: .9rem; }
+    .waheb-ai-quick { padding: 0 14px 12px; }
+    .waheb-ai-chip { font-size: .72rem; padding: 7px 9px; }
+    .waheb-ai-launcher { width: 60px; height: 60px; }
+
+    body .whatsapp-side-button {
+      bottom: calc(82px + env(safe-area-inset-bottom)) !important;
+    }
+  }
+</style>
+
+<div class="waheb-ai-widget" id="wahebAiWidget" aria-live="polite">
+  <div class="waheb-ai-panel" role="dialog" aria-label="WahebSite KI-Assistent" aria-modal="false">
+    <div class="waheb-ai-header">
+      <div class="waheb-ai-brand">
+        <div class="waheb-ai-avatar" aria-hidden="true">
+          <img src="images/logo.png" alt="" onerror="this.style.display='none'; this.parentElement.insertAdjacentHTML('beforeend','<strong style=&quot;color:#061223;font-family:Arial,sans-serif;font-size:24px;&quot;>W</strong>');" />
+          <span class="waheb-ai-status-dot"></span>
+        </div>
+        <div class="waheb-ai-title">
+          <strong>Waheb AI</strong>
+          <span>KI-Assistent · WahebSite</span>
+        </div>
+      </div>
+      <button class="waheb-ai-close" type="button" aria-label="Chat schließen" id="wahebAiClose">×</button>
+    </div>
+
+    <div class="waheb-ai-note">🤖 Waheb AI ist eine künstliche Intelligenz – keine echte Person.</div>
+
+    <div class="waheb-ai-messages" id="wahebAiMessages"></div>
+
+    <div class="waheb-ai-quick" id="wahebAiQuick">
+      <button class="waheb-ai-chip" type="button" data-ask="Ich brauche eine neue Website">Neue Website</button>
+      <button class="waheb-ai-chip" type="button" data-ask="Wie lange dauert eine Website?">Dauer</button>
+      <button class="waheb-ai-chip" type="button" data-ask="Wie viele Seiten brauche ich?">Seitenumfang</button>
+      <button class="waheb-ai-chip" type="button" data-ask="Was kostet eine Website?">Preise</button>
+      <button class="waheb-ai-chip" type="button" data-ask="Ich möchte bei Google besser gefunden werden">SEO</button>
+      <button class="waheb-ai-chip" type="button" data-ask="Wie kann ich euch kontaktieren?">Kontakt</button>
+    </div>
+
+    <div class="waheb-ai-inputbar">
+      <form class="waheb-ai-form" id="wahebAiForm">
+        <input class="waheb-ai-input" id="wahebAiInput" type="text" autocomplete="off" placeholder="Deine Frage an Waheb AI..." aria-label="Nachricht eingeben" />
+        <button class="waheb-ai-send" type="submit" aria-label="Nachricht senden">➤</button>
+      </form>
+      <div class="waheb-ai-footer-links">
+        Lieber direkt? <a href="#contact">Kontaktformular</a> oder <a href="https://wa.me/4915778739720?text=Hallo%20WahebSite%2C%20ich%20habe%20eine%20Frage%20zu%20Webdesign%20oder%20SEO." rel="noreferrer" target="_blank">WhatsApp</a>
+      </div>
+    </div>
+  </div>
+
+  <button class="waheb-ai-launcher" id="wahebAiLauncher" type="button" aria-label="Waheb AI öffnen">
+    <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M7.5 8.5h9M7.5 12h5.8M5.8 18.2 3.5 20V6.8C3.5 4.7 5.2 3 7.3 3h9.4c2.1 0 3.8 1.7 3.8 3.8v7.6c0 2.1-1.7 3.8-3.8 3.8H5.8Z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </button>
+</div>
+
+<script>
+  (function () {
+    const widget = document.getElementById('wahebAiWidget');
+    const launcher = document.getElementById('wahebAiLauncher');
+    const closeBtn = document.getElementById('wahebAiClose');
+    const form = document.getElementById('wahebAiForm');
+    const input = document.getElementById('wahebAiInput');
+    const messages = document.getElementById('wahebAiMessages');
+    const quick = document.getElementById('wahebAiQuick');
+
+    if (!widget || !launcher || !closeBtn || !form || !input || !messages) return;
+
+    const whatsappHref = 'https://wa.me/4915778739720?text=' + encodeURIComponent('Hallo WahebSite, ich möchte über Webdesign/SEO sprechen.');
+    const emailHref = 'mailto:wahebwahbe100@gmail.com';
+
+    const answers = {
+      welcome: `Hallo! 👋 Ich bin <strong>Waheb AI</strong>, der digitale Assistent von <strong>WahebSite</strong>. Ich helfe dir bei Fragen zu Webdesign, SEO, Onlineshops, Ablauf, Dauer, Seitenumfang, Preisen und Kontaktmöglichkeiten.`,
+
+      website: `Sehr gerne. WahebSite erstellt moderne Websites für Unternehmen, Restaurants, Praxen, Onlineshops und lokale Dienstleister. Wichtig sind klares Design, schnelle Nutzerführung, mobile Optimierung, Vertrauen und starke Kontaktwege. <br><br>Für eine passende Empfehlung brauche ich meistens nur: Branche, Ziel der Website, gewünschte Seiten und ob SEO wichtig ist.`,
+      website_ar: `أكيد. WahebSite يصمّم مواقع حديثة للشركات، المطاعم، العيادات، المتاجر والخدمات المحلية. التركيز يكون على شكل احترافي، سرعة، وضوح، توافق مع الجوال وطرق تواصل قوية. <br><br>لأعطيك تصور مناسب، اكتب لي نوع مشروعك، المدينة، وعدد الصفحات التقريبي.`,
+
+      duration: `Die Dauer hängt vom Umfang ab. Bei WahebSite ist das Ziel: <strong>keine langen Wartezeiten</strong>. Als grobe Orientierung:<br><br>⚡ Onepager: ca. 1–2 Tage<br>🏢 Business-Website mit 4–6 Seiten: ca. 3–4 Tage<br>🚀 Website mit SEO-Seiten oder mehr Inhalt: meist ca. 3–4 Tage<br>🛒 Kleiner Onlineshop oder Buchungssystem: nach Absprache, Ziel ca. 3–4 Tage<br><br>Wichtig: Damit es schnell klappt, sollten Logo, Texte, Bilder und Kontaktdaten möglichst bereit sein.`,
+      duration_ar: `مدة تصميم الموقع تعتمد على حجمه، لكن هدف WahebSite أن لا تكون المدة طويلة. بشكل عام:<br><br>⚡ موقع صفحة واحدة: تقريبًا 1–2 يوم<br>🏢 موقع شركة 4–6 صفحات: تقريبًا 3–4 أيام<br>🚀 موقع مع صفحات SEO أو محتوى أكثر: غالبًا 3–4 أيام<br>🛒 متجر صغير أو نظام حجز: حسب الاتفاق، والهدف 3–4 أيام<br><br>مهم: كلما كان الشعار، النصوص، الصور وبيانات التواصل جاهزة، يتم التسليم أسرع.`,
+
+      pages: `Für viele Unternehmen reicht am Anfang eine klare Struktur mit 4–6 Seiten:<br><br>1. Startseite<br>2. Leistungen<br>3. Über uns<br>4. Projekte/Referenzen<br>5. Kontakt<br>6. Optional: SEO-Seiten für Städte oder einzelne Leistungen<br><br>Ein Onepager ist gut für kleine Angebote. Mehrere Seiten sind besser, wenn Google-Sichtbarkeit und ausführliche Informationen wichtig sind.`,
+      pages_ar: `غالبًا الموقع الاحترافي يبدأ من 4 إلى 6 صفحات:<br><br>1. الصفحة الرئيسية<br>2. الخدمات<br>3. من نحن<br>4. الأعمال أو المشاريع<br>5. التواصل<br>6. اختياري: صفحات SEO للمدن أو لكل خدمة<br><br>موقع صفحة واحدة مناسب للبداية، أما الموقع متعدد الصفحات فهو أفضل للظهور في Google.`,
+
+      scope: `Kurz gesagt: Für die meisten Projekte passen 4–6 Seiten. Die Umsetzung liegt bei WahebSite meistens bei ca. 3–4 Tagen, wenn Inhalte und Bilder bereit sind. Ein Onepager kann oft in ca. 1–2 Tagen fertig werden. Bei SEO-Seiten, Buchungssystem oder kleinem Onlineshop wird der Umfang vorher abgestimmt, das Ziel bleibt aber eine schnelle Umsetzung von ca. 3–4 Tagen.`,
+      scope_ar: `باختصار: أغلب المشاريع تحتاج 4–6 صفحات. عند WahebSite تكون مدة التنفيذ غالبًا 3–4 أيام إذا كان المحتوى والصور جاهزة. موقع صفحة واحدة ممكن يجهز تقريبًا خلال 1–2 يوم. إذا كان هناك صفحات SEO، نظام حجز أو متجر صغير، يتم الاتفاق على التفاصيل مسبقًا، لكن الهدف يبقى تسليم سريع خلال 3–4 أيام.`,
+
+      price: `Die Kosten hängen vom Umfang ab: Onepager, Business-Website, mehrere Unterseiten, SEO-Landingpages, Buchungssystem oder Onlineshop. <br><br>Damit WahebSite ein faires Angebot machen kann, sind diese Infos hilfreich: Branche, gewünschte Seiten, vorhandene Inhalte und Ziel der Website. Schreib uns direkt über das <a href="#contact">Kontaktformular</a> oder per <a href="${whatsappHref}" target="_blank" rel="noreferrer">WhatsApp</a>.`,
+      price_ar: `السعر يعتمد على حجم المشروع: صفحة واحدة، موقع شركة، صفحات كثيرة، SEO، نظام حجز أو متجر إلكتروني. <br><br>للحصول على عرض مناسب، أرسل نوع المشروع، عدد الصفحات، هل يوجد محتوى جاهز، وهل تريد SEO. تواصل عبر <a href="#contact">نموذج التواصل</a> أو <a href="${whatsappHref}" target="_blank" rel="noreferrer">WhatsApp</a>.`,
+
+      process: `Der Ablauf ist einfach:<br><br>1. Kurze Projektbesprechung<br>2. Inhalte, Ziel und Stil klären<br>3. Design und Struktur erstellen<br>4. Website umsetzen und mobil optimieren<br>5. Korrekturen und Feinschliff<br>6. Veröffentlichung und Übergabe<br><br>Du bekommst dabei eine klare Führung, damit der Prozess für dich einfach bleibt.`,
+      process_ar: `طريقة العمل سهلة:<br><br>1. فهم المشروع والهدف<br>2. تحديد الصفحات والمحتوى والشكل المطلوب<br>3. تصميم الهيكل والشكل<br>4. بناء الموقع وتحسينه للجوال<br>5. تعديلات ومراجعة<br>6. نشر الموقع وتسليمه<br><br>كل خطوة تكون واضحة حتى لا يكون الموضوع معقدًا عليك.`,
+
+      requirements: `Für den Start sind diese Dinge hilfreich:<br><br>✅ Logo, falls vorhanden<br>✅ Farben oder Stilwünsche<br>✅ Texte oder Stichpunkte zu deinen Leistungen<br>✅ Bilder, Referenzen oder Beispiele<br>✅ Kontaktdaten<br>✅ Wunsch-Domain, falls vorhanden<br><br>Wenn noch nicht alles fertig ist, ist das kein Problem. WahebSite kann auch bei Struktur und Texten unterstützen.`,
+      requirements_ar: `للبداية نحتاج غالبًا:<br><br>✅ الشعار إن وجد<br>✅ الألوان أو ستايل تحبه<br>✅ نصوص أو نقاط عن خدماتك<br>✅ صور أو أمثلة أعمال<br>✅ بيانات التواصل<br>✅ الدومين إن وجد<br><br>إذا لم تكن كل الأشياء جاهزة، لا مشكلة. يمكن مساعدتك في ترتيب المحتوى والنصوص.`,
+
+      seo: `Bei SEO geht es darum, dass deine Website bei Google besser gefunden wird. WahebSite achtet auf saubere Struktur, lokale Landingpages, schnelle Ladezeiten, klare Texte, interne Verlinkung und gute Nutzerführung. <br><br>Für eine erste Einschätzung kannst du mir deine Branche und Stadt schreiben.`,
+      seo_ar: `SEO يعني تحسين ظهور موقعك في Google. WahebSite يهتم ببنية الموقع، سرعة التحميل، النصوص الواضحة، صفحات المدن، الروابط الداخلية وتجربة المستخدم. <br><br>اكتب لي المجال والمدينة لأعطيك تصورًا أوليًا.`,
+
+      localSeo: `Ja, lokale SEO-Seiten können sinnvoll sein, wenn du Kunden in bestimmten Städten gewinnen möchtest. Wichtig ist, dass jede Seite echten Mehrwert hat und nicht nur der Stadtname ausgetauscht wird.`,
+      localSeo_ar: `نعم، صفحات SEO للمدن مفيدة إذا تريد عملاء من مدن معينة. المهم أن تكون كل صفحة مفيدة فعلًا وليست نسخة مكررة فقط مع تغيير اسم المدينة.`,
+
+      mobile: `Ja. Eine moderne Website sollte auf Handy, Tablet und Desktop sauber funktionieren. WahebSite achtet auf responsive Design, gut lesbare Texte, schnelle Kontaktbuttons und eine klare mobile Nutzerführung.`,
+      mobile_ar: `نعم. الموقع يجب أن يعمل بشكل ممتاز على الجوال، التابلت والكمبيوتر. يتم الاهتمام بالتصميم المتجاوب، وضوح النصوص، أزرار التواصل وسهولة الاستخدام.`,
+
+      domainHosting: `Domain und Hosting können in das Projekt eingeplant werden. Wenn du bereits Domain oder Hosting hast, kann die Website darauf vorbereitet werden. Wenn nicht, kann WahebSite dir erklären, was du brauchst. SSL/HTTPS sollte immer aktiviert sein.`,
+      domainHosting_ar: `يمكن ترتيب الدومين والاستضافة ضمن المشروع. إذا لديك دومين أو استضافة يمكن تجهيز الموقع عليها، وإذا لا يوجد، يمكن توضيح ما تحتاجه. من المهم تفعيل SSL/HTTPS دائمًا.`,
+
+      content: `Wenn du noch keine Texte oder Bilder hast, ist das kein Hindernis. Für den Start reichen oft Stichpunkte zu deinen Leistungen. Daraus kann eine klare Seitenstruktur und ein professioneller Textaufbau entstehen. Eigene Bilder sind gut, aber es können auch passende Platzhalter oder Bildkonzepte genutzt werden.`,
+      content_ar: `إذا ليس لديك نصوص أو صور جاهزة، هذا ليس عائقًا. كبداية تكفي نقاط عن خدماتك، وبعدها يمكن بناء هيكل ونصوص احترافية. الصور الخاصة أفضل، لكن يمكن أيضًا استخدام أفكار صور أو صور مؤقتة مناسبة.`,
+
+      maintenance: `Nach der Erstellung kann die Website bei Bedarf weiter betreut werden: kleine Änderungen, neue Inhalte, technische Pflege, SEO-Erweiterungen oder neue Landingpages. Der genaue Umfang wird je nach Bedarf abgestimmt.`,
+      maintenance_ar: `بعد الانتهاء يمكن متابعة الموقع عند الحاجة: تعديلات بسيطة، إضافة محتوى، صيانة تقنية، تحسين SEO أو إضافة صفحات جديدة. يتم الاتفاق حسب احتياجك.`,
+
+      redesign: `Ja, eine bestehende Website kann überarbeitet werden. Typische Ziele sind moderneres Design, bessere mobile Ansicht, schnellere Kontaktwege, klarere Texte und bessere SEO-Struktur.`,
+      redesign_ar: `نعم، يمكن تطوير موقع موجود مسبقًا. غالبًا يكون الهدف تصميم أحدث، تحسين الجوال، تسهيل التواصل، ترتيب النصوص وتحسين SEO.`,
+
+      shop: `Ja, WahebSite kann auch Onlineshops und verkaufsstarke Produktseiten umsetzen. Dabei zählen ein klares Layout, Vertrauen, einfache Bedienung, gute mobile Darstellung und ein sauberer Weg zur Anfrage oder zum Kauf.`,
+      shop_ar: `نعم، يمكن تصميم متجر إلكتروني أو صفحات منتجات قوية. المهم أن يكون التصميم واضحًا، يعطي ثقة، سهل الاستخدام ومناسبًا للجوال.`,
+
+      booking: `Für Termine oder Anfragen können passende Kontaktwege eingebaut werden: Anfrageformular, WhatsApp, Telefonbutton oder ein Buchungssystem. Welche Lösung passt, hängt von deinem Ablauf ab.`,
+      booking_ar: `يمكن إضافة طرق حجز أو طلب موعد مثل نموذج تواصل، زر واتساب، زر اتصال أو نظام حجز. الحل المناسب يعتمد على طريقة عملك.`,
+
+      multilingual: `Mehrsprachige Websites sind möglich, zum Beispiel Deutsch/Arabisch oder Deutsch/Englisch. Wichtig ist eine klare Sprachstruktur, damit Nutzer und Google die Inhalte gut verstehen.`,
+      multilingual_ar: `نعم، يمكن عمل موقع بعدة لغات مثل الألمانية/العربية أو الألمانية/الإنجليزية. المهم تنظيم اللغات بشكل واضح للمستخدم وGoogle.`,
+
+      legal: `Für Deutschland sind rechtliche Seiten wie Impressum und Datenschutz wichtig. WahebSite kann die Seiten technisch einbauen, die rechtssicheren Inhalte sollten aber vom Kunden oder einer passenden rechtlichen Quelle kommen.`,
+      legal_ar: `في ألمانيا صفحات مثل Impressum و Datenschutz مهمة. يمكن إدخالها تقنيًا في الموقع، لكن النصوص القانونية الدقيقة يجب أن تأتي من العميل أو مصدر قانوني مناسب.`,
+
+      contact: `Du kannst WahebSite direkt erreichen über:<br><br>📱 WhatsApp: <a href="${whatsappHref}" target="_blank" rel="noreferrer">+49 1577 8739720</a><br>✉️ E-Mail: <a href="${emailHref}">wahebwahbe100@gmail.com</a><br>📝 Oder über das <a href="#contact">Kontaktformular</a> unten auf der Seite.`,
+      contact_ar: `يمكنك التواصل مع WahebSite مباشرة عبر:<br><br>📱 واتساب: <a href="${whatsappHref}" target="_blank" rel="noreferrer">+49 1577 8739720</a><br>✉️ البريد: <a href="${emailHref}">wahebwahbe100@gmail.com</a><br>📝 أو عبر <a href="#contact">نموذج التواصل</a> في أسفل الصفحة.`,
+
+      greeting: `Hallo 👋 Schön, dass du da bist. Frag mich gerne zu Webdesign, SEO, Preisen, Dauer, Seitenumfang, Hosting oder Kontakt.`,
+      greeting_ar: `أهلًا وسهلًا 👋 اسألني عن تصميم المواقع، SEO، الأسعار، المدة، عدد الصفحات، الاستضافة أو التواصل.`,
+
+      thanks: `Sehr gerne 😊 Wenn du möchtest, kannst du mir kurz deine Branche und Stadt schreiben, dann gebe ich dir eine passendere Empfehlung.`,
+      thanks_ar: `على الرحب والسعة 😊 اكتب لي نوع مشروعك والمدينة، وسأعطيك اقتراحًا أنسب.`,
+
+      fallback: `Ich helfe dir gerne weiter. Ich kann Fragen zu Website-Erstellung, SEO, Preisen, Dauer, Seitenumfang, Onlineshops, Domain/Hosting, Pflege, Buchungssystemen und Kontakt beantworten. Schreib einfach kurz, was du brauchst.`,
+      fallback_ar: `أقدر أساعدك. اسألني عن تصميم الموقع، SEO، السعر، المدة، عدد الصفحات، المتجر، الدومين والاستضافة، الصيانة، نظام الحجز أو طرق التواصل. اكتب لي ما تحتاجه باختصار.`
+    };
+
+    function pick(key, isArabic) {
+      return isArabic && answers[key + '_ar'] ? answers[key + '_ar'] : answers[key];
+    }
+
+    function scrollToBottom() {
+      messages.scrollTop = messages.scrollHeight;
+    }
+
+    function addMessage(role, html) {
+      const row = document.createElement('div');
+      row.className = 'waheb-ai-row ' + role;
+
+      if (role === 'bot') {
+        const avatar = document.createElement('div');
+        avatar.className = 'waheb-ai-mini-avatar';
+        avatar.textContent = 'W';
+        row.appendChild(avatar);
+      }
+
+      const bubble = document.createElement('div');
+      bubble.className = 'waheb-ai-bubble';
+      if (role === 'user') {
+        bubble.textContent = html;
+      } else {
+        bubble.innerHTML = html;
+      }
+
+      row.appendChild(bubble);
+      messages.appendChild(row);
+      scrollToBottom();
+      return row;
+    }
+
+    function addTyping() {
+      return addMessage('bot', '<span class="waheb-ai-typing"><span></span><span></span><span></span></span>');
+    }
+
+    function getAnswer(text) {
+      const q = (text || '').toLowerCase();
+      const hasArabic = /[\u0600-\u06FF]/.test(q);
+
+      const has = (pattern) => pattern.test(q);
+
+      if (has(/danke|vielen dank|super|شكرا|شكرًا|ممتاز|تمام|حلو/)) return pick('thanks', hasArabic);
+      if (has(/^(hi|hallo|hey|servus|guten tag|مرحبا|هلا|السلام|اهلا|أهلا)/)) return pick('greeting', hasArabic);
+
+      const asksTime = has(/dauer|wie lange|zeit|fertig|lieferzeit|tage|wochen|مدة|وقت|كم ياخذ|كم ياخد|قديش|متى يخلص|اسبوع|أسبوع|ايام|أيام/);
+      const asksPages = has(/wie viele seiten|seitenanzahl|seitenumfang|unterseiten|onepager|landingpage|landingpages|كم صفحة|كم صفحه|عدد الصفحات|صفحات|صفحه|صفحة/);
+      if (asksTime && asksPages) return pick('scope', hasArabic);
+      if (asksTime) return pick('duration', hasArabic);
+      if (asksPages) return pick('pages', hasArabic);
+
+      if (has(/whatsapp|kontakt|telefon|email|e-mail|mail|nummer|anrufen|erreichen|adresse|تواصل|واتساب|رقم|ايميل|إيميل|بريد|اتصال|تلفون/)) return pick('contact', hasArabic);
+      if (has(/preis|preise|kosten|kostet|angebot|budget|paket|tarif|كم|سعر|تكلفة|يكلف|العرض|ميزانية/)) return pick('price', hasArabic);
+      if (has(/ablauf|prozess|schritte|wie läuft|starten|beginnen|طريقة العمل|الخطوات|كيف تبدأ|كيف نبدأ|مراحل/)) return pick('process', hasArabic);
+      if (has(/braucht ihr|benötigt|unterlagen|material|logo|bilder|texte|inhalt|content|ماذا تحتاج|شو تحتاج|الشعار|صور|نصوص|محتوى|اللوغو|اللوجو/)) return pick('requirements', hasArabic);
+      if (has(/domain|hosting|host|ssl|https|server|استضافة|دومين|نطاق|سيرفر/)) return pick('domainHosting', hasArabic);
+      if (has(/wartung|pflege|support|ändern|änderung|updates|betreuung|صيانة|دعم|تعديل|تعديلات|تحديث/)) return pick('maintenance', hasArabic);
+      if (has(/relaunch|redesign|überarbeiten|alte website|bestehende website|تطوير موقع|تعديل موقع|موقع موجود|تحديث موقع/)) return pick('redesign', hasArabic);
+      if (has(/mehrsprachig|sprache|sprachen|arabisch|englisch|deutsch|لغتين|لغة|لغات|عربي|الماني|ألماني|انجليزي|إنجليزي/)) return pick('multilingual', hasArabic);
+      if (has(/impressum|datenschutz|dsgvo|rechtlich|legal|privacy|قانون|قانوني|خصوصية|سياسة الخصوصية/)) return pick('legal', hasArabic);
+      if (has(/google business|google maps|lokal|local seo|stadt|städte|nähe|محلي|خرائط|جوجل ماب|مدن|مدينة/)) return pick('localSeo', hasArabic);
+      if (has(/seo|google|ranking|gefunden|suchmaschine|keywords|محركات|جوجل|ظهور|بحث|كلمات مفتاحية/)) return pick('seo', hasArabic);
+      if (has(/mobile|handy|smartphone|responsive|tablet|الجوال|الموبايل|الهاتف|متجاوب|تابلت/)) return pick('mobile', hasArabic);
+      if (has(/shop|onlineshop|ecommerce|e-commerce|produkt|produkte|verkaufen|متجر|بيع|منتجات|اونلاين|أونلاين/)) return pick('shop', hasArabic);
+      if (has(/buchung|booking|termin|kalender|موعد|حجز|رزنامة|تقويم/)) return pick('booking', hasArabic);
+      if (has(/texte|bilder|fotos|copywriting|content|نصوص|صور|محتوى|كتابة/)) return pick('content', hasArabic);
+      if (has(/website|webseite|homepage|webdesign|seite|design|موقع|تصميم|ويب/)) return pick('website', hasArabic);
+
+      return pick('fallback', hasArabic);
+    }
+
+    function ask(text) {
+      const clean = (text || '').trim();
+      if (!clean) return;
+      addMessage('user', clean);
+      input.value = '';
+
+      const typing = addTyping();
+      window.setTimeout(() => {
+        typing.remove();
+        addMessage('bot', getAnswer(clean));
+      }, 520 + Math.min(clean.length * 12, 500));
+    }
+
+    function openChat() {
+      widget.classList.add('is-open');
+      document.body.classList.add('waheb-ai-opened');
+      if (!messages.dataset.started) {
+        messages.dataset.started = 'true';
+        addMessage('bot', answers.welcome);
+      }
+      window.setTimeout(() => input.focus(), 120);
+    }
+
+    function closeChat() {
+      widget.classList.remove('is-open');
+      document.body.classList.remove('waheb-ai-opened');
+    }
+
+    launcher.addEventListener('click', openChat);
+    closeBtn.addEventListener('click', closeChat);
+
+    form.addEventListener('submit', function (event) {
+      event.preventDefault();
+      ask(input.value);
+    });
+
+    quick.addEventListener('click', function (event) {
+      const button = event.target.closest('[data-ask]');
+      if (!button) return;
+      ask(button.getAttribute('data-ask'));
+    });
+
+    window.addEventListener('keydown', function (event) {
+      if (event.key === 'Escape' && widget.classList.contains('is-open')) closeChat();
+    });
+
+    window.setTimeout(() => {
+      if (!widget.classList.contains('is-open')) {
+        launcher.setAttribute('title', 'Waheb AI öffnen');
+      }
+    }, 1200);
+  })();
+</script>
+<!-- ===== /WahebSite KI Chat Assistant ===== -->
+
 </body>
 </html>
