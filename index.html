@@ -1487,7 +1487,6 @@
 
       section[id="about"],
       section[id="why"],
-      section[id="projects"],
       section[id="contact"] {
         padding-top: 4rem !important;
         padding-bottom: 4rem !important;
@@ -1750,170 +1749,6 @@
 
 
 
-    /* ===== Ritt-style projects section replacement - blue/black WahebSite colors ===== */
-    #projects.ritt-projects {
-      max-width: none !important;
-      width: 100% !important;
-      margin: 0 !important;
-      padding: 0 !important;
-      overflow: hidden !important;
-      background:
-        radial-gradient(circle at 15% 0%, rgba(56,189,248,.16), transparent 30%),
-        radial-gradient(circle at 86% 24%, rgba(37,99,235,.14), transparent 34%),
-        linear-gradient(135deg, #07111f 0%, #0b1628 48%, #050816 100%) !important;
-      color: #f8fbff !important;
-      border-top: 1px solid rgba(125,211,252,.18) !important;
-      border-bottom: 1px solid rgba(125,211,252,.18) !important;
-    }
-
-    #projects.ritt-projects::before { display: none !important; }
-
-    .ritt-projects-inner {
-      padding: 5.5rem 0 6.5rem 0;
-      overflow: hidden;
-      background: transparent !important;
-      color: #f8fbff;
-    }
-
-    .ritt-projects-head {
-      max-width: 1440px;
-      margin: 0 auto;
-      padding: 0 clamp(1.25rem, 7vw, 8rem);
-    }
-
-    .ritt-kicker {
-      margin: 0 0 1.5rem 0 !important;
-      color: #7dd3fc !important;
-      font-family: Arial, sans-serif !important;
-      font-size: .86rem !important;
-      font-weight: 900 !important;
-      letter-spacing: .42em !important;
-      text-transform: uppercase !important;
-      line-height: 1.2 !important;
-    }
-
-    #projects.ritt-projects h2 {
-      margin: 0 !important;
-      max-width: 1120px;
-      color: #ffffff !important;
-      text-shadow: none !important;
-      font-family: 'Playfair Display', serif !important;
-      font-size: clamp(2.7rem, 5.4vw, 5.05rem) !important;
-      line-height: .98 !important;
-      letter-spacing: -.055em !important;
-      font-weight: 900 !important;
-    }
-
-    #projects.ritt-projects h2 span {
-      background: linear-gradient(90deg, #67e8f9, #38bdf8, #60a5fa) !important;
-      -webkit-background-clip: text !important;
-      -webkit-text-fill-color: transparent !important;
-      color: #38bdf8 !important;
-    }
-
-    .ritt-marquee {
-      position: relative;
-      width: 100%;
-      margin-top: 4.4rem;
-      overflow: visible;
-    }
-
-    .ritt-marquee-track {
-      display: flex;
-      width: max-content;
-      gap: 1.7rem;
-      align-items: stretch;
-      animation: rittProjectsScroll 42s linear infinite;
-      will-change: transform;
-    }
-
-    @keyframes rittProjectsScroll {
-      from { transform: translateX(0); }
-      to { transform: translateX(calc(-50% - .85rem)); }
-    }
-
-    .ritt-work-card {
-      flex: 0 0 clamp(285px, 27vw, 430px);
-      display: block;
-      border-radius: 16px;
-      overflow: hidden;
-      background: linear-gradient(180deg, rgba(15,30,52,.96), rgba(8,18,34,.94)) !important;
-      border: 1px solid rgba(125,211,252,.25);
-      text-decoration: none !important;
-      color: #f8fbff !important;
-      box-shadow: 0 18px 48px rgba(0,0,0,.30), 0 0 28px rgba(56,189,248,.08);
-      transition: transform .3s ease, border-color .3s ease, box-shadow .3s ease;
-    }
-
-    .ritt-work-card:hover {
-      transform: translateY(-8px);
-      border-color: rgba(56,189,248,.55);
-      box-shadow: 0 24px 60px rgba(0,0,0,.36), 0 0 38px rgba(56,189,248,.16);
-    }
-
-    .ritt-work-image {
-      width: 100%;
-      height: clamp(175px, 18vw, 255px);
-      border-radius: 16px 16px 0 0;
-      overflow: hidden;
-      background: #07111f;
-    }
-
-    .ritt-work-image img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: top center;
-      display: block;
-      filter: none !important;
-      opacity: 1 !important;
-    }
-
-    .ritt-work-info {
-      padding: 1.15rem 1.15rem 1.25rem 1.15rem;
-      background: transparent !important;
-    }
-
-    .ritt-work-info h3 {
-      margin: 0 !important;
-      color: #ffffff !important;
-      text-shadow: none !important;
-      font-family: 'Playfair Display', serif !important;
-      font-size: 1.4rem !important;
-      line-height: 1.2 !important;
-      font-weight: 900 !important;
-    }
-
-    .ritt-work-info p {
-      margin: .28rem 0 0 0 !important;
-      color: #cfe0f3 !important;
-      font-family: Arial, sans-serif !important;
-      font-size: .92rem !important;
-      line-height: 1.6 !important;
-      font-weight: 600 !important;
-    }
-
-    .ritt-work-info span {
-      display: inline-flex;
-      margin-top: .8rem;
-      color: #7dd3fc !important;
-      font-family: Arial, sans-serif !important;
-      font-size: .86rem !important;
-      font-weight: 800 !important;
-    }
-
-    @media (max-width: 768px) {
-      .ritt-projects-inner { padding: 4.25rem 0 4.75rem 0; }
-      .ritt-projects-head { padding: 0 1.25rem; }
-      #projects.ritt-projects h2 { font-size: clamp(2.2rem, 11vw, 3.4rem) !important; line-height: 1.03 !important; }
-      .ritt-marquee { margin-top: 2.5rem; }
-      .ritt-marquee-track { gap: 1rem; animation-duration: 38s; }
-      .ritt-work-card { flex-basis: 78vw; }
-      .ritt-work-image { height: 48vw; min-height: 190px; }
-    }
-
-
-
     /* ===== Hero mobile table edge correction ===== */
     @media (max-width: 640px) {
       #home .hero-mobile-table {
@@ -2061,7 +1896,6 @@
 <a class="nav-link" href="#about">Über uns</a>
 <a class="nav-link" href="#services">Leistungen</a>
 <a class="nav-link" href="#why">Warum eine Website?</a>
-<a class="nav-link" href="#projects">Projekte</a>
 <a class="nav-link" href="pages/standorte.html">Standorte</a>
 <a class="nav-link" href="#faq">FAQ</a><a class="nav-link" href="#contact">Kontakt</a><a class="nav-link" href="pages/ueber-uns.html">Über uns</a>
 </nav>
@@ -2076,7 +1910,6 @@
 <a href="#about" onclick="toggleMobileMenu()">Über uns</a>
 <a href="#services" onclick="toggleMobileMenu()">Leistungen</a>
 <a href="#why" onclick="toggleMobileMenu()">Warum eine Website?</a>
-<a href="#projects" onclick="toggleMobileMenu()">Projekte</a>
 <a href="pages/standorte.html" onclick="toggleMobileMenu()">Standorte</a>
 <a href="#contact" onclick="toggleMobileMenu()">Kontakt</a>
 <a href="pages/ueber-uns.html" onclick="toggleMobileMenu()">Über uns</a>
@@ -2095,7 +1928,6 @@
 <p class="mt-6 max-w-2xl text-lg leading-8" style="color:#4b5563;">Moderne, schnelle und mobiloptimierte Websites für Unternehmen, Praxen, Restaurants, Onlineshops und lokale Dienstleister in ganz Deutschland.</p>
 <div class="mt-8 flex flex-wrap gap-4">
 <a class="btn-primary rounded-2xl px-6 py-3" href="#contact">Website jetzt anfragen</a>
-<a class="btn-secondary rounded-2xl border border-black/10 bg-white/60 px-6 py-3 font-semibold" href="#projects">Beispiele ansehen</a>
 </div>
 <div class="mt-10 grid gap-4 sm:grid-cols-3 hero-mobile-table">
 <div class="glass rounded-2xl p-5 text-center">
@@ -2319,178 +2151,6 @@
 <div class="section-card rounded-3xl border p-6 shadow-xl" style="border-color:rgba(56,189,248,.16); background:linear-gradient(to bottom right, rgba(56,189,248,.10), rgba(255,255,255,.92));">
 <h3 class="text-2xl font-bold">Das Ergebnis</h3>
 <p class="mt-4 leading-8" style="color:#4b5563;">Starke Struktur + Geschwindigkeit + klare Botschaft = mehr Kunden, mehr Umsatz und mehr Reichweite.</p>
-</div>
-</div>
-</div>
-</section>
-<section class="page-step ritt-projects" id="projects">
-<div class="ritt-projects-inner">
-<div class="ritt-projects-head fade-up">
-<p class="ritt-kicker">Echte Projekte</p>
-<h2><span>Meine aktuellen Arbeiten.</span></h2>
-</div>
-<div aria-label="Aktuelle Website-Projekte" class="ritt-marquee">
-<div class="ritt-marquee-track">
-<a class="ritt-work-card" href="https://xn--bogner-schdlingsbekmpfung-uecj.de/" rel="noopener" target="_blank">
-<div class="ritt-work-image"><img alt="Bogner Schädlingsbekämpfung" decoding="async" loading="lazy" src="https://ritt-happens.de/wp-content/uploads/2026/04/03-bogner-schaedlingsbekaempfung.jpg"/></div>
-<div class="ritt-work-info">
-<h3>Bogner Schädlingsbekämpfung</h3>
-<p>Kammerjäger</p>
-<span>Zur Website →</span>
-</div>
-</a>
-<a class="ritt-work-card" href="https://volena-hair.de/" rel="noopener" target="_blank">
-<div class="ritt-work-image"><img alt="Voléna" decoding="async" loading="lazy" src="https://ritt-happens.de/wp-content/uploads/2026/06/volena-website-design-scaled.png"/></div>
-<div class="ritt-work-info">
-<h3>Voléna</h3>
-<p>Haar Extensions</p>
-<span>Zur Website →</span>
-</div>
-</a>
-<a class="ritt-work-card" href="https://108-yogastudio.com/" rel="noopener" target="_blank">
-<div class="ritt-work-image"><img alt="108 Yoga Studio" decoding="async" loading="lazy" src="https://ritt-happens.de/wp-content/uploads/2026/04/01-108-yoga-studio.jpg"/></div>
-<div class="ritt-work-info">
-<h3>108 Yoga Studio</h3>
-<p>Yoga Studio</p>
-<span>Zur Website →</span>
-</div>
-</a>
-<a class="ritt-work-card" href="https://delroy-leasing.de/" rel="noopener" target="_blank">
-<div class="ritt-work-image"><img alt="Delroy Leasing" decoding="async" loading="lazy" src="https://ritt-happens.de/wp-content/uploads/2026/04/04-delroy-leasing.jpg"/></div>
-<div class="ritt-work-info">
-<h3>Delroy Leasing</h3>
-<p>Leasing Unternehmensberatung</p>
-<span>Zur Website →</span>
-</div>
-</a>
-<a class="ritt-work-card" href="https://www.heilpraktiker-knetzgau.de/" rel="noopener" target="_blank">
-<div class="ritt-work-image"><img alt="Heilpraktiker Knetzgau" decoding="async" loading="lazy" src="https://ritt-happens.de/wp-content/uploads/2026/04/05-heilpraktiker-knetzgau.jpg"/></div>
-<div class="ritt-work-info">
-<h3>Heilpraktiker Knetzgau</h3>
-<p>Naturheilpraxis</p>
-<span>Zur Website →</span>
-</div>
-</a>
-<a class="ritt-work-card" href="https://engel-erbenheim.de/" rel="noopener" target="_blank">
-<div class="ritt-work-image"><img alt="Der Engel in Erbenheim" decoding="async" loading="lazy" src="https://ritt-happens.de/wp-content/uploads/2026/05/screencapture-engel-erbenheim-de-2026-05-06-12_11_15-scaled.png"/></div>
-<div class="ritt-work-info">
-<h3>Der Engel in Erbenheim</h3>
-<p>Restaurant</p>
-<span>Zur Website →</span>
-</div>
-</a>
-<a class="ritt-work-card" href="https://banana-split.online/" rel="noopener" target="_blank">
-<div class="ritt-work-image"><img alt="Banana Split" decoding="async" loading="lazy" src="https://ritt-happens.de/wp-content/uploads/2026/04/02-banana-split.jpg"/></div>
-<div class="ritt-work-info">
-<h3>Banana Split</h3>
-<p>Online Sport Studio</p>
-<span>Zur Website →</span>
-</div>
-</a>
-<a class="ritt-work-card" href="https://voigt-diallo.de/" rel="noopener" target="_blank">
-<div class="ritt-work-image"><img alt="Voigt Diallo Aesthetic" decoding="async" loading="lazy" src="https://ritt-happens.de/wp-content/uploads/2026/04/08-voigt-diallo-aesthetic.jpg"/></div>
-<div class="ritt-work-info">
-<h3>Voigt Diallo Aesthetic</h3>
-<p>Praxis für ästhetische Medizin</p>
-<span>Zur Website →</span>
-</div>
-</a>
-<a class="ritt-work-card" href="https://r2r-recycling.com/" rel="noopener" target="_blank">
-<div class="ritt-work-image"><img alt="R2R Recycling" decoding="async" loading="lazy" src="https://ritt-happens.de/wp-content/uploads/2026/04/06-r2r-recycling.jpg"/></div>
-<div class="ritt-work-info">
-<h3>R2R Recycling</h3>
-<p>Recycling Unternehmen</p>
-<span>Zur Website →</span>
-</div>
-</a>
-<a class="ritt-work-card" href="https://xn--haushaltsauflsung-jungk-klc.de/" rel="noopener" target="_blank">
-<div class="ritt-work-image"><img alt="Jungk Haushaltsauflösungen" decoding="async" loading="lazy" src="https://ritt-happens.de/wp-content/uploads/2026/04/09-haushaltsaufloesung-jungk.jpg"/></div>
-<div class="ritt-work-info">
-<h3>Jungk Haushaltsauflösungen</h3>
-<p>Haushaltsauflösungen &amp; Umzüge</p>
-<span>Zur Website →</span>
-</div>
-</a>
-<a class="ritt-work-card" href="https://xn--bogner-schdlingsbekmpfung-uecj.de/" rel="noopener" target="_blank">
-<div class="ritt-work-image"><img alt="Bogner Schädlingsbekämpfung" decoding="async" loading="lazy" src="https://ritt-happens.de/wp-content/uploads/2026/04/03-bogner-schaedlingsbekaempfung.jpg"/></div>
-<div class="ritt-work-info">
-<h3>Bogner Schädlingsbekämpfung</h3>
-<p>Kammerjäger</p>
-<span>Zur Website →</span>
-</div>
-</a>
-<a class="ritt-work-card" href="https://volena-hair.de/" rel="noopener" target="_blank">
-<div class="ritt-work-image"><img alt="Voléna" decoding="async" loading="lazy" src="https://ritt-happens.de/wp-content/uploads/2026/06/volena-website-design-scaled.png"/></div>
-<div class="ritt-work-info">
-<h3>Voléna</h3>
-<p>Haar Extensions</p>
-<span>Zur Website →</span>
-</div>
-</a>
-<a class="ritt-work-card" href="https://108-yogastudio.com/" rel="noopener" target="_blank">
-<div class="ritt-work-image"><img alt="108 Yoga Studio" decoding="async" loading="lazy" src="https://ritt-happens.de/wp-content/uploads/2026/04/01-108-yoga-studio.jpg"/></div>
-<div class="ritt-work-info">
-<h3>108 Yoga Studio</h3>
-<p>Yoga Studio</p>
-<span>Zur Website →</span>
-</div>
-</a>
-<a class="ritt-work-card" href="https://delroy-leasing.de/" rel="noopener" target="_blank">
-<div class="ritt-work-image"><img alt="Delroy Leasing" decoding="async" loading="lazy" src="https://ritt-happens.de/wp-content/uploads/2026/04/04-delroy-leasing.jpg"/></div>
-<div class="ritt-work-info">
-<h3>Delroy Leasing</h3>
-<p>Leasing Unternehmensberatung</p>
-<span>Zur Website →</span>
-</div>
-</a>
-<a class="ritt-work-card" href="https://www.heilpraktiker-knetzgau.de/" rel="noopener" target="_blank">
-<div class="ritt-work-image"><img alt="Heilpraktiker Knetzgau" decoding="async" loading="lazy" src="https://ritt-happens.de/wp-content/uploads/2026/04/05-heilpraktiker-knetzgau.jpg"/></div>
-<div class="ritt-work-info">
-<h3>Heilpraktiker Knetzgau</h3>
-<p>Naturheilpraxis</p>
-<span>Zur Website →</span>
-</div>
-</a>
-<a class="ritt-work-card" href="https://engel-erbenheim.de/" rel="noopener" target="_blank">
-<div class="ritt-work-image"><img alt="Der Engel in Erbenheim" decoding="async" loading="lazy" src="https://ritt-happens.de/wp-content/uploads/2026/05/screencapture-engel-erbenheim-de-2026-05-06-12_11_15-scaled.png"/></div>
-<div class="ritt-work-info">
-<h3>Der Engel in Erbenheim</h3>
-<p>Restaurant</p>
-<span>Zur Website →</span>
-</div>
-</a>
-<a class="ritt-work-card" href="https://banana-split.online/" rel="noopener" target="_blank">
-<div class="ritt-work-image"><img alt="Banana Split" decoding="async" loading="lazy" src="https://ritt-happens.de/wp-content/uploads/2026/04/02-banana-split.jpg"/></div>
-<div class="ritt-work-info">
-<h3>Banana Split</h3>
-<p>Online Sport Studio</p>
-<span>Zur Website →</span>
-</div>
-</a>
-<a class="ritt-work-card" href="https://voigt-diallo.de/" rel="noopener" target="_blank">
-<div class="ritt-work-image"><img alt="Voigt Diallo Aesthetic" decoding="async" loading="lazy" src="https://ritt-happens.de/wp-content/uploads/2026/04/08-voigt-diallo-aesthetic.jpg"/></div>
-<div class="ritt-work-info">
-<h3>Voigt Diallo Aesthetic</h3>
-<p>Praxis für ästhetische Medizin</p>
-<span>Zur Website →</span>
-</div>
-</a>
-<a class="ritt-work-card" href="https://r2r-recycling.com/" rel="noopener" target="_blank">
-<div class="ritt-work-image"><img alt="R2R Recycling" decoding="async" loading="lazy" src="https://ritt-happens.de/wp-content/uploads/2026/04/06-r2r-recycling.jpg"/></div>
-<div class="ritt-work-info">
-<h3>R2R Recycling</h3>
-<p>Recycling Unternehmen</p>
-<span>Zur Website →</span>
-</div>
-</a>
-<a class="ritt-work-card" href="https://xn--haushaltsauflsung-jungk-klc.de/" rel="noopener" target="_blank">
-<div class="ritt-work-image"><img alt="Jungk Haushaltsauflösungen" decoding="async" loading="lazy" src="https://ritt-happens.de/wp-content/uploads/2026/04/09-haushaltsaufloesung-jungk.jpg"/></div>
-<div class="ritt-work-info">
-<h3>Jungk Haushaltsauflösungen</h3>
-<p>Haushaltsauflösungen &amp; Umzüge</p>
-<span>Zur Website →</span>
-</div>
-</a>
 </div>
 </div>
 </div>
