@@ -1,0 +1,5372 @@
+<!DOCTYPE html>
+
+<html lang="de">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=AW-18130743239"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'AW-18130743239');
+</script>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><link href="/favicon.ico" rel="icon" sizes="any"/><link href="/favicon.png" rel="icon" sizes="32x32" type="image/png"/><link href="/favicon.ico" rel="shortcut icon"/><link href="/favicon.png" rel="apple-touch-icon"/>
+<title>Webdesign Deutschland | SEO &amp; moderne Websites | WahebSite</title>
+<meta content="Professionelles Webdesign und SEO für Unternehmen in Deutschland. Moderne Websites mit klarer Struktur, schneller Nutzerführung und Fokus auf Anfragen." name="description"/>
+<link href="https://wahebsite.de/" rel="canonical"/>
+<meta content="index, follow" name="robots"/>
+<meta content="website" property="og:type"/>
+<meta content="Webdesign Deutschland | SEO &amp; moderne Websites | WahebSite" property="og:title"/>
+<meta content="Professionelles Webdesign und SEO für Unternehmen in Deutschland. Moderne Websites mit klarer Struktur, schneller Nutzerführung und Fokus auf Anfragen." property="og:description"/>
+<meta content="https://wahebsite.de/" property="og:url"/>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "ProfessionalService", "name": "WahebSite", "description": "Professionelles Webdesign und SEO in ganz Deutschland. Moderne Websites für Unternehmen, Restaurants, Praxen, Onlineshops und lokale Geschäfte.", "areaServed": "Deutschland", "serviceType": ["Webdesign", "SEO", "Website-Erstellung", "Lokale Suchmaschinenoptimierung"], "telephone": "+49 1521 3873166", "email": "wahebwahbe100@gmail.com", "url": "https://wahebsite.de/"}</script>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<style>
+    html { scroll-behavior: smooth; }
+
+    :root {
+      --bg: #f7f5f1;
+      --surface: rgba(255,255,255,0.82);
+      --surface-strong: #ffffff;
+      --text: #111827;
+      --muted: #5b6472;
+      --border: rgba(17,24,39,.10);
+      --accent: #38bdf8;
+      --accent-dark: #0ea5e9;
+      --accent-soft: rgba(56,189,248,.12);
+      --shadow: 0 20px 60px rgba(17,24,39,.08);
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      overflow-x: hidden;
+      font-family: 'Playfair Display', serif;
+      position: relative;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background:
+        radial-gradient(circle at 12% 16%, rgba(56,189,248,.10), transparent 24%),
+        radial-gradient(circle at 86% 10%, rgba(17,24,39,.05), transparent 28%),
+        radial-gradient(circle at 50% 92%, rgba(56,189,248,.08), transparent 28%);
+      z-index: -2;
+      pointer-events: none;
+    }
+
+    body::after {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(17,24,39,0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(17,24,39,0.03) 1px, transparent 1px);
+      background-size: 38px 38px;
+      z-index: -1;
+      pointer-events: none;
+    }
+
+    .glass {
+      background: linear-gradient(180deg, rgba(255,255,255,0.92), rgba(240,249,255,0.88));
+      backdrop-filter: blur(14px);
+      border: 1px solid rgba(56,189,248,0.22);
+      box-shadow: 0 18px 46px rgba(14,165,233,0.12);
+    }
+
+    .nav-link {
+      position: relative;
+      transition: .3s;
+      color: rgba(17,24,39,.85);
+    }
+
+    .nav-link::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -6px;
+      width: 0;
+      height: 2px;
+      background: linear-gradient(to right, var(--accent), var(--accent-dark));
+      transition: .3s;
+    }
+
+    .nav-link:hover, .nav-link.active { color: var(--text); }
+    .nav-link:hover::after, .nav-link.active::after { width: 100%; }
+
+    .btn-primary {
+      background: linear-gradient(90deg, var(--accent), var(--accent-dark));
+      color: #ffffff;
+      font-weight: 800;
+      transition: .3s;
+      box-shadow: 0 12px 28px rgba(14,165,233,.24);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px) scale(1.02);
+      box-shadow: 0 16px 34px rgba(14,165,233,.28);
+    }
+
+    .btn-secondary {
+      transition: .3s;
+      color: var(--text);
+    }
+
+    .btn-secondary:hover {
+      background: rgba(17,24,39,0.04);
+      transform: translateY(-2px);
+    }
+
+    header img, footer img {
+      filter: drop-shadow(0 6px 18px rgba(56,189,248,.18));
+    }
+
+    .logo-wrap {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .logo-wrap img {
+      height: 40px;
+      width: auto;
+      object-fit: contain;
+      display: block;
+      margin: 0;
+      padding: 0;
+    }
+
+    .logo-brand {
+      font-family: 'Playfair Display', serif;
+      display: inline-flex;
+      align-items: center;
+      line-height: 1;
+      font-weight: 800;
+      letter-spacing: 0.2px;
+      font-size: 1.6rem;
+      transition: transform .35s ease;
+      margin: 0;
+      padding: 0;
+    }
+
+    .logo-waheb {
+      color: #111827;
+      transition: all .35s ease;
+    }
+
+    .logo-site {
+      margin-left: 2px;
+      background: linear-gradient(90deg, #0ea5e9, #38bdf8);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      filter: drop-shadow(0 0 8px rgba(56,189,248,.18));
+      transition: all .35s ease;
+    }
+
+    .logo-wrap:hover .logo-brand {
+      transform: translateY(-1px);
+    }
+
+    .logo-wrap:hover .logo-waheb {
+      color: #000000;
+      text-shadow: 0 0 1px rgba(0,0,0,0.08);
+    }
+
+    .logo-wrap:hover .logo-site {
+      filter: drop-shadow(0 0 14px rgba(56,189,248,.40));
+      transform: scale(1.04);
+    }
+
+    .hero-card {
+      position: relative;
+      overflow: hidden;
+      border-radius: 30px;
+      border: 1px solid rgba(56,189,248,.20);
+      background: linear-gradient(180deg, rgba(255,255,255,0.96), rgba(239,249,255,0.98));
+      box-shadow: 0 25px 80px rgba(17,24,39,0.12), 0 0 40px rgba(56,189,248,0.16);
+    }
+
+    .window-header {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      padding: 18px 22px;
+      border-bottom: 1px solid rgba(17,24,39,0.08);
+      background: rgba(255,255,255,.75);
+    }
+
+    .dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 999px;
+      display: inline-block;
+    }
+
+    .dot.red { background: #ef4444; }
+    .dot.yellow { background: #f59e0b; }
+    .dot.green { background: #22c55e; }
+
+    .code-body {
+      padding: 24px;
+      font-family: Consolas, Monaco, 'Courier New', monospace;
+      font-size: 22px;
+      line-height: 2;
+      color: #111827;
+      min-height: 300px;
+      text-align: left;
+      direction: ltr;
+    }
+
+    .line-static { color: #374151; }
+    .indent-1 { padding-left: 22px; }
+    .indent-2 { padding-left: 44px; }
+    .code-key { color: var(--accent-dark); }
+    .code-value { color: #111827; font-weight: 700; }
+    .code-bracket { color: #6b7280; }
+
+    .typing-cursor {
+      display: inline-block;
+      width: 10px;
+      height: 1.1em;
+      margin-left: 4px;
+      border-radius: 4px;
+      background: var(--accent);
+      box-shadow: 0 0 16px rgba(56,189,248,0.45);
+      animation: blinkCursor .9s infinite;
+      vertical-align: middle;
+    }
+
+    @keyframes blinkCursor {
+      0%, 48% { opacity: 1; }
+      49%, 100% { opacity: .18; }
+    }
+
+    .section-card {
+      transition: .35s ease;
+      border-color: rgba(56,189,248,0.18) !important;
+      box-shadow: 0 14px 36px rgba(14,165,233,0.08);
+    }
+
+    .section-card:hover {
+      transform: translateY(-6px);
+      border-color: rgba(14,165,233,.34) !important;
+      box-shadow: 0 20px 44px rgba(14,165,233,.16);
+    }
+
+    .project-art {
+      height: 260px;
+      border-radius: 20px 20px 0 0;
+      overflow: hidden;
+      position: relative;
+      background: #f3f4f6;
+    }
+
+    .project-art img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .website-preview-showcase {
+      position: relative;
+      margin-top: 2rem;
+      width: min(100%, 860px);
+      height: 500px;
+      border-radius: 28px;
+      overflow: hidden;
+      background:
+        linear-gradient(rgba(255,255,255,.06) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.06) 1px, transparent 1px),
+        #050816;
+      background-size: 60px 60px;
+      border: 1px solid rgba(56,189,248,.20);
+      box-shadow: 0 24px 70px rgba(17,24,39,.24), 0 0 36px rgba(56,189,248,.14);
+      padding: 1rem;
+      isolation: isolate;
+    }
+
+    .website-preview-showcase::before,
+    .website-preview-showcase::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      z-index: 5;
+      height: 86px;
+      pointer-events: none;
+    }
+
+    .website-preview-showcase::before {
+      top: 0;
+      background: linear-gradient(to bottom, #050816 8%, rgba(5,8,22,.62) 38%, transparent);
+    }
+
+    .website-preview-showcase::after {
+      bottom: 0;
+      background: linear-gradient(to top, #050816 8%, rgba(5,8,22,.62) 38%, transparent);
+    }
+
+    .website-preview-logos {
+      position: absolute;
+      top: 1.05rem;
+      left: 50%;
+      z-index: 8;
+      transform: translateX(-50%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 2rem;
+      color: rgba(255,255,255,.36);
+      font-size: clamp(1.05rem, 2.4vw, 1.65rem);
+      font-weight: 900;
+      letter-spacing: .03em;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    .website-preview-grid {
+      position: absolute;
+      inset: 0;
+      z-index: 2;
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 1.05rem;
+      padding: 0 1rem;
+      transform: rotate(-1deg) scale(1.01);
+    }
+
+    .website-preview-column {
+      height: 100%;
+      overflow: hidden;
+      transform: translateY(0);
+    }
+
+    .website-preview-column:nth-child(2) { transform: translateY(-42px); }
+    .website-preview-column:nth-child(3) { transform: translateY(26px); }
+    .website-preview-column:nth-child(4) { transform: translateY(-18px); }
+
+    .website-preview-track {
+      display: flex;
+      flex-direction: column;
+      gap: 1.05rem;
+      animation: websiteScrollUp 34s linear infinite;
+      will-change: transform;
+    }
+
+    .website-preview-column:nth-child(2) .website-preview-track { animation-duration: 38s; }
+    .website-preview-column:nth-child(3) .website-preview-track { animation-duration: 32s; }
+    .website-preview-column:nth-child(4) .website-preview-track { animation-duration: 36s; }
+
+    .website-preview-card {
+      flex: 0 0 auto;
+      aspect-ratio: 1920 / 1900;
+      height: auto;
+      min-height: 245px;
+      border-radius: 18px;
+      overflow: hidden;
+      background: #ffffff;
+      border: 1px solid rgba(255,255,255,.18);
+      box-shadow: 0 20px 48px rgba(0,0,0,.24);
+    }
+
+    .website-preview-card img {
+      width: 100%;
+      height: 100%;
+      aspect-ratio: 1920 / 1900;
+      object-fit: cover;
+      object-position: top center;
+      display: block;
+      filter: saturate(1.06) contrast(1.04);
+      backface-visibility: hidden;
+      transform: translateZ(0);
+    }
+
+    @keyframes websiteScrollUp {
+      0% {
+        transform: translateY(0);
+      }
+      100% {
+        transform: translateY(calc(-50% - .45rem));
+      }
+    }
+
+    @media (max-width: 768px) {
+      .website-preview-showcase {
+        width: 100%;
+        height: 420px;
+        margin-top: 1.5rem;
+        padding: .75rem;
+        border-radius: 22px;
+        background-size: 50px 50px;
+      }
+
+      .website-preview-logos {
+        top: .85rem;
+        gap: 1rem;
+        font-size: 1rem;
+      }
+
+      .website-preview-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: .65rem;
+        padding: 0 .7rem;
+        transform: rotate(-1deg) scale(1.02);
+      }
+
+      .website-preview-column:nth-child(3),
+      .website-preview-column:nth-child(4) {
+        display: none;
+      }
+
+      .website-preview-track {
+        gap: .65rem;
+        animation-duration: 30s;
+      }
+
+      .website-preview-column:nth-child(2) .website-preview-track { animation-duration: 34s; }
+      .website-preview-column:nth-child(3) .website-preview-track { animation-duration: 28s; }
+
+      .website-preview-card {
+        aspect-ratio: 1920 / 1900;
+        height: auto;
+        min-height: 215px;
+        border-radius: 14px;
+      }
+    }
+
+
+    .feature-icon, .service-icon {
+      width: 3.5rem;
+      height: 3.5rem;
+      border-radius: 1.2rem;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(180deg, rgba(224,242,254,.96), rgba(186,230,253,.72));
+      color: #0284c7;
+      border: 1px solid rgba(56,189,248,.24);
+      box-shadow: 0 10px 24px rgba(14,165,233,.12);
+      font-size: 1.5rem;
+    }
+
+    .fade-up {
+      opacity: 0;
+      transform: translateY(34px);
+      transition: opacity .8s ease, transform .8s ease;
+    }
+
+    .show {
+      opacity: 1 !important;
+      transform: translateY(0) !important;
+    }
+
+    .contact-input {
+      width: 100%;
+      border-radius: 18px;
+      border: 1px solid rgba(17,24,39,.10);
+      background: rgba(255,255,255,.85);
+      padding: 14px 18px;
+      color: var(--text);
+      outline: none;
+      transition: .25s;
+    }
+
+    .contact-input:focus {
+      border-color: rgba(14,165,233,.62);
+      box-shadow: 0 0 0 4px rgba(56,189,248,.18);
+      background: #ffffff;
+    }
+
+    .journey-step {
+      position: relative;
+      padding-left: 2rem;
+    }
+
+    .journey-step::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: .8rem;
+      width: 14px;
+      height: 14px;
+      border-radius: 999px;
+      background: var(--accent);
+      box-shadow: 0 0 0 8px rgba(56,189,248,.10);
+    }
+
+    .journey-step::after {
+      content: "";
+      position: absolute;
+      left: 6px;
+      top: 2.2rem;
+      bottom: -2rem;
+      width: 2px;
+      background: linear-gradient(to bottom, rgba(56,189,248,.50), transparent);
+    }
+
+    .journey-step:last-child::after { display: none; }
+
+    @media (max-width: 900px) {
+      .desktop-nav { display: none; }
+      .mobile-nav-button { display: inline-flex; }
+    }
+
+    @media (min-width: 901px) {
+      .mobile-nav-button,
+      .mobile-menu { display: none !important; }
+    }
+
+    @media (max-width: 768px) {
+      .code-body {
+        font-size: 16px;
+        min-height: 240px;
+      }
+
+      .indent-1 { padding-left: 16px; }
+      .indent-2 { padding-left: 30px; }
+
+      .logo-wrap {
+        gap: 3px;
+      }
+
+      .logo-wrap img {
+        height: 34px;
+      }
+
+      .logo-brand {
+        font-size: 1.2rem;
+      }
+
+      .logo-site {
+        margin-left: 1px;
+      }
+    }
+  
+
+    .breadcrumb-pill { background: rgba(255,255,255,.78); border:1px solid rgba(17,24,39,.08); backdrop-filter: blur(8px); }
+    .faq-item summary { cursor:pointer; list-style:none; }
+    .faq-item summary::-webkit-details-marker { display:none; }
+    .faq-item[open] { box-shadow: 0 20px 40px rgba(17,24,39,.06); }
+    .city-chip:hover { transform: translateY(-2px); }
+    
+    .standorte-accordion summary::-webkit-details-marker { display: none; }
+    .standorte-accordion[open] .standorte-chevron { transform: rotate(180deg); }
+
+
+    .whatsapp-side-button {
+      position: fixed;
+      right: 18px;
+      bottom: 18px;
+      z-index: 9999;
+      display: inline-flex;
+      align-items: center;
+      gap: 14px;
+      text-decoration: none;
+      transition: transform .25s ease;
+    }
+
+    .whatsapp-side-button:hover {
+      transform: translateY(-2px);
+    }
+
+    .whatsapp-side-button .whatsapp-label {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 50px;
+      padding: 0 20px;
+      border-radius: 999px;
+      background: #1f2940;
+      color: #ffffff;
+      font-weight: 700;
+      font-size: 14px;
+      line-height: 1;
+      box-shadow: 0 12px 28px rgba(17, 24, 39, .20);
+      white-space: nowrap;
+    }
+
+    .whatsapp-side-button .whatsapp-icon-wrap {
+      width: 50px;
+      height: 50px;
+      border-radius: 999px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: #25D366;
+      box-shadow: 0 14px 34px rgba(37, 211, 102, .32);
+      flex-shrink: 0;
+    }
+
+    .whatsapp-side-button img {
+      width: 24px;
+      height: 24px;
+      object-fit: contain;
+    }
+
+    @media (max-width: 768px) {
+      .whatsapp-side-button {
+        right: 10px;
+        bottom: 10px;
+        gap: 12px;
+      }
+
+      .whatsapp-side-button .whatsapp-label {
+        min-height: 46px;
+        padding: 0 18px;
+        font-size: 12px;
+      }
+
+      .whatsapp-side-button .whatsapp-icon-wrap {
+        width: 46px;
+        height: 46px;
+      }
+
+      .whatsapp-side-button img {
+        width: 22px;
+        height: 22px;
+      }
+    }
+
+
+    .startseite-video-wrap {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 0 1.5rem 6rem;
+    }
+
+    .startseite-video-card {
+      position: relative;
+      overflow: hidden;
+      border-radius: 34px;
+      border: 1px solid rgba(56,189,248,.24);
+      background:
+        radial-gradient(circle at 18% 0%, rgba(56,189,248,.18), transparent 32%),
+        linear-gradient(180deg, rgba(255,255,255,.96), rgba(239,249,255,.92));
+      box-shadow: 0 26px 80px rgba(17,24,39,.12), 0 0 42px rgba(56,189,248,.12);
+      padding: 1.1rem;
+    }
+
+    .startseite-video-inner {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.25rem;
+      align-items: center;
+    }
+
+    .startseite-video-text {
+      border-radius: 26px;
+      border: 1px solid rgba(14,165,233,.22);
+      background: linear-gradient(90deg, var(--accent), var(--accent-dark));
+      padding: 1.5rem;
+      text-align: center;
+      direction: rtl;
+    }
+
+    .startseite-video-text p {
+      margin: 0;
+      color: #ffffff;
+      font-size: 1.12rem;
+      line-height: 2;
+      font-weight: 700;
+    }
+
+    .startseite-video-shell {
+      position: relative;
+      overflow: hidden;
+      border-radius: 28px;
+      background: #0b1120;
+      box-shadow: inset 0 0 0 1px rgba(255,255,255,.10), 0 22px 60px rgba(17,24,39,.22);
+    }
+
+    .startseite-video-shell::before {
+      content: "";
+      display: block;
+      padding-top: 56.25%;
+    }
+
+    .startseite-video-shell video {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+
+    .startseite-video-play {
+      display: none;
+    }
+
+    @media (max-width: 768px) {
+      .startseite-video-shell.mobile-clean-controls {
+        cursor: pointer;
+        -webkit-tap-highlight-color: transparent;
+      }
+
+      .startseite-video-shell.mobile-clean-controls video::-webkit-media-controls {
+        display: none !important;
+      }
+
+      .startseite-video-shell.mobile-clean-controls video::-webkit-media-controls-enclosure {
+        display: none !important;
+      }
+
+      .startseite-video-play {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        z-index: 4;
+        width: 68px;
+        height: 68px;
+        transform: translate(-50%, -50%);
+        border: 0;
+        border-radius: 999px;
+        background: linear-gradient(90deg, var(--accent), var(--accent-dark));
+        color: #ffffff;
+        font-size: 28px;
+        line-height: 1;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 14px 34px rgba(14,165,233,.34);
+        transition: opacity .2s ease, transform .2s ease;
+      }
+
+      .startseite-video-shell.is-playing .startseite-video-play {
+        opacity: 0;
+        pointer-events: none;
+        transform: translate(-50%, -50%) scale(.92);
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .startseite-video-card {
+        padding: 1.35rem;
+      }
+
+      .startseite-video-inner {
+        grid-template-columns: .85fr 1.35fr;
+        gap: 1.35rem;
+      }
+
+      .startseite-video-text {
+        text-align: right;
+        padding: 2rem;
+      }
+
+      .startseite-video-text p {
+        font-size: 1.25rem;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .startseite-video-wrap {
+        padding: 0 1rem 4rem;
+      }
+
+      .startseite-video-card {
+        border-radius: 26px;
+        padding: .65rem;
+      }
+
+      .startseite-video-text {
+        border-radius: 20px;
+        padding: 1.1rem;
+      }
+
+      .startseite-video-text p {
+        font-size: 1rem;
+        line-height: 1.9;
+      }
+
+      .startseite-video-shell {
+        border-radius: 34px;
+        width: min(285px, 100%);
+        aspect-ratio: 9 / 16;
+        height: auto;
+        margin: 0 auto;
+        border: 10px solid #111827;
+        background: #111827;
+        box-shadow: 0 22px 60px rgba(17,24,39,.28), 0 0 0 1px rgba(255,255,255,.18);
+      }
+
+      .startseite-video-shell::before {
+        display: none;
+        padding-top: 0;
+      }
+
+      .startseite-video-shell::after {
+        content: "";
+        position: absolute;
+        top: 9px;
+        left: 50%;
+        width: 72px;
+        height: 9px;
+        transform: translateX(-50%);
+        border-radius: 999px;
+        background: rgba(17,24,39,.92);
+        z-index: 2;
+        pointer-events: none;
+      }
+
+      .startseite-video-shell video {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: 24px;
+        object-fit: cover;
+        display: block;
+        z-index: 1;
+      }
+    }
+
+
+    /* ===== Blue / Black full redesign ===== */
+    :root {
+      --bg: #020617;
+      --surface: rgba(15,23,42,0.78);
+      --surface-strong: #0f172a;
+      --text: #e5f3ff;
+      --muted: #9fb3c8;
+      --border: rgba(125,211,252,.18);
+      --accent: #38bdf8;
+      --accent-dark: #2563eb;
+      --accent-soft: rgba(56,189,248,.14);
+      --shadow: 0 24px 80px rgba(0,0,0,.38);
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 92px;
+    }
+
+    body {
+      background:
+        radial-gradient(circle at 14% 10%, rgba(56,189,248,.18), transparent 26%),
+        radial-gradient(circle at 88% 18%, rgba(37,99,235,.20), transparent 32%),
+        radial-gradient(circle at 50% 90%, rgba(14,165,233,.12), transparent 30%),
+        linear-gradient(135deg, #020617 0%, #07111f 44%, #030712 100%) !important;
+      color: var(--text) !important;
+    }
+
+    body::before {
+      background:
+        radial-gradient(circle at 18% 16%, rgba(56,189,248,.14), transparent 24%),
+        radial-gradient(circle at 82% 8%, rgba(37,99,235,.18), transparent 28%),
+        radial-gradient(circle at 50% 88%, rgba(56,189,248,.10), transparent 30%) !important;
+      z-index: -3;
+    }
+
+    body::after {
+      background-image:
+        linear-gradient(rgba(125,211,252,0.055) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(125,211,252,0.055) 1px, transparent 1px) !important;
+      background-size: 42px 42px !important;
+      z-index: -2;
+    }
+
+    header {
+      background: rgba(2,6,23,.76) !important;
+      border-bottom: 1px solid rgba(125,211,252,.16) !important;
+      box-shadow: 0 18px 50px rgba(0,0,0,.28);
+    }
+
+    .mobile-menu {
+      background: rgba(2,6,23,.95) !important;
+      border-color: rgba(125,211,252,.18) !important;
+    }
+
+    .mobile-menu a,
+    .nav-link,
+    .btn-secondary,
+    .logo-waheb {
+      color: rgba(229,243,255,.88) !important;
+    }
+
+    .logo-site,
+    #home h1 span,
+    #about h2 span {
+      background: linear-gradient(90deg, #7dd3fc, #38bdf8, #2563eb);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .logo-wrap img,
+    header img,
+    footer img {
+      filter: drop-shadow(0 10px 24px rgba(56,189,248,.26));
+    }
+
+    #home,
+    #services,
+    #seo-cities,
+    footer {
+      border-color: rgba(125,211,252,.14) !important;
+    }
+
+    #services,
+    #seo-cities {
+      background:
+        radial-gradient(circle at 10% 0%, rgba(56,189,248,.12), transparent 24%),
+        linear-gradient(180deg, rgba(15,23,42,.62), rgba(2,6,23,.82)) !important;
+    }
+
+    section {
+      position: relative;
+      overflow: hidden;
+    }
+
+    section::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at 18% 0%, rgba(56,189,248,.08), transparent 26%),
+        radial-gradient(circle at 92% 55%, rgba(37,99,235,.08), transparent 30%);
+      pointer-events: none;
+      z-index: -1;
+    }
+
+    h1, h2, h3 {
+      color: #f8fbff !important;
+      text-shadow: 0 14px 42px rgba(0,0,0,.20);
+    }
+
+    p,
+    li,
+    label,
+    span[style*="color:#6b7280"],
+    p[style*="color:#6b7280"],
+    p[style*="color:#4b5563"],
+    div[style*="color:#4b5563"],
+    ul[style*="color:#4b5563"] {
+      color: var(--muted) !important;
+    }
+
+    span[style*="background:rgba(56,189,248,.10)"],
+    .breadcrumb-pill {
+      background: rgba(14,165,233,.12) !important;
+      border-color: rgba(125,211,252,.22) !important;
+      color: #7dd3fc !important;
+    }
+
+    .glass,
+    .section-card,
+    .hero-card,
+    .startseite-video-card,
+    #contact .glass,
+    .rounded-2xl.border,
+    .rounded-3xl.border {
+      background:
+        radial-gradient(circle at 12% 0%, rgba(56,189,248,.12), transparent 32%),
+        linear-gradient(180deg, rgba(15,23,42,.86), rgba(2,6,23,.72)) !important;
+      border-color: rgba(125,211,252,.18) !important;
+      box-shadow: 0 24px 70px rgba(0,0,0,.34), 0 0 36px rgba(56,189,248,.08) !important;
+      color: var(--text) !important;
+    }
+
+    .section-card:hover {
+      transform: translateY(-8px);
+      border-color: rgba(56,189,248,.42) !important;
+      box-shadow: 0 30px 90px rgba(0,0,0,.42), 0 0 50px rgba(56,189,248,.14) !important;
+    }
+
+    .window-header {
+      background: rgba(15,23,42,.80) !important;
+      border-color: rgba(125,211,252,.14) !important;
+    }
+
+    .code-body {
+      background: linear-gradient(180deg, rgba(2,6,23,.42), rgba(15,23,42,.72));
+      color: #dbeafe !important;
+    }
+
+    .line-static,
+    .code-value {
+      color: #dbeafe !important;
+    }
+
+    .code-bracket {
+      color: #93c5fd !important;
+    }
+
+    .project-art {
+      background: rgba(2,6,23,.8) !important;
+    }
+
+    .contact-input {
+      background: rgba(2,6,23,.78) !important;
+      border-color: rgba(125,211,252,.20) !important;
+      color: #e5f3ff !important;
+    }
+
+    .contact-input::placeholder {
+      color: rgba(159,179,200,.70);
+    }
+
+    .contact-input:focus {
+      background: rgba(15,23,42,.95) !important;
+      border-color: rgba(56,189,248,.72) !important;
+      box-shadow: 0 0 0 4px rgba(56,189,248,.18) !important;
+    }
+
+    .btn-secondary {
+      background: rgba(15,23,42,.72) !important;
+      border-color: rgba(125,211,252,.20) !important;
+      box-shadow: 0 12px 30px rgba(0,0,0,.18);
+    }
+
+    .btn-secondary:hover {
+      background: rgba(14,165,233,.14) !important;
+    }
+
+    .website-preview-showcase {
+      background:
+        linear-gradient(rgba(125,211,252,.07) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(125,211,252,.07) 1px, transparent 1px),
+        linear-gradient(135deg, #020617, #06152b 56%, #030712) !important;
+      border-color: rgba(125,211,252,.22) !important;
+      box-shadow: 0 28px 90px rgba(0,0,0,.46), 0 0 50px rgba(56,189,248,.12) !important;
+    }
+
+    .website-preview-showcase::before {
+      background: linear-gradient(to bottom, #020617 6%, rgba(2,6,23,.62) 38%, transparent) !important;
+    }
+
+    .website-preview-showcase::after {
+      background: linear-gradient(to top, #020617 6%, rgba(2,6,23,.62) 38%, transparent) !important;
+    }
+
+    footer {
+      background:
+        radial-gradient(circle at 20% 0%, rgba(56,189,248,.12), transparent 30%),
+        linear-gradient(180deg, #020617, #01030a) !important;
+    }
+
+    footer .bg-white\/5,
+    footer .bg-white\/10 {
+      background-color: rgba(15,23,42,.62) !important;
+      border-color: rgba(125,211,252,.16) !important;
+    }
+
+    /* تدريج دخول الأقسام صفحة بعد صفحة */
+    .page-step {
+      opacity: 0;
+      transform: translateY(70px) scale(.985);
+      filter: blur(8px);
+      transition:
+        opacity 1.05s cubic-bezier(.22, 1, .36, 1),
+        transform 1.05s cubic-bezier(.22, 1, .36, 1),
+        filter 1.05s cubic-bezier(.22, 1, .36, 1);
+    }
+
+    .page-step.page-show {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+      filter: blur(0);
+    }
+
+    .page-step:nth-of-type(odd) {
+      transform: translateY(70px) translateX(-18px) scale(.985);
+    }
+
+    .page-step:nth-of-type(even) {
+      transform: translateY(70px) translateX(18px) scale(.985);
+    }
+
+    .page-step.page-show:nth-of-type(odd),
+    .page-step.page-show:nth-of-type(even) {
+      transform: translateY(0) translateX(0) scale(1);
+    }
+
+    @media (max-width: 768px) {
+      .page-step,
+      .page-step:nth-of-type(odd),
+      .page-step:nth-of-type(even) {
+        transform: translateY(48px) scale(.99);
+        filter: blur(5px);
+      }
+
+      .page-step.page-show {
+        transform: translateY(0) scale(1);
+      }
+    }
+
+
+    /* ===== Clarity correction: clearer blue/black design ===== */
+    body {
+      background:
+        radial-gradient(circle at 15% 8%, rgba(56,189,248,.14), transparent 24%),
+        radial-gradient(circle at 85% 18%, rgba(37,99,235,.12), transparent 30%),
+        linear-gradient(135deg, #07111f 0%, #0b1628 46%, #050816 100%) !important;
+      color: #f8fbff !important;
+    }
+
+    header {
+      background: rgba(5,12,24,.92) !important;
+    }
+
+    h1, h2, h3 {
+      color: #ffffff !important;
+      text-shadow: none !important;
+    }
+
+    p,
+    li,
+    label,
+    .mobile-menu a,
+    p[style],
+    div[style],
+    ul[style],
+    span[style] {
+      color: #cfe0f3 !important;
+    }
+
+    #home h1 span,
+    #about h2 span,
+    .logo-site {
+      background: linear-gradient(90deg, #67e8f9, #38bdf8, #60a5fa) !important;
+      -webkit-background-clip: text !important;
+      -webkit-text-fill-color: transparent !important;
+    }
+
+    .glass,
+    .section-card,
+    .hero-card,
+    .startseite-video-card,
+    #contact .glass,
+    .rounded-2xl.border,
+    .rounded-3xl.border {
+      background: linear-gradient(180deg, rgba(15,30,52,.96), rgba(8,18,34,.94)) !important;
+      border-color: rgba(125,211,252,.28) !important;
+      box-shadow: 0 18px 48px rgba(0,0,0,.30), 0 0 28px rgba(56,189,248,.08) !important;
+    }
+
+    .section-card:hover {
+      transform: translateY(-5px) !important;
+      box-shadow: 0 24px 60px rgba(0,0,0,.34), 0 0 34px rgba(56,189,248,.12) !important;
+    }
+
+    .btn-primary {
+      background: linear-gradient(90deg, #0ea5e9, #2563eb) !important;
+      color: #ffffff !important;
+      text-shadow: none !important;
+    }
+
+    .btn-secondary {
+      background: rgba(255,255,255,.08) !important;
+      color: #ffffff !important;
+      border-color: rgba(125,211,252,.32) !important;
+    }
+
+    .contact-input {
+      background: rgba(255,255,255,.08) !important;
+      color: #ffffff !important;
+      border-color: rgba(125,211,252,.34) !important;
+    }
+
+    .contact-input::placeholder {
+      color: rgba(207,224,243,.72) !important;
+    }
+
+    .window-header {
+      background: rgba(255,255,255,.08) !important;
+    }
+
+    .code-body {
+      background: #0b1628 !important;
+      color: #eaf6ff !important;
+    }
+
+    .website-preview-showcase {
+      background:
+        linear-gradient(rgba(125,211,252,.08) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(125,211,252,.08) 1px, transparent 1px),
+        linear-gradient(135deg, #07111f, #0b1d36 55%, #050816) !important;
+    }
+
+    .website-preview-card {
+      background: #ffffff !important;
+      border-color: rgba(255,255,255,.32) !important;
+    }
+
+    .website-preview-card img {
+      filter: none !important;
+      opacity: 1 !important;
+    }
+
+    .website-preview-showcase::before {
+      height: 58px !important;
+      background: linear-gradient(to bottom, rgba(7,17,31,.90), transparent) !important;
+    }
+
+    .website-preview-showcase::after {
+      height: 58px !important;
+      background: linear-gradient(to top, rgba(7,17,31,.90), transparent) !important;
+    }
+
+    .page-step {
+      opacity: 1;
+      transform: none;
+      filter: none;
+      transition: opacity .85s ease, transform .85s ease;
+    }
+
+    .page-step:not(.page-show) {
+      opacity: .08;
+      transform: translateY(36px);
+      filter: none;
+    }
+
+    .page-step.page-show {
+      opacity: 1 !important;
+      transform: translateY(0) !important;
+      filter: none !important;
+    }
+
+    .fade-up {
+      filter: none !important;
+    }
+
+    footer {
+      background: #050816 !important;
+    }
+
+    @media (max-width: 768px) {
+      .page-step:not(.page-show) {
+        opacity: .12;
+        transform: translateY(24px);
+      }
+
+      h1 {
+        line-height: 1.16 !important;
+      }
+
+      .glass,
+      .section-card,
+      .hero-card,
+      .startseite-video-card,
+      #contact .glass {
+        background: linear-gradient(180deg, rgba(15,30,52,.98), rgba(8,18,34,.96)) !important;
+      }
+    }
+
+
+    /* ===== First section different color ===== */
+    #home {
+      background:
+        radial-gradient(circle at 15% 18%, rgba(56,189,248,.28), transparent 28%),
+        radial-gradient(circle at 85% 12%, rgba(14,165,233,.22), transparent 30%),
+        radial-gradient(circle at 55% 92%, rgba(37,99,235,.18), transparent 34%),
+        linear-gradient(135deg, #082f49 0%, #0f3b63 44%, #020617 100%) !important;
+      border-bottom: 1px solid rgba(125,211,252,.24) !important;
+    }
+
+    #home::before {
+      background:
+        linear-gradient(rgba(255,255,255,.055) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.055) 1px, transparent 1px) !important;
+      background-size: 46px 46px !important;
+      opacity: .9;
+    }
+
+    #home .glass,
+    #home .hero-card,
+    #home .website-preview-showcase {
+      background:
+        radial-gradient(circle at 20% 0%, rgba(103,232,249,.16), transparent 34%),
+        linear-gradient(180deg, rgba(7,47,82,.94), rgba(8,20,38,.94)) !important;
+      border-color: rgba(186,230,253,.32) !important;
+      box-shadow: 0 24px 70px rgba(0,0,0,.34), 0 0 44px rgba(56,189,248,.16) !important;
+    }
+
+    #home .btn-secondary {
+      background: rgba(255,255,255,.12) !important;
+      border-color: rgba(186,230,253,.36) !important;
+    }
+
+
+    /* ===== iPhone / mobile correction ===== */
+    @media (max-width: 640px) {
+      html,
+      body {
+        width: 100%;
+        max-width: 100%;
+        overflow-x: hidden !important;
+      }
+
+      body {
+        -webkit-text-size-adjust: 100%;
+      }
+
+      header {
+        top: 0;
+        padding-top: env(safe-area-inset-top);
+      }
+
+      header .mx-auto {
+        padding-left: 1rem !important;
+        padding-right: 1rem !important;
+        padding-top: .75rem !important;
+        padding-bottom: .75rem !important;
+      }
+
+      .logo-wrap img {
+        height: 32px !important;
+      }
+
+      .logo-brand {
+        font-size: 1.08rem !important;
+      }
+
+      .btn-primary.rounded-xl {
+        padding: .55rem .75rem !important;
+        font-size: .78rem !important;
+        white-space: nowrap;
+      }
+
+      .mobile-nav-button {
+        display: inline-flex !important;
+        align-items: center;
+        justify-content: center;
+        min-width: 42px;
+        min-height: 42px;
+        color: #ffffff !important;
+        background: rgba(255,255,255,.10) !important;
+        border-color: rgba(125,211,252,.26) !important;
+      }
+
+      .mobile-menu {
+        max-height: calc(100vh - 72px);
+        overflow-y: auto;
+      }
+
+      #home > div {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 2rem !important;
+        padding-left: 1rem !important;
+        padding-right: 1rem !important;
+        padding-top: 2.5rem !important;
+        padding-bottom: 3rem !important;
+      }
+
+      #home h1 {
+        font-size: clamp(2.05rem, 10vw, 3rem) !important;
+        line-height: 1.12 !important;
+        letter-spacing: -.03em;
+        word-break: normal;
+      }
+
+      #home p {
+        font-size: 1rem !important;
+        line-height: 1.85 !important;
+      }
+
+      #home .mt-8.flex {
+        display: grid !important;
+        grid-template-columns: 1fr !important;
+        gap: .85rem !important;
+      }
+
+      #home .mt-8.flex a {
+        width: 100%;
+        text-align: center;
+        justify-content: center;
+      }
+
+      .website-preview-showcase {
+        width: 100% !important;
+        height: 390px !important;
+        margin-top: 1.25rem !important;
+        padding: .7rem !important;
+        border-radius: 22px !important;
+      }
+
+      .website-preview-logos {
+        top: .75rem !important;
+        width: 100%;
+        gap: .75rem !important;
+        font-size: .88rem !important;
+        letter-spacing: .02em !important;
+      }
+
+      .website-preview-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+        gap: .65rem !important;
+        padding: 0 .65rem !important;
+        transform: rotate(-1deg) scale(1.01) !important;
+      }
+
+      .website-preview-column:nth-child(3),
+      .website-preview-column:nth-child(4) {
+        display: none !important;
+      }
+
+      .website-preview-track {
+        gap: .65rem !important;
+        animation-duration: 34s !important;
+      }
+
+      .website-preview-column:nth-child(2) .website-preview-track {
+        animation-duration: 38s !important;
+      }
+
+      .website-preview-card {
+        min-height: 205px !important;
+        border-radius: 14px !important;
+      }
+
+      .website-preview-card img {
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: cover !important;
+        object-position: top center !important;
+      }
+
+      #home .mt-10.grid {
+        grid-template-columns: 1fr !important;
+        gap: .85rem !important;
+        margin-top: 1.5rem !important;
+      }
+
+      .hero-card {
+        border-radius: 22px !important;
+        width: 100%;
+      }
+
+      .window-header {
+        padding: 12px 14px !important;
+      }
+
+      .code-body {
+        padding: 16px !important;
+        font-size: 13px !important;
+        line-height: 1.9 !important;
+        min-height: 205px !important;
+        overflow-x: auto;
+      }
+
+      .startseite-video-wrap {
+        padding-left: 1rem !important;
+        padding-right: 1rem !important;
+        padding-bottom: 3rem !important;
+      }
+
+      .startseite-video-card {
+        padding: .6rem !important;
+        border-radius: 22px !important;
+      }
+
+      .startseite-video-text {
+        padding: 1rem !important;
+        border-radius: 18px !important;
+      }
+
+      .startseite-video-text p {
+        font-size: .95rem !important;
+        line-height: 1.8 !important;
+      }
+
+      section.mx-auto,
+      section .mx-auto,
+      footer .mx-auto {
+        padding-left: 1rem !important;
+        padding-right: 1rem !important;
+      }
+
+      section[id="about"],
+      section[id="why"],
+      section[id="contact"] {
+        padding-top: 4rem !important;
+        padding-bottom: 4rem !important;
+      }
+
+      #services > div,
+      #seo-cities > div {
+        padding-top: 4rem !important;
+        padding-bottom: 4rem !important;
+      }
+
+      h2 {
+        font-size: clamp(1.85rem, 8vw, 2.45rem) !important;
+        line-height: 1.18 !important;
+      }
+
+      h3 {
+        line-height: 1.25 !important;
+      }
+
+      .glass,
+      .section-card,
+      #contact .glass {
+        border-radius: 22px !important;
+        padding: 1.25rem !important;
+      }
+
+      .project-art {
+        height: 210px !important;
+      }
+
+      .contact-input {
+        font-size: 16px !important;
+        min-height: 48px;
+      }
+
+      textarea.contact-input {
+        min-height: 130px !important;
+      }
+
+      .whatsapp-side-button {
+        right: calc(10px + env(safe-area-inset-right)) !important;
+        bottom: calc(10px + env(safe-area-inset-bottom)) !important;
+        gap: .55rem !important;
+      }
+
+      .whatsapp-side-button .whatsapp-label {
+        display: none !important;
+      }
+
+      .whatsapp-side-button .whatsapp-icon-wrap {
+        width: 52px !important;
+        height: 52px !important;
+      }
+
+      footer .grid {
+        grid-template-columns: 1fr !important;
+      }
+
+      footer .rounded-\[2rem\] {
+        border-radius: 22px !important;
+        padding: 1.25rem !important;
+      }
+    }
+
+    @media (max-width: 390px) {
+      #home h1 {
+        font-size: 1.95rem !important;
+      }
+
+      .website-preview-showcase {
+        height: 360px !important;
+      }
+
+      .website-preview-card {
+        min-height: 185px !important;
+      }
+
+      .code-body {
+        font-size: 12px !important;
+      }
+
+      .btn-primary.rounded-xl {
+        padding-left: .6rem !important;
+        padding-right: .6rem !important;
+      }
+    }
+
+
+    /* ===== Fix empty website cards / missing image fallback ===== */
+    .website-preview-card {
+      position: relative;
+      background:
+        radial-gradient(circle at 20% 0%, rgba(56,189,248,.20), transparent 34%),
+        linear-gradient(135deg, #07111f, #0f2746) !important;
+    }
+
+    .website-preview-card img {
+      opacity: 1;
+      background: #07111f;
+    }
+
+    .website-preview-card img.is-missing {
+      display: none !important;
+    }
+
+    .website-preview-card::after {
+      content: attr(data-title);
+      position: absolute;
+      inset: 0;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 1rem;
+      text-align: center;
+      color: #dff6ff;
+      font-weight: 800;
+      font-size: .95rem;
+      line-height: 1.4;
+      background:
+        linear-gradient(rgba(125,211,252,.10) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(125,211,252,.10) 1px, transparent 1px),
+        radial-gradient(circle at 50% 18%, rgba(56,189,248,.22), transparent 34%),
+        linear-gradient(135deg, #07111f, #0b1d36);
+      background-size: 28px 28px, 28px 28px, auto, auto;
+    }
+
+    .website-preview-card.image-missing::after {
+      display: flex;
+    }
+
+
+    /* ===== Direct image visibility + mobile background fix ===== */
+    html,
+    body {
+      min-height: 100%;
+      background-color: #07111f !important;
+      overflow-x: hidden !important;
+    }
+
+    body {
+      background:
+        radial-gradient(circle at 14% 8%, rgba(56,189,248,.16), transparent 25%),
+        radial-gradient(circle at 86% 16%, rgba(37,99,235,.14), transparent 28%),
+        linear-gradient(135deg, #07111f 0%, #0b1628 48%, #050816 100%) !important;
+      background-attachment: scroll !important;
+    }
+
+    body::before,
+    body::after {
+      position: absolute !important;
+      min-height: 100%;
+    }
+
+    .website-preview-card {
+      background: #07111f !important;
+      overflow: hidden !important;
+      cursor: default !important;
+      pointer-events: none;
+      transform: translateZ(0);
+      -webkit-transform: translateZ(0);
+    }
+
+    .website-preview-card img {
+      display: block !important;
+      opacity: 1 !important;
+      visibility: visible !important;
+      width: 100% !important;
+      height: 100% !important;
+      min-width: 100%;
+      min-height: 100%;
+      object-fit: cover !important;
+      object-position: top center !important;
+      background: #07111f !important;
+      pointer-events: none;
+      transform: translateZ(0);
+      -webkit-transform: translateZ(0);
+      backface-visibility: hidden;
+      -webkit-backface-visibility: hidden;
+    }
+
+    .website-preview-track {
+      pointer-events: none;
+      transform: translateZ(0);
+      -webkit-transform: translateZ(0);
+    }
+
+    .website-preview-grid,
+    .website-preview-showcase {
+      -webkit-transform: translateZ(0);
+      transform: translateZ(0);
+    }
+
+    .page-step,
+    .page-step:not(.page-show),
+    .page-step.page-show {
+      opacity: 1 !important;
+      visibility: visible !important;
+      filter: none !important;
+    }
+
+    @media (max-width: 640px) {
+      body {
+        background:
+          radial-gradient(circle at 18% 5%, rgba(56,189,248,.18), transparent 28%),
+          radial-gradient(circle at 90% 20%, rgba(37,99,235,.16), transparent 30%),
+          linear-gradient(180deg, #07111f 0%, #0b1628 42%, #050816 100%) !important;
+        background-attachment: scroll !important;
+      }
+
+      #home {
+        background:
+          radial-gradient(circle at 20% 10%, rgba(56,189,248,.24), transparent 28%),
+          radial-gradient(circle at 88% 16%, rgba(14,165,233,.18), transparent 32%),
+          linear-gradient(180deg, #08314d 0%, #0b2744 55%, #07111f 100%) !important;
+      }
+
+      .website-preview-showcase {
+        background:
+          linear-gradient(rgba(125,211,252,.08) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(125,211,252,.08) 1px, transparent 1px),
+          linear-gradient(180deg, #07111f, #0b1d36 56%, #050816) !important;
+        background-size: 48px 48px !important;
+      }
+
+      .website-preview-card,
+      .website-preview-card img {
+        opacity: 1 !important;
+        visibility: visible !important;
+      }
+
+      section::before {
+        opacity: .55 !important;
+      }
+    }
+
+
+    /* ===== Hero desktop: stack visual cards beside the text ===== */
+    @media (min-width: 1024px) {
+      .hero-side-stack {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+      }
+
+      .hero-side-stack .hero-card,
+      .hero-side-stack .website-preview-showcase {
+        width: 100%;
+        margin-top: 0;
+      }
+
+      .hero-side-stack .website-preview-showcase {
+        height: 390px;
+      }
+
+      .hero-side-stack .code-body {
+        min-height: 250px;
+      }
+    }
+
+
+
+    /* ===== Hero mobile table edge correction ===== */
+    @media (max-width: 640px) {
+      #home .hero-mobile-table {
+        display: grid !important;
+        grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+        gap: 0 !important;
+        overflow: hidden !important;
+        border-radius: 22px !important;
+        border: 1px solid rgba(186,230,253,.32) !important;
+        background: linear-gradient(180deg, rgba(7,47,82,.94), rgba(8,20,38,.94)) !important;
+      }
+
+      #home .hero-mobile-table > .glass {
+        border-radius: 0 !important;
+        border: 0 !important;
+        border-left: 1px solid rgba(186,230,253,.22) !important;
+        box-shadow: none !important;
+        padding: .85rem .45rem !important;
+        background: transparent !important;
+        min-width: 0 !important;
+      }
+
+      #home .hero-mobile-table > .glass:first-child {
+        border-left: 0 !important;
+      }
+
+      #home .hero-mobile-table > .glass img {
+        width: 76px !important;
+        height: 76px !important;
+      }
+
+      #home .hero-mobile-table > .glass p {
+        font-size: .72rem !important;
+        line-height: 1.35 !important;
+        margin-top: .45rem !important;
+      }
+    }
+
+    /* ===== Correct hero preview borders on phones ===== */
+    @media (max-width: 640px) {
+      #home .hero-side-stack {
+        width: 100% !important;
+        max-width: 100% !important;
+        gap: 1.35rem !important;
+      }
+
+      #home .hero-side-stack .hero-card,
+      #home .hero-side-stack .website-preview-showcase {
+        width: 100% !important;
+        max-width: 100% !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        box-sizing: border-box !important;
+      }
+
+      #home .website-preview-showcase {
+        height: 430px !important;
+        padding: 0 !important;
+        overflow: hidden !important;
+        border-radius: 24px !important;
+      }
+
+      #home .website-preview-logos {
+        top: 1rem !important;
+        left: 0 !important;
+        right: 0 !important;
+        width: 100% !important;
+        transform: none !important;
+        z-index: 9 !important;
+        justify-content: center !important;
+        gap: 1rem !important;
+        pointer-events: none !important;
+      }
+
+      #home .website-preview-grid {
+        inset: 0 !important;
+        width: 100% !important;
+        height: 100% !important;
+        box-sizing: border-box !important;
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+        gap: .75rem !important;
+        padding: 4.25rem .75rem .9rem .75rem !important;
+        transform: none !important;
+      }
+
+      #home .website-preview-column,
+      #home .website-preview-column:nth-child(1),
+      #home .website-preview-column:nth-child(2),
+      #home .website-preview-column:nth-child(3),
+      #home .website-preview-column:nth-child(4) {
+        height: 100% !important;
+        min-width: 0 !important;
+        transform: none !important;
+        overflow: hidden !important;
+      }
+
+      #home .website-preview-column:nth-child(3),
+      #home .website-preview-column:nth-child(4) {
+        display: none !important;
+      }
+
+      #home .website-preview-track {
+        gap: .75rem !important;
+        transform: translateY(0);
+      }
+
+      #home .website-preview-card {
+        width: 100% !important;
+        height: 165px !important;
+        min-height: 0 !important;
+        aspect-ratio: auto !important;
+        border-radius: 14px !important;
+        box-sizing: border-box !important;
+      }
+
+      #home .website-preview-card img {
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: cover !important;
+        object-position: top center !important;
+      }
+
+      #home .website-preview-showcase::before {
+        height: 70px !important;
+      }
+
+      #home .website-preview-showcase::after {
+        height: 42px !important;
+      }
+    }
+
+
+
+    /* ===== Screenshot-inspired navigation + hero ===== */
+    .sakalli-header {
+      position: fixed !important;
+      inset: 0 0 auto 0;
+      z-index: 1000;
+      border: 0 !important;
+      background: linear-gradient(180deg, rgba(8,7,27,.94), rgba(8,7,27,.58) 72%, transparent) !important;
+      box-shadow: none !important;
+      backdrop-filter: blur(10px);
+      font-family: 'Manrope', sans-serif;
+    }
+
+    .sakalli-nav-shell {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: min(100% - 48px, 1380px);
+      min-height: 92px;
+      margin: 0 auto;
+      padding: 0 !important;
+    }
+
+    .sakalli-brand {
+      display: inline-flex;
+      align-items: center;
+      gap: .68rem;
+      color: #f4f5ff;
+      text-decoration: none;
+      flex-shrink: 0;
+    }
+
+    .sakalli-brand-mark {
+      width: 52px;
+      height: 42px;
+      overflow: visible;
+      filter: drop-shadow(0 0 15px rgba(101,103,255,.30));
+    }
+
+    .sakalli-brand-name {
+      display: inline-flex;
+      align-items: baseline;
+      font-size: 1.25rem;
+      font-weight: 800;
+      letter-spacing: -.04em;
+      line-height: 1;
+    }
+
+    .sakalli-brand-name .brand-dot,
+    .sakalli-brand-name .brand-site {
+      color: #7f83ff;
+    }
+
+    .sakalli-desktop-nav {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: clamp(1.8rem, 3vw, 3.2rem);
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .sakalli-desktop-nav .nav-link {
+      color: #9ca2ba !important;
+      font-size: .98rem;
+      font-weight: 600;
+      letter-spacing: -.01em;
+      transition: color .2s ease, transform .2s ease;
+    }
+
+    .sakalli-desktop-nav .nav-link::after {
+      bottom: -10px;
+      height: 2px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, #696cff, #8c7dff);
+    }
+
+    .sakalli-desktop-nav .nav-link:hover,
+    .sakalli-desktop-nav .nav-link.active {
+      color: #f5f6ff !important;
+      transform: translateY(-1px);
+    }
+
+    .sakalli-nav-actions {
+      display: flex;
+      align-items: center;
+      gap: .85rem;
+      flex-shrink: 0;
+    }
+
+    .sakalli-blog-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: .55rem;
+      min-height: 42px;
+      padding: 0 1.15rem;
+      border: 1px solid rgba(118,113,255,.28);
+      border-radius: 11px;
+      color: #8f91ff;
+      background: rgba(44,39,102,.30);
+      font-size: .93rem;
+      font-weight: 600;
+      box-shadow: inset 0 1px 0 rgba(255,255,255,.035);
+      transition: transform .2s ease, border-color .2s ease, background .2s ease;
+    }
+
+    .sakalli-blog-btn:hover {
+      transform: translateY(-2px);
+      border-color: rgba(137,132,255,.58);
+      background: rgba(62,54,139,.42);
+    }
+
+    .sakalli-language-switch {
+      display: inline-flex;
+      align-items: center;
+      padding: 4px;
+      border-radius: 11px;
+      background: rgba(255,255,255,.045);
+      border: 1px solid rgba(255,255,255,.025);
+    }
+
+    .sakalli-language-switch button {
+      min-width: 36px;
+      min-height: 34px;
+      border: 0;
+      border-radius: 8px;
+      background: transparent;
+      color: rgba(155,159,181,.48);
+      font-family: inherit;
+      font-size: .82rem;
+      font-weight: 700;
+      cursor: default;
+    }
+
+    .sakalli-language-switch button.is-active {
+      color: #171526;
+      background: rgba(236,237,249,.66);
+      box-shadow: 0 5px 14px rgba(0,0,0,.16);
+    }
+
+    .sakalli-mobile-toggle {
+      display: none;
+      width: 44px;
+      height: 44px;
+      align-items: center;
+      justify-content: center;
+      padding: 0 !important;
+      border: 1px solid rgba(124,121,255,.25) !important;
+      border-radius: 12px !important;
+      color: #eef0ff !important;
+      background: rgba(52,48,112,.30) !important;
+      font-size: 1.22rem;
+      line-height: 1;
+    }
+
+    .sakalli-mobile-menu.hidden { display: none !important; }
+
+    .sakalli-mobile-menu {
+      width: min(calc(100% - 28px), 520px);
+      margin: 0 auto 12px;
+      padding: 1rem !important;
+      border: 1px solid rgba(124,121,255,.22) !important;
+      border-radius: 18px;
+      background: rgba(13,11,38,.96) !important;
+      box-shadow: 0 20px 60px rgba(0,0,0,.35);
+    }
+
+    .sakalli-mobile-menu a {
+      padding: .72rem .8rem;
+      border-radius: 10px;
+      color: #bec1d3 !important;
+    }
+
+    .sakalli-mobile-menu a:hover {
+      color: #fff !important;
+      background: rgba(112,106,255,.12);
+    }
+
+    #home.sakalli-hero {
+      position: relative;
+      isolation: isolate;
+      display: flex;
+      align-items: center;
+      min-height: 100svh;
+      overflow: hidden;
+      border: 0 !important;
+      background:
+        radial-gradient(circle at 50% 47%, rgba(70,54,175,.16), transparent 31%),
+        radial-gradient(circle at 92% 24%, rgba(45,38,126,.14), transparent 25%),
+        radial-gradient(circle at 8% 74%, rgba(31,34,105,.12), transparent 27%),
+        linear-gradient(135deg, #09071c 0%, #0d0925 46%, #120d32 100%) !important;
+      color: #f5f6ff;
+      font-family: 'Manrope', sans-serif;
+    }
+
+    #home.sakalli-hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: -3;
+      background:
+        radial-gradient(circle at 50% 78%, rgba(99,85,255,.12), transparent 23%),
+        linear-gradient(180deg, rgba(0,0,0,.05), rgba(4,3,16,.24)) !important;
+      background-size: auto !important;
+      opacity: 1 !important;
+      pointer-events: none;
+    }
+
+    #home.sakalli-hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: 5;
+      pointer-events: none;
+      background: linear-gradient(180deg, rgba(4,3,15,.08), transparent 18%, transparent 82%, rgba(5,4,19,.25));
+    }
+
+    .sakalli-network {
+      position: absolute;
+      inset: -3%;
+      z-index: -2;
+      width: 106%;
+      height: 106%;
+      overflow: visible;
+      opacity: .78;
+      pointer-events: none;
+      perspective: 1000px;
+    }
+
+    .sakalli-network-layer {
+      opacity: var(--layer-opacity, .62);
+      transform-box: fill-box;
+      transform-origin: center;
+      transition: opacity .28s ease;
+    }
+
+    .sakalli-network-layer path {
+      fill: none;
+      stroke: rgba(76, 72, 167, .34);
+      stroke-width: 1.05;
+      vector-effect: non-scaling-stroke;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .sakalli-network-layer.layer-back {
+      --layer-opacity: .44;
+    }
+
+    .sakalli-network-layer.layer-back path {
+      stroke: rgba(65, 62, 143, .27);
+      stroke-width: .82;
+    }
+
+    .sakalli-network-layer.layer-front {
+      --layer-opacity: .76;
+    }
+
+    .sakalli-network-layer.layer-front path {
+      stroke: rgba(88, 83, 194, .38);
+    }
+
+    .network-node {
+      fill: #5959c8;
+      opacity: .96;
+      filter: url(#sakalliNodeGlow);
+      transform-box: fill-box;
+      transform-origin: center;
+      animation: sakalliNodePulse 4.8s ease-in-out infinite;
+    }
+
+    .network-node.faint {
+      opacity: .58;
+      animation-delay: -2.1s;
+    }
+
+    .sakalli-network-drift {
+      transform-box: fill-box;
+      transform-origin: center;
+      animation: sakalliNetworkDrift 11s ease-in-out infinite;
+    }
+
+    .sakalli-network-drift.drift-b { animation-duration: 14s; animation-delay: -4.5s; }
+    .sakalli-network-drift.drift-c { animation-duration: 12.5s; animation-delay: -7s; }
+    .sakalli-network-drift.drift-d { animation-duration: 15.5s; animation-delay: -2.8s; }
+
+    #home.sakalli-hero.is-pointer-active .sakalli-network-layer {
+      opacity: min(1, calc(var(--layer-opacity, .62) + .16));
+    }
+
+    @keyframes sakalliNetworkDrift {
+      0%, 100% { transform: translate(0, 0); }
+      40% { transform: translate(7px, -8px); }
+      72% { transform: translate(-5px, 5px); }
+    }
+
+    @keyframes sakalliNodePulse {
+      0%, 100% { opacity: .72; transform: scale(.88); }
+      50% { opacity: 1; transform: scale(1.16); }
+    }
+
+    .sakalli-orb {
+      position: absolute;
+      width: 320px;
+      height: 320px;
+      border-radius: 999px;
+      background: rgba(95,75,255,.11);
+      filter: blur(90px);
+      pointer-events: none;
+      z-index: -1;
+    }
+
+    .sakalli-orb.one { left: 39%; top: 35%; }
+    .sakalli-orb.two { right: -80px; bottom: 4%; opacity: .48; }
+
+    #home > .sakalli-hero-inner {
+      position: relative;
+      z-index: 2;
+      display: flex !important;
+      flex-direction: column !important;
+      align-items: center;
+      justify-content: center;
+      width: min(100% - 36px, 1040px);
+      min-height: 100svh;
+      margin: 0 auto;
+      padding: 126px 0 64px !important;
+      gap: 0 !important;
+      text-align: center;
+    }
+
+    .sakalli-hero-brand {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1.1rem;
+      margin-bottom: 2.35rem;
+      animation: sakalliHeroEnter .72s .05s both cubic-bezier(.22,1,.36,1);
+    }
+
+    .sakalli-hero-brand .sakalli-brand-mark {
+      width: 105px;
+      height: 76px;
+    }
+
+    .sakalli-hero-brand-text {
+      display: inline-flex;
+      align-items: baseline;
+      color: #f1f2fb;
+      font-size: clamp(2rem, 3vw, 2.75rem);
+      font-weight: 700;
+      letter-spacing: -.055em;
+    }
+
+    .sakalli-hero-brand-text .brand-site,
+    .sakalli-hero-brand-text .brand-dot {
+      color: #7578ff;
+    }
+
+    .sakalli-hero-title {
+      max-width: 920px;
+      margin: 0;
+      color: #eef0fb !important;
+      font-family: 'Manrope', sans-serif;
+      font-size: clamp(3.55rem, 6.2vw, 6.55rem);
+      font-weight: 600;
+      line-height: 1.02;
+      letter-spacing: -.065em;
+      text-wrap: balance;
+      text-shadow: 0 20px 60px rgba(0,0,0,.22) !important;
+      animation: sakalliHeroEnter .82s .13s both cubic-bezier(.22,1,.36,1);
+    }
+
+    #home .sakalli-hero-title .accent {
+      color: #7c7fff !important;
+      -webkit-text-fill-color: #7c7fff !important;
+      background: none !important;
+      filter: drop-shadow(0 0 22px rgba(101,102,255,.17));
+    }
+
+    .sakalli-hero-copy {
+      max-width: 800px;
+      margin: 2rem auto 0;
+      color: #9ea4bd !important;
+      font-size: clamp(1.1rem, 1.6vw, 1.42rem) !important;
+      font-weight: 500;
+      line-height: 1.75 !important;
+      letter-spacing: -.02em;
+      text-wrap: balance;
+      animation: sakalliHeroEnter .82s .22s both cubic-bezier(.22,1,.36,1);
+    }
+
+    .hero-copy-line { display: block; }
+
+    .sakalli-hero-action-row {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 2.55rem;
+      animation: sakalliHeroEnter .82s .31s both cubic-bezier(.22,1,.36,1);
+    }
+
+    .sakalli-hero-cta {
+      position: relative;
+      z-index: 2;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: .75rem;
+      min-width: 270px;
+      min-height: 68px;
+      padding: 0 2.15rem;
+      border: 1px solid rgba(168,165,255,.24);
+      border-radius: 999px;
+      color: #fff !important;
+      background: linear-gradient(100deg, #5b5ce8, #6d6bff 56%, #625cff) !important;
+      box-shadow: 0 16px 45px rgba(82,76,246,.35), inset 0 1px 0 rgba(255,255,255,.18);
+      font-size: 1.05rem;
+      font-weight: 800;
+      letter-spacing: -.02em;
+      transition: transform .2s ease, box-shadow .2s ease, filter .2s ease;
+    }
+
+    .sakalli-hero-cta:hover {
+      transform: translateY(-3px) scale(1.015);
+      filter: brightness(1.07);
+      box-shadow: 0 22px 58px rgba(82,76,246,.44), inset 0 1px 0 rgba(255,255,255,.20);
+    }
+
+    .sakalli-robot {
+      position: absolute;
+      left: calc(100% - 2px);
+      bottom: -10px;
+      width: 82px;
+      height: 82px;
+      overflow: visible;
+      filter: drop-shadow(0 12px 18px rgba(0,0,0,.32));
+      animation: sakalliRobotFloat 3.8s ease-in-out infinite;
+    }
+
+    .sakalli-scroll {
+      position: absolute;
+      left: 50%;
+      bottom: 25px;
+      z-index: 4;
+      width: 31px;
+      height: 51px;
+      transform: translateX(-50%);
+      border: 2px solid rgba(99,96,212,.46);
+      border-radius: 999px;
+      opacity: .85;
+    }
+
+    .sakalli-scroll::before {
+      content: "";
+      position: absolute;
+      left: 50%;
+      top: 11px;
+      width: 5px;
+      height: 9px;
+      transform: translateX(-50%);
+      border-radius: 999px;
+      background: #6465d9;
+      box-shadow: 0 0 9px rgba(104,105,232,.55);
+      animation: sakalliScrollDot 2s ease-in-out infinite;
+    }
+
+    @keyframes sakalliHeroEnter {
+      from { opacity: 0; transform: translateY(24px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes sakalliRobotFloat {
+      0%,100% { transform: translateY(0) rotate(-2deg); }
+      50% { transform: translateY(-8px) rotate(2deg); }
+    }
+
+    @keyframes sakalliScrollDot {
+      0% { opacity: .2; transform: translate(-50%, 0); }
+      35% { opacity: 1; }
+      100% { opacity: 0; transform: translate(-50%, 16px); }
+    }
+
+    @media (max-width: 1040px) {
+      .sakalli-desktop-nav { gap: 1.45rem; }
+      .sakalli-language-switch { display: none; }
+      .sakalli-hero-title { max-width: 850px; }
+    }
+
+    @media (max-width: 900px) {
+      .sakalli-nav-shell { width: min(100% - 28px, 860px); min-height: 78px; }
+      .sakalli-desktop-nav,
+      .sakalli-blog-btn,
+      .sakalli-language-switch { display: none !important; }
+      .sakalli-mobile-toggle { display: inline-flex !important; }
+      .sakalli-brand-mark { width: 46px; height: 36px; }
+      .sakalli-brand-name { font-size: 1.08rem; }
+      #home > .sakalli-hero-inner { padding-top: 112px !important; }
+    }
+
+    @media (max-width: 640px) {
+      #home.sakalli-hero { min-height: 100svh; }
+      #home > .sakalli-hero-inner {
+        width: min(100% - 28px, 560px);
+        min-height: 100svh;
+        padding: 104px 0 76px !important;
+      }
+      .sakalli-hero-brand { gap: .72rem; margin-bottom: 1.55rem; }
+      .sakalli-hero-brand .sakalli-brand-mark { width: 68px; height: 52px; }
+      .sakalli-hero-brand-text { font-size: 1.7rem; }
+      .sakalli-hero-title {
+        max-width: 100%;
+        font-size: clamp(2.7rem, 13.8vw, 4.15rem) !important;
+        line-height: 1.04 !important;
+        letter-spacing: -.06em;
+      }
+      .sakalli-hero-copy {
+        max-width: 36rem;
+        margin-top: 1.4rem;
+        font-size: 1rem !important;
+        line-height: 1.7 !important;
+      }
+      .sakalli-hero-action-row { margin-top: 2rem; }
+      .sakalli-hero-cta { min-width: 230px; min-height: 60px; padding: 0 1.65rem; font-size: .96rem; }
+      .sakalli-robot { left: calc(100% - 18px); bottom: -11px; width: 66px; height: 66px; }
+      .sakalli-scroll { bottom: 15px; transform: translateX(-50%) scale(.86); }
+      .sakalli-orb.one { left: 8%; top: 39%; }
+    }
+
+    @media (max-width: 420px) {
+      .sakalli-brand-name { display: none; }
+      .sakalli-hero-title { font-size: clamp(2.45rem, 13vw, 3.25rem) !important; }
+      .sakalli-hero-copy br { display: none; }
+      .sakalli-robot { left: auto; right: -44px; }
+    }
+
+
+
+/* ===== Projekte / Referenzen section (sakalli-inspired) ===== */
+#projects.waheb-projects {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  padding: 7.5rem 1.5rem 8rem;
+  background:
+    radial-gradient(circle at 14% 18%, rgba(104, 104, 255, .16), transparent 28%),
+    radial-gradient(circle at 86% 78%, rgba(56, 189, 248, .10), transparent 30%),
+    linear-gradient(180deg, #0d0a25 0%, #0b0920 45%, #070617 100%);
+  border-top: 1px solid rgba(131, 133, 255, .12);
+  border-bottom: 1px solid rgba(131, 133, 255, .12);
+}
+
+#projects.waheb-projects::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  opacity: .34;
+  background-image:
+    linear-gradient(rgba(132, 135, 255, .06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(132, 135, 255, .06) 1px, transparent 1px);
+  background-size: 56px 56px;
+  mask-image: linear-gradient(to bottom, transparent, #000 12%, #000 88%, transparent);
+}
+
+#projects.waheb-projects::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 1rem;
+  width: min(72vw, 960px);
+  height: 360px;
+  transform: translateX(-50%);
+  border-radius: 50%;
+  background: rgba(108, 100, 255, .11);
+  filter: blur(92px);
+  z-index: -1;
+  pointer-events: none;
+}
+
+.waheb-projects-shell {
+  width: min(1480px, 100%);
+  margin: 0 auto;
+}
+
+.waheb-projects-heading {
+  max-width: 730px;
+  margin: 0 auto 3.4rem;
+  text-align: center;
+}
+
+.waheb-projects-kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: .55rem;
+  margin-bottom: 1rem;
+  color: #9294ff !important;
+  font: 800 .78rem/1 'Manrope', sans-serif;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+}
+
+.waheb-projects-kicker::before,
+.waheb-projects-kicker::after {
+  content: "";
+  width: 28px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #787aff);
+}
+
+.waheb-projects-kicker::after {
+  background: linear-gradient(90deg, #787aff, transparent);
+}
+
+.waheb-projects-title {
+  margin: 0;
+  color: #f6f5ff !important;
+  font-family: 'Manrope', sans-serif;
+  font-size: clamp(2.55rem, 5.2vw, 5.25rem);
+  line-height: .98;
+  letter-spacing: -.055em;
+  font-weight: 800;
+}
+
+.waheb-projects-title span {
+  background: linear-gradient(90deg, #a9a8ff, #7478ff 48%, #67b9ff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.waheb-projects-subtitle {
+  max-width: 620px;
+  margin: 1.35rem auto 0;
+  color: #9b9bb7 !important;
+  font-family: 'Manrope', sans-serif;
+  font-size: 1.02rem;
+  line-height: 1.85;
+}
+
+.waheb-projects-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1.15rem;
+  perspective: 1400px;
+}
+
+.waheb-project-card {
+  position: relative;
+  min-width: 0;
+  overflow: hidden;
+  border: 1px solid rgba(141, 143, 255, .16);
+  border-radius: 22px;
+  display: block;
+  color: inherit;
+  text-decoration: none;
+  cursor: pointer;
+  background: linear-gradient(180deg, rgba(25, 22, 58, .92), rgba(13, 11, 36, .96));
+  box-shadow: 0 22px 70px rgba(0, 0, 0, .28), inset 0 1px 0 rgba(255,255,255,.03);
+  transform-style: preserve-3d;
+  transform: rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg)) translateY(0);
+  transition: transform .18s ease, border-color .28s ease, box-shadow .28s ease;
+  will-change: transform;
+}
+
+.waheb-project-card:hover {
+  border-color: rgba(132, 135, 255, .48);
+  box-shadow: 0 28px 90px rgba(0, 0, 0, .42), 0 0 42px rgba(103, 105, 255, .12);
+}
+
+.waheb-project-card:nth-child(4n + 1) { --card-glow: rgba(112, 105, 255, .18); }
+.waheb-project-card:nth-child(4n + 2) { --card-glow: rgba(67, 156, 255, .16); }
+.waheb-project-card:nth-child(4n + 3) { --card-glow: rgba(138, 91, 255, .16); }
+.waheb-project-card:nth-child(4n + 4) { --card-glow: rgba(54, 201, 215, .13); }
+
+.waheb-project-card .waheb-project-preview {
+  background:
+    radial-gradient(circle at 18% 12%, var(--card-glow, rgba(112,105,255,.16)), transparent 46%),
+    linear-gradient(rgba(120, 122, 255, .08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(120, 122, 255, .08) 1px, transparent 1px),
+    #11102a;
+  background-size: auto, 34px 34px, 34px 34px, auto;
+}
+
+.waheb-project-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: radial-gradient(circle at var(--mx, 50%) var(--my, 50%), rgba(147, 149, 255, .16), transparent 34%);
+  opacity: 0;
+  transition: opacity .25s ease;
+  pointer-events: none;
+  z-index: 3;
+}
+
+.waheb-project-card:hover::after { opacity: 1; }
+
+.waheb-project-preview {
+  position: relative;
+  height: clamp(235px, 19vw, 290px);
+  overflow: hidden;
+  background:
+    linear-gradient(rgba(120, 122, 255, .08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(120, 122, 255, .08) 1px, transparent 1px),
+    #11102a;
+  background-size: 34px 34px;
+}
+
+.waheb-project-preview::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  background: linear-gradient(to bottom, transparent 58%, rgba(11, 9, 31, .86) 100%);
+}
+
+
+.waheb-project-preview .waheb-project-shot {
+  opacity: 0;
+  transition: opacity .45s ease, transform .8s cubic-bezier(.2,.8,.2,1), filter .35s ease;
+}
+
+.waheb-project-preview .waheb-project-shot.is-loaded {
+  opacity: 1;
+}
+
+.waheb-project-preview.is-loading::after {
+  content: "Vorschau wird geladen …";
+  position: absolute;
+  left: 1rem;
+  bottom: 1rem;
+  z-index: 4;
+  padding: .55rem .75rem;
+  border: 1px solid rgba(255,255,255,.12);
+  border-radius: 999px;
+  color: rgba(244,244,255,.8);
+  background: rgba(9,8,29,.62);
+  backdrop-filter: blur(12px);
+  font: 700 .68rem/1 'Manrope', sans-serif;
+  letter-spacing: .02em;
+  pointer-events: none;
+}
+
+.waheb-project-preview.has-shot .waheb-project-fallback {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.waheb-project-fallback {
+  transition: opacity .35s ease, visibility .35s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: .55rem;
+}
+
+.waheb-project-fallback strong {
+  color: #f6f5ff;
+  font: 800 1.2rem/1.2 'Manrope', sans-serif;
+}
+
+.waheb-project-fallback small {
+  color: #9294ff;
+  font: 700 .76rem/1 'Manrope', sans-serif;
+  letter-spacing: .04em;
+}
+
+.waheb-project-preview img {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  display: block;
+  filter: saturate(.96) contrast(1.02);
+  transform: scale(1.002);
+  transition: transform .8s cubic-bezier(.2,.8,.2,1), filter .35s ease;
+}
+
+.waheb-project-card:hover .waheb-project-preview img {
+  transform: scale(1.018);
+  filter: saturate(1.06) contrast(1.04);
+}
+
+.waheb-project-fallback {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  padding: 2rem;
+  text-align: center;
+  color: #d9d9ff;
+  font: 800 clamp(1.5rem, 3vw, 2.3rem)/1.15 'Manrope', sans-serif;
+  letter-spacing: -.04em;
+  background:
+    radial-gradient(circle at 30% 15%, rgba(118, 120, 255, .28), transparent 34%),
+    linear-gradient(135deg, #17143b, #0c0a25 58%, #11173c);
+}
+
+.waheb-project-live {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  z-index: 4;
+  display: inline-flex;
+  align-items: center;
+  gap: .45rem;
+  padding: .68rem .9rem;
+  border: 1px solid rgba(255,255,255,.14);
+  border-radius: 999px;
+  color: #f4f4ff !important;
+  background: rgba(9, 8, 29, .62);
+  backdrop-filter: blur(14px);
+  font: 700 .78rem/1 'Manrope', sans-serif;
+  box-shadow: 0 12px 28px rgba(0,0,0,.24);
+  transform: translateZ(26px);
+  transition: background .25s ease, transform .25s ease;
+}
+
+.waheb-project-live:hover {
+  background: rgba(111, 112, 255, .86);
+  transform: translateZ(26px) translateY(-2px);
+}
+
+.waheb-project-content {
+  position: relative;
+  z-index: 2;
+  padding: 1.45rem 1.55rem 1.65rem;
+  transform: translateZ(18px);
+}
+
+.waheb-project-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: .82rem;
+}
+
+.waheb-project-type {
+  display: inline-flex;
+  align-items: center;
+  gap: .45rem;
+  color: #8487ff !important;
+  font: 800 .72rem/1 'Manrope', sans-serif;
+  letter-spacing: .13em;
+  text-transform: uppercase;
+}
+
+.waheb-project-type::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #777aff;
+  box-shadow: 0 0 13px #777aff;
+}
+
+.waheb-project-index {
+  color: rgba(192, 194, 230, .46) !important;
+  font: 700 .72rem/1 'Manrope', sans-serif;
+}
+
+.waheb-project-name {
+  margin: 0;
+  color: #f5f4ff !important;
+  font: 800 clamp(1.25rem, 2vw, 1.7rem)/1.18 'Manrope', sans-serif;
+  letter-spacing: -.03em;
+}
+
+.waheb-project-description {
+  margin: .65rem 0 0;
+  color: #9d9db8 !important;
+  font: 500 .93rem/1.75 'Manrope', sans-serif;
+}
+
+.waheb-projects-footer {
+  display: flex;
+  justify-content: center;
+  margin-top: 2.8rem;
+}
+
+.waheb-projects-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: .7rem;
+  min-height: 54px;
+  padding: 0 1.5rem;
+  border: 1px solid rgba(134, 136, 255, .32);
+  border-radius: 999px;
+  color: #f6f5ff !important;
+  background: linear-gradient(90deg, rgba(111, 112, 255, .18), rgba(90, 98, 230, .12));
+  font: 800 .9rem/1 'Manrope', sans-serif;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.05);
+  transition: transform .25s ease, background .25s ease, box-shadow .25s ease;
+}
+
+.waheb-projects-cta:hover {
+  transform: translateY(-3px);
+  background: linear-gradient(90deg, #686aff, #5c6ee7);
+  box-shadow: 0 15px 34px rgba(93, 96, 232, .25);
+}
+
+@media (min-width: 821px) {
+  #projects.waheb-projects {
+    padding-left: clamp(1rem, 2.2vw, 2rem);
+    padding-right: clamp(1rem, 2.2vw, 2rem);
+  }
+
+  .waheb-project-preview img {
+    object-position: top center;
+  }
+
+  .waheb-project-content {
+    padding: 1rem 1rem 1.15rem;
+  }
+}
+
+@media (max-width: 820px) {
+  #projects.waheb-projects { padding: 5.5rem .8rem 6rem; }
+  .waheb-projects-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: .75rem;
+  }
+  .waheb-project-card { border-radius: 18px; }
+  .waheb-project-preview {
+    height: auto;
+    aspect-ratio: 4 / 3;
+  }
+  .waheb-project-content { padding: .9rem .9rem 1rem; }
+  .waheb-project-meta { margin-bottom: .55rem; gap: .35rem; }
+  .waheb-project-type { font-size: .58rem; letter-spacing: .08em; }
+  .waheb-project-index { font-size: .6rem; }
+  .waheb-project-name { font-size: clamp(.88rem, 3.7vw, 1.12rem); }
+  .waheb-project-description {
+    margin-top: .4rem;
+    font-size: .72rem;
+    line-height: 1.5;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  .waheb-project-live {
+    top: .55rem;
+    right: .55rem;
+    width: 30px;
+    height: 30px;
+    padding: 0;
+    justify-content: center;
+    overflow: hidden;
+    font-size: 0;
+  }
+  .waheb-project-live::after {
+    content: "↗";
+    font: 800 .88rem/1 'Manrope', sans-serif;
+  }
+  .waheb-project-preview.is-loading::after {
+    left: .45rem;
+    bottom: .45rem;
+    max-width: calc(100% - .9rem);
+    padding: .4rem .5rem;
+    font-size: .52rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
+
+@media (max-width: 520px) {
+  .waheb-projects-heading { margin-bottom: 2.4rem; }
+  .waheb-projects-title { font-size: clamp(2.4rem, 13vw, 3.7rem); }
+  .waheb-projects-subtitle { font-size: .94rem; line-height: 1.75; }
+  .waheb-projects-grid { gap: .6rem; }
+  .waheb-project-card { border-radius: 15px; }
+  .waheb-project-content { padding: .72rem .72rem .82rem; }
+  .waheb-project-type { font-size: .5rem; }
+  .waheb-project-index { display: none; }
+  .waheb-project-name { font-size: clamp(.78rem, 3.9vw, 1rem); }
+  .waheb-project-description { display: none; }
+  .waheb-project-live { width: 27px; height: 27px; top: .42rem; right: .42rem; }
+}
+
+@media (max-width: 350px) {
+  #projects.waheb-projects { padding-left: .55rem; padding-right: .55rem; }
+  .waheb-projects-grid { gap: .45rem; }
+  .waheb-project-content { padding: .62rem; }
+  .waheb-project-name { font-size: .72rem; }
+  .waheb-project-type { display: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .waheb-project-card,
+  .waheb-project-preview img,
+  .waheb-project-live,
+  .waheb-projects-cta { transition: none !important; }
+}
+
+</style>
+<meta content="summary_large_image" name="twitter:card"/><script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebSite", "name": "WahebSite", "url": "https://wahebsite.de/", "inLanguage": "de-DE"}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Startseite", "item": "https://wahebsite.de/"}]}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Arbeitet WahebSite nur lokal oder deutschlandweit?", "acceptedAnswer": {"@type": "Answer", "text": "WahebSite ist deutschlandweit ausgerichtet. Neben der zentralen Startseite können zusätzliche Standortseiten helfen, Leistungen regional verständlich zu präsentieren."}}, {"@type": "Question", "name": "Was ist bei SEO-Landingpages für Städte wichtig?", "acceptedAnswer": {"@type": "Answer", "text": "Wichtig sind echte Relevanz, klare Nutzerführung, eigenständige Inhalte und saubere interne Verlinkung. Reine Kopien mit ausgetauschtem Ortsnamen sind langfristig deutlich schwächer."}}, {"@type": "Question", "name": "Ist eine neue Website automatisch suchmaschinenoptimiert?", "acceptedAnswer": {"@type": "Answer", "text": "Nicht automatisch. Design, Technik, Struktur, Inhalte und lokale Signale sollten gemeinsam aufgebaut werden, damit die Website nicht nur modern aussieht, sondern auch besser gefunden werden kann."}}]}</script><link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+<style id="waheb-project-scroll-effects">
+/* ===== Smooth, GPU-friendly project reveal ===== */
+#projects.projects-motion-ready .waheb-project-card {
+  --reveal-x: 0px;
+  --reveal-delay: 0ms;
+  opacity: 0;
+  translate: var(--reveal-x) 42px;
+  transition:
+    opacity .52s ease-out var(--reveal-delay),
+    translate .72s cubic-bezier(.22, 1, .36, 1) var(--reveal-delay),
+    transform .18s ease,
+    border-color .28s ease,
+    box-shadow .28s ease;
+  will-change: opacity, translate;
+  contain: layout paint style;
+}
+
+#projects.projects-motion-ready .waheb-project-card.project-reveal-in {
+  opacity: 1;
+  translate: 0 0;
+}
+
+#projects.projects-motion-ready .waheb-project-card.project-motion-done {
+  will-change: auto;
+}
+
+/* lightweight light sweep: transform + opacity only */
+#projects .waheb-project-card::before {
+  content: "";
+  position: absolute;
+  z-index: 5;
+  top: -20%;
+  left: -45%;
+  width: 30%;
+  height: 140%;
+  pointer-events: none;
+  opacity: 0;
+  transform: skewX(-18deg) translate3d(-120%, 0, 0);
+  background: linear-gradient(90deg, transparent, rgba(214, 221, 255, .14), transparent);
+}
+
+#projects .waheb-project-card.project-reveal-in::before {
+  animation: wahebProjectLightSweepSmooth .72s ease-out calc(var(--reveal-delay) + 80ms) both;
+}
+
+@keyframes wahebProjectLightSweepSmooth {
+  0% { opacity: 0; transform: skewX(-18deg) translate3d(-120%, 0, 0); }
+  28% { opacity: .72; }
+  100% { opacity: 0; transform: skewX(-18deg) translate3d(520%, 0, 0); }
+}
+
+/* image reveal without blur, masks or clip-path */
+#projects.projects-motion-ready .waheb-project-card .waheb-project-shot.is-loaded {
+  opacity: 0;
+  transform: translate3d(0, 14px, 0) scale(1.035);
+  transition:
+    opacity .48s ease-out calc(var(--reveal-delay) + 60ms),
+    transform .78s cubic-bezier(.22, 1, .36, 1) calc(var(--reveal-delay) + 45ms),
+    filter .25s ease;
+  will-change: opacity, transform;
+}
+
+#projects.projects-motion-ready .waheb-project-card.project-reveal-in .waheb-project-shot.is-loaded {
+  opacity: 1;
+  transform: translate3d(0, 0, 0) scale(1.002);
+}
+
+#projects.projects-motion-ready .waheb-project-card.project-motion-done .waheb-project-shot.is-loaded {
+  will-change: auto;
+}
+
+#projects.projects-motion-ready .waheb-project-card.project-reveal-in:hover .waheb-project-shot.is-loaded {
+  transform: translate3d(0, 0, 0) scale(1.018);
+}
+
+/* one simple gradient pass during reveal */
+#projects .waheb-project-gradient-wipe {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  pointer-events: none;
+  opacity: 0;
+  transform: translate3d(-110%, 0, 0);
+  background: linear-gradient(112deg, transparent 20%, rgba(111, 112, 255, .28) 46%, rgba(77, 182, 255, .16) 58%, transparent 82%);
+}
+
+#projects .waheb-project-card.project-reveal-in .waheb-project-gradient-wipe {
+  animation: wahebPreviewGradientSmooth .82s ease-out calc(var(--reveal-delay) + 30ms) both;
+}
+
+@keyframes wahebPreviewGradientSmooth {
+  0% { opacity: .78; transform: translate3d(-110%, 0, 0); }
+  70% { opacity: .24; }
+  100% { opacity: 0; transform: translate3d(110%, 0, 0); }
+}
+
+@media (max-width: 820px) {
+  #projects.projects-motion-ready .waheb-project-card {
+    --reveal-x: 0px !important;
+    translate: 0 30px;
+  }
+  #projects.projects-motion-ready .waheb-project-card.project-reveal-in {
+    translate: 0 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #projects.projects-motion-ready .waheb-project-card,
+  #projects.projects-motion-ready .waheb-project-card .waheb-project-shot.is-loaded {
+    opacity: 1 !important;
+    translate: 0 0 !important;
+    transform: none !important;
+    transition: none !important;
+    will-change: auto !important;
+  }
+  #projects .waheb-project-card::before,
+  #projects .waheb-project-gradient-wipe {
+    display: none !important;
+    animation: none !important;
+  }
+}
+</style>
+
+<!-- Project previews are captured by Microlink 4 seconds after each target website finishes loading. -->
+
+
+  <!-- ===== Unified homepage palette ===== -->
+  <meta name="theme-color" content="#080817"/>
+  <style id="waheb-unified-homepage-palette">
+    :root {
+      --bg: #080817 !important;
+      --surface: rgba(18, 19, 48, .78) !important;
+      --surface-strong: #12142f !important;
+      --text: #f7f7ff !important;
+      --muted: #b9bdd5 !important;
+      --border: rgba(137, 126, 255, .22) !important;
+      --accent: #7b72ff !important;
+      --accent-dark: #4f66e8 !important;
+      --accent-soft: rgba(123, 114, 255, .15) !important;
+      --shadow: 0 26px 80px rgba(0, 0, 0, .38) !important;
+    }
+
+    html { background: #080817 !important; }
+
+    body {
+      background:
+        radial-gradient(circle at 8% 7%, rgba(107, 91, 255, .18), transparent 28%),
+        radial-gradient(circle at 92% 20%, rgba(58, 111, 238, .14), transparent 31%),
+        radial-gradient(circle at 48% 72%, rgba(91, 67, 202, .10), transparent 36%),
+        linear-gradient(180deg, #09091b 0%, #0b0d22 42%, #070817 100%) !important;
+      color: var(--text) !important;
+    }
+
+    body::before {
+      background:
+        radial-gradient(circle at 18% 14%, rgba(132, 113, 255, .13), transparent 25%),
+        radial-gradient(circle at 82% 36%, rgba(59, 130, 246, .09), transparent 29%),
+        radial-gradient(circle at 45% 88%, rgba(120, 82, 255, .09), transparent 30%) !important;
+      opacity: 1 !important;
+    }
+
+    body::after {
+      background-image:
+        linear-gradient(rgba(150, 141, 255, .035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(150, 141, 255, .035) 1px, transparent 1px) !important;
+      background-size: 46px 46px !important;
+      opacity: .55 !important;
+    }
+
+    .sakalli-header {
+      background: rgba(8, 8, 24, .76) !important;
+      border-bottom-color: rgba(145, 134, 255, .13) !important;
+      box-shadow: 0 14px 44px rgba(0, 0, 0, .22) !important;
+    }
+
+    .sakalli-nav-shell {
+      border-color: rgba(145, 134, 255, .13) !important;
+      background: linear-gradient(180deg, rgba(20, 20, 50, .76), rgba(10, 11, 30, .66)) !important;
+      box-shadow: inset 0 1px 0 rgba(255,255,255,.035), 0 18px 45px rgba(0,0,0,.20) !important;
+    }
+
+    .sakalli-desktop-nav .nav-link,
+    .sakalli-mobile-menu a,
+    .sakalli-brand-name { color: rgba(244, 244, 255, .82) !important; }
+
+    .sakalli-desktop-nav .nav-link:hover,
+    .sakalli-desktop-nav .nav-link.active { color: #ffffff !important; }
+
+    .sakalli-desktop-nav .nav-link::after,
+    .nav-link::after {
+      background: linear-gradient(90deg, #a497ff, #647cff) !important;
+    }
+
+    .sakalli-blog-btn,
+    .sakalli-mobile-toggle,
+    .sakalli-language-switch {
+      background: rgba(255,255,255,.055) !important;
+      border-color: rgba(150, 139, 255, .20) !important;
+      color: #f5f4ff !important;
+    }
+
+    .sakalli-blog-btn:hover,
+    .sakalli-mobile-toggle:hover {
+      background: rgba(124, 112, 255, .14) !important;
+      border-color: rgba(164, 151, 255, .42) !important;
+    }
+
+    #home.sakalli-hero {
+      background:
+        radial-gradient(circle at 25% 20%, rgba(91, 69, 194, .34), transparent 35%),
+        radial-gradient(circle at 78% 30%, rgba(54, 83, 172, .19), transparent 38%),
+        linear-gradient(145deg, #11102e 0%, #090a20 55%, #070817 100%) !important;
+      border-bottom-color: rgba(145, 134, 255, .16) !important;
+    }
+
+    #home.sakalli-hero::before {
+      background:
+        radial-gradient(circle at 52% 43%, rgba(132, 103, 255, .09), transparent 26%),
+        linear-gradient(rgba(153, 143, 255, .035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(153, 143, 255, .035) 1px, transparent 1px) !important;
+      background-size: auto, 52px 52px, 52px 52px !important;
+    }
+
+    #home .sakalli-hero-title .accent,
+    .sakalli-hero-brand-text .brand-site,
+    .sakalli-hero-brand-text .brand-dot,
+    .sakalli-brand-name .brand-site,
+    .sakalli-brand-name .brand-dot,
+    #about h2 span {
+      background: linear-gradient(90deg, #b0a7ff 0%, #7e76ff 46%, #5f82ff 100%) !important;
+      -webkit-background-clip: text !important;
+      background-clip: text !important;
+      -webkit-text-fill-color: transparent !important;
+    }
+
+    .sakalli-hero-copy { color: #c7c9da !important; }
+
+    .sakalli-hero-cta,
+    .btn-primary,
+    .waheb-projects-cta {
+      background: linear-gradient(95deg, #756cff 0%, #5a6be8 58%, #397be2 100%) !important;
+      color: #ffffff !important;
+      border-color: rgba(181, 172, 255, .22) !important;
+      box-shadow: 0 16px 38px rgba(88, 75, 230, .28), inset 0 1px 0 rgba(255,255,255,.16) !important;
+    }
+
+    .sakalli-hero-cta:hover,
+    .btn-primary:hover,
+    .waheb-projects-cta:hover {
+      box-shadow: 0 20px 48px rgba(91, 77, 236, .38), 0 0 34px rgba(105, 118, 255, .18) !important;
+    }
+
+    /* Keep every page section in the same visual family as the hero. */
+    main, section, footer { color: var(--text) !important; }
+
+    #projects.waheb-projects,
+    #about,
+    #services,
+    #why,
+    #seo-cities,
+    #contact {
+      position: relative;
+      isolation: isolate;
+      border-color: rgba(143, 132, 255, .13) !important;
+    }
+
+    #projects.waheb-projects {
+      background:
+        radial-gradient(circle at 15% 14%, rgba(104, 83, 223, .20), transparent 30%),
+        radial-gradient(circle at 87% 42%, rgba(49, 104, 210, .11), transparent 34%),
+        linear-gradient(180deg, #090a20 0%, #0b0d22 100%) !important;
+    }
+
+    #about {
+      background:
+        radial-gradient(circle at 86% 18%, rgba(116, 94, 237, .16), transparent 29%),
+        linear-gradient(180deg, #0b0d22 0%, #0c0e25 100%) !important;
+    }
+
+    #services {
+      background:
+        radial-gradient(circle at 8% 18%, rgba(76, 115, 231, .13), transparent 31%),
+        radial-gradient(circle at 92% 84%, rgba(115, 82, 220, .12), transparent 28%),
+        linear-gradient(180deg, #0c0e25 0%, #090b1f 100%) !important;
+    }
+
+    #why {
+      background:
+        radial-gradient(circle at 82% 35%, rgba(107, 82, 227, .14), transparent 33%),
+        linear-gradient(180deg, #090b1f 0%, #0c0e24 100%) !important;
+    }
+
+    #seo-cities {
+      background:
+        radial-gradient(circle at 13% 42%, rgba(61, 117, 222, .12), transparent 31%),
+        linear-gradient(180deg, #0c0e24 0%, #090a1d 100%) !important;
+    }
+
+    #contact {
+      background:
+        radial-gradient(circle at 20% 12%, rgba(116, 91, 239, .18), transparent 31%),
+        radial-gradient(circle at 88% 82%, rgba(54, 103, 222, .10), transparent 28%),
+        linear-gradient(180deg, #090a1d 0%, #080817 100%) !important;
+    }
+
+    #about::after,
+    #services::after,
+    #why::after,
+    #seo-cities::after,
+    #contact::after {
+      content: "";
+      position: absolute;
+      z-index: -1;
+      inset: 0;
+      pointer-events: none;
+      background: linear-gradient(90deg, transparent, rgba(159, 147, 255, .035), transparent);
+      opacity: .85;
+    }
+
+    #about h2, #services h2, #why h2, #seo-cities h2, #contact h2,
+    #about h3, #services h3, #why h3, #seo-cities h3, #contact h3 {
+      color: #fbfbff !important;
+    }
+
+    #about p, #about li,
+    #services p, #services li,
+    #why p, #why li,
+    #seo-cities p, #seo-cities li,
+    #contact p, #contact li, #contact label,
+    #about [style*="color"], #services [style*="color"], #why [style*="color"],
+    #seo-cities [style*="color"], #contact [style*="color"] {
+      color: var(--muted) !important;
+    }
+
+    .glass,
+    .section-card,
+    .hero-card,
+    .startseite-video-card,
+    #contact .glass,
+    #about .rounded-2xl.border,
+    #about .rounded-3xl.border,
+    #services .rounded-2xl.border,
+    #services .rounded-3xl.border,
+    #why .rounded-2xl.border,
+    #why .rounded-3xl.border,
+    #seo-cities .rounded-2xl.border,
+    #seo-cities .rounded-3xl.border {
+      background:
+        radial-gradient(circle at 12% 0%, rgba(127, 109, 255, .09), transparent 31%),
+        linear-gradient(180deg, rgba(24, 25, 59, .92), rgba(12, 14, 36, .92)) !important;
+      border-color: rgba(143, 132, 255, .20) !important;
+      box-shadow: 0 22px 65px rgba(0, 0, 0, .30), inset 0 1px 0 rgba(255,255,255,.035) !important;
+      color: var(--text) !important;
+    }
+
+    .section-card:hover,
+    .glass:hover {
+      border-color: rgba(157, 145, 255, .34) !important;
+      box-shadow: 0 28px 76px rgba(0, 0, 0, .36), 0 0 34px rgba(102, 88, 226, .08) !important;
+    }
+
+    .feature-icon,
+    .service-icon {
+      background: linear-gradient(145deg, rgba(126, 113, 255, .20), rgba(62, 102, 223, .13)) !important;
+      color: #aaa1ff !important;
+      border-color: rgba(151, 139, 255, .25) !important;
+      box-shadow: 0 12px 30px rgba(69, 62, 171, .16) !important;
+    }
+
+    .btn-secondary {
+      background: rgba(255,255,255,.055) !important;
+      color: #f8f7ff !important;
+      border-color: rgba(148, 137, 255, .22) !important;
+      box-shadow: inset 0 1px 0 rgba(255,255,255,.03) !important;
+    }
+
+    .btn-secondary:hover {
+      background: rgba(120, 108, 255, .13) !important;
+      border-color: rgba(160, 149, 255, .35) !important;
+    }
+
+    .contact-input {
+      background: rgba(8, 9, 27, .68) !important;
+      color: #f7f7ff !important;
+      border-color: rgba(145, 134, 255, .22) !important;
+      box-shadow: inset 0 1px 0 rgba(255,255,255,.025) !important;
+    }
+
+    .contact-input::placeholder { color: rgba(193, 196, 216, .58) !important; }
+
+    .contact-input:focus {
+      background: rgba(13, 14, 38, .92) !important;
+      border-color: rgba(145, 132, 255, .72) !important;
+      box-shadow: 0 0 0 4px rgba(118, 105, 255, .16), 0 12px 30px rgba(0,0,0,.18) !important;
+    }
+
+    .breadcrumb-pill,
+    .city-chip,
+    span[style*="background:rgba(56,189,248,.10)"] {
+      background: rgba(121, 108, 255, .11) !important;
+      border-color: rgba(151, 138, 255, .22) !important;
+      color: #aaa2ff !important;
+    }
+
+    .journey-step::before {
+      background: #8077ff !important;
+      box-shadow: 0 0 0 8px rgba(128, 119, 255, .11), 0 0 24px rgba(128,119,255,.26) !important;
+    }
+    .journey-step::after {
+      background: linear-gradient(to bottom, rgba(132, 121, 255, .48), transparent) !important;
+    }
+
+    .waheb-project-card {
+      background: linear-gradient(180deg, rgba(22, 22, 53, .96), rgba(10, 11, 29, .96)) !important;
+      border-color: rgba(141, 130, 255, .17) !important;
+      box-shadow: 0 22px 62px rgba(0,0,0,.34) !important;
+    }
+
+    .waheb-project-card:hover {
+      border-color: rgba(158, 145, 255, .36) !important;
+      box-shadow: 0 30px 78px rgba(0,0,0,.42), 0 0 38px var(--card-glow) !important;
+    }
+
+    .waheb-project-type,
+    .waheb-project-index,
+    .waheb-project-live,
+    .waheb-projects-kicker { color: #a9a1ff !important; }
+
+    .waheb-projects-title span { color: #857bff !important; }
+    .waheb-projects-subtitle,
+    .waheb-project-description { color: #b8bbd0 !important; }
+
+    .whatsapp-side-button .whatsapp-label {
+      background: rgba(15, 16, 40, .94) !important;
+      border: 1px solid rgba(148, 137, 255, .18) !important;
+      box-shadow: 0 14px 34px rgba(0,0,0,.26) !important;
+    }
+
+    footer {
+      background:
+        radial-gradient(circle at 15% 0%, rgba(112, 91, 235, .15), transparent 30%),
+        linear-gradient(180deg, #080817 0%, #050510 100%) !important;
+      border-color: rgba(143, 132, 255, .15) !important;
+    }
+
+    footer .rounded-\[2rem\],
+    footer details,
+    footer .bg-white\/5,
+    footer .bg-white\/10 {
+      background-color: rgba(20, 21, 48, .62) !important;
+      border-color: rgba(143, 132, 255, .16) !important;
+    }
+
+    footer a[style*="color:#7dd3fc"],
+    footer p[style*="color:#7dd3fc"],
+    footer span[style*="color:#7dd3fc"] { color: #aaa2ff !important; }
+
+    @media (max-width: 768px) {
+      .sakalli-header { background: rgba(7, 7, 22, .90) !important; }
+      .sakalli-mobile-menu {
+        background: rgba(10, 11, 31, .98) !important;
+        border-color: rgba(145, 134, 255, .20) !important;
+      }
+      #about, #services, #why, #seo-cities, #contact {
+        background-attachment: scroll !important;
+      }
+    }
+  </style>
+
+<style>
+  /* شعار الهيدر: صورة واضحة بدون إطار أو عنصر مؤقت */
+  .sakalli-brand {
+    min-width: 0;
+    min-height: 58px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 12px;
+  }
+
+  .sakalli-logo-slot {
+    display: inline-flex;
+    align-items: center;
+    justify-content: flex-start;
+    height: 58px;
+    line-height: 0;
+    border: 0;
+    border-radius: 0;
+    padding: 0;
+    background: transparent;
+    box-shadow: none;
+    overflow: visible;
+    flex-shrink: 0;
+  }
+
+  .sakalli-navbar-logo {
+    display: block;
+    width: auto;
+    height: 58px;
+    max-width: 220px;
+    object-fit: contain;
+    object-position: left center;
+    border: 0;
+    border-radius: 0;
+    padding: 0;
+    background: transparent;
+    box-shadow: none;
+    filter: drop-shadow(0 8px 20px rgba(75, 104, 255, .22));
+  }
+
+  .sakalli-brand-copy {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 5px;
+    min-width: 0;
+  }
+
+  .sakalli-brand-name {
+    display: inline-flex;
+    align-items: baseline;
+    white-space: nowrap;
+    font-size: 1.38rem;
+    line-height: 1;
+  }
+
+  .sakalli-brand-tags {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 5px;
+    color: rgba(220, 224, 255, .72);
+    font-size: .62rem;
+    font-weight: 700;
+    line-height: 1;
+    letter-spacing: .055em;
+    text-transform: uppercase;
+  }
+
+  .sakalli-brand-tags span {
+    display: inline-flex;
+    align-items: center;
+  }
+
+  .sakalli-brand-tags span:not(:last-child)::after {
+    content: "•";
+    margin-left: 5px;
+    color: #8588ff;
+  }
+
+  @media (max-width: 768px) {
+    .sakalli-brand {
+      min-width: 0;
+      min-height: 48px;
+      gap: 8px;
+    }
+
+    .sakalli-logo-slot {
+      height: 46px;
+    }
+
+    .sakalli-navbar-logo {
+      height: 46px;
+      max-width: 150px;
+    }
+
+    .sakalli-brand-copy {
+      gap: 4px;
+    }
+
+    .sakalli-brand-name {
+      font-size: 1.05rem;
+    }
+
+    .sakalli-brand-tags {
+      gap: 4px;
+      font-size: .48rem;
+      letter-spacing: .035em;
+    }
+
+    .sakalli-brand-tags span:not(:last-child)::after {
+      margin-left: 4px;
+    }
+  }
+
+  @media (max-width: 420px) {
+    .sakalli-brand-tags {
+      font-size: .43rem;
+      gap: 3px;
+    }
+  }
+
+
+  /* تنسيق روابط الهيدر فقط — بدون إطار أو خلفية */
+  .sakalli-nav-shell {
+    column-gap: clamp(14px, 2vw, 30px);
+  }
+
+  .sakalli-desktop-nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1 1 auto;
+    gap: clamp(1.15rem, 2.25vw, 2.55rem);
+    margin-inline: clamp(12px, 2vw, 34px);
+    padding: 0 !important;
+    border: 0 !important;
+    border-radius: 0 !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    backdrop-filter: none !important;
+    white-space: nowrap;
+  }
+
+  .sakalli-desktop-nav .nav-link {
+    padding: 0 !important;
+    border: 0 !important;
+    border-radius: 0 !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    white-space: nowrap;
+  }
+
+  @media (max-width: 1180px) and (min-width: 901px) {
+    .sakalli-nav-shell {
+      width: min(100% - 30px, 1180px);
+      column-gap: 12px;
+    }
+
+    .sakalli-desktop-nav {
+      gap: clamp(.85rem, 1.55vw, 1.35rem);
+      margin-inline: 10px;
+    }
+
+    .sakalli-desktop-nav .nav-link {
+      font-size: .88rem;
+    }
+  }
+</style>
+</head>
+<body>
+<header class="sakalli-header">
+  <div class="sakalli-nav-shell flex items-center justify-between">
+    <a aria-label="WahebSite Startseite" class="sakalli-brand" href="#home">
+      <span class="sakalli-logo-slot" id="logo">
+        <img class="sakalli-navbar-logo" src="images/logo.png" alt="WahebSite Logo"/>
+      </span>
+      <span class="sakalli-brand-copy">
+        <span class="sakalli-brand-name"><span>Waheb</span><span class="brand-site">Site</span></span>
+        <span class="sakalli-brand-tags" aria-label="Webdesign, SEO und Entwicklung">
+          <span>Webdesign</span>
+          <span>SEO</span>
+          <span>Entwicklung</span>
+        </span>
+      </span>
+    </a>
+
+    <nav class="sakalli-desktop-nav" aria-label="Hauptnavigation">
+      <a class="nav-link" href="#services">Leistungen</a>
+      <a class="nav-link" href="#projects">Projekte</a>
+      <a class="nav-link" href="#about">Über mich</a>
+      <a class="nav-link" href="#why">Warum ich</a>
+      <a class="nav-link" href="#contact">Kontakt</a>
+    </nav>
+
+    <div class="sakalli-nav-actions">
+      <a class="sakalli-blog-btn" href="#contact">Anfragen <span aria-hidden="true">→</span></a>
+      <button class="sakalli-mobile-toggle mobile-nav-button" type="button" aria-label="Menü öffnen" onclick="toggleMobileMenu()">☰</button>
+    </div>
+  </div>
+  <div class="sakalli-mobile-menu mobile-menu hidden" id="mobileMenu">
+    <div class="flex flex-col gap-1 text-sm font-semibold">
+      <a href="#home" onclick="toggleMobileMenu()">Startseite</a>
+      <a href="#services" onclick="toggleMobileMenu()">Leistungen</a>
+      <a href="#projects" onclick="toggleMobileMenu()">Projekte</a>
+      <a href="#about" onclick="toggleMobileMenu()">Über mich</a>
+      <a href="#why" onclick="toggleMobileMenu()">Warum ich</a>
+      <a href="#contact" onclick="toggleMobileMenu()">Kontakt</a>
+    </div>
+  </div>
+</header>
+<section class="sakalli-hero page-step page-show" id="home">
+  <svg class="sakalli-network" viewBox="0 0 1600 900" preserveAspectRatio="none" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <filter id="sakalliNodeGlow" x="-180%" y="-180%" width="460%" height="460%">
+        <feGaussianBlur stdDeviation="3.2" result="blur"/>
+        <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+      </filter>
+    </defs>
+
+    <g class="sakalli-network-layer layer-back" data-depth="0.28">
+      <g class="sakalli-network-drift drift-a">
+        <path d="M-35 96 L82 126 L145 84 L214 174 L320 198"/>
+        <circle class="network-node" cx="82" cy="126" r="3.2"/>
+        <circle class="network-node" cx="145" cy="84" r="2.4"/>
+        <circle class="network-node" cx="214" cy="174" r="3.5"/>
+        <circle class="network-node faint" cx="320" cy="198" r="2.1"/>
+
+        <path d="M1195 -18 L1240 42 L1321 34 L1378 93 L1468 61 L1618 136"/>
+        <circle class="network-node" cx="1240" cy="42" r="2.7"/>
+        <circle class="network-node faint" cx="1321" cy="34" r="2"/>
+        <circle class="network-node" cx="1378" cy="93" r="3.1"/>
+        <circle class="network-node" cx="1468" cy="61" r="2.5"/>
+      </g>
+    </g>
+
+    <g class="sakalli-network-layer layer-mid" data-depth="0.58">
+      <g class="sakalli-network-drift drift-b">
+        <path d="M-28 470 L60 452 L112 526 L184 550 L246 622"/>
+        <circle class="network-node" cx="60" cy="452" r="2.6"/>
+        <circle class="network-node" cx="112" cy="526" r="3.3"/>
+        <circle class="network-node faint" cx="184" cy="550" r="2"/>
+        <circle class="network-node" cx="246" cy="622" r="2.8"/>
+
+        <path d="M1370 290 L1431 323 L1489 286 L1531 354 L1618 334"/>
+        <circle class="network-node" cx="1431" cy="323" r="2.8"/>
+        <circle class="network-node" cx="1489" cy="286" r="3.4"/>
+        <circle class="network-node faint" cx="1531" cy="354" r="2.1"/>
+      </g>
+    </g>
+
+    <g class="sakalli-network-layer layer-front" data-depth="0.92">
+      <g class="sakalli-network-drift drift-c">
+        <path d="M485 8 L526 68 L614 50 L671 116"/>
+        <circle class="network-node" cx="526" cy="68" r="3.4"/>
+        <circle class="network-node" cx="614" cy="50" r="2.6"/>
+        <circle class="network-node faint" cx="671" cy="116" r="2.1"/>
+
+        <path d="M1120 690 L1185 648 L1257 714 L1323 681 L1398 752 L1492 729 L1622 782"/>
+        <circle class="network-node" cx="1185" cy="648" r="2.5"/>
+        <circle class="network-node" cx="1257" cy="714" r="3.5"/>
+        <circle class="network-node faint" cx="1323" cy="681" r="2"/>
+        <circle class="network-node" cx="1398" cy="752" r="3"/>
+        <circle class="network-node" cx="1492" cy="729" r="2.6"/>
+      </g>
+    </g>
+
+    <g class="sakalli-network-layer layer-detail" data-depth="0.72">
+      <g class="sakalli-network-drift drift-d">
+        <path d="M284 812 L372 773 L446 825 L513 791 L588 840"/>
+        <circle class="network-node faint" cx="372" cy="773" r="2.1"/>
+        <circle class="network-node" cx="446" cy="825" r="3.2"/>
+        <circle class="network-node" cx="513" cy="791" r="2.4"/>
+
+        <path d="M1018 168 L1087 150 L1142 202 L1214 179"/>
+        <circle class="network-node" cx="1087" cy="150" r="3"/>
+        <circle class="network-node" cx="1142" cy="202" r="2.7"/>
+      </g>
+    </g>
+  </svg>
+  <span class="sakalli-orb one"></span>
+  <span class="sakalli-orb two"></span>
+
+  <div class="sakalli-hero-inner">
+<h1 class="sakalli-hero-title">Von der Idee zur<br/>Website. <span class="accent">Schnell.</span></h1>
+    <p class="sakalli-hero-copy"><span class="hero-copy-line">Websites und SEO-Lösungen, die einfach tun, was sie sollen.</span><span class="hero-copy-line">Direkt vom Entwickler, klar umgesetzt und fair kalkuliert.</span></p>
+
+    <div class="sakalli-hero-action-row">
+      <a class="sakalli-hero-cta" href="#contact">Projekt anfragen <span aria-hidden="true">→</span></a>
+      <svg class="sakalli-robot" viewBox="0 0 100 100" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="robotBody" x1="24" y1="22" x2="79" y2="88" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#3f9ee8"/><stop offset="1" stop-color="#3158ac"/>
+    </linearGradient>
+  </defs>
+  <path d="M51 16V9" stroke="#67b8f4" stroke-width="4" stroke-linecap="round"/><circle cx="51" cy="7" r="3" fill="#7880ff"/>
+  <path d="M27 31c3-11 13-16 25-16s22 5 25 16l-6 15H33l-6-15Z" fill="url(#robotBody)"/>
+  <rect x="31" y="26" width="42" height="22" rx="11" fill="#162345" stroke="#63b9f5" stroke-width="2"/>
+  <circle cx="43" cy="37" r="3.5" fill="#8ee5ff"/><circle cx="61" cy="37" r="3.5" fill="#8ee5ff"/>
+  <path d="M45 43c4 2 9 2 13 0" stroke="#58a9e9" stroke-width="2" stroke-linecap="round"/>
+  <path d="M35 50h34l-4 34c-1 7-6 11-13 11s-12-4-13-11l-4-34Z" fill="url(#robotBody)" stroke="#5caeeb" stroke-width="2"/>
+  <circle cx="52" cy="67" r="7" fill="#172a52" stroke="#75caff" stroke-width="2"/><circle cx="52" cy="67" r="2.5" fill="#7c7fff"/>
+  <path d="m34 56-10 10 5 7 7-8M70 56l10 10-5 7-7-8" fill="none" stroke="#397fc7" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+    </div>
+  </div>
+
+  <a class="sakalli-scroll" href="#projects" aria-label="Zu den Projekten scrollen"></a>
+</section>
+
+<section class="waheb-projects page-step" id="projects" aria-labelledby="projects-title">
+  <div class="waheb-projects-shell">
+    <div class="waheb-projects-heading fade-up">
+      <span class="waheb-projects-kicker">Projekte</span>
+      <h2 class="waheb-projects-title" id="projects-title">Referenzen<span>.</span></h2>
+      <p class="waheb-projects-subtitle">Ausgewählte Kundenprojekte – individuell gestaltet, responsiv umgesetzt und direkt live erreichbar.</p>
+    </div>
+    <div class="waheb-projects-grid">
+      <!-- Eigene Projektbilder: images/Projekte1.png bis images/Projekte16.png im Ordner images ablegen. -->
+
+      <a class="waheb-project-card" data-project-card href="https://boehme-hv.de/" target="_blank" rel="noopener noreferrer" aria-label="Hausverwaltung Böhme öffnen">
+        <div class="waheb-project-preview">
+          <div class="waheb-project-fallback"><strong>Hausverwaltung Böhme</strong><small>boehme-hv.de</small></div>
+          <img class="waheb-project-shot" src="images/Projekte1.png" data-sources="images/Projekte1.png" alt="Vorschau der Website Hausverwaltung Böhme" loading="eager" decoding="async"/>
+          <span class="waheb-project-live">Website öffnen <span aria-hidden="true">↗</span></span>
+        </div>
+        <div class="waheb-project-content">
+          <div class="waheb-project-meta">
+            <span class="waheb-project-type">Website</span>
+            <span class="waheb-project-index">01</span>
+          </div>
+          <h3 class="waheb-project-name">Hausverwaltung Böhme</h3>
+          <p class="waheb-project-description">Immobilienverwaltung mit klarer Struktur und professioneller Nutzerführung.</p>
+        </div>
+      </a>
+      <a class="waheb-project-card" data-project-card href="https://eis-spezial.de/" target="_blank" rel="noopener noreferrer" aria-label="Eis Spezial öffnen">
+        <div class="waheb-project-preview">
+          <div class="waheb-project-fallback"><strong>Eis Spezial</strong><small>eis-spezial.de</small></div>
+          <img class="waheb-project-shot" src="images/Projekte2.png" data-sources="images/Projekte2.png" alt="Vorschau der Website Eis Spezial" loading="eager" decoding="async"/>
+          <span class="waheb-project-live">Website öffnen <span aria-hidden="true">↗</span></span>
+        </div>
+        <div class="waheb-project-content">
+          <div class="waheb-project-meta">
+            <span class="waheb-project-type">Website</span>
+            <span class="waheb-project-index">02</span>
+          </div>
+          <h3 class="waheb-project-name">Eis Spezial</h3>
+          <p class="waheb-project-description">Moderner Webauftritt für Eis, Gastronomie und professionelle Kundenanfragen.</p>
+        </div>
+      </a>
+      <a class="waheb-project-card" data-project-card href="https://ankercaravanberlin.de/" target="_blank" rel="noopener noreferrer" aria-label="ANKER Caravan Berlin öffnen">
+        <div class="waheb-project-preview">
+          <div class="waheb-project-fallback"><strong>ANKER Caravan Berlin</strong><small>ankercaravanberlin.de</small></div>
+          <img class="waheb-project-shot" src="images/Projekte3.png" data-sources="images/Projekte3.png" alt="Vorschau der Website ANKER Caravan Berlin" loading="lazy" decoding="async"/>
+          <span class="waheb-project-live">Website öffnen <span aria-hidden="true">↗</span></span>
+        </div>
+        <div class="waheb-project-content">
+          <div class="waheb-project-meta">
+            <span class="waheb-project-type">Website</span>
+            <span class="waheb-project-index">03</span>
+          </div>
+          <h3 class="waheb-project-name">ANKER Caravan Berlin</h3>
+          <p class="waheb-project-description">Verkaufsstarke Website für Wohnwagen, Beratung und Caravan-Service.</p>
+        </div>
+      </a>
+      <a class="waheb-project-card" data-project-card href="https://handwerk-plus24.de/" target="_blank" rel="noopener noreferrer" aria-label="Handwerk Plus 24 öffnen">
+        <div class="waheb-project-preview">
+          <div class="waheb-project-fallback"><strong>Handwerk Plus 24</strong><small>handwerk-plus24.de</small></div>
+          <img class="waheb-project-shot" src="images/Projekte4.png" data-sources="images/Projekte4.png" alt="Vorschau der Website Handwerk Plus 24" loading="lazy" decoding="async"/>
+          <span class="waheb-project-live">Website öffnen <span aria-hidden="true">↗</span></span>
+        </div>
+        <div class="waheb-project-content">
+          <div class="waheb-project-meta">
+            <span class="waheb-project-type">Website</span>
+            <span class="waheb-project-index">04</span>
+          </div>
+          <h3 class="waheb-project-name">Handwerk Plus 24</h3>
+          <p class="waheb-project-description">Leistungsstarker Auftritt für Handwerk, Reinigung und direkte Anfragen.</p>
+        </div>
+      </a>
+      <a class="waheb-project-card" data-project-card href="https://gebaeudeserviceboehme.de/" target="_blank" rel="noopener noreferrer" aria-label="Gebäudeservice Böhme öffnen">
+        <div class="waheb-project-preview">
+          <div class="waheb-project-fallback"><strong>Gebäudeservice Böhme</strong><small>gebaeudeserviceboehme.de</small></div>
+          <img class="waheb-project-shot" src="images/Projekte5.png" data-sources="images/Projekte5.png" alt="Vorschau der Website Gebäudeservice Böhme" loading="lazy" decoding="async"/>
+          <span class="waheb-project-live">Website öffnen <span aria-hidden="true">↗</span></span>
+        </div>
+        <div class="waheb-project-content">
+          <div class="waheb-project-meta">
+            <span class="waheb-project-type">Website</span>
+            <span class="waheb-project-index">05</span>
+          </div>
+          <h3 class="waheb-project-name">Gebäudeservice Böhme</h3>
+          <p class="waheb-project-description">Professioneller Auftritt für Gebäudeservice, Reinigung und direkte Kundenanfragen.</p>
+        </div>
+      </a>
+      <a class="waheb-project-card" data-project-card href="https://zaunmacher24.de/" target="_blank" rel="noopener noreferrer" aria-label="Zaunmacher24 öffnen">
+        <div class="waheb-project-preview">
+          <div class="waheb-project-fallback"><strong>Zaunmacher24</strong><small>zaunmacher24.de</small></div>
+          <img class="waheb-project-shot" src="images/Projekte6.png" data-sources="images/Projekte6.png" alt="Vorschau der Website Zaunmacher24" loading="lazy" decoding="async"/>
+          <span class="waheb-project-live">Website öffnen <span aria-hidden="true">↗</span></span>
+        </div>
+        <div class="waheb-project-content">
+          <div class="waheb-project-meta">
+            <span class="waheb-project-type">Website</span>
+            <span class="waheb-project-index">06</span>
+          </div>
+          <h3 class="waheb-project-name">Zaunmacher24</h3>
+          <p class="waheb-project-description">Produkt- und serviceorientierte Website für Zaun- und Mauersysteme.</p>
+        </div>
+      </a>
+      <a class="waheb-project-card" data-project-card href="https://elia-frankfurt.com/" target="_blank" rel="noopener noreferrer" aria-label="Elia Frankfurt öffnen">
+        <div class="waheb-project-preview">
+          <div class="waheb-project-fallback"><strong>Elia Frankfurt</strong><small>elia-frankfurt.com</small></div>
+          <img class="waheb-project-shot" src="images/Projekte7.png" data-sources="images/Projekte7.png" alt="Vorschau der Website Elia Frankfurt" loading="lazy" decoding="async"/>
+          <span class="waheb-project-live">Website öffnen <span aria-hidden="true">↗</span></span>
+        </div>
+        <div class="waheb-project-content">
+          <div class="waheb-project-meta">
+            <span class="waheb-project-type">Website</span>
+            <span class="waheb-project-index">07</span>
+          </div>
+          <h3 class="waheb-project-name">Elia Frankfurt</h3>
+          <p class="waheb-project-description">Eleganter Restaurant-Auftritt mit direktem Zugang zu Angebot und Kontakt.</p>
+        </div>
+      </a>
+      <a class="waheb-project-card" data-project-card href="https://dr-dettmer.de/" target="_blank" rel="noopener noreferrer" aria-label="Dr. Dettmer öffnen">
+        <div class="waheb-project-preview">
+          <div class="waheb-project-fallback"><strong>Dr. Dettmer</strong><small>dr-dettmer.de</small></div>
+          <img class="waheb-project-shot" src="images/Projekte8.png" data-sources="images/Projekte8.png" alt="Vorschau der Website Dr. Dettmer" loading="lazy" decoding="async"/>
+          <span class="waheb-project-live">Website öffnen <span aria-hidden="true">↗</span></span>
+        </div>
+        <div class="waheb-project-content">
+          <div class="waheb-project-meta">
+            <span class="waheb-project-type">Website</span>
+            <span class="waheb-project-index">08</span>
+          </div>
+          <h3 class="waheb-project-name">Dr. Dettmer</h3>
+          <p class="waheb-project-description">Professioneller Praxisauftritt mit übersichtlichen Informationen und Kontaktwegen.</p>
+        </div>
+      </a>
+      <a class="waheb-project-card" data-project-card href="https://lindenhof-benrath.com/" target="_blank" rel="noopener noreferrer" aria-label="Lindenhof Benrath öffnen">
+        <div class="waheb-project-preview">
+          <div class="waheb-project-fallback"><strong>Lindenhof Benrath</strong><small>lindenhof-benrath.com</small></div>
+          <img class="waheb-project-shot" src="images/Projekte9.png" data-sources="images/Projekte9.png" alt="Vorschau der Website Lindenhof Benrath" loading="lazy" decoding="async"/>
+          <span class="waheb-project-live">Website öffnen <span aria-hidden="true">↗</span></span>
+        </div>
+        <div class="waheb-project-content">
+          <div class="waheb-project-meta">
+            <span class="waheb-project-type">Website</span>
+            <span class="waheb-project-index">09</span>
+          </div>
+          <h3 class="waheb-project-name">Lindenhof Benrath</h3>
+          <p class="waheb-project-description">Einladender Gastronomie-Auftritt mit modernem Design und klarer Navigation.</p>
+        </div>
+      </a>
+      <a class="waheb-project-card" data-project-card href="https://willsbbq.de/" target="_blank" rel="noopener noreferrer" aria-label="Will&#x27;s BBQ öffnen">
+        <div class="waheb-project-preview">
+          <div class="waheb-project-fallback"><strong>Will&#x27;s BBQ</strong><small>willsbbq.de</small></div>
+          <img class="waheb-project-shot" src="images/Projekte10.png" data-sources="images/Projekte10.png" alt="Vorschau der Website Will&#x27;s BBQ" loading="lazy" decoding="async"/>
+          <span class="waheb-project-live">Website öffnen <span aria-hidden="true">↗</span></span>
+        </div>
+        <div class="waheb-project-content">
+          <div class="waheb-project-meta">
+            <span class="waheb-project-type">Website</span>
+            <span class="waheb-project-index">10</span>
+          </div>
+          <h3 class="waheb-project-name">Will&#x27;s BBQ</h3>
+          <p class="waheb-project-description">Markanter Webauftritt für BBQ, Catering und unkomplizierte Kundenanfragen.</p>
+        </div>
+      </a>
+      <a class="waheb-project-card" data-project-card href="https://aldente-leichlingen.de/" target="_blank" rel="noopener noreferrer" aria-label="Al Dente Leichlingen öffnen">
+        <div class="waheb-project-preview">
+          <div class="waheb-project-fallback"><strong>Al Dente Leichlingen</strong><small>aldente-leichlingen.de</small></div>
+          <img class="waheb-project-shot" src="images/Projekte11.png" data-sources="images/Projekte11.png" alt="Vorschau der Website Al Dente Leichlingen" loading="lazy" decoding="async"/>
+          <span class="waheb-project-live">Website öffnen <span aria-hidden="true">↗</span></span>
+        </div>
+        <div class="waheb-project-content">
+          <div class="waheb-project-meta">
+            <span class="waheb-project-type">Website</span>
+            <span class="waheb-project-index">11</span>
+          </div>
+          <h3 class="waheb-project-name">Al Dente Leichlingen</h3>
+          <p class="waheb-project-description">Moderner Restaurant-Auftritt für Speisekarte, Reservierung und Kontakt.</p>
+        </div>
+      </a>
+      <a class="waheb-project-card" data-project-card href="https://beidenis-restaurant.de/" target="_blank" rel="noopener noreferrer" aria-label="Bei Denis Restaurant öffnen">
+        <div class="waheb-project-preview">
+          <div class="waheb-project-fallback"><strong>Bei Denis Restaurant</strong><small>beidenis-restaurant.de</small></div>
+          <img class="waheb-project-shot" src="images/Projekte12.png" data-sources="images/Projekte12.png" alt="Vorschau der Website Bei Denis Restaurant" loading="lazy" decoding="async"/>
+          <span class="waheb-project-live">Website öffnen <span aria-hidden="true">↗</span></span>
+        </div>
+        <div class="waheb-project-content">
+          <div class="waheb-project-meta">
+            <span class="waheb-project-type">Website</span>
+            <span class="waheb-project-index">12</span>
+          </div>
+          <h3 class="waheb-project-name">Bei Denis Restaurant</h3>
+          <p class="waheb-project-description">Warmer Gastronomie-Auftritt mit klarer Präsentation und direkter Erreichbarkeit.</p>
+        </div>
+      </a>
+      <a class="waheb-project-card" data-project-card href="https://sebastian-heinen.de/" target="_blank" rel="noopener noreferrer" aria-label="Sebastian Heinen öffnen">
+        <div class="waheb-project-preview">
+          <div class="waheb-project-fallback"><strong>Sebastian Heinen</strong><small>sebastian-heinen.de</small></div>
+          <img class="waheb-project-shot" src="images/Projekte13.png" data-sources="images/Projekte13.png" alt="Vorschau der Website Sebastian Heinen" loading="lazy" decoding="async"/>
+          <span class="waheb-project-live">Website öffnen <span aria-hidden="true">↗</span></span>
+        </div>
+        <div class="waheb-project-content">
+          <div class="waheb-project-meta">
+            <span class="waheb-project-type">Website</span>
+            <span class="waheb-project-index">13</span>
+          </div>
+          <h3 class="waheb-project-name">Sebastian Heinen</h3>
+          <p class="waheb-project-description">Persönlicher und hochwertiger Webauftritt mit fokussierter Nutzerführung.</p>
+        </div>
+      </a>
+      <a class="waheb-project-card" data-project-card href="https://schuschu-restaurant.de/" target="_blank" rel="noopener noreferrer" aria-label="SchuSchu Restaurant öffnen">
+        <div class="waheb-project-preview">
+          <div class="waheb-project-fallback"><strong>SchuSchu Restaurant</strong><small>schuschu-restaurant.de</small></div>
+          <img class="waheb-project-shot" src="images/Projekte14.png" data-sources="images/Projekte14.png" alt="Vorschau der Website SchuSchu Restaurant" loading="lazy" decoding="async"/>
+          <span class="waheb-project-live">Website öffnen <span aria-hidden="true">↗</span></span>
+        </div>
+        <div class="waheb-project-content">
+          <div class="waheb-project-meta">
+            <span class="waheb-project-type">Website</span>
+            <span class="waheb-project-index">14</span>
+          </div>
+          <h3 class="waheb-project-name">SchuSchu Restaurant</h3>
+          <p class="waheb-project-description">Stilvoller Restaurant-Auftritt mit übersichtlichen Inhalten und Kontaktoptionen.</p>
+        </div>
+      </a>
+      <a class="waheb-project-card" data-project-card href="https://www.myhome-24.de/" target="_blank" rel="noopener noreferrer" aria-label="MyHome24 öffnen">
+        <div class="waheb-project-preview">
+          <div class="waheb-project-fallback"><strong>MyHome24</strong><small>myhome-24.de</small></div>
+          <img class="waheb-project-shot" src="images/Projekte15.png" data-sources="images/Projekte15.png" alt="Vorschau der Website MyHome24" loading="lazy" decoding="async"/>
+          <span class="waheb-project-live">Website öffnen <span aria-hidden="true">↗</span></span>
+        </div>
+        <div class="waheb-project-content">
+          <div class="waheb-project-meta">
+            <span class="waheb-project-type">Website</span>
+            <span class="waheb-project-index">15</span>
+          </div>
+          <h3 class="waheb-project-name">MyHome24</h3>
+          <p class="waheb-project-description">Klare Präsentation für Dienstleistungen rund um Haushalt und Immobilien.</p>
+        </div>
+      </a>
+      <a class="waheb-project-card" data-project-card href="https://wahebwahbe100-byte.github.io/SeniorTrainer/" target="_blank" rel="noopener noreferrer" aria-label="SeniorTrainer öffnen">
+        <div class="waheb-project-preview">
+          <div class="waheb-project-fallback"><strong>SeniorTrainer</strong><small>wahebwahbe100-byte.github.io/SeniorTrainer</small></div>
+          <img class="waheb-project-shot" src="images/Projekte16.png" data-sources="images/Projekte16.png" alt="Vorschau der Website SeniorTrainer" loading="lazy" decoding="async"/>
+          <span class="waheb-project-live">Website öffnen <span aria-hidden="true">↗</span></span>
+        </div>
+        <div class="waheb-project-content">
+          <div class="waheb-project-meta">
+            <span class="waheb-project-type">Website</span>
+            <span class="waheb-project-index">16</span>
+          </div>
+          <h3 class="waheb-project-name">SeniorTrainer</h3>
+          <p class="waheb-project-description">Moderner Trainingsauftritt mit klarer Präsentation, Leistungen und Kontaktmöglichkeiten.</p>
+        </div>
+      </a>
+    </div>
+    <div class="waheb-projects-footer">
+      <a class="waheb-projects-cta" href="#contact">Dein Projekt? Anfrage starten <span aria-hidden="true">→</span></a>
+    </div>
+  </div>
+</section>
+<div class="page-step startseite-video-wrap fade-up">
+<div class="startseite-video-card">
+<div class="startseite-video-inner">
+<div class="startseite-video-text">
+<p>Sehen Sie in diesem Video, wie eine moderne Website schnell, responsive und professionell auf Smartphones, Tablets und Desktop-Computern wirkt.</p>
+</div>
+<div class="startseite-video-shell">
+<video aria-label="Automatisch abgespieltes Website-Video" autoplay="" controlslist="nodownload noplaybackrate" loop="" muted="" playsinline="" preload="auto" webkit-playsinline="">
+<source src="Startseite.mp4" type="video/mp4"/>
+          Ihr Browser unterstützt das Video-Format nicht.
+        </video>
+<button aria-label="Video abspielen" class="startseite-video-play" type="button">▶</button>
+</div>
+</div>
+</div>
+</div>
+<section class="page-step mx-auto max-w-7xl px-6 py-24" id="about">
+<div class="grid items-center gap-14 lg:grid-cols-2">
+<div class="fade-up">
+<span class="inline-flex rounded-full border px-4 py-1 text-sm font-semibold" style="border-color:rgba(56,189,248,.20); background:rgba(56,189,248,.10); color:#0ea5e9;">Über uns</span>
+<h2 class="mt-6 text-4xl font-bold leading-tight sm:text-5xl">
+          Eine Website, die den <span style="color:#0ea5e9;">Wert Ihres Unternehmens in Deutschland</span> sichtbar macht
+        </h2>
+<p class="mt-8 text-lg leading-8" style="color:#4b5563;">
+          Wir gestalten klare und elegante Seiten, die Ihre Leistungen schnell erklären und schon auf den ersten Blick Vertrauen schaffen.
+        </p>
+<p class="mt-5 text-lg leading-8" style="color:#4b5563;">
+          Ob Arztpraxis, Ingenieurbüro, Restaurant oder Onlineshop – wir entwickeln eine Website, die perfekt zu Ihrer Branche passt.
+        </p>
+<div class="mt-8 rounded-3xl border p-6 shadow-xl" style="border-color:rgba(56,189,248,.20); background:linear-gradient(to right, rgba(56,189,248,.10), rgba(255,255,255,.92));">
+<p class="text-2xl font-bold" style="color:#0ea5e9;">Sie zahlen erst, wenn Ihre Website vollständig fertig ist.</p>
+</div>
+</div>
+<div class="grid gap-5 sm:grid-cols-2">
+<div class="glass rounded-3xl p-8 shadow-2xl sm:col-span-2">
+<div class="grid gap-6 md:grid-cols-3">
+<div class="rounded-2xl border border-black/10 bg-white/70 p-5 text-center">
+<img alt="setup4" class="mx-auto h-20 w-20 object-contain" src="setup/setup4.png"/>
+<h3 class="mt-4 text-lg font-bold">Hohe Geschwindigkeit</h3>
+<p class="mt-2 text-sm" style="color:#6b7280;">Eine schnellere Erfahrung für Ihre Besucher auf allen Geräten.</p>
+</div>
+<div class="rounded-2xl border border-black/10 bg-white/70 p-5 text-center">
+<img alt="setup5" class="mx-auto h-20 w-20 object-contain" src="setup/setup5.png"/>
+<h3 class="mt-4 text-lg font-bold">Mobil optimiert</h3>
+<p class="mt-2 text-sm" style="color:#6b7280;">Saubere und responsive Darstellung auf Smartphone und Tablet.</p>
+</div>
+<div class="rounded-2xl border border-black/10 bg-white/70 p-5 text-center">
+<img alt="setup6" class="mx-auto h-20 w-20 object-contain" src="setup/setup6.png"/>
+<h3 class="mt-4 text-lg font-bold">Mehr Anfragen</h3>
+<p class="mt-2 text-sm" style="color:#6b7280;">Klare Kontaktbuttons und überzeugende Inhalte steigern die Conversion.</p>
+</div>
+</div>
+</div>
+<div class="section-card rounded-3xl border border-black/10 bg-white/70 p-6 shadow-xl">
+<img alt="setup7" class="h-20 w-20 object-contain" src="setup/setup7.png"/>
+<h3 class="mt-4 text-xl font-bold">Buchungssysteme</h3>
+<p class="mt-3 text-sm leading-7" style="color:#6b7280;">Ideal für Praxen, Salons, Beratungen und Dienstleister.</p>
+</div>
+<div class="section-card rounded-3xl border p-6 shadow-xl" style="border-color:rgba(56,189,248,.15); background:linear-gradient(to bottom right, rgba(56,189,248,.10), rgba(255,255,255,.94));">
+<img alt="setup8" class="h-20 w-20 object-contain" src="setup/setup8.png"/>
+<h3 class="mt-4 text-xl font-bold">Starker erster Eindruck</h3>
+<p class="mt-3 text-sm leading-7" style="color:#6b7280;">Elegantes Design und klare Struktur zeigen direkt die Stärke Ihrer Marke.</p>
+</div>
+</div>
+</div>
+</section>
+<section class="page-step border-y border-black/10 bg-white/35" id="services">
+<div class="mx-auto max-w-7xl px-6 py-24">
+<div class="max-w-2xl fade-up">
+<p class="text-sm font-semibold uppercase tracking-[0.2em]" style="color:#0ea5e9;">Leistungen</p>
+<h2 class="mt-3 text-3xl font-bold sm:text-4xl">Alles, was Sie für eine starke Online-Präsenz brauchen</h2>
+<p class="mt-4 leading-8" style="color:#6b7280;">Komplette Lösungen vom Design bis zum Launch und Support.</p>
+</div>
+<div class="mt-12 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
+<div class="section-card rounded-3xl border border-black/10 bg-white/80 p-6 shadow-xl">
+<img alt="setup9" class="h-20 w-20 object-contain" src="setup/setup9.png"/>
+<h3 class="mt-5 text-xl font-semibold">Professionelles Webdesign</h3>
+<p class="mt-3 text-sm leading-7" style="color:#6b7280;">Modernes Design, klarer Aufbau und starke Markenwirkung.</p>
+</div>
+<div class="section-card rounded-3xl border border-black/10 bg-white/80 p-6 shadow-xl">
+<img alt="setup10" class="h-20 w-20 object-contain" src="setup/setup10.png"/>
+<h3 class="mt-5 text-xl font-semibold">Onlineshops</h3>
+<p class="mt-3 text-sm leading-7" style="color:#6b7280;">Strukturierte Produktseiten und ein angenehmer Kaufprozess.</p>
+</div>
+<div class="section-card rounded-3xl border border-black/10 bg-white/80 p-6 shadow-xl">
+<img alt="setup11" class="h-20 w-20 object-contain" src="setup/setup11.png"/>
+<h3 class="mt-5 text-xl font-semibold">Website-Funktionen</h3>
+<p class="mt-3 text-sm leading-7" style="color:#6b7280;">Formulare, Spezialseiten und praktische Funktionen direkt für Ihre Website.</p>
+</div>
+<div class="section-card rounded-3xl border border-black/10 bg-white/80 p-6 shadow-xl">
+<img alt="setup12" class="h-20 w-20 object-contain" src="setup/setup12.png"/>
+<h3 class="mt-5 text-xl font-semibold">Performance &amp; Support</h3>
+<p class="mt-3 text-sm leading-7" style="color:#6b7280;">Hohe Geschwindigkeit, bessere Nutzererfahrung und Support nach der Fertigstellung.</p>
+</div>
+</div>
+</div>
+</section>
+<section class="page-step mx-auto max-w-6xl px-6 py-24" id="why">
+<div class="fade-up text-center">
+<p class="text-sm font-semibold uppercase tracking-[0.2em]" style="color:#0ea5e9;">Warum eine Website?</p>
+<h2 class="mt-3 text-3xl font-bold sm:text-4xl">Eine Website ist nicht nur Design – sie ist ein Werkzeug für Wachstum</h2>
+<p class="mx-auto mt-4 max-w-3xl leading-8" style="color:#6b7280;">
+        Mit einer klaren, schnellen und überzeugenden Website werden Sie einfacher gefunden und gewinnen mehr Vertrauen bei Ihren Kunden.
+      </p>
+</div>
+<div class="mt-16 grid gap-8 lg:grid-cols-2">
+<div class="glass rounded-[2rem] p-8 shadow-xl">
+<div class="journey-step pb-10">
+<h3 class="text-2xl font-bold" style="color:#0ea5e9;">Bessere Sichtbarkeit</h3>
+<p class="mt-3 leading-8" style="color:#4b5563;">Ihre Website hilft Ihnen, jederzeit von Menschen gefunden zu werden, die nach Ihren Leistungen suchen.</p>
+</div>
+<div class="journey-step pb-10">
+<h3 class="text-2xl font-bold" style="color:#0ea5e9;">Mehr Vertrauen</h3>
+<p class="mt-3 leading-8" style="color:#4b5563;">Ein professioneller Webauftritt zeigt, dass Ihr Unternehmen organisiert, modern und seriös ist.</p>
+</div>
+<div class="journey-step">
+<h3 class="text-2xl font-bold" style="color:#0ea5e9;">Mehr Anfragen</h3>
+<p class="mt-3 leading-8" style="color:#4b5563;">Klare Kontaktwege und ein überzeugendes Angebot machen aus Besuchern potenzielle Kunden.</p>
+</div>
+</div>
+<div class="grid gap-6">
+<div class="section-card rounded-3xl border border-black/10 bg-white/80 p-6 shadow-xl">
+<h3 class="text-2xl font-bold">Was bringt Ihnen eine Website?</h3>
+<ul class="mt-5 space-y-3" style="color:#4b5563;">
+<li>• Klare Darstellung Ihrer Leistungen, Vorteile und Kontaktmöglichkeiten</li>
+<li>• Mehr Anfragen, Buchungen und Kundenkontakte</li>
+<li>• Direkte Verbindung zu WhatsApp, E-Mail und Social Media</li>
+<li>• Ein professionelles Erscheinungsbild für Ihre Marke</li>
+</ul>
+</div>
+<div class="section-card rounded-3xl border p-6 shadow-xl" style="border-color:rgba(56,189,248,.16); background:linear-gradient(to bottom right, rgba(56,189,248,.10), rgba(255,255,255,.92));">
+<h3 class="text-2xl font-bold">Das Ergebnis</h3>
+<p class="mt-4 leading-8" style="color:#4b5563;">Starke Struktur + Geschwindigkeit + klare Botschaft = mehr Kunden, mehr Umsatz und mehr Reichweite.</p>
+</div>
+</div>
+</div>
+</section>
+<section class="page-step border-y border-black/10 bg-white/35" id="seo-cities">
+<div class="mx-auto max-w-7xl px-6 py-24">
+<div class="max-w-3xl fade-up">
+<p class="text-sm font-semibold uppercase tracking-[0.2em]" style="color:#0ea5e9;">Deutschlandweit sichtbar</p>
+<h2 class="mt-3 text-3xl font-bold sm:text-4xl">Webdesign &amp; SEO für Unternehmen in ganz Deutschland</h2>
+<p class="mt-4 leading-8" style="color:#6b7280;">Wir erstellen professionelle Websites für Restaurants, Arztpraxen, Handwerksbetriebe, Kanzleien, Onlineshops und lokale Unternehmen. Durch klare Struktur, schnelle Ladezeiten und lokale SEO helfen wir dabei, bei Google besser gefunden zu werden und mehr Anfragen zu gewinnen.</p>
+</div>
+<div class="mt-12 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
+<div class="section-card rounded-3xl border border-black/10 bg-white/80 p-6 shadow-xl">
+<img alt="setup13" class="h-20 w-20 object-contain" src="setup/setup13.png"/>
+<h3 class="mt-5 text-xl font-semibold">Lokale SEO</h3>
+<p class="mt-3 text-sm leading-7" style="color:#6b7280;">Bessere Sichtbarkeit bei Suchanfragen wie Webdesign Berlin, SEO Köln oder Website Hamburg.</p>
+</div>
+<div class="section-card rounded-3xl border border-black/10 bg-white/80 p-6 shadow-xl">
+<img alt="setup14" class="h-20 w-20 object-contain" src="setup/setup14.png"/>
+<h3 class="mt-5 text-xl font-semibold">Für lokale Geschäfte</h3>
+<p class="mt-3 text-sm leading-7" style="color:#6b7280;">Ideal für Restaurants, Stores, Salons, Praxen, Dienstleister und wachsende Unternehmen.</p>
+</div>
+<div class="section-card rounded-3xl border border-black/10 bg-white/80 p-6 shadow-xl">
+<img alt="setup15" class="h-20 w-20 object-contain" src="setup/setup15.png"/>
+<h3 class="mt-5 text-xl font-semibold">SEO-Struktur</h3>
+<p class="mt-3 text-sm leading-7" style="color:#6b7280;">Saubere Titel, Meta-Daten, interne Links, Standortseiten und starke Keyword-Relevanz.</p>
+</div>
+<div class="section-card rounded-3xl border border-black/10 bg-white/80 p-6 shadow-xl">
+<img alt="setup16" class="h-20 w-20 object-contain" src="setup/setup16.png"/>
+<h3 class="mt-5 text-xl font-semibold">Mehr Anfragen</h3>
+<p class="mt-3 text-sm leading-7" style="color:#6b7280;">Klare Botschaften, starke CTAs und einfache Kontaktwege per WhatsApp und E-Mail.</p>
+</div>
+</div>
+</div>
+</section>
+<section class="page-step mx-auto max-w-6xl px-6 py-24" id="contact">
+<div class="grid gap-8 lg:grid-cols-2">
+<div class="glass rounded-[2rem] p-10 shadow-2xl">
+<h2 class="text-3xl font-bold sm:text-4xl">Bereit für Ihre neue Website?</h2>
+<p class="mt-4 text-lg leading-8" style="color:#4b5563;">
+          Starten Sie jetzt mit einer modernen, schnellen Website, die Ihrem Projekt eine starke Online-Präsenz gibt.
+        </p>
+<div class="mt-8 space-y-4" style="color:#4b5563;">
+<p>✓ Kostenlose Erstberatung</p>
+<p>✓ Individuelles Design passend zu Ihrem Unternehmen</p>
+<p>✓ Zahlung erst nach vollständiger Fertigstellung</p>
+</div>
+<div class="mt-8 flex flex-wrap gap-4">
+<a class="btn-primary inline-block rounded-2xl px-8 py-3" href="https://wa.me/4915778739720?text=Hallo%20WahebSite%2C%20ich%20w%C3%BCrde%20gerne%20mit%20Ihnen%20sprechen." rel="noreferrer" target="_blank">
+            Kontakt über WhatsApp
+          </a>
+<a class="btn-secondary inline-block rounded-2xl border border-black/10 bg-white/70 px-8 py-3 font-semibold" href="mailto:wahebwahbe100@gmail.com">
+            Kontakt per E-Mail
+          </a>
+</div>
+</div>
+<div class="glass rounded-[2rem] p-8 shadow-2xl">
+<form action="https://api.web3forms.com/submit" class="space-y-4" method="POST" onsubmit="return submitForm(event)">
+<input name="access_key" type="hidden" value="e19eaac1-2128-42f7-8c1f-bffe0a42975b"/>
+<input name="subject" type="hidden" value="Neue Website-Anfrage über WahebSite"/>
+<input name="from_name" type="hidden" value="WahebSite Kontaktformular"/>
+<input autocomplete="off" class="hidden" name="botcheck" style="display:none;" tabindex="-1" type="checkbox"/>
+<div>
+<label class="mb-2 block text-sm" style="color:#6b7280;">Name</label>
+<input class="contact-input" name="name" placeholder="Ihr Name" required="" type="text"/>
+</div>
+<div>
+<label class="mb-2 block text-sm" style="color:#6b7280;">E-Mail</label>
+<input class="contact-input" name="email" placeholder="name@example.com" required="" type="email"/>
+</div>
+<div>
+<label class="mb-2 block text-sm" style="color:#6b7280;">Telefonnummer</label>
+<input autocomplete="tel" class="contact-input" inputmode="tel" name="phone" placeholder="Ihre Telefonnummer" required="" type="tel"/>
+</div>
+<div>
+<label class="mb-2 block text-sm" style="color:#6b7280;">Projektart</label>
+<select class="contact-input" name="project_type" required="">
+<option value="">Bitte wählen</option>
+<option>Business Website</option>
+<option>Onlineshop</option>
+<option>Booking Website</option>
+<option>Individuelles Design</option>
+</select>
+</div>
+<div>
+<label class="mb-2 block text-sm" style="color:#6b7280;">Projektbeschreibung</label>
+<textarea class="contact-input min-h-[140px] resize-none" name="message" placeholder="Beschreiben Sie Ihr Projekt" required=""></textarea>
+</div>
+<div>
+<label class="flex items-start gap-3 text-sm" style="color:#6b7280;">
+<input class="mt-1" name="privacy_consent" required="" type="checkbox" value="Ja"/>
+<span>Ich habe die <a href="pages/legal/datenschutz.html" style="color:#0ea5e9; font-weight:700;">Datenschutzerklärung</a> gelesen und stimme der Verarbeitung meiner Angaben zur Bearbeitung meiner Anfrage zu.</span>
+</label>
+</div>
+<button class="btn-primary w-full rounded-2xl px-6 py-3" id="submitButton" type="submit">Anfrage senden</button>
+<p class="hidden text-center font-semibold" id="formMessage" style="color:#0ea5e9;">Vielen Dank für Ihre Anfrage! Wir haben Ihre Nachricht erhalten und melden uns so schnell wie möglich bei Ihnen.</p>
+</form>
+</div>
+</div>
+</section>
+<a aria-label="WhatsApp Kontakt öffnen" class="whatsapp-side-button" href="https://wa.me/4915778739720?text=Hallo%20WahebSite%2C%20ich%20w%C3%BCrde%20gerne%20mit%20Ihnen%20sprechen." rel="noreferrer" target="_blank">
+<span class="whatsapp-label">Lass uns auf WhatsApp sprechen</span>
+<span class="whatsapp-icon-wrap"><img alt="WhatsApp Icon" src="https://cdn-icons-png.flaticon.com/512/733/733585.png"/></span>
+</a>
+<footer class="border-t border-white/10 bg-[#0b1120]">
+<div class="mx-auto max-w-7xl px-6 py-12">
+<div class="rounded-[2rem] border border-white/10 bg-white/5 p-8 shadow-xl backdrop-blur-sm">
+<div class="grid gap-8 md:grid-cols-[1.2fr_1fr_1fr_1fr] md:items-center">
+<div class="flex items-center gap-4">
+<img alt="WahebSite Logo" class="h-20 w-auto max-w-[120px] object-contain border-0 bg-transparent p-0 shadow-none" src="images/logo.png"/>
+<div>
+<h3 class="text-2xl font-bold text-white">WahebSite</h3>
+<p class="mt-2 text-sm leading-6" style="color:rgba(255,255,255,0.70);">Professionelles Webdesign für moderne Unternehmen, Praxen, Restaurants und Onlineshops.</p>
+</div>
+</div>
+<a class="flex items-center gap-4 rounded-2xl border border-white/10 bg-white/10 p-4 transition hover:-translate-y-1 hover:bg-white/15 hover:shadow-lg" href="https://wa.me/4915778739720?text=Hallo%20WahebSite%2C%20ich%20w%C3%BCrde%20gerne%20mit%20Ihnen%20sprechen." rel="noreferrer" target="_blank">
+<img alt="WhatsApp Icon" class="h-12 w-12 rounded-2xl object-contain bg-white p-2 shadow-sm" src="https://cdn-icons-png.flaticon.com/512/733/733585.png"/>
+<div>
+<p class="text-sm font-semibold" style="color:rgba(255,255,255,0.65);">WhatsApp</p>
+<p class="text-sm font-bold" style="color:#7dd3fc;">+49 1577 8739720</p>
+</div>
+</a>
+<a class="flex items-center gap-4 rounded-2xl border border-white/10 bg-white/10 p-4 transition hover:-translate-y-1 hover:bg-white/15 hover:shadow-lg" href="mailto:wahebwahbe100@gmail.com">
+<img alt="Email Icon" class="h-12 w-12 rounded-2xl object-contain bg-white p-2 shadow-sm" src="https://cdn-icons-png.flaticon.com/512/561/561127.png"/>
+<div>
+<p class="text-sm font-semibold" style="color:rgba(255,255,255,0.65);">E-Mail</p>
+<p class="text-sm font-bold break-all" style="color:#7dd3fc;">wahebwahbe100@gmail.com</p>
+</div>
+</a>
+<a class="flex items-center gap-4 rounded-2xl border border-white/10 bg-white/10 p-4 transition hover:-translate-y-1 hover:bg-white/15 hover:shadow-lg" href="https://www.instagram.com/_laxl7/" rel="noreferrer" target="_blank">
+<img alt="Instagram Icon" class="h-12 w-12 rounded-2xl object-contain bg-white p-2 shadow-sm" src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png"/>
+<div>
+<p class="text-sm font-semibold" style="color:rgba(255,255,255,0.65);">Instagram</p>
+<p class="text-sm font-bold" style="color:#7dd3fc;">@_laxl7</p>
+</div>
+</a>
+</div>
+<div class="mt-8 border-t border-white/10 pt-5">
+<details class="standorte-accordion rounded-3xl border border-white/10 bg-white/5 p-4">
+<summary class="flex cursor-pointer list-none items-center justify-between gap-4 text-left">
+<div>
+<p class="text-sm font-semibold uppercase tracking-[0.18em]" style="color:rgba(255,255,255,0.55);">Standorte</p>
+<p class="mt-1 text-sm" style="color:rgba(255,255,255,0.78);">Städte anzeigen und passende Standortseite öffnen</p>
+</div>
+<span class="standorte-chevron text-xl font-bold" style="color:#7dd3fc; transition:transform .25s ease;">⌄</span>
+</summary>
+<div class="mt-4 flex flex-wrap justify-center gap-x-5 gap-y-2 border-t border-white/10 pt-4"><a class="text-sm" href="pages/cities/webdesign-berlin.html" style="color:rgba(255,255,255,0.70);">Berlin</a> <a class="text-sm" href="pages/cities/webdesign-hamburg.html" style="color:rgba(255,255,255,0.70);">Hamburg</a> <a class="text-sm" href="pages/cities/webdesign-muenchen.html" style="color:rgba(255,255,255,0.70);">München</a> <a class="text-sm" href="pages/cities/webdesign-koeln.html" style="color:rgba(255,255,255,0.70);">Köln</a> <a class="text-sm" href="pages/cities/webdesign-frankfurt.html" style="color:rgba(255,255,255,0.70);">Frankfurt</a> <a class="text-sm" href="pages/cities/webdesign-stuttgart.html" style="color:rgba(255,255,255,0.70);">Stuttgart</a> <a class="text-sm" href="pages/cities/webdesign-duesseldorf.html" style="color:rgba(255,255,255,0.70);">Düsseldorf</a> <a class="text-sm" href="pages/cities/webdesign-dortmund.html" style="color:rgba(255,255,255,0.70);">Dortmund</a> <a class="text-sm" href="pages/cities/webdesign-essen.html" style="color:rgba(255,255,255,0.70);">Essen</a> <a class="text-sm" href="pages/cities/webdesign-leipzig.html" style="color:rgba(255,255,255,0.70);">Leipzig</a> <a class="text-sm" href="pages/cities/webdesign-bremen.html" style="color:rgba(255,255,255,0.70);">Bremen</a> <a class="text-sm" href="pages/cities/webdesign-dresden.html" style="color:rgba(255,255,255,0.70);">Dresden</a> <a class="text-sm" href="pages/cities/webdesign-hannover.html" style="color:rgba(255,255,255,0.70);">Hannover</a> <a class="text-sm" href="pages/cities/webdesign-nuernberg.html" style="color:rgba(255,255,255,0.70);">Nürnberg</a> <a class="text-sm" href="pages/cities/webdesign-duisburg.html" style="color:rgba(255,255,255,0.70);">Duisburg</a> <a class="text-sm" href="pages/cities/webdesign-bochum.html" style="color:rgba(255,255,255,0.70);">Bochum</a> <a class="text-sm" href="pages/cities/webdesign-wuppertal.html" style="color:rgba(255,255,255,0.70);">Wuppertal</a> <a class="text-sm" href="pages/cities/webdesign-bielefeld.html" style="color:rgba(255,255,255,0.70);">Bielefeld</a> <a class="text-sm" href="pages/cities/webdesign-bonn.html" style="color:rgba(255,255,255,0.70);">Bonn</a> <a class="text-sm" href="pages/cities/webdesign-muenster.html" style="color:rgba(255,255,255,0.70);">Münster</a></div>
+</details>
+<div class="mt-6 flex flex-wrap justify-center gap-x-5 gap-y-2 border-t border-white/10 pt-5">
+<a class="text-sm font-semibold" href="pages/ueber-uns.html" style="color:#7dd3fc;">Über uns</a>
+<a class="text-sm font-semibold" href="pages/legal/impressum.html" style="color:#7dd3fc;">Impressum</a>
+<a class="text-sm font-semibold" href="pages/legal/datenschutz.html" style="color:#7dd3fc;">Datenschutz</a>
+<a class="text-sm font-semibold" href="pages/standorte.html" style="color:#7dd3fc;">Standorte</a>
+</div>
+<p class="mt-5 text-center text-sm" style="color:rgba(255,255,255,0.55);">© 2026 Alle Rechte vorbehalten · Made with ❤️ in Germany</p>
+</div>
+</div>
+</div>
+</footer>
+<script>
+
+    const pageSteps = document.querySelectorAll('.page-step');
+
+    const pageStepObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('page-show');
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
+
+    pageSteps.forEach((section, index) => {
+      section.style.transitionDelay = `${Math.min(index * 0.08, 0.32)}s`;
+      pageStepObserver.observe(section);
+    });
+
+    const animatedItems = document.querySelectorAll('.fade-up');
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) entry.target.classList.add('show');
+      });
+    }, { threshold: 0.15 });
+
+    animatedItems.forEach((item) => observer.observe(item));
+
+    const typingElement = document.getElementById('typingText');
+
+    const typingLines = [
+      {
+        plain: 'design: "elegant",',
+        html: '<span class="code-key">design</span>: <span class="code-value">"elegant"</span>,'
+      },
+      {
+        plain: 'speed: "fast",',
+        html: '<span class="code-key">speed</span>: <span class="code-value">"fast"</span>,'
+      },
+      {
+        plain: 'mobile: true,',
+        html: '<span class="code-key">mobile</span>: <span class="code-value">true</span>,'
+      },
+      {
+        plain: 'trust: "strong",',
+        html: '<span class="code-key">trust</span>: <span class="code-value">"strong"</span>,'
+      }
+    ];
+
+    let typingLineIndex = 0;
+    let typingCharIndex = 0;
+    let deleting = false;
+
+    function renderPartialHTML(fullHTML, visibleChars) {
+      const wrapper = document.createElement('div');
+      wrapper.innerHTML = fullHTML;
+      let count = 0;
+
+      function walk(node) {
+        if (node.nodeType === Node.TEXT_NODE) {
+          const text = node.textContent || '';
+          if (count >= visibleChars) {
+            node.textContent = '';
+          } else if (count + text.length > visibleChars) {
+            node.textContent = text.slice(0, visibleChars - count);
+            count = visibleChars;
+          } else {
+            count += text.length;
+          }
+        } else if (node.nodeType === Node.ELEMENT_NODE) {
+          [...node.childNodes].forEach(walk);
+        }
+      }
+
+      [...wrapper.childNodes].forEach(walk);
+      return wrapper.innerHTML;
+    }
+
+    function runTypingEffect() {
+      if (!typingElement) return;
+      const current = typingLines[typingLineIndex];
+      const plainText = current.plain;
+
+      if (!deleting) {
+        typingCharIndex++;
+        typingElement.innerHTML = renderPartialHTML(current.html, typingCharIndex);
+
+        if (typingCharIndex >= plainText.length) {
+          deleting = true;
+          setTimeout(runTypingEffect, 1200);
+          return;
+        }
+      } else {
+        typingCharIndex--;
+        typingElement.innerHTML = renderPartialHTML(current.html, typingCharIndex);
+
+        if (typingCharIndex <= 0) {
+          deleting = false;
+          typingLineIndex = (typingLineIndex + 1) % typingLines.length;
+        }
+      }
+
+      setTimeout(runTypingEffect, deleting ? 40 : 80);
+    }
+
+    runTypingEffect();
+
+    async function submitForm(event) {
+      event.preventDefault();
+
+      const form = event.target;
+      const message = document.getElementById('formMessage');
+      const button = document.getElementById('submitButton');
+      const formData = new FormData(form);
+
+      if (button) {
+        button.disabled = true;
+        button.textContent = 'Wird gesendet...';
+      }
+
+      if (message) {
+        message.classList.add('hidden');
+        message.textContent = '';
+      }
+
+      try {
+        const response = await fetch(form.action, {
+          method: 'POST',
+          body: formData,
+          headers: { 'Accept': 'application/json' }
+        });
+
+        const result = await response.json();
+
+        if (response.ok && result.success) {
+          form.reset();
+          if (message) {
+            message.textContent = 'Vielen Dank für Ihre Anfrage! Wir haben Ihre Nachricht erhalten und melden uns so schnell wie möglich bei Ihnen.';
+            message.style.color = '#0ea5e9';
+            message.classList.remove('hidden');
+            message.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          }
+        } else {
+          throw new Error(result.message || 'Das Formular konnte nicht gesendet werden.');
+        }
+      } catch (error) {
+        if (message) {
+          message.textContent = 'Es gab ein Problem beim Senden. Bitte versuchen Sie es erneut oder kontaktieren Sie uns per WhatsApp.';
+          message.style.color = '#ef4444';
+          message.classList.remove('hidden');
+          message.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+      } finally {
+        if (button) {
+          button.disabled = false;
+          button.textContent = 'Anfrage senden';
+        }
+      }
+
+      return false;
+    }
+
+    function toggleMobileMenu() {
+      const menu = document.getElementById('mobileMenu');
+      menu.classList.toggle('hidden');
+    }
+
+    const navLinks = [...document.querySelectorAll('.nav-link')].filter(link => (link.getAttribute('href') || '').startsWith('#'));
+    const sections = navLinks.map(link => document.querySelector(link.getAttribute('href')));
+
+    window.addEventListener('scroll', () => {
+      let currentId = '';
+
+      sections.forEach(section => {
+        if (!section) return;
+        const top = section.offsetTop - 140;
+        const height = section.offsetHeight;
+
+        if (window.scrollY >= top && window.scrollY < top + height) {
+          currentId = section.id;
+        }
+      });
+
+      navLinks.forEach(link => {
+        link.classList.toggle('active', link.getAttribute('href') === '#' + currentId);
+      });
+    });
+
+    function setupWebsiteVideo() {
+      const shell = document.querySelector('.startseite-video-shell');
+      const video = shell ? shell.querySelector('video') : null;
+      const playButton = shell ? shell.querySelector('.startseite-video-play') : null;
+      if (!shell || !video || !playButton) return;
+
+      shell.classList.add('mobile-clean-controls');
+      video.muted = true;
+      video.loop = true;
+      video.autoplay = true;
+      video.playsInline = true;
+      video.removeAttribute('controls');
+      video.controls = false;
+
+      const startMutedAutoplay = () => {
+        video.muted = true;
+        video.loop = true;
+        video.play().catch(() => {});
+      };
+
+      const updateState = () => {
+        shell.classList.toggle('is-playing', !video.paused && !video.ended);
+        playButton.textContent = '▶';
+        playButton.setAttribute('aria-label', 'Video mit Ton von vorne starten');
+      };
+
+      const restartWithSound = (event) => {
+        event.preventDefault();
+        video.pause();
+        video.currentTime = 0;
+        video.muted = false;
+        video.loop = false;
+        video.controls = true;
+        video.play().catch(() => {});
+        updateState();
+      };
+
+      shell.addEventListener('click', restartWithSound);
+      video.addEventListener('canplay', startMutedAutoplay, { once: true });
+      video.addEventListener('play', updateState);
+      video.addEventListener('pause', updateState);
+      video.addEventListener('ended', updateState);
+      startMutedAutoplay();
+      updateState();
+    }
+
+    setupWebsiteVideo();
+
+
+
+    function setIphoneViewportHeight() {
+      document.documentElement.style.setProperty('--vh', `${window.innerHeight * 0.01}px`);
+    }
+
+    setIphoneViewportHeight();
+    window.addEventListener('resize', setIphoneViewportHeight);
+    window.addEventListener('orientationchange', setIphoneViewportHeight);
+
+    function showWebsiteImagesImmediately() {
+      const images = document.querySelectorAll('img[src*="website1."], img[src*="website2."], img[src*="website3."], img[src*="website4."], img[src*="business-site."], img[src*="booking-site."], img[src*="ecommerce-site."]');
+
+      images.forEach((img) => {
+        img.loading = 'eager';
+        img.decoding = 'sync';
+        img.fetchPriority = 'high';
+        img.style.opacity = '1';
+        img.style.visibility = 'visible';
+        img.style.display = 'block';
+      });
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', showWebsiteImagesImmediately);
+    } else {
+      showWebsiteImagesImmediately();
+    }
+
+    window.addEventListener('pageshow', showWebsiteImagesImmediately);
+
+  </script>
+
+<!-- ===== WahebSite KI Chat Assistant ===== -->
+<style>
+  .waheb-ai-widget {
+    position: fixed;
+    right: 22px;
+    bottom: 22px;
+    z-index: 100000;
+    font-family: 'Playfair Display', serif;
+    color: #eaf6ff;
+  }
+
+  .waheb-ai-panel {
+    width: min(430px, calc(100vw - 28px));
+    height: min(650px, calc(100vh - 110px));
+    max-height: 650px;
+    border-radius: 28px;
+    overflow: hidden;
+    display: none;
+    flex-direction: column;
+    border: 1px solid rgba(125,211,252,.28);
+    background: linear-gradient(180deg, rgba(12,30,54,.98), rgba(5,13,26,.98));
+    box-shadow: 0 26px 80px rgba(0,0,0,.48), 0 0 44px rgba(56,189,248,.16);
+    backdrop-filter: blur(18px);
+  }
+
+  .waheb-ai-widget.is-open .waheb-ai-panel { display: flex; }
+
+  .waheb-ai-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 14px;
+    padding: 16px 18px;
+    background: linear-gradient(90deg, #0ea5e9, #2563eb);
+    color: #ffffff;
+  }
+
+  .waheb-ai-brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    min-width: 0;
+  }
+
+  .waheb-ai-avatar {
+    position: relative;
+    width: 54px;
+    height: 54px;
+    border-radius: 999px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 auto;
+    background: radial-gradient(circle at 30% 20%, #ffffff, #bae6fd 50%, #0ea5e9);
+    border: 3px solid rgba(255,255,255,.72);
+    box-shadow: 0 12px 26px rgba(0,0,0,.24);
+    overflow: hidden;
+  }
+
+  .waheb-ai-avatar img {
+    width: 78%;
+    height: 78%;
+    object-fit: contain;
+    display: block;
+    filter: drop-shadow(0 4px 10px rgba(0,0,0,.18));
+  }
+
+  .waheb-ai-status-dot {
+    position: absolute;
+    right: -1px;
+    bottom: 4px;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: #22c55e;
+    border: 2px solid #ffffff;
+  }
+
+  .waheb-ai-title {
+    min-width: 0;
+  }
+
+  .waheb-ai-title strong {
+    display: block;
+    font-size: 1.15rem;
+    line-height: 1.1;
+    color: #ffffff !important;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .waheb-ai-title span {
+    display: block;
+    margin-top: 3px;
+    font-family: Arial, sans-serif;
+    font-size: .78rem;
+    font-weight: 700;
+    color: rgba(255,255,255,.82) !important;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .waheb-ai-close {
+    width: 42px;
+    height: 42px;
+    border: 0;
+    border-radius: 999px;
+    background: rgba(2,6,23,.25);
+    color: #ffffff;
+    font-size: 24px;
+    line-height: 1;
+    cursor: pointer;
+    transition: transform .2s ease, background .2s ease;
+  }
+
+  .waheb-ai-close:hover {
+    transform: rotate(90deg) scale(1.04);
+    background: rgba(2,6,23,.38);
+  }
+
+  .waheb-ai-note {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 11px 18px;
+    border-bottom: 1px solid rgba(125,211,252,.16);
+    background: rgba(255,255,255,.055);
+    font-family: Arial, sans-serif;
+    font-size: .82rem;
+    color: #cfe0f3 !important;
+  }
+
+  .waheb-ai-messages {
+    flex: 1;
+    min-height: 0;
+    overflow-y: auto;
+    padding: 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    scroll-behavior: smooth;
+  }
+
+  .waheb-ai-messages::-webkit-scrollbar { width: 8px; }
+  .waheb-ai-messages::-webkit-scrollbar-thumb {
+    background: rgba(56,189,248,.35);
+    border-radius: 999px;
+  }
+
+  .waheb-ai-row {
+    display: flex;
+    gap: 10px;
+    align-items: flex-end;
+  }
+
+  .waheb-ai-row.user {
+    justify-content: flex-end;
+  }
+
+  .waheb-ai-mini-avatar {
+    width: 31px;
+    height: 31px;
+    border-radius: 50%;
+    flex: 0 0 auto;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #bae6fd, #0ea5e9);
+    color: #061223;
+    font-weight: 900;
+    border: 1px solid rgba(255,255,255,.45);
+    font-family: Arial, sans-serif;
+  }
+
+  .waheb-ai-bubble {
+    max-width: 82%;
+    border-radius: 22px;
+    padding: 13px 15px;
+    font-family: Arial, sans-serif;
+    font-size: .95rem;
+    line-height: 1.65;
+    color: #eaf6ff !important;
+    border: 1px solid rgba(125,211,252,.20);
+    background: rgba(15,30,52,.92);
+    box-shadow: 0 12px 26px rgba(0,0,0,.20);
+  }
+
+  .waheb-ai-row.user .waheb-ai-bubble {
+    color: #ffffff !important;
+    background: linear-gradient(90deg, #0ea5e9, #2563eb);
+    border-color: rgba(255,255,255,.18);
+    border-bottom-right-radius: 8px;
+  }
+
+  .waheb-ai-row.bot .waheb-ai-bubble {
+    border-bottom-left-radius: 8px;
+  }
+
+  .waheb-ai-bubble a {
+    color: #7dd3fc !important;
+    font-weight: 800;
+    text-decoration: none;
+  }
+
+  .waheb-ai-bubble a:hover { text-decoration: underline; }
+
+  .waheb-ai-quick {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    padding: 0 18px 14px;
+    border-bottom: 1px solid rgba(125,211,252,.13);
+  }
+
+  .waheb-ai-chip {
+    border: 1px solid rgba(125,211,252,.24);
+    background: rgba(56,189,248,.10);
+    color: #dff6ff;
+    border-radius: 999px;
+    padding: 8px 11px;
+    font-family: Arial, sans-serif;
+    font-weight: 800;
+    font-size: .78rem;
+    cursor: pointer;
+    transition: transform .2s ease, background .2s ease, border-color .2s ease;
+  }
+
+  .waheb-ai-chip:hover {
+    transform: translateY(-2px);
+    background: rgba(56,189,248,.18);
+    border-color: rgba(125,211,252,.42);
+  }
+
+  .waheb-ai-inputbar {
+    padding: 14px;
+    border-top: 1px solid rgba(125,211,252,.16);
+    background: rgba(2,6,23,.38);
+  }
+
+  .waheb-ai-form {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .waheb-ai-input {
+    flex: 1;
+    min-width: 0;
+    height: 52px;
+    border-radius: 999px;
+    border: 1px solid rgba(125,211,252,.24);
+    background: rgba(255,255,255,.08);
+    color: #ffffff;
+    outline: none;
+    padding: 0 18px;
+    font-family: Arial, sans-serif;
+    font-size: .95rem;
+  }
+
+  .waheb-ai-input::placeholder { color: rgba(207,224,243,.65); }
+
+  .waheb-ai-input:focus {
+    border-color: rgba(56,189,248,.72);
+    box-shadow: 0 0 0 4px rgba(56,189,248,.13);
+  }
+
+  .waheb-ai-send {
+    width: 52px;
+    height: 52px;
+    border: 0;
+    border-radius: 999px;
+    cursor: pointer;
+    color: #ffffff;
+    font-size: 20px;
+    background: linear-gradient(90deg, #0ea5e9, #2563eb);
+    box-shadow: 0 12px 24px rgba(14,165,233,.26);
+    transition: transform .2s ease;
+  }
+
+  .waheb-ai-send:hover { transform: translateY(-2px) scale(1.03); }
+
+  .waheb-ai-footer-links {
+    margin-top: 10px;
+    text-align: center;
+    font-family: Arial, sans-serif;
+    font-size: .78rem;
+    color: rgba(207,224,243,.70) !important;
+  }
+
+  .waheb-ai-footer-links a {
+    color: #7dd3fc !important;
+    font-weight: 800;
+    text-decoration: none;
+  }
+
+  .waheb-ai-launcher {
+    width: 66px;
+    height: 66px;
+    border: 0;
+    border-radius: 999px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    float: right;
+    margin-top: 14px;
+    cursor: pointer;
+    color: #ffffff;
+    background:
+      radial-gradient(circle at 30% 20%, rgba(255,255,255,.24), transparent 28%),
+      linear-gradient(135deg, #0ea5e9, #2563eb);
+    box-shadow: 0 18px 42px rgba(14,165,233,.36), 0 0 0 6px rgba(56,189,248,.10);
+    transition: transform .25s ease, box-shadow .25s ease;
+  }
+
+  .waheb-ai-launcher:hover {
+    transform: translateY(-4px) scale(1.04);
+    box-shadow: 0 22px 52px rgba(14,165,233,.44), 0 0 0 9px rgba(56,189,248,.12);
+  }
+
+  .waheb-ai-widget.is-open .waheb-ai-launcher { display: none; }
+
+  .waheb-ai-launcher svg {
+    width: 30px;
+    height: 30px;
+  }
+
+  .waheb-ai-typing {
+    display: inline-flex;
+    gap: 5px;
+    align-items: center;
+    padding: 4px 0;
+  }
+
+  .waheb-ai-typing span {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: #7dd3fc;
+    opacity: .45;
+    animation: wahebAiTyping 1s infinite ease-in-out;
+  }
+
+  .waheb-ai-typing span:nth-child(2) { animation-delay: .15s; }
+  .waheb-ai-typing span:nth-child(3) { animation-delay: .3s; }
+
+  @keyframes wahebAiTyping {
+    0%, 80%, 100% { transform: translateY(0); opacity: .35; }
+    40% { transform: translateY(-5px); opacity: 1; }
+  }
+
+  body .whatsapp-side-button {
+    bottom: 104px !important;
+    transition: opacity .22s ease, transform .22s ease, bottom .22s ease;
+  }
+
+  body.waheb-ai-opened .whatsapp-side-button {
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(8px);
+  }
+
+  @media (max-width: 640px) {
+    .waheb-ai-widget {
+      right: 10px;
+      bottom: calc(10px + env(safe-area-inset-bottom));
+      left: 10px;
+    }
+
+    .waheb-ai-panel {
+      width: 100%;
+      height: min(640px, calc(100vh - 88px));
+      border-radius: 24px;
+    }
+
+    .waheb-ai-header { padding: 14px 14px; }
+    .waheb-ai-avatar { width: 50px; height: 50px; }
+    .waheb-ai-title strong { font-size: 1.06rem; }
+    .waheb-ai-title span { font-size: .72rem; }
+    .waheb-ai-messages { padding: 14px; }
+    .waheb-ai-bubble { max-width: 86%; font-size: .9rem; }
+    .waheb-ai-quick { padding: 0 14px 12px; }
+    .waheb-ai-chip { font-size: .72rem; padding: 7px 9px; }
+    .waheb-ai-launcher { width: 60px; height: 60px; }
+
+    body .whatsapp-side-button {
+      bottom: calc(82px + env(safe-area-inset-bottom)) !important;
+    }
+  }
+
+    @media (prefers-reduced-motion: reduce) {
+      .sakalli-network-drift,
+      .network-node {
+        animation: none !important;
+      }
+      .sakalli-network-layer {
+        transition: none !important;
+      }
+    }
+
+</style>
+
+<div class="waheb-ai-widget" id="wahebAiWidget" aria-live="polite">
+  <div class="waheb-ai-panel" role="dialog" aria-label="WahebSite KI-Assistent" aria-modal="false">
+    <div class="waheb-ai-header">
+      <div class="waheb-ai-brand">
+        <div class="waheb-ai-avatar" aria-hidden="true">
+          <img src="images/logo.png" alt="" onerror="this.style.display='none'; this.parentElement.insertAdjacentHTML('beforeend','<strong style=&quot;color:#061223;font-family:Arial,sans-serif;font-size:24px;&quot;>W</strong>');" />
+          <span class="waheb-ai-status-dot"></span>
+        </div>
+        <div class="waheb-ai-title">
+          <strong>Waheb AI</strong>
+          <span>KI-Assistent · WahebSite</span>
+        </div>
+      </div>
+      <button class="waheb-ai-close" type="button" aria-label="Chat schließen" id="wahebAiClose">×</button>
+    </div>
+
+    <div class="waheb-ai-note">🤖 Waheb AI ist eine künstliche Intelligenz – keine echte Person.</div>
+
+    <div class="waheb-ai-messages" id="wahebAiMessages"></div>
+
+    <div class="waheb-ai-quick" id="wahebAiQuick">
+      <button class="waheb-ai-chip" type="button" data-ask="Ich brauche eine neue Website">Neue Website</button>
+      <button class="waheb-ai-chip" type="button" data-ask="Wie lange dauert eine Website?">Dauer</button>
+      <button class="waheb-ai-chip" type="button" data-ask="Wie viele Seiten brauche ich?">Seitenumfang</button>
+      <button class="waheb-ai-chip" type="button" data-ask="Was kostet eine Website?">Preise</button>
+      <button class="waheb-ai-chip" type="button" data-ask="Ich möchte bei Google besser gefunden werden">SEO</button>
+      <button class="waheb-ai-chip" type="button" data-ask="Wie kann ich euch kontaktieren?">Kontakt</button>
+    </div>
+
+    <div class="waheb-ai-inputbar">
+      <form class="waheb-ai-form" id="wahebAiForm">
+        <input class="waheb-ai-input" id="wahebAiInput" type="text" autocomplete="off" placeholder="Deine Frage an Waheb AI..." aria-label="Nachricht eingeben" />
+        <button class="waheb-ai-send" type="submit" aria-label="Nachricht senden">➤</button>
+      </form>
+      <div class="waheb-ai-footer-links">
+        Lieber direkt? <a href="#contact">Kontaktformular</a> oder <a href="https://wa.me/4915778739720?text=Hallo%20WahebSite%2C%20ich%20habe%20eine%20Frage%20zu%20Webdesign%20oder%20SEO." rel="noreferrer" target="_blank">WhatsApp</a>
+      </div>
+    </div>
+  </div>
+
+  <button class="waheb-ai-launcher" id="wahebAiLauncher" type="button" aria-label="Waheb AI öffnen">
+    <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M7.5 8.5h9M7.5 12h5.8M5.8 18.2 3.5 20V6.8C3.5 4.7 5.2 3 7.3 3h9.4c2.1 0 3.8 1.7 3.8 3.8v7.6c0 2.1-1.7 3.8-3.8 3.8H5.8Z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </button>
+</div>
+
+<script>
+  (function () {
+    const widget = document.getElementById('wahebAiWidget');
+    const launcher = document.getElementById('wahebAiLauncher');
+    const closeBtn = document.getElementById('wahebAiClose');
+    const form = document.getElementById('wahebAiForm');
+    const input = document.getElementById('wahebAiInput');
+    const messages = document.getElementById('wahebAiMessages');
+    const quick = document.getElementById('wahebAiQuick');
+
+    if (!widget || !launcher || !closeBtn || !form || !input || !messages) return;
+
+    const whatsappHref = 'https://wa.me/4915778739720?text=' + encodeURIComponent('Hallo WahebSite, ich möchte über Webdesign/SEO sprechen.');
+    const emailHref = 'mailto:wahebwahbe100@gmail.com';
+
+    const answers = {
+      welcome: `Hallo! 👋 Ich bin <strong>Waheb AI</strong>, der digitale Assistent von <strong>WahebSite</strong>. Ich helfe dir bei Fragen zu Webdesign, SEO, Onlineshops, Ablauf, Dauer, Seitenumfang, Preisen und Kontaktmöglichkeiten.`,
+
+      website: `Sehr gerne. WahebSite erstellt moderne Websites für Unternehmen, Restaurants, Praxen, Onlineshops und lokale Dienstleister. Wichtig sind klares Design, schnelle Nutzerführung, mobile Optimierung, Vertrauen und starke Kontaktwege. <br><br>Für eine passende Empfehlung brauche ich meistens nur: Branche, Ziel der Website, gewünschte Seiten und ob SEO wichtig ist.`,
+      website_ar: `أكيد. WahebSite يصمّم مواقع حديثة للشركات، المطاعم، العيادات، المتاجر والخدمات المحلية. التركيز يكون على شكل احترافي، سرعة، وضوح، توافق مع الجوال وطرق تواصل قوية. <br><br>لأعطيك تصور مناسب، اكتب لي نوع مشروعك، المدينة، وعدد الصفحات التقريبي.`,
+
+      duration: `Die Dauer hängt vom Umfang ab. Bei WahebSite ist das Ziel: <strong>keine langen Wartezeiten</strong>. Als grobe Orientierung:<br><br>⚡ Onepager: ca. 1–2 Tage<br>🏢 Business-Website mit 4–6 Seiten: ca. 3–4 Tage<br>🚀 Website mit SEO-Seiten oder mehr Inhalt: meist ca. 3–4 Tage<br>🛒 Kleiner Onlineshop oder Buchungssystem: nach Absprache, Ziel ca. 3–4 Tage<br><br>Wichtig: Damit es schnell klappt, sollten Logo, Texte, Bilder und Kontaktdaten möglichst bereit sein.`,
+      duration_ar: `مدة تصميم الموقع تعتمد على حجمه، لكن هدف WahebSite أن لا تكون المدة طويلة. بشكل عام:<br><br>⚡ موقع صفحة واحدة: تقريبًا 1–2 يوم<br>🏢 موقع شركة 4–6 صفحات: تقريبًا 3–4 أيام<br>🚀 موقع مع صفحات SEO أو محتوى أكثر: غالبًا 3–4 أيام<br>🛒 متجر صغير أو نظام حجز: حسب الاتفاق، والهدف 3–4 أيام<br><br>مهم: كلما كان الشعار، النصوص، الصور وبيانات التواصل جاهزة، يتم التسليم أسرع.`,
+
+      pages: `Für viele Unternehmen reicht am Anfang eine klare Struktur mit 4–6 Seiten:<br><br>1. Startseite<br>2. Leistungen<br>3. Über uns<br>4. Projekte/Referenzen<br>5. Kontakt<br>6. Optional: SEO-Seiten für Städte oder einzelne Leistungen<br><br>Ein Onepager ist gut für kleine Angebote. Mehrere Seiten sind besser, wenn Google-Sichtbarkeit und ausführliche Informationen wichtig sind.`,
+      pages_ar: `غالبًا الموقع الاحترافي يبدأ من 4 إلى 6 صفحات:<br><br>1. الصفحة الرئيسية<br>2. الخدمات<br>3. من نحن<br>4. الأعمال أو المشاريع<br>5. التواصل<br>6. اختياري: صفحات SEO للمدن أو لكل خدمة<br><br>موقع صفحة واحدة مناسب للبداية، أما الموقع متعدد الصفحات فهو أفضل للظهور في Google.`,
+
+      scope: `Kurz gesagt: Für die meisten Projekte passen 4–6 Seiten. Die Umsetzung liegt bei WahebSite meistens bei ca. 3–4 Tagen, wenn Inhalte und Bilder bereit sind. Ein Onepager kann oft in ca. 1–2 Tagen fertig werden. Bei SEO-Seiten, Buchungssystem oder kleinem Onlineshop wird der Umfang vorher abgestimmt, das Ziel bleibt aber eine schnelle Umsetzung von ca. 3–4 Tagen.`,
+      scope_ar: `باختصار: أغلب المشاريع تحتاج 4–6 صفحات. عند WahebSite تكون مدة التنفيذ غالبًا 3–4 أيام إذا كان المحتوى والصور جاهزة. موقع صفحة واحدة ممكن يجهز تقريبًا خلال 1–2 يوم. إذا كان هناك صفحات SEO، نظام حجز أو متجر صغير، يتم الاتفاق على التفاصيل مسبقًا، لكن الهدف يبقى تسليم سريع خلال 3–4 أيام.`,
+
+      price: `Die Kosten hängen vom Umfang ab: Onepager, Business-Website, mehrere Unterseiten, SEO-Landingpages, Buchungssystem oder Onlineshop. <br><br>Damit WahebSite ein faires Angebot machen kann, sind diese Infos hilfreich: Branche, gewünschte Seiten, vorhandene Inhalte und Ziel der Website. Schreib uns direkt über das <a href="#contact">Kontaktformular</a> oder per <a href="${whatsappHref}" target="_blank" rel="noreferrer">WhatsApp</a>.`,
+      price_ar: `السعر يعتمد على حجم المشروع: صفحة واحدة، موقع شركة، صفحات كثيرة، SEO، نظام حجز أو متجر إلكتروني. <br><br>للحصول على عرض مناسب، أرسل نوع المشروع، عدد الصفحات، هل يوجد محتوى جاهز، وهل تريد SEO. تواصل عبر <a href="#contact">نموذج التواصل</a> أو <a href="${whatsappHref}" target="_blank" rel="noreferrer">WhatsApp</a>.`,
+
+      process: `Der Ablauf ist einfach:<br><br>1. Kurze Projektbesprechung<br>2. Inhalte, Ziel und Stil klären<br>3. Design und Struktur erstellen<br>4. Website umsetzen und mobil optimieren<br>5. Korrekturen und Feinschliff<br>6. Veröffentlichung und Übergabe<br><br>Du bekommst dabei eine klare Führung, damit der Prozess für dich einfach bleibt.`,
+      process_ar: `طريقة العمل سهلة:<br><br>1. فهم المشروع والهدف<br>2. تحديد الصفحات والمحتوى والشكل المطلوب<br>3. تصميم الهيكل والشكل<br>4. بناء الموقع وتحسينه للجوال<br>5. تعديلات ومراجعة<br>6. نشر الموقع وتسليمه<br><br>كل خطوة تكون واضحة حتى لا يكون الموضوع معقدًا عليك.`,
+
+      requirements: `Für den Start sind diese Dinge hilfreich:<br><br>✅ Logo, falls vorhanden<br>✅ Farben oder Stilwünsche<br>✅ Texte oder Stichpunkte zu deinen Leistungen<br>✅ Bilder, Referenzen oder Beispiele<br>✅ Kontaktdaten<br>✅ Wunsch-Domain, falls vorhanden<br><br>Wenn noch nicht alles fertig ist, ist das kein Problem. WahebSite kann auch bei Struktur und Texten unterstützen.`,
+      requirements_ar: `للبداية نحتاج غالبًا:<br><br>✅ الشعار إن وجد<br>✅ الألوان أو ستايل تحبه<br>✅ نصوص أو نقاط عن خدماتك<br>✅ صور أو أمثلة أعمال<br>✅ بيانات التواصل<br>✅ الدومين إن وجد<br><br>إذا لم تكن كل الأشياء جاهزة، لا مشكلة. يمكن مساعدتك في ترتيب المحتوى والنصوص.`,
+
+      seo: `Bei SEO geht es darum, dass deine Website bei Google besser gefunden wird. WahebSite achtet auf saubere Struktur, lokale Landingpages, schnelle Ladezeiten, klare Texte, interne Verlinkung und gute Nutzerführung. <br><br>Für eine erste Einschätzung kannst du mir deine Branche und Stadt schreiben.`,
+      seo_ar: `SEO يعني تحسين ظهور موقعك في Google. WahebSite يهتم ببنية الموقع، سرعة التحميل، النصوص الواضحة، صفحات المدن، الروابط الداخلية وتجربة المستخدم. <br><br>اكتب لي المجال والمدينة لأعطيك تصورًا أوليًا.`,
+
+      localSeo: `Ja, lokale SEO-Seiten können sinnvoll sein, wenn du Kunden in bestimmten Städten gewinnen möchtest. Wichtig ist, dass jede Seite echten Mehrwert hat und nicht nur der Stadtname ausgetauscht wird.`,
+      localSeo_ar: `نعم، صفحات SEO للمدن مفيدة إذا تريد عملاء من مدن معينة. المهم أن تكون كل صفحة مفيدة فعلًا وليست نسخة مكررة فقط مع تغيير اسم المدينة.`,
+
+      mobile: `Ja. Eine moderne Website sollte auf Handy, Tablet und Desktop sauber funktionieren. WahebSite achtet auf responsive Design, gut lesbare Texte, schnelle Kontaktbuttons und eine klare mobile Nutzerführung.`,
+      mobile_ar: `نعم. الموقع يجب أن يعمل بشكل ممتاز على الجوال، التابلت والكمبيوتر. يتم الاهتمام بالتصميم المتجاوب، وضوح النصوص، أزرار التواصل وسهولة الاستخدام.`,
+
+      domainHosting: `Domain und Hosting können in das Projekt eingeplant werden. Wenn du bereits Domain oder Hosting hast, kann die Website darauf vorbereitet werden. Wenn nicht, kann WahebSite dir erklären, was du brauchst. SSL/HTTPS sollte immer aktiviert sein.`,
+      domainHosting_ar: `يمكن ترتيب الدومين والاستضافة ضمن المشروع. إذا لديك دومين أو استضافة يمكن تجهيز الموقع عليها، وإذا لا يوجد، يمكن توضيح ما تحتاجه. من المهم تفعيل SSL/HTTPS دائمًا.`,
+
+      content: `Wenn du noch keine Texte oder Bilder hast, ist das kein Hindernis. Für den Start reichen oft Stichpunkte zu deinen Leistungen. Daraus kann eine klare Seitenstruktur und ein professioneller Textaufbau entstehen. Eigene Bilder sind gut, aber es können auch passende Platzhalter oder Bildkonzepte genutzt werden.`,
+      content_ar: `إذا ليس لديك نصوص أو صور جاهزة، هذا ليس عائقًا. كبداية تكفي نقاط عن خدماتك، وبعدها يمكن بناء هيكل ونصوص احترافية. الصور الخاصة أفضل، لكن يمكن أيضًا استخدام أفكار صور أو صور مؤقتة مناسبة.`,
+
+      maintenance: `Nach der Erstellung kann die Website bei Bedarf weiter betreut werden: kleine Änderungen, neue Inhalte, technische Pflege, SEO-Erweiterungen oder neue Landingpages. Der genaue Umfang wird je nach Bedarf abgestimmt.`,
+      maintenance_ar: `بعد الانتهاء يمكن متابعة الموقع عند الحاجة: تعديلات بسيطة، إضافة محتوى، صيانة تقنية، تحسين SEO أو إضافة صفحات جديدة. يتم الاتفاق حسب احتياجك.`,
+
+      redesign: `Ja, eine bestehende Website kann überarbeitet werden. Typische Ziele sind moderneres Design, bessere mobile Ansicht, schnellere Kontaktwege, klarere Texte und bessere SEO-Struktur.`,
+      redesign_ar: `نعم، يمكن تطوير موقع موجود مسبقًا. غالبًا يكون الهدف تصميم أحدث، تحسين الجوال، تسهيل التواصل، ترتيب النصوص وتحسين SEO.`,
+
+      shop: `Ja, WahebSite kann auch Onlineshops und verkaufsstarke Produktseiten umsetzen. Dabei zählen ein klares Layout, Vertrauen, einfache Bedienung, gute mobile Darstellung und ein sauberer Weg zur Anfrage oder zum Kauf.`,
+      shop_ar: `نعم، يمكن تصميم متجر إلكتروني أو صفحات منتجات قوية. المهم أن يكون التصميم واضحًا، يعطي ثقة، سهل الاستخدام ومناسبًا للجوال.`,
+
+      booking: `Für Termine oder Anfragen können passende Kontaktwege eingebaut werden: Anfrageformular, WhatsApp, Telefonbutton oder ein Buchungssystem. Welche Lösung passt, hängt von deinem Ablauf ab.`,
+      booking_ar: `يمكن إضافة طرق حجز أو طلب موعد مثل نموذج تواصل، زر واتساب، زر اتصال أو نظام حجز. الحل المناسب يعتمد على طريقة عملك.`,
+
+      multilingual: `Mehrsprachige Websites sind möglich, zum Beispiel Deutsch/Arabisch oder Deutsch/Englisch. Wichtig ist eine klare Sprachstruktur, damit Nutzer und Google die Inhalte gut verstehen.`,
+      multilingual_ar: `نعم، يمكن عمل موقع بعدة لغات مثل الألمانية/العربية أو الألمانية/الإنجليزية. المهم تنظيم اللغات بشكل واضح للمستخدم وGoogle.`,
+
+      legal: `Für Deutschland sind rechtliche Seiten wie Impressum und Datenschutz wichtig. WahebSite kann die Seiten technisch einbauen, die rechtssicheren Inhalte sollten aber vom Kunden oder einer passenden rechtlichen Quelle kommen.`,
+      legal_ar: `في ألمانيا صفحات مثل Impressum و Datenschutz مهمة. يمكن إدخالها تقنيًا في الموقع، لكن النصوص القانونية الدقيقة يجب أن تأتي من العميل أو مصدر قانوني مناسب.`,
+
+      contact: `Du kannst WahebSite direkt erreichen über:<br><br>📱 WhatsApp: <a href="${whatsappHref}" target="_blank" rel="noreferrer">+49 1577 8739720</a><br>✉️ E-Mail: <a href="${emailHref}">wahebwahbe100@gmail.com</a><br>📝 Oder über das <a href="#contact">Kontaktformular</a> unten auf der Seite.`,
+      contact_ar: `يمكنك التواصل مع WahebSite مباشرة عبر:<br><br>📱 واتساب: <a href="${whatsappHref}" target="_blank" rel="noreferrer">+49 1577 8739720</a><br>✉️ البريد: <a href="${emailHref}">wahebwahbe100@gmail.com</a><br>📝 أو عبر <a href="#contact">نموذج التواصل</a> في أسفل الصفحة.`,
+
+      greeting: `Hallo 👋 Schön, dass du da bist. Frag mich gerne zu Webdesign, SEO, Preisen, Dauer, Seitenumfang, Hosting oder Kontakt.`,
+      greeting_ar: `أهلًا وسهلًا 👋 اسألني عن تصميم المواقع، SEO، الأسعار، المدة، عدد الصفحات، الاستضافة أو التواصل.`,
+
+      thanks: `Sehr gerne 😊 Wenn du möchtest, kannst du mir kurz deine Branche und Stadt schreiben, dann gebe ich dir eine passendere Empfehlung.`,
+      thanks_ar: `على الرحب والسعة 😊 اكتب لي نوع مشروعك والمدينة، وسأعطيك اقتراحًا أنسب.`,
+
+      fallback: `Ich helfe dir gerne weiter. Ich kann Fragen zu Website-Erstellung, SEO, Preisen, Dauer, Seitenumfang, Onlineshops, Domain/Hosting, Pflege, Buchungssystemen und Kontakt beantworten. Schreib einfach kurz, was du brauchst.`,
+      fallback_ar: `أقدر أساعدك. اسألني عن تصميم الموقع، SEO، السعر، المدة، عدد الصفحات، المتجر، الدومين والاستضافة، الصيانة، نظام الحجز أو طرق التواصل. اكتب لي ما تحتاجه باختصار.`
+    };
+
+    function pick(key, isArabic) {
+      return isArabic && answers[key + '_ar'] ? answers[key + '_ar'] : answers[key];
+    }
+
+    function scrollToBottom() {
+      messages.scrollTop = messages.scrollHeight;
+    }
+
+    function addMessage(role, html) {
+      const row = document.createElement('div');
+      row.className = 'waheb-ai-row ' + role;
+
+      if (role === 'bot') {
+        const avatar = document.createElement('div');
+        avatar.className = 'waheb-ai-mini-avatar';
+        avatar.textContent = 'W';
+        row.appendChild(avatar);
+      }
+
+      const bubble = document.createElement('div');
+      bubble.className = 'waheb-ai-bubble';
+      if (role === 'user') {
+        bubble.textContent = html;
+      } else {
+        bubble.innerHTML = html;
+      }
+
+      row.appendChild(bubble);
+      messages.appendChild(row);
+      scrollToBottom();
+      return row;
+    }
+
+    function addTyping() {
+      return addMessage('bot', '<span class="waheb-ai-typing"><span></span><span></span><span></span></span>');
+    }
+
+    function getAnswer(text) {
+      const q = (text || '').toLowerCase();
+      const hasArabic = /[\u0600-\u06FF]/.test(q);
+
+      const has = (pattern) => pattern.test(q);
+
+      if (has(/danke|vielen dank|super|شكرا|شكرًا|ممتاز|تمام|حلو/)) return pick('thanks', hasArabic);
+      if (has(/^(hi|hallo|hey|servus|guten tag|مرحبا|هلا|السلام|اهلا|أهلا)/)) return pick('greeting', hasArabic);
+
+      const asksTime = has(/dauer|wie lange|zeit|fertig|lieferzeit|tage|wochen|مدة|وقت|كم ياخذ|كم ياخد|قديش|متى يخلص|اسبوع|أسبوع|ايام|أيام/);
+      const asksPages = has(/wie viele seiten|seitenanzahl|seitenumfang|unterseiten|onepager|landingpage|landingpages|كم صفحة|كم صفحه|عدد الصفحات|صفحات|صفحه|صفحة/);
+      if (asksTime && asksPages) return pick('scope', hasArabic);
+      if (asksTime) return pick('duration', hasArabic);
+      if (asksPages) return pick('pages', hasArabic);
+
+      if (has(/whatsapp|kontakt|telefon|email|e-mail|mail|nummer|anrufen|erreichen|adresse|تواصل|واتساب|رقم|ايميل|إيميل|بريد|اتصال|تلفون/)) return pick('contact', hasArabic);
+      if (has(/preis|preise|kosten|kostet|angebot|budget|paket|tarif|كم|سعر|تكلفة|يكلف|العرض|ميزانية/)) return pick('price', hasArabic);
+      if (has(/ablauf|prozess|schritte|wie läuft|starten|beginnen|طريقة العمل|الخطوات|كيف تبدأ|كيف نبدأ|مراحل/)) return pick('process', hasArabic);
+      if (has(/braucht ihr|benötigt|unterlagen|material|logo|bilder|texte|inhalt|content|ماذا تحتاج|شو تحتاج|الشعار|صور|نصوص|محتوى|اللوغو|اللوجو/)) return pick('requirements', hasArabic);
+      if (has(/domain|hosting|host|ssl|https|server|استضافة|دومين|نطاق|سيرفر/)) return pick('domainHosting', hasArabic);
+      if (has(/wartung|pflege|support|ändern|änderung|updates|betreuung|صيانة|دعم|تعديل|تعديلات|تحديث/)) return pick('maintenance', hasArabic);
+      if (has(/relaunch|redesign|überarbeiten|alte website|bestehende website|تطوير موقع|تعديل موقع|موقع موجود|تحديث موقع/)) return pick('redesign', hasArabic);
+      if (has(/mehrsprachig|sprache|sprachen|arabisch|englisch|deutsch|لغتين|لغة|لغات|عربي|الماني|ألماني|انجليزي|إنجليزي/)) return pick('multilingual', hasArabic);
+      if (has(/impressum|datenschutz|dsgvo|rechtlich|legal|privacy|قانون|قانوني|خصوصية|سياسة الخصوصية/)) return pick('legal', hasArabic);
+      if (has(/google business|google maps|lokal|local seo|stadt|städte|nähe|محلي|خرائط|جوجل ماب|مدن|مدينة/)) return pick('localSeo', hasArabic);
+      if (has(/seo|google|ranking|gefunden|suchmaschine|keywords|محركات|جوجل|ظهور|بحث|كلمات مفتاحية/)) return pick('seo', hasArabic);
+      if (has(/mobile|handy|smartphone|responsive|tablet|الجوال|الموبايل|الهاتف|متجاوب|تابلت/)) return pick('mobile', hasArabic);
+      if (has(/shop|onlineshop|ecommerce|e-commerce|produkt|produkte|verkaufen|متجر|بيع|منتجات|اونلاين|أونلاين/)) return pick('shop', hasArabic);
+      if (has(/buchung|booking|termin|kalender|موعد|حجز|رزنامة|تقويم/)) return pick('booking', hasArabic);
+      if (has(/texte|bilder|fotos|copywriting|content|نصوص|صور|محتوى|كتابة/)) return pick('content', hasArabic);
+      if (has(/website|webseite|homepage|webdesign|seite|design|موقع|تصميم|ويب/)) return pick('website', hasArabic);
+
+      return pick('fallback', hasArabic);
+    }
+
+    function ask(text) {
+      const clean = (text || '').trim();
+      if (!clean) return;
+      addMessage('user', clean);
+      input.value = '';
+
+      const typing = addTyping();
+      window.setTimeout(() => {
+        typing.remove();
+        addMessage('bot', getAnswer(clean));
+      }, 520 + Math.min(clean.length * 12, 500));
+    }
+
+    function openChat() {
+      widget.classList.add('is-open');
+      document.body.classList.add('waheb-ai-opened');
+      if (!messages.dataset.started) {
+        messages.dataset.started = 'true';
+        addMessage('bot', answers.welcome);
+      }
+      window.setTimeout(() => input.focus(), 120);
+    }
+
+    function closeChat() {
+      widget.classList.remove('is-open');
+      document.body.classList.remove('waheb-ai-opened');
+    }
+
+    launcher.addEventListener('click', openChat);
+    closeBtn.addEventListener('click', closeChat);
+
+    form.addEventListener('submit', function (event) {
+      event.preventDefault();
+      ask(input.value);
+    });
+
+    quick.addEventListener('click', function (event) {
+      const button = event.target.closest('[data-ask]');
+      if (!button) return;
+      ask(button.getAttribute('data-ask'));
+    });
+
+    window.addEventListener('keydown', function (event) {
+      if (event.key === 'Escape' && widget.classList.contains('is-open')) closeChat();
+    });
+
+    window.setTimeout(() => {
+      if (!widget.classList.contains('is-open')) {
+        launcher.setAttribute('title', 'Waheb AI öffnen');
+      }
+    }, 1200);
+  })();
+</script>
+<!-- ===== /WahebSite KI Chat Assistant ===== -->
+
+
+<script>
+  (function () {
+    const hero = document.getElementById('home');
+    if (!hero) return;
+
+    const layers = Array.from(hero.querySelectorAll('.sakalli-network-layer'));
+    if (!layers.length || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+    let rafId = 0;
+    let targetX = 0;
+    let targetY = 0;
+    let currentX = 0;
+    let currentY = 0;
+    let heroVisible = true;
+
+    function applyFrame() {
+      rafId = 0;
+      if (!heroVisible) return;
+
+      currentX += (targetX - currentX) * 0.11;
+      currentY += (targetY - currentY) * 0.11;
+
+      layers.forEach((layer, index) => {
+        const depth = Number(layer.dataset.depth || 0.5);
+        const direction = index % 2 === 0 ? 1 : -1;
+        const moveX = currentX * 26 * depth * direction;
+        const moveY = currentY * 18 * depth;
+        const rotate = currentX * 0.5 * depth * direction;
+
+        layer.style.transform = `translate3d(${moveX.toFixed(2)}px, ${moveY.toFixed(2)}px, 0) rotate(${rotate.toFixed(3)}deg)`;
+      });
+
+      const stillMoving = Math.abs(targetX - currentX) > 0.001 || Math.abs(targetY - currentY) > 0.001;
+      if (stillMoving) rafId = requestAnimationFrame(applyFrame);
+    }
+
+    function requestFrame() {
+      if (!rafId && heroVisible) rafId = requestAnimationFrame(applyFrame);
+    }
+
+    function updatePointer(event) {
+      const rect = hero.getBoundingClientRect();
+      targetX = ((event.clientX - rect.left) / rect.width - 0.5) * 2;
+      targetY = ((event.clientY - rect.top) / rect.height - 0.5) * 2;
+      hero.classList.add('is-pointer-active');
+      requestFrame();
+    }
+
+    function resetPointer() {
+      targetX = 0;
+      targetY = 0;
+      hero.classList.remove('is-pointer-active');
+      requestFrame();
+    }
+
+    hero.addEventListener('pointermove', updatePointer, { passive: true });
+    hero.addEventListener('pointerleave', resetPointer, { passive: true });
+    window.addEventListener('blur', resetPointer);
+
+    if ('IntersectionObserver' in window) {
+      const visibilityObserver = new IntersectionObserver((entries) => {
+        heroVisible = entries[0]?.isIntersecting ?? true;
+        if (!heroVisible && rafId) {
+          cancelAnimationFrame(rafId);
+          rafId = 0;
+        } else if (heroVisible) {
+          requestFrame();
+        }
+      }, { threshold: 0 });
+      visibilityObserver.observe(hero);
+    }
+
+    window.addEventListener('pagehide', () => {
+      if (rafId) cancelAnimationFrame(rafId);
+    }, { once: true });
+  })();
+</script>
+
+
+<script>
+(function () {
+  const cards = document.querySelectorAll('[data-project-card]');
+  const finePointer = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+  if (!cards.length || !finePointer || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+  cards.forEach((card) => {
+    let rafId = 0;
+    let latestEvent = null;
+
+    const renderTilt = () => {
+      rafId = 0;
+      if (!latestEvent) return;
+
+      const rect = card.getBoundingClientRect();
+      const x = (latestEvent.clientX - rect.left) / rect.width;
+      const y = (latestEvent.clientY - rect.top) / rect.height;
+      card.style.setProperty('--ry', `${(x - 0.5) * 4.2}deg`);
+      card.style.setProperty('--rx', `${(0.5 - y) * 3.4}deg`);
+      card.style.setProperty('--mx', `${x * 100}%`);
+      card.style.setProperty('--my', `${y * 100}%`);
+    };
+
+    card.addEventListener('pointermove', (event) => {
+      latestEvent = event;
+      if (!rafId) rafId = requestAnimationFrame(renderTilt);
+    }, { passive: true });
+
+    card.addEventListener('pointerleave', () => {
+      latestEvent = null;
+      if (rafId) {
+        cancelAnimationFrame(rafId);
+        rafId = 0;
+      }
+      card.style.setProperty('--ry', '0deg');
+      card.style.setProperty('--rx', '0deg');
+      card.style.setProperty('--mx', '50%');
+      card.style.setProperty('--my', '50%');
+    }, { passive: true });
+  });
+})();
+</script>
+
+
+<script>
+(function initProjectScreenshots() {
+  const shots = document.querySelectorAll('.waheb-project-shot[data-sources]');
+
+  shots.forEach((img) => {
+    const preview = img.closest('.waheb-project-preview');
+    const sources = (img.dataset.sources || '').split('|').filter(Boolean);
+    let index = Math.max(0, sources.indexOf(img.getAttribute('src')));
+
+    if (preview) preview.classList.add('is-loading');
+
+    const showLoaded = () => {
+      img.classList.add('is-loaded');
+      if (preview) {
+        preview.classList.remove('is-loading');
+        preview.classList.add('has-shot');
+      }
+    };
+
+    const loadNext = () => {
+      index += 1;
+      if (index < sources.length) {
+        img.classList.remove('is-loaded');
+        img.src = sources[index];
+        return;
+      }
+      if (preview) preview.classList.remove('is-loading');
+      img.style.display = 'none';
+    };
+
+    img.addEventListener('load', () => {
+      if (img.naturalWidth >= 500 && img.naturalHeight >= 280) {
+        showLoaded();
+      } else {
+        loadNext();
+      }
+    });
+
+    img.addEventListener('error', loadNext);
+
+    if (img.complete) {
+      if (img.naturalWidth >= 500 && img.naturalHeight >= 280) showLoaded();
+      else loadNext();
+    }
+  });
+})();
+</script>
+
+
+<script id="waheb-project-scroll-effects-js">
+(function initProjectScrollEffects() {
+  const section = document.getElementById('projects');
+  if (!section) return;
+
+  const cards = Array.from(section.querySelectorAll('[data-project-card]'));
+  if (!cards.length) return;
+
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (reduceMotion || !('IntersectionObserver' in window)) {
+    cards.forEach((card) => card.classList.add('project-reveal-in', 'project-motion-done'));
+    return;
+  }
+
+  section.classList.add('projects-motion-ready');
+
+  cards.forEach((card, index) => {
+    const preview = card.querySelector('.waheb-project-preview');
+    if (preview && !preview.querySelector('.waheb-project-gradient-wipe')) {
+      const wipe = document.createElement('span');
+      wipe.className = 'waheb-project-gradient-wipe';
+      wipe.setAttribute('aria-hidden', 'true');
+      preview.appendChild(wipe);
+    }
+
+    card.style.setProperty('--reveal-x', index % 2 ? '18px' : '-18px');
+    card.style.setProperty('--reveal-delay', `${index % 2 ? 65 : 0}ms`);
+  });
+
+  const revealObserver = new IntersectionObserver((entries, observer) => {
+    entries.forEach((entry) => {
+      if (!entry.isIntersecting) return;
+
+      const card = entry.target;
+      card.classList.add('project-reveal-in');
+      observer.unobserve(card);
+
+      window.setTimeout(() => {
+        card.classList.add('project-motion-done');
+      }, 950);
+    });
+  }, {
+    threshold: 0.08,
+    rootMargin: '0px 0px -5% 0px'
+  });
+
+  cards.forEach((card) => revealObserver.observe(card));
+})();
+</script>
+</body>
+</html>
