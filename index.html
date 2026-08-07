@@ -2844,6 +2844,17 @@
     content: "↗";
     font: 800 .88rem/1 'Manrope', sans-serif;
   }
+  .waheb-project-live--svg::after {
+    content: none;
+    display: none;
+  }
+  .waheb-project-live--svg svg {
+    display: block !important;
+    width: 16px;
+    height: 16px;
+    margin: 0 !important;
+    flex: 0 0 auto;
+  }
   .waheb-project-preview.is-loading::after {
     left: .45rem;
     bottom: .45rem;
@@ -2866,7 +2877,15 @@
   .waheb-project-type { font-size: .5rem; }
   .waheb-project-index { display: none; }
   .waheb-project-name { font-size: clamp(.78rem, 3.9vw, 1rem); }
-  .waheb-project-description { display: none; }
+  .waheb-project-description {
+    display: block;
+    margin-top: .4rem;
+    font-size: .68rem;
+    line-height: 1.5;
+    overflow: visible;
+    -webkit-line-clamp: unset;
+    -webkit-box-orient: initial;
+  }
   .waheb-project-live { width: 27px; height: 27px; top: .42rem; right: .42rem; }
 }
 
@@ -3907,7 +3926,7 @@
         <div class="waheb-project-preview">
           <div class="waheb-project-fallback"><strong>SeniorTrainer</strong><small>wahebwahbe100-byte.github.io/SeniorTrainer</small></div>
           <img class="waheb-project-shot" src="images/Projekte16.png" data-sources="images/Projekte16.png" alt="Vorschau der Website SeniorTrainer" loading="lazy" decoding="async"/>
-          <span class="waheb-project-live">Website öffnen <svg aria-hidden="true" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block; vertical-align:-3px; margin-left:4px;"><path d="M7 17 17 7"></path><path d="M9 7h8v8"></path></svg></span>
+          <span class="waheb-project-live waheb-project-live--svg">Website öffnen <svg aria-hidden="true" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block; vertical-align:-3px; margin-left:4px;"><path d="M7 17 17 7"></path><path d="M9 7h8v8"></path></svg></span>
         </div>
         <div class="waheb-project-content">
           <div class="waheb-project-meta">
