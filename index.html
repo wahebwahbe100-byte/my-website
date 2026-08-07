@@ -2805,6 +2805,20 @@
   }
 }
 
+.waheb-arrow-svg {
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+  flex: 0 0 auto;
+  vertical-align: -0.14em;
+}
+
+.waheb-project-live .waheb-arrow-svg {
+  width: 16px;
+  height: 16px;
+  margin-left: 4px;
+}
+
 @media (max-width: 820px) {
   #projects.waheb-projects { padding: 5.5rem .8rem 6rem; }
   .waheb-projects-grid {
@@ -2841,14 +2855,14 @@
     font-size: 0;
   }
   .waheb-project-live::after {
-    content: "↗";
-    font: 800 .88rem/1 'Manrope', sans-serif;
+    content: none !important;
+    display: none !important;
   }
   .waheb-project-live--svg::after {
     content: none;
     display: none;
   }
-  .waheb-project-live--svg svg {
+  .waheb-project-live svg {
     display: block !important;
     width: 16px;
     height: 16px;
@@ -3573,7 +3587,7 @@
     </nav>
 
     <div class="sakalli-nav-actions">
-      <a class="sakalli-blog-btn" href="#contact">Anfragen <span aria-hidden="true">→</span></a>
+      <a class="sakalli-blog-btn" href="#contact">Anfragen <svg class="waheb-arrow-svg" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg></a>
       <button class="sakalli-mobile-toggle mobile-nav-button" type="button" aria-label="Menü öffnen" onclick="toggleMobileMenu()">☰</button>
     </div>
   </div>
@@ -3665,7 +3679,7 @@
     <p class="sakalli-hero-copy"><span class="hero-copy-line">Websites und SEO-Lösungen, die einfach tun, was sie sollen.</span><span class="hero-copy-line">Direkt vom Entwickler, klar umgesetzt und fair kalkuliert.</span></p>
 
     <div class="sakalli-hero-action-row">
-      <a class="sakalli-hero-cta" href="#contact">Projekt anfragen <span aria-hidden="true">→</span></a>
+      <a class="sakalli-hero-cta" href="#contact">Projekt anfragen <svg class="waheb-arrow-svg" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg></a>
       <svg class="sakalli-robot" viewBox="0 0 100 100" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
   <defs>
     <linearGradient id="robotBody" x1="24" y1="22" x2="79" y2="88" gradientUnits="userSpaceOnUse">
@@ -3701,7 +3715,7 @@
         <div class="waheb-project-preview">
           <div class="waheb-project-fallback"><strong>Hausverwaltung Böhme</strong><small>boehme-hv.de</small></div>
           <img class="waheb-project-shot" src="images/Projekte1.png" data-sources="images/Projekte1.png" alt="Vorschau der Website Hausverwaltung Böhme" loading="eager" decoding="async"/>
-          <span class="waheb-project-live">Website öffnen <span aria-hidden="true">↗</span></span>
+          <span class="waheb-project-live waheb-project-live--svg">Website öffnen <svg class="waheb-arrow-svg" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"></path><path d="M9 7h8v8"></path></svg></span>
         </div>
         <div class="waheb-project-content">
           <div class="waheb-project-meta">
@@ -3716,7 +3730,7 @@
         <div class="waheb-project-preview">
           <div class="waheb-project-fallback"><strong>Eis Spezial</strong><small>eis-spezial.de</small></div>
           <img class="waheb-project-shot" src="images/Projekte2.png" data-sources="images/Projekte2.png" alt="Vorschau der Website Eis Spezial" loading="eager" decoding="async"/>
-          <span class="waheb-project-live">Website öffnen <span aria-hidden="true">↗</span></span>
+          <span class="waheb-project-live waheb-project-live--svg">Website öffnen <svg class="waheb-arrow-svg" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"></path><path d="M9 7h8v8"></path></svg></span>
         </div>
         <div class="waheb-project-content">
           <div class="waheb-project-meta">
@@ -3731,7 +3745,7 @@
         <div class="waheb-project-preview">
           <div class="waheb-project-fallback"><strong>ANKER Caravan Berlin</strong><small>ankercaravanberlin.de</small></div>
           <img class="waheb-project-shot" src="images/Projekte3.png" data-sources="images/Projekte3.png" alt="Vorschau der Website ANKER Caravan Berlin" loading="lazy" decoding="async"/>
-          <span class="waheb-project-live">Website öffnen <span aria-hidden="true">↗</span></span>
+          <span class="waheb-project-live waheb-project-live--svg">Website öffnen <svg class="waheb-arrow-svg" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"></path><path d="M9 7h8v8"></path></svg></span>
         </div>
         <div class="waheb-project-content">
           <div class="waheb-project-meta">
@@ -3746,7 +3760,7 @@
         <div class="waheb-project-preview">
           <div class="waheb-project-fallback"><strong>Handwerk Plus 24</strong><small>handwerk-plus24.de</small></div>
           <img class="waheb-project-shot" src="images/Projekte4.png" data-sources="images/Projekte4.png" alt="Vorschau der Website Handwerk Plus 24" loading="lazy" decoding="async"/>
-          <span class="waheb-project-live">Website öffnen <span aria-hidden="true">↗</span></span>
+          <span class="waheb-project-live waheb-project-live--svg">Website öffnen <svg class="waheb-arrow-svg" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"></path><path d="M9 7h8v8"></path></svg></span>
         </div>
         <div class="waheb-project-content">
           <div class="waheb-project-meta">
@@ -3761,7 +3775,7 @@
         <div class="waheb-project-preview">
           <div class="waheb-project-fallback"><strong>Gebäudeservice Böhme</strong><small>gebaeudeserviceboehme.de</small></div>
           <img class="waheb-project-shot" src="images/Projekte5.png" data-sources="images/Projekte5.png" alt="Vorschau der Website Gebäudeservice Böhme" loading="lazy" decoding="async"/>
-          <span class="waheb-project-live">Website öffnen <span aria-hidden="true">↗</span></span>
+          <span class="waheb-project-live waheb-project-live--svg">Website öffnen <svg class="waheb-arrow-svg" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"></path><path d="M9 7h8v8"></path></svg></span>
         </div>
         <div class="waheb-project-content">
           <div class="waheb-project-meta">
@@ -3776,7 +3790,7 @@
         <div class="waheb-project-preview">
           <div class="waheb-project-fallback"><strong>Zaunmacher24</strong><small>zaunmacher24.de</small></div>
           <img class="waheb-project-shot" src="images/Projekte6.png" data-sources="images/Projekte6.png" alt="Vorschau der Website Zaunmacher24" loading="lazy" decoding="async"/>
-          <span class="waheb-project-live">Website öffnen <span aria-hidden="true">↗</span></span>
+          <span class="waheb-project-live waheb-project-live--svg">Website öffnen <svg class="waheb-arrow-svg" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"></path><path d="M9 7h8v8"></path></svg></span>
         </div>
         <div class="waheb-project-content">
           <div class="waheb-project-meta">
@@ -3791,7 +3805,7 @@
         <div class="waheb-project-preview">
           <div class="waheb-project-fallback"><strong>Elia Frankfurt</strong><small>elia-frankfurt.com</small></div>
           <img class="waheb-project-shot" src="images/Projekte7.png" data-sources="images/Projekte7.png" alt="Vorschau der Website Elia Frankfurt" loading="lazy" decoding="async"/>
-          <span class="waheb-project-live">Website öffnen <span aria-hidden="true">↗</span></span>
+          <span class="waheb-project-live waheb-project-live--svg">Website öffnen <svg class="waheb-arrow-svg" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"></path><path d="M9 7h8v8"></path></svg></span>
         </div>
         <div class="waheb-project-content">
           <div class="waheb-project-meta">
@@ -3806,7 +3820,7 @@
         <div class="waheb-project-preview">
           <div class="waheb-project-fallback"><strong>Dr. Dettmer</strong><small>dr-dettmer.de</small></div>
           <img class="waheb-project-shot" src="images/Projekte8.png" data-sources="images/Projekte8.png" alt="Vorschau der Website Dr. Dettmer" loading="lazy" decoding="async"/>
-          <span class="waheb-project-live">Website öffnen <span aria-hidden="true">↗</span></span>
+          <span class="waheb-project-live waheb-project-live--svg">Website öffnen <svg class="waheb-arrow-svg" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"></path><path d="M9 7h8v8"></path></svg></span>
         </div>
         <div class="waheb-project-content">
           <div class="waheb-project-meta">
@@ -3821,7 +3835,7 @@
         <div class="waheb-project-preview">
           <div class="waheb-project-fallback"><strong>Lindenhof Benrath</strong><small>lindenhof-benrath.com</small></div>
           <img class="waheb-project-shot" src="images/Projekte9.png" data-sources="images/Projekte9.png" alt="Vorschau der Website Lindenhof Benrath" loading="lazy" decoding="async"/>
-          <span class="waheb-project-live">Website öffnen <span aria-hidden="true">↗</span></span>
+          <span class="waheb-project-live waheb-project-live--svg">Website öffnen <svg class="waheb-arrow-svg" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"></path><path d="M9 7h8v8"></path></svg></span>
         </div>
         <div class="waheb-project-content">
           <div class="waheb-project-meta">
@@ -3836,7 +3850,7 @@
         <div class="waheb-project-preview">
           <div class="waheb-project-fallback"><strong>Will&#x27;s BBQ</strong><small>willsbbq.de</small></div>
           <img class="waheb-project-shot" src="images/Projekte10.png" data-sources="images/Projekte10.png" alt="Vorschau der Website Will&#x27;s BBQ" loading="lazy" decoding="async"/>
-          <span class="waheb-project-live">Website öffnen <span aria-hidden="true">↗</span></span>
+          <span class="waheb-project-live waheb-project-live--svg">Website öffnen <svg class="waheb-arrow-svg" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"></path><path d="M9 7h8v8"></path></svg></span>
         </div>
         <div class="waheb-project-content">
           <div class="waheb-project-meta">
@@ -3851,7 +3865,7 @@
         <div class="waheb-project-preview">
           <div class="waheb-project-fallback"><strong>Al Dente Leichlingen</strong><small>aldente-leichlingen.de</small></div>
           <img class="waheb-project-shot" src="images/Projekte11.png" data-sources="images/Projekte11.png" alt="Vorschau der Website Al Dente Leichlingen" loading="lazy" decoding="async"/>
-          <span class="waheb-project-live">Website öffnen <span aria-hidden="true">↗</span></span>
+          <span class="waheb-project-live waheb-project-live--svg">Website öffnen <svg class="waheb-arrow-svg" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"></path><path d="M9 7h8v8"></path></svg></span>
         </div>
         <div class="waheb-project-content">
           <div class="waheb-project-meta">
@@ -3866,7 +3880,7 @@
         <div class="waheb-project-preview">
           <div class="waheb-project-fallback"><strong>Bei Denis Restaurant</strong><small>beidenis-restaurant.de</small></div>
           <img class="waheb-project-shot" src="images/Projekte12.png" data-sources="images/Projekte12.png" alt="Vorschau der Website Bei Denis Restaurant" loading="lazy" decoding="async"/>
-          <span class="waheb-project-live">Website öffnen <span aria-hidden="true">↗</span></span>
+          <span class="waheb-project-live waheb-project-live--svg">Website öffnen <svg class="waheb-arrow-svg" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"></path><path d="M9 7h8v8"></path></svg></span>
         </div>
         <div class="waheb-project-content">
           <div class="waheb-project-meta">
@@ -3881,7 +3895,7 @@
         <div class="waheb-project-preview">
           <div class="waheb-project-fallback"><strong>Sebastian Heinen</strong><small>sebastian-heinen.de</small></div>
           <img class="waheb-project-shot" src="images/Projekte13.png" data-sources="images/Projekte13.png" alt="Vorschau der Website Sebastian Heinen" loading="lazy" decoding="async"/>
-          <span class="waheb-project-live">Website öffnen <span aria-hidden="true">↗</span></span>
+          <span class="waheb-project-live waheb-project-live--svg">Website öffnen <svg class="waheb-arrow-svg" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"></path><path d="M9 7h8v8"></path></svg></span>
         </div>
         <div class="waheb-project-content">
           <div class="waheb-project-meta">
@@ -3896,7 +3910,7 @@
         <div class="waheb-project-preview">
           <div class="waheb-project-fallback"><strong>SchuSchu Restaurant</strong><small>schuschu-restaurant.de</small></div>
           <img class="waheb-project-shot" src="images/Projekte14.png" data-sources="images/Projekte14.png" alt="Vorschau der Website SchuSchu Restaurant" loading="lazy" decoding="async"/>
-          <span class="waheb-project-live">Website öffnen <span aria-hidden="true">↗</span></span>
+          <span class="waheb-project-live waheb-project-live--svg">Website öffnen <svg class="waheb-arrow-svg" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"></path><path d="M9 7h8v8"></path></svg></span>
         </div>
         <div class="waheb-project-content">
           <div class="waheb-project-meta">
@@ -3911,7 +3925,7 @@
         <div class="waheb-project-preview">
           <div class="waheb-project-fallback"><strong>MyHome24</strong><small>myhome-24.de</small></div>
           <img class="waheb-project-shot" src="images/Projekte15.png" data-sources="images/Projekte15.png" alt="Vorschau der Website MyHome24" loading="lazy" decoding="async"/>
-          <span class="waheb-project-live">Website öffnen <span aria-hidden="true">↗</span></span>
+          <span class="waheb-project-live waheb-project-live--svg">Website öffnen <svg class="waheb-arrow-svg" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"></path><path d="M9 7h8v8"></path></svg></span>
         </div>
         <div class="waheb-project-content">
           <div class="waheb-project-meta">
@@ -3926,7 +3940,7 @@
         <div class="waheb-project-preview">
           <div class="waheb-project-fallback"><strong>SeniorTrainer</strong><small>wahebwahbe100-byte.github.io/SeniorTrainer</small></div>
           <img class="waheb-project-shot" src="images/Projekte16.png" data-sources="images/Projekte16.png" alt="Vorschau der Website SeniorTrainer" loading="lazy" decoding="async"/>
-          <span class="waheb-project-live waheb-project-live--svg">Website öffnen <svg aria-hidden="true" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block; vertical-align:-3px; margin-left:4px;"><path d="M7 17 17 7"></path><path d="M9 7h8v8"></path></svg></span>
+          <span class="waheb-project-live waheb-project-live--svg">Website öffnen <svg class="waheb-arrow-svg" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"></path><path d="M9 7h8v8"></path></svg></span>
         </div>
         <div class="waheb-project-content">
           <div class="waheb-project-meta">
@@ -3939,7 +3953,7 @@
       </a>
     </div>
     <div class="waheb-projects-footer">
-      <a class="waheb-projects-cta" href="#contact">Dein Projekt? Anfrage starten <span aria-hidden="true">→</span></a>
+      <a class="waheb-projects-cta" href="#contact">Dein Projekt? Anfrage starten <svg class="waheb-arrow-svg" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg></a>
     </div>
   </div>
 </section>
