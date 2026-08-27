@@ -9,6 +9,13 @@
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
 
+  gtag('consent', 'default', {
+    'ad_storage': 'denied',
+    'analytics_storage': 'denied',
+    'ad_user_data': 'denied',
+    'ad_personalization': 'denied'
+  });
+
   gtag('config', 'AW-18130743239');
 </script>
 <meta charset="utf-8"/>
@@ -3560,6 +3567,216 @@
     }
   }
 </style>
+
+<style id="waheb-privacy-notice-css">
+  .waheb-privacy-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 100000;
+    display: none;
+    align-items: flex-end;
+    justify-content: flex-start;
+    padding: 18px;
+    background: rgba(2, 6, 23, .32);
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+  }
+
+  .waheb-privacy-overlay.is-visible {
+    display: flex;
+  }
+
+  .waheb-privacy-dialog {
+    width: min(440px, calc(100vw - 24px));
+    margin: 0;
+    padding: 18px 20px 18px;
+    border: 0;
+    border-radius: 0;
+    background: #f7fbff;
+    color: #1e293b;
+    box-shadow: none;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+
+  .waheb-privacy-dialog h2 {
+    margin: 0 0 12px;
+    padding: 0;
+    color: #0f172a !important;
+    font-family: Arial, Helvetica, sans-serif !important;
+    font-size: 14px !important;
+    line-height: 1.25 !important;
+    font-weight: 700 !important;
+    letter-spacing: 0 !important;
+    text-shadow: none !important;
+  }
+
+  .waheb-privacy-dialog p {
+    margin: 0;
+    padding: 0;
+    max-width: none;
+    color: #475569 !important;
+    font-family: Arial, Helvetica, sans-serif !important;
+    font-size: 14px !important;
+    line-height: 1.5 !important;
+    font-weight: 400 !important;
+    letter-spacing: 0 !important;
+  }
+
+  .waheb-privacy-links {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 18px;
+    margin-top: 14px;
+  }
+
+  .waheb-privacy-links a {
+    color: #0ea5e9 !important;
+    font-family: Arial, Helvetica, sans-serif !important;
+    font-size: 13px !important;
+    line-height: 1.35 !important;
+    font-weight: 400 !important;
+    text-decoration: underline !important;
+    text-underline-offset: 3px;
+  }
+
+  .waheb-privacy-close {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 170px;
+    min-height: 46px;
+    margin-top: 15px;
+    padding: 0 18px;
+    border: 0;
+    border-radius: 3px;
+    background: #0f4c81;
+    color: #ffffff;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    line-height: 1;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: none;
+    transition: background .18s ease, transform .18s ease;
+  }
+
+  .waheb-privacy-close:hover {
+    background: #0b3b66;
+    transform: translateY(-1px);
+  }
+
+  .waheb-privacy-close:focus-visible,
+  .waheb-privacy-links a:focus-visible {
+    outline: 2px solid #0ea5e9;
+    outline-offset: 3px;
+  }
+
+  @media (max-width: 640px) {
+    .waheb-privacy-overlay {
+      align-items: flex-end;
+      justify-content: flex-start;
+      padding: 10px 12px;
+    }
+
+    .waheb-privacy-dialog {
+      width: 100%;
+      padding: 18px 20px 18px;
+    }
+
+    .waheb-privacy-dialog h2 {
+      font-size: 14px !important;
+      margin-bottom: 18px;
+    }
+
+    .waheb-privacy-dialog p {
+      font-size: 14px !important;
+      line-height: 1.56 !important;
+    }
+
+    .waheb-privacy-links {
+      gap: 24px;
+      margin-top: 18px;
+    }
+
+    .waheb-privacy-close {
+      min-width: 0;
+      width: auto;
+      min-height: 46px;
+      font-size: 15px;
+      margin-top: 20px;
+    }
+  }
+
+  @media (max-width: 390px) {
+    .waheb-privacy-dialog {
+      padding: 20px 20px 22px;
+    }
+
+    .waheb-privacy-dialog p {
+      font-size: 13px !important;
+    }
+
+    .waheb-privacy-links {
+      gap: 18px;
+    }
+
+    .waheb-privacy-close {
+      width: 100%;
+    }
+  }
+</style>
+
+
+<style id="waheb-hero-video-css">
+  #home.sakalli-hero {
+    background-color: #07111f !important;
+  }
+
+  #home .sakalli-hero-video {
+    position: absolute;
+    inset: 0;
+    z-index: -4;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center center;
+    pointer-events: none;
+    opacity: .72;
+    filter: brightness(.52) saturate(.90) contrast(1.08);
+  }
+
+  /* Blue/dark overlay so the headline stays readable */
+  #home.sakalli-hero::before {
+    background:
+      linear-gradient(180deg, rgba(2,6,23,.40) 0%, rgba(5,15,35,.54) 52%, rgba(2,6,23,.68) 100%),
+      radial-gradient(circle at 50% 42%, rgba(14,165,233,.09), transparent 42%) !important;
+  }
+
+  /* Keep the old animated network subtle above the video */
+  #home .sakalli-network {
+    opacity: .28 !important;
+  }
+
+  #home .sakalli-orb {
+    opacity: .22 !important;
+  }
+
+  @media (max-width: 640px) {
+    #home .sakalli-hero-video {
+      object-position: center center;
+      opacity: .66;
+      filter: brightness(.48) saturate(.88) contrast(1.08);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    #home .sakalli-hero-video {
+      display: none;
+    }
+  }
+</style>
+
 </head>
 <body>
 <header class="sakalli-header">
@@ -3603,6 +3820,10 @@
   </div>
 </header>
 <section class="sakalli-hero page-step page-show" id="home">
+  <video class="sakalli-hero-video" autoplay muted loop playsinline preload="metadata" aria-hidden="true">
+  <source src="hero-background.mp4" type="video/mp4"/>
+</video>
+
   <svg class="sakalli-network" viewBox="0 0 1600 900" preserveAspectRatio="none" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
     <defs>
       <filter id="sakalliNodeGlow" x="-180%" y="-180%" width="460%" height="460%">
@@ -3709,7 +3930,7 @@
       <p class="waheb-projects-subtitle">Ausgewählte Kundenprojekte – individuell gestaltet, responsiv umgesetzt und direkt live erreichbar.</p>
     </div>
     <div class="waheb-projects-grid">
-      <!-- Eigene Projektbilder: images/Projekte1.png bis images/Projekte16.png im Ordner images ablegen. -->
+      <!-- Eigene Projektbilder: images/Projekte1.png bis images/Projekte17.png im Ordner images ablegen. -->
 
       <a class="waheb-project-card" data-project-card href="https://boehme-hv.de/" target="_blank" rel="noopener noreferrer" aria-label="Hausverwaltung Böhme öffnen">
         <div class="waheb-project-preview">
@@ -3934,6 +4155,21 @@
           </div>
           <h3 class="waheb-project-name">SeniorTrainer</h3>
           <p class="waheb-project-description">Moderner Trainingsauftritt mit klarer Präsentation, Leistungen und Kontaktmöglichkeiten.</p>
+        </div>
+      </a>
+      <a class="waheb-project-card" data-project-card href="https://oralc.de/" target="_blank" rel="noopener noreferrer" aria-label="ORALC Fachzahnarzt Praxis öffnen">
+        <div class="waheb-project-preview">
+          <div class="waheb-project-fallback"><strong>ORALC Fachzahnarzt Praxis</strong><small>oralc.de</small></div>
+          <img class="waheb-project-shot" src="images/Projekte17.png" data-sources="images/Projekte17.png" alt="Vorschau der Website ORALC Fachzahnarzt Praxis in Berlin" loading="lazy" decoding="async"/>
+          <span class="waheb-project-live waheb-project-live--svg">Website öffnen <svg class="waheb-arrow-svg" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"></path><path d="M9 7h8v8"></path></svg></span>
+        </div>
+        <div class="waheb-project-content">
+          <div class="waheb-project-meta">
+            <span class="waheb-project-type">Website</span>
+            <span class="waheb-project-index">17</span>
+          </div>
+          <h3 class="waheb-project-name">ORALC Fachzahnarzt Praxis</h3>
+          <p class="waheb-project-description">Moderner Praxisauftritt für Oralchirurgie, Implantologie und Terminbuchung in Berlin.</p>
         </div>
       </a>
     </div>
@@ -4226,7 +4462,7 @@
 <div class="mt-6 flex flex-wrap justify-center gap-x-5 gap-y-2 border-t border-white/10 pt-5">
 <a class="text-sm font-semibold" href="pages/ueber-uns.html" style="color:#7dd3fc;">Über uns</a>
 <a class="text-sm font-semibold" href="pages/legal/impressum.html" style="color:#7dd3fc;">Impressum</a>
-<a class="text-sm font-semibold" href="pages/legal/datenschutz.html" style="color:#7dd3fc;">Datenschutz</a>
+<a class="text-sm font-semibold" href="pages/legal/datenschutz.html" style="color:#7dd3fc;">Datenschutzerklärung</a>
 <a class="text-sm font-semibold" href="pages/standorte.html" style="color:#7dd3fc;">Standorte</a>
 </div>
 <p class="mt-5 text-center text-sm" style="color:rgba(255,255,255,0.55);">© 2026 Alle Rechte vorbehalten · Made with ❤️ in Germany</p>
@@ -5386,5 +5622,71 @@
   cards.forEach((card) => revealObserver.observe(card));
 })();
 </script>
+
+<div class="waheb-privacy-overlay" id="wahebPrivacyNotice" role="presentation" aria-hidden="true">
+  <section class="waheb-privacy-dialog" role="dialog" aria-modal="true" aria-labelledby="wahebPrivacyTitle" aria-describedby="wahebPrivacyText">
+    <h2 id="wahebPrivacyTitle">Datenschutzhinweis</h2>
+    <p id="wahebPrivacyText">
+      Diese Website verwendet ausschließlich technisch notwendige Cookies bzw. lokale Speicherfunktionen, damit grundlegende Funktionen und die Sicherheit der Website gewährleistet werden. Es werden keine Statistik-, Marketing- oder Tracking-Cookies ohne Ihre Einwilligung gesetzt.
+    </p>
+
+    <nav class="waheb-privacy-links" aria-label="Rechtliche Hinweise">
+      <a href="pages/legal/datenschutz.html">Datenschutzerklärung</a>
+      <a href="pages/legal/impressum.html">Impressum</a>
+    </nav>
+
+    <button class="waheb-privacy-close" id="wahebPrivacyClose" type="button">
+      Hinweis schließen
+    </button>
+  </section>
+</div>
+
+<script id="waheb-privacy-notice-js">
+(function () {
+  const notice = document.getElementById('wahebPrivacyNotice');
+  const closeButton = document.getElementById('wahebPrivacyClose');
+  if (!notice || !closeButton) return;
+
+  const storageKey = 'wahebPrivacyNoticeClosed_v1';
+
+  function openNotice() {
+    notice.classList.add('is-visible');
+    notice.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+    window.setTimeout(() => closeButton.focus({ preventScroll: true }), 60);
+  }
+
+  function closeNotice() {
+    notice.classList.remove('is-visible');
+    notice.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+    try {
+      localStorage.setItem(storageKey, '1');
+    } catch (e) {}
+  }
+
+  let alreadyClosed = false;
+  try {
+    alreadyClosed = localStorage.getItem(storageKey) === '1';
+  } catch (e) {}
+
+  if (!alreadyClosed) {
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', openNotice, { once: true });
+    } else {
+      openNotice();
+    }
+  }
+
+  closeButton.addEventListener('click', closeNotice);
+
+  document.addEventListener('keydown', function (event) {
+    if (event.key === 'Escape' && notice.classList.contains('is-visible')) {
+      closeNotice();
+    }
+  });
+})();
+</script>
+
 </body>
 </html>
