@@ -3846,6 +3846,154 @@
   }
 </style>
 
+
+
+<style id="waheb-border-neon-light-css">
+  /* Neon light that travels around the blue text-card border */
+  .startseite-video-text {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+  }
+
+  .startseite-video-text::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    padding: 2px;
+    pointer-events: none;
+    z-index: 2;
+    background: conic-gradient(
+      from var(--waheb-neon-angle, 0deg),
+      transparent 0deg,
+      transparent 285deg,
+      rgba(103,232,249,.10) 300deg,
+      rgba(125,211,252,.72) 320deg,
+      rgba(255,255,255,1) 337deg,
+      rgba(56,189,248,.92) 350deg,
+      transparent 360deg
+    );
+    -webkit-mask:
+      linear-gradient(#000 0 0) content-box,
+      linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    filter: drop-shadow(0 0 5px rgba(125,211,252,.85))
+            drop-shadow(0 0 12px rgba(56,189,248,.46));
+    animation: wahebBorderNeonSpin 4.8s linear infinite;
+  }
+
+  .startseite-video-text::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    pointer-events: none;
+    z-index: 1;
+    box-shadow:
+      inset 0 0 0 1px rgba(186,230,253,.22),
+      0 0 18px rgba(56,189,248,.12);
+  }
+
+  .startseite-video-text > * {
+    position: relative;
+    z-index: 3;
+  }
+
+  @property --waheb-neon-angle {
+    syntax: '<angle>';
+    inherits: false;
+    initial-value: 0deg;
+  }
+
+  @keyframes wahebBorderNeonSpin {
+    to { --waheb-neon-angle: 360deg; }
+  }
+
+  /* Fallback for browsers without animated custom properties */
+  @supports not (background: conic-gradient(from 1deg, red, blue)) {
+    .startseite-video-text::before {
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,.9), transparent);
+      animation: none;
+      opacity: .7;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .startseite-video-text::before { animation: none !important; }
+  }
+</style>
+
+
+
+
+<style id="waheb-projects-border-neon-css">
+  /* Same rotating neon-border effect on every Projekte card */
+  #projects .waheb-project-card {
+    isolation: isolate;
+  }
+
+  #projects .waheb-project-neon-border {
+    position: absolute;
+    inset: 0;
+    z-index: 12;
+    border-radius: inherit;
+    pointer-events: none;
+    overflow: hidden;
+  }
+
+  #projects .waheb-project-neon-border::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    padding: 2px;
+    background: conic-gradient(
+      from var(--waheb-neon-angle, 0deg),
+      transparent 0deg,
+      transparent 282deg,
+      rgba(103,232,249,.08) 298deg,
+      rgba(125,211,252,.72) 318deg,
+      rgba(255,255,255,1) 337deg,
+      rgba(99,102,241,.98) 350deg,
+      transparent 360deg
+    );
+    -webkit-mask:
+      linear-gradient(#000 0 0) content-box,
+      linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    filter:
+      drop-shadow(0 0 5px rgba(125,211,252,.88))
+      drop-shadow(0 0 11px rgba(99,102,241,.58));
+    animation: wahebBorderNeonSpin 5.2s linear infinite;
+    will-change: background;
+  }
+
+  /* Stagger the lights so all cards do not flash at the same point together */
+  #projects .waheb-project-card:nth-child(4n + 1) .waheb-project-neon-border::before { animation-delay: 0s; }
+  #projects .waheb-project-card:nth-child(4n + 2) .waheb-project-neon-border::before { animation-delay: -1.3s; }
+  #projects .waheb-project-card:nth-child(4n + 3) .waheb-project-neon-border::before { animation-delay: -2.6s; }
+  #projects .waheb-project-card:nth-child(4n + 4) .waheb-project-neon-border::before { animation-delay: -3.9s; }
+
+  /* Slight border glow while hovering, without blocking the project link */
+  #projects .waheb-project-card:hover {
+    border-color: rgba(125,211,252,.44);
+    box-shadow:
+      0 28px 90px rgba(0,0,0,.42),
+      0 0 26px rgba(99,102,241,.15),
+      0 0 44px rgba(56,189,248,.10);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    #projects .waheb-project-neon-border::before {
+      animation: none !important;
+      --waheb-neon-angle: 330deg;
+    }
+  }
+</style>
+
 </head>
 <body>
 <header class="sakalli-header">
@@ -4002,6 +4150,7 @@
       <!-- Eigene Projektbilder: images/Projekte1.png bis images/Projekte17.png im Ordner images ablegen. -->
 
       <a class="waheb-project-card" data-project-card href="https://boehme-hv.de/" target="_blank" rel="noopener noreferrer" aria-label="Hausverwaltung Böhme öffnen">
+        <span class="waheb-project-neon-border" aria-hidden="true"></span>
         <div class="waheb-project-preview">
           <div class="waheb-project-fallback"><strong>Hausverwaltung Böhme</strong><small>boehme-hv.de</small></div>
           <img class="waheb-project-shot" src="images/Projekte1.png" data-sources="images/Projekte1.png" alt="Vorschau der Website Hausverwaltung Böhme" loading="eager" decoding="async"/>
@@ -4017,6 +4166,7 @@
         </div>
       </a>
       <a class="waheb-project-card" data-project-card href="https://eis-spezial.de/" target="_blank" rel="noopener noreferrer" aria-label="Eis Spezial öffnen">
+        <span class="waheb-project-neon-border" aria-hidden="true"></span>
         <div class="waheb-project-preview">
           <div class="waheb-project-fallback"><strong>Eis Spezial</strong><small>eis-spezial.de</small></div>
           <img class="waheb-project-shot" src="images/Projekte2.png" data-sources="images/Projekte2.png" alt="Vorschau der Website Eis Spezial" loading="eager" decoding="async"/>
@@ -4032,6 +4182,7 @@
         </div>
       </a>
       <a class="waheb-project-card" data-project-card href="https://ankercaravanberlin.de/" target="_blank" rel="noopener noreferrer" aria-label="ANKER Caravan Berlin öffnen">
+        <span class="waheb-project-neon-border" aria-hidden="true"></span>
         <div class="waheb-project-preview">
           <div class="waheb-project-fallback"><strong>ANKER Caravan Berlin</strong><small>ankercaravanberlin.de</small></div>
           <img class="waheb-project-shot" src="images/Projekte3.png" data-sources="images/Projekte3.png" alt="Vorschau der Website ANKER Caravan Berlin" loading="lazy" decoding="async"/>
@@ -4047,6 +4198,7 @@
         </div>
       </a>
       <a class="waheb-project-card" data-project-card href="https://handwerk-plus24.de/" target="_blank" rel="noopener noreferrer" aria-label="Handwerk Plus 24 öffnen">
+        <span class="waheb-project-neon-border" aria-hidden="true"></span>
         <div class="waheb-project-preview">
           <div class="waheb-project-fallback"><strong>Handwerk Plus 24</strong><small>handwerk-plus24.de</small></div>
           <img class="waheb-project-shot" src="images/Projekte4.png" data-sources="images/Projekte4.png" alt="Vorschau der Website Handwerk Plus 24" loading="lazy" decoding="async"/>
@@ -4062,6 +4214,7 @@
         </div>
       </a>
       <a class="waheb-project-card" data-project-card href="https://gebaeudeserviceboehme.de/" target="_blank" rel="noopener noreferrer" aria-label="Gebäudeservice Böhme öffnen">
+        <span class="waheb-project-neon-border" aria-hidden="true"></span>
         <div class="waheb-project-preview">
           <div class="waheb-project-fallback"><strong>Gebäudeservice Böhme</strong><small>gebaeudeserviceboehme.de</small></div>
           <img class="waheb-project-shot" src="images/Projekte5.png" data-sources="images/Projekte5.png" alt="Vorschau der Website Gebäudeservice Böhme" loading="lazy" decoding="async"/>
@@ -4077,6 +4230,7 @@
         </div>
       </a>
       <a class="waheb-project-card" data-project-card href="https://zaunmacher24.de/" target="_blank" rel="noopener noreferrer" aria-label="Zaunmacher24 öffnen">
+        <span class="waheb-project-neon-border" aria-hidden="true"></span>
         <div class="waheb-project-preview">
           <div class="waheb-project-fallback"><strong>Zaunmacher24</strong><small>zaunmacher24.de</small></div>
           <img class="waheb-project-shot" src="images/Projekte6.png" data-sources="images/Projekte6.png" alt="Vorschau der Website Zaunmacher24" loading="lazy" decoding="async"/>
@@ -4092,6 +4246,7 @@
         </div>
       </a>
       <a class="waheb-project-card" data-project-card href="https://elia-frankfurt.com/" target="_blank" rel="noopener noreferrer" aria-label="Elia Frankfurt öffnen">
+        <span class="waheb-project-neon-border" aria-hidden="true"></span>
         <div class="waheb-project-preview">
           <div class="waheb-project-fallback"><strong>Elia Frankfurt</strong><small>elia-frankfurt.com</small></div>
           <img class="waheb-project-shot" src="images/Projekte7.png" data-sources="images/Projekte7.png" alt="Vorschau der Website Elia Frankfurt" loading="lazy" decoding="async"/>
@@ -4107,6 +4262,7 @@
         </div>
       </a>
       <a class="waheb-project-card" data-project-card href="https://dr-dettmer.de/" target="_blank" rel="noopener noreferrer" aria-label="Dr. Dettmer öffnen">
+        <span class="waheb-project-neon-border" aria-hidden="true"></span>
         <div class="waheb-project-preview">
           <div class="waheb-project-fallback"><strong>Dr. Dettmer</strong><small>dr-dettmer.de</small></div>
           <img class="waheb-project-shot" src="images/Projekte8.png" data-sources="images/Projekte8.png" alt="Vorschau der Website Dr. Dettmer" loading="lazy" decoding="async"/>
@@ -4122,6 +4278,7 @@
         </div>
       </a>
       <a class="waheb-project-card" data-project-card href="https://lindenhof-benrath.com/" target="_blank" rel="noopener noreferrer" aria-label="Lindenhof Benrath öffnen">
+        <span class="waheb-project-neon-border" aria-hidden="true"></span>
         <div class="waheb-project-preview">
           <div class="waheb-project-fallback"><strong>Lindenhof Benrath</strong><small>lindenhof-benrath.com</small></div>
           <img class="waheb-project-shot" src="images/Projekte9.png" data-sources="images/Projekte9.png" alt="Vorschau der Website Lindenhof Benrath" loading="lazy" decoding="async"/>
@@ -4137,6 +4294,7 @@
         </div>
       </a>
       <a class="waheb-project-card" data-project-card href="https://willsbbq.de/" target="_blank" rel="noopener noreferrer" aria-label="Will&#x27;s BBQ öffnen">
+        <span class="waheb-project-neon-border" aria-hidden="true"></span>
         <div class="waheb-project-preview">
           <div class="waheb-project-fallback"><strong>Will&#x27;s BBQ</strong><small>willsbbq.de</small></div>
           <img class="waheb-project-shot" src="images/Projekte10.png" data-sources="images/Projekte10.png" alt="Vorschau der Website Will&#x27;s BBQ" loading="lazy" decoding="async"/>
@@ -4152,6 +4310,7 @@
         </div>
       </a>
       <a class="waheb-project-card" data-project-card href="https://aldente-leichlingen.de/" target="_blank" rel="noopener noreferrer" aria-label="Al Dente Leichlingen öffnen">
+        <span class="waheb-project-neon-border" aria-hidden="true"></span>
         <div class="waheb-project-preview">
           <div class="waheb-project-fallback"><strong>Al Dente Leichlingen</strong><small>aldente-leichlingen.de</small></div>
           <img class="waheb-project-shot" src="images/Projekte11.png" data-sources="images/Projekte11.png" alt="Vorschau der Website Al Dente Leichlingen" loading="lazy" decoding="async"/>
@@ -4167,6 +4326,7 @@
         </div>
       </a>
       <a class="waheb-project-card" data-project-card href="https://beidenis-restaurant.de/" target="_blank" rel="noopener noreferrer" aria-label="Bei Denis Restaurant öffnen">
+        <span class="waheb-project-neon-border" aria-hidden="true"></span>
         <div class="waheb-project-preview">
           <div class="waheb-project-fallback"><strong>Bei Denis Restaurant</strong><small>beidenis-restaurant.de</small></div>
           <img class="waheb-project-shot" src="images/Projekte12.png" data-sources="images/Projekte12.png" alt="Vorschau der Website Bei Denis Restaurant" loading="lazy" decoding="async"/>
@@ -4182,6 +4342,7 @@
         </div>
       </a>
       <a class="waheb-project-card" data-project-card href="https://schuschu-restaurant.de/" target="_blank" rel="noopener noreferrer" aria-label="SchuSchu Restaurant öffnen">
+        <span class="waheb-project-neon-border" aria-hidden="true"></span>
         <div class="waheb-project-preview">
           <div class="waheb-project-fallback"><strong>SchuSchu Restaurant</strong><small>schuschu-restaurant.de</small></div>
           <img class="waheb-project-shot" src="images/Projekte14.png" data-sources="images/Projekte14.png" alt="Vorschau der Website SchuSchu Restaurant" loading="lazy" decoding="async"/>
@@ -4197,6 +4358,7 @@
         </div>
       </a>
       <a class="waheb-project-card" data-project-card href="https://www.myhome-24.de/" target="_blank" rel="noopener noreferrer" aria-label="MyHome24 öffnen">
+        <span class="waheb-project-neon-border" aria-hidden="true"></span>
         <div class="waheb-project-preview">
           <div class="waheb-project-fallback"><strong>MyHome24</strong><small>myhome-24.de</small></div>
           <img class="waheb-project-shot" src="images/Projekte15.png" data-sources="images/Projekte15.png" alt="Vorschau der Website MyHome24" loading="lazy" decoding="async"/>
@@ -4212,6 +4374,7 @@
         </div>
       </a>
       <a class="waheb-project-card" data-project-card href="https://wahebwahbe100-byte.github.io/SeniorTrainer/" target="_blank" rel="noopener noreferrer" aria-label="SeniorTrainer öffnen">
+        <span class="waheb-project-neon-border" aria-hidden="true"></span>
         <div class="waheb-project-preview">
           <div class="waheb-project-fallback"><strong>SeniorTrainer</strong><small>wahebwahbe100-byte.github.io/SeniorTrainer</small></div>
           <img class="waheb-project-shot" src="images/Projekte16.png" data-sources="images/Projekte16.png" alt="Vorschau der Website SeniorTrainer" loading="lazy" decoding="async"/>
@@ -4227,6 +4390,7 @@
         </div>
       </a>
       <a class="waheb-project-card" data-project-card href="https://oralc.de/" target="_blank" rel="noopener noreferrer" aria-label="ORALC Fachzahnarzt Praxis öffnen">
+        <span class="waheb-project-neon-border" aria-hidden="true"></span>
         <div class="waheb-project-preview">
           <div class="waheb-project-fallback"><strong>ORALC Fachzahnarzt Praxis</strong><small>oralc.de</small></div>
           <img class="waheb-project-shot" src="images/Projekte17.png" data-sources="images/Projekte17.png" alt="Vorschau der Website ORALC Fachzahnarzt Praxis in Berlin" loading="lazy" decoding="async"/>
@@ -4522,17 +4686,17 @@
 <summary class="flex cursor-pointer list-none items-center justify-between gap-4 text-left">
 <div>
 <p class="text-sm font-semibold uppercase tracking-[0.18em]" style="color:rgba(255,255,255,0.55);">Standorte</p>
-<p class="mt-1 text-sm" style="color:rgba(255,255,255,0.78);">Städte anzeigen und passende Standortseite öffnen</p>
+<p class="mt-1 text-sm" style="color:rgba(255,255,255,0.78);">Städte anzeigen</p>
 </div>
 <span class="standorte-chevron text-xl font-bold" style="color:#7dd3fc; transition:transform .25s ease;">⌄</span>
 </summary>
-<div class="mt-4 flex flex-wrap justify-center gap-x-5 gap-y-2 border-t border-white/10 pt-4"><a class="text-sm" href="pages/cities/webdesign-berlin.html" style="color:rgba(255,255,255,0.70);">Berlin</a> <a class="text-sm" href="pages/cities/webdesign-hamburg.html" style="color:rgba(255,255,255,0.70);">Hamburg</a> <a class="text-sm" href="pages/cities/webdesign-muenchen.html" style="color:rgba(255,255,255,0.70);">München</a> <a class="text-sm" href="pages/cities/webdesign-koeln.html" style="color:rgba(255,255,255,0.70);">Köln</a> <a class="text-sm" href="pages/cities/webdesign-frankfurt.html" style="color:rgba(255,255,255,0.70);">Frankfurt</a> <a class="text-sm" href="pages/cities/webdesign-stuttgart.html" style="color:rgba(255,255,255,0.70);">Stuttgart</a> <a class="text-sm" href="pages/cities/webdesign-duesseldorf.html" style="color:rgba(255,255,255,0.70);">Düsseldorf</a> <a class="text-sm" href="pages/cities/webdesign-dortmund.html" style="color:rgba(255,255,255,0.70);">Dortmund</a> <a class="text-sm" href="pages/cities/webdesign-essen.html" style="color:rgba(255,255,255,0.70);">Essen</a> <a class="text-sm" href="pages/cities/webdesign-leipzig.html" style="color:rgba(255,255,255,0.70);">Leipzig</a> <a class="text-sm" href="pages/cities/webdesign-bremen.html" style="color:rgba(255,255,255,0.70);">Bremen</a> <a class="text-sm" href="pages/cities/webdesign-dresden.html" style="color:rgba(255,255,255,0.70);">Dresden</a> <a class="text-sm" href="pages/cities/webdesign-hannover.html" style="color:rgba(255,255,255,0.70);">Hannover</a> <a class="text-sm" href="pages/cities/webdesign-nuernberg.html" style="color:rgba(255,255,255,0.70);">Nürnberg</a> <a class="text-sm" href="pages/cities/webdesign-duisburg.html" style="color:rgba(255,255,255,0.70);">Duisburg</a> <a class="text-sm" href="pages/cities/webdesign-bochum.html" style="color:rgba(255,255,255,0.70);">Bochum</a> <a class="text-sm" href="pages/cities/webdesign-wuppertal.html" style="color:rgba(255,255,255,0.70);">Wuppertal</a> <a class="text-sm" href="pages/cities/webdesign-bielefeld.html" style="color:rgba(255,255,255,0.70);">Bielefeld</a> <a class="text-sm" href="pages/cities/webdesign-bonn.html" style="color:rgba(255,255,255,0.70);">Bonn</a> <a class="text-sm" href="pages/cities/webdesign-muenster.html" style="color:rgba(255,255,255,0.70);">Münster</a></div>
+<div class="mt-4 flex flex-wrap justify-center gap-x-5 gap-y-2 border-t border-white/10 pt-4"><span class="text-sm" style="color:rgba(255,255,255,0.70);">Berlin</span> <span class="text-sm" style="color:rgba(255,255,255,0.70);">Hamburg</span> <span class="text-sm" style="color:rgba(255,255,255,0.70);">München</span> <span class="text-sm" style="color:rgba(255,255,255,0.70);">Köln</span> <span class="text-sm" style="color:rgba(255,255,255,0.70);">Frankfurt</span> <span class="text-sm" style="color:rgba(255,255,255,0.70);">Stuttgart</span> <span class="text-sm" style="color:rgba(255,255,255,0.70);">Düsseldorf</span> <span class="text-sm" style="color:rgba(255,255,255,0.70);">Dortmund</span> <span class="text-sm" style="color:rgba(255,255,255,0.70);">Essen</span> <span class="text-sm" style="color:rgba(255,255,255,0.70);">Leipzig</span> <span class="text-sm" style="color:rgba(255,255,255,0.70);">Bremen</span> <span class="text-sm" style="color:rgba(255,255,255,0.70);">Dresden</span> <span class="text-sm" style="color:rgba(255,255,255,0.70);">Hannover</span> <span class="text-sm" style="color:rgba(255,255,255,0.70);">Nürnberg</span> <span class="text-sm" style="color:rgba(255,255,255,0.70);">Duisburg</span> <span class="text-sm" style="color:rgba(255,255,255,0.70);">Bochum</span> <span class="text-sm" style="color:rgba(255,255,255,0.70);">Wuppertal</span> <span class="text-sm" style="color:rgba(255,255,255,0.70);">Bielefeld</span> <span class="text-sm" style="color:rgba(255,255,255,0.70);">Bonn</span> <span class="text-sm" style="color:rgba(255,255,255,0.70);">Münster</span></div>
 </details>
 <div class="mt-6 flex flex-wrap justify-center gap-x-5 gap-y-2 border-t border-white/10 pt-5">
 <a class="text-sm font-semibold" href="pages/ueber-uns.html" style="color:#7dd3fc;">Über uns</a>
 <a class="text-sm font-semibold" href="pages/legal/impressum.html" style="color:#7dd3fc;">Impressum</a>
 <a class="text-sm font-semibold" href="pages/legal/datenschutz.html" style="color:#7dd3fc;">Datenschutzerklärung</a>
-<a class="text-sm font-semibold" href="pages/standorte.html" style="color:#7dd3fc;">Standorte</a>
+<span class="text-sm font-semibold" style="color:#7dd3fc;">Standorte</span>
 </div>
 <p class="mt-5 text-center text-sm" style="color:rgba(255,255,255,0.55);">© 2026 Alle Rechte vorbehalten · Made with ❤️ in Germany</p>
 </div>
