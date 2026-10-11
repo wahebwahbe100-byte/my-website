@@ -1,0 +1,141 @@
+/* Compact, accessible Standorte switcher. All city links remain crawlable HTML. */
+#seo-city-directory.standorte-switcher {
+  margin: clamp(2.25rem, 5vw, 3.25rem) auto 0;
+  padding: 0 1rem;
+  width: min(100%, 1120px);
+  display: flex;
+  justify-content: center;
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+}
+.standorte-switcher__details {
+  width: min(100%, 360px);
+  max-width: 100%;
+  color: #f8f7ff;
+  transition: width 200ms ease;
+}
+.standorte-switcher__details[open] { width: min(100%, 980px); }
+.standorte-switcher__toggle {
+  list-style: none;
+  user-select: none;
+  margin: 0 auto;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem 1.35rem;
+  width: min(100%, 360px);
+  min-height: 66px;
+  border: 1px solid rgba(172, 164, 255, .38);
+  border-radius: 18px;
+  background: linear-gradient(125deg, #26244c 0%, #14162f 95%);
+  color: #f8f7ff;
+  box-shadow: 0 8px 26px rgba(15, 12, 39, .2);
+  font-family: inherit;
+}
+.standorte-switcher__toggle:hover {
+  border-color: rgba(190, 183, 255, .8);
+  background: linear-gradient(125deg, #33315e 0%, #1c1c3c 95%);
+}
+.standorte-switcher__toggle:focus-visible {
+  outline: 3px solid #93c5fd;
+  outline-offset: 4px;
+}
+.standorte-switcher__toggle::-webkit-details-marker { display: none; }
+.standorte-switcher__main {
+  display: inline-flex;
+  align-items: center;
+  gap: .8rem;
+  font-size: 1.06rem;
+  font-weight: 700;
+  letter-spacing: .01em;
+}
+.standorte-switcher__main svg { width: 22px; height: 22px; flex: 0 0 auto; color: #a5b4fc; }
+.standorte-switcher__right { display: inline-flex; align-items: center; gap: .65rem; }
+.standorte-switcher__small { font-size: .78rem; color: #c9c9df; white-space: nowrap; }
+.standorte-switcher__arrow { width: 19px; height: 19px; transition: transform .2s ease; }
+.standorte-switcher__details[open] .standorte-switcher__arrow { transform: rotate(180deg); }
+.standorte-switcher__panel {
+  margin-top: 14px;
+  padding: clamp(1rem, 3vw, 1.6rem);
+  border: 1px solid rgba(172,164,255,.27);
+  border-radius: 24px;
+  background: linear-gradient(150deg, #1b1b39, #101124);
+  color: #f6f6ff;
+  box-shadow: 0 20px 46px rgba(8, 8, 27, .24);
+}
+.standorte-switcher__title {
+  color: #efefff !important;
+  font-size: 1rem;
+  font-weight: 700;
+  margin: 0 0 1rem;
+}
+.standorte-switcher__grid {
+  display: grid !important;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: .65rem;
+}
+.standorte-switcher__grid a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  min-height: 46px;
+  padding: .62rem .8rem;
+  font-size: .89rem;
+  font-weight: 500;
+  line-height: 1.35;
+  border: 1px solid rgba(174,172,218,.18);
+  border-radius: 12px;
+  color: #e8e8ff !important;
+  background: rgba(255,255,255,.065);
+  overflow-wrap: break-word;
+}
+.standorte-switcher__grid a:hover,
+.standorte-switcher__grid a:focus-visible {
+  background: rgba(116,106,233,.24);
+  color: #fff !important;
+  border-color: rgba(165,158,255,.65);
+}
+.standorte-switcher__grid a[aria-current="page"] {
+  background: rgba(124,116,254,.28);
+  border-color: rgba(177,168,255,.7);
+}
+.standorte-switcher__all {
+  display: inline-flex;
+  align-items: center;
+  margin-top: 1.15rem;
+  font-weight: 650;
+  font-size: .9rem;
+  color: #b9cfff !important;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.standorte-switcher__all:hover,
+.standorte-switcher__all:focus-visible { color: #fff !important; }
+@media (max-width: 720px) {
+  .standorte-switcher__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 420px) {
+  .standorte-switcher__small { display: none; }
+  .standorte-switcher__grid { gap: .45rem; }
+  .standorte-switcher__grid a { font-size: .83rem; padding: .6rem .65rem; }
+  .standorte-switcher__toggle { min-height: 60px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .standorte-switcher__details, .standorte-switcher__arrow { transition: none; }
+}
+
+/* Override pre-existing city-page panel styling without changing the original website theme. */
+body.waheb-city-page #seo-city-directory.standorte-switcher {
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+}
+body.waheb-city-page #seo-city-directory.standorte-switcher .standorte-switcher__title {
+  color: #efefff !important;
+}
+body.waheb-city-page #seo-city-directory.standorte-switcher .standorte-switcher__grid a {
+  color: #e8e8ff !important;
+}
