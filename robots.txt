@@ -1,3 +1,4 @@
 User-agent: *
 Allow: /
-Sitemap: https://wahebsite.de/sitemap.xml
+
+Sitemap: https://waheb-site.de/sitemap.xml

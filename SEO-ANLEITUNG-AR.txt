@@ -1,0 +1,32 @@
+تعليمات تحديث SEO – موقع Waheb Site – 11.10.2026
+
+النطاق الصحيح حسب ملف CNAME:
+https://waheb-site.de/
+
+الخطوات بعد فك الضغط:
+1. افتح مجلد my-website-main وارفع جميع الملفات والمجلدات إلى جذر المستودع/الاستضافة التي تستخدم GitHub Pages؛ لا ترفع ملف index.html وحده.
+2. يجب أن يفتح الرابط https://waheb-site.de/ وأن يعمل الرابط https://waheb-site.de/pages/cities/webdesign-hamburg.html
+3. افتح Google Search Console، تحقق من ملكية waheb-site.de، وأضف رابط Sitemap التالي:
+https://waheb-site.de/sitemap.xml
+4. اطلب فحص وفهرسة الصفحة الرئيسية وأهم صفحات المدن بواسطة URL Inspection.
+5. تابع مرات الظهور والنقرات والكلمات في قسم Performance بشكل دوري وأضف أمثلة مشاريع وآراء موثقة ومحتوى خاص بالمدن التي تخدمها فعليًا.
+
+أهم كلمات البحث الألمانية (استبدل {Stadt} باسم المدينة):
+Webdesign {Stadt}
+Website erstellen lassen {Stadt}
+Homepage erstellen lassen {Stadt}
+Webdesigner {Stadt}
+WordPress Website {Stadt}
+Webdesign Agentur {Stadt}
+Professionelle Website {Stadt}
+Website Relaunch {Stadt}
+Webseite erstellen lassen {Stadt}
+SEO Webdesign {Stadt}
+
+المدن التي تم تقوية محتواها خصيصًا:
+Berlin, Hamburg, München, Köln, Frankfurt am Main, Stuttgart, Düsseldorf, Dortmund, Essen, Leipzig, Bremen, Dresden, Hannover, Nürnberg, Duisburg, Bochum, Wuppertal, Bielefeld, Bonn, Münster, Lübeck.
+
+ملاحظات:
+- ليس بالإمكان ضمان المرتبة الأولى على Google، وتحسين ترتيب الموقع يعتمد على جودة المحتوى والمنافسة والروابط الخارجية وفهرسة Google.
+- عدم إنشاء فروع محلية وهمية أو حشو المدن والكلمات بلا فائدة، فهذا قد يضر الترتيب.
+- الملفات تتضمن الإصلاحات المطلوبة؛ يجب نشرها فعليًا حتى تظهر التغييرات.

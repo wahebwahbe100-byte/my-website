@@ -1,0 +1,38 @@
+WAHEB SITE – SEO UPDATE, 11.10.2026
+
+LIVE DOMAIN: https://waheb-site.de/ (laut CNAME; nicht wahebsite.de)
+UPLOAD: Gesamten Inhalt des Ordners my-website-main in das Root-Verzeichnis der GitHub-Pages-Website hochladen; Pfade pages/cities/ beibehalten.
+WICHTIG: Nicht bloß index.html hochladen; alle Unterordner und Medien ebenfalls hochladen.
+
+UMGESETZT:
+- Canonicals, OpenGraph-URLs und JSON-LD für 85 bestehende Stadtseiten sowie die übrigen HTML-Dateien auf die reale Domain und Dateipfade korrigiert.
+- Sitemap und robots.txt im Root aktualisiert. Kein falscher Root-Link auf /webdesign-hamburg.html mehr.
+- Die 20 im Screenshot genannten Städte PLUS Lübeck mit deutschen Keyword-Titeln, Descriptions, H1 und eigenen, hilfreichen Praxisbeispielen ergänzt.
+- Interne, klickbare Stadtverlinkung im Footer und in einem sichtbaren Standort-Navigationsbereich der Startseite.
+- 9,3 MB eingebettetes Base64-MP3 der Startseite durch Referenz auf exakt dieselbe vorhandene MP3-Datei ersetzt (kleinere HTML-Datei, Audio bleibt verfügbar).
+- Standortseiten sind zur Orientierung/Kontaktaufnahme da: keine erfundenen lokalen Geschäftsadressen oder Rankinggarantien.
+
+DIE WICHTIGSTEN DEUTSCHEN SUCHANFRAGEN (jeweils {city} ersetzen):
+Webdesign {city}
+Website erstellen lassen {city}
+Homepage erstellen lassen {city}
+Webdesigner {city}
+WordPress Website {city}
+Webdesign Agentur {city}
+Professionelle Website erstellen lassen {city}
+Website Relaunch {city}
+Webseite erstellen lassen {city}
+SEO Webdesign {city}
+
+AKTIVIERUNGS-SCHRITTE:
+1. Website-Ordner vollständig auf GitHub Pages veröffentlichen und prüfen, ob https://waheb-site.de/pages/cities/webdesign-hamburg.html direkt lädt.
+2. Google Search Console (Domain-Property waheb-site.de) öffnen und Sitemap https://waheb-site.de/sitemap.xml einreichen.
+3. URL-Prüfung für Startseite und Fokusstädte ausführen, Crawling und Indexierungsstatus kontrollieren.
+4. Echte Kundenprojekte/Referenzen, Leistungen, FAQs und Informationen passend zur jeweiligen Region regelmäßig ergänzen; keine reinen Stadt-Namen-Kopien aufbauen.
+5. Ranking/CTR/Impressions in Google Search Console je Suchanfrage und Seite über mehrere Wochen beobachten.
+
+HINWEISE:
+- Google garantiert keinen ersten Platz; Sichtbarkeit hängt auch von Wettbewerb, Qualität, Backlinks, Standortnähe und Indexierung ab.
+- City-Landingpages dürfen keine inhaltsarmen Doorway-Pages oder reine Keyword-Listen sein. Nur Regionen bewerben, die tatsächlich bedient werden.
+- SEO erfordert inhaltliche Pflege und externe Referenzen; Meta-Tags allein reichen nicht.
+- Keine neuen erfundenen Büros, Bewertungen oder Rezensionen angelegt.
