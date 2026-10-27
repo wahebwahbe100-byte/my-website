@@ -2,16 +2,14 @@
 
 <html lang="de">
 <head>
+<!-- Waheb Site: Google Favicon, unified across all pages -->
+<link rel="icon" type="image/png" sizes="48x48" href="google-favicon-48x48.png?v=20261027-original">
+<link rel="icon" type="image/png" sizes="192x192" href="google-favicon-192x192.png?v=20261027-original">
 
+<link rel="apple-touch-icon" sizes="192x192" href="google-favicon-192x192.png?v=20261027-original">
+<link rel="manifest" href="site.webmanifest?v=20261027-original">
 
-
-
-
-<link rel="icon" type="image/png" sizes="48x48" href="google-favicon-48x48.png?v=20261013-neu">
-<link rel="icon" type="image/png" sizes="192x192" href="google-favicon-192x192.png?v=20261013-neu">
-<link rel="shortcut icon" type="image/x-icon" href="google-favicon.ico?v=20261013-neu">
-<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png?v=20261013-clear">
-<link rel="manifest" href="site.webmanifest?v=20261013-clear">
+<!-- Waheb Site: original google-favicon mascot images restored; no standard favicon files -->
 <!-- Google tag (gtag.js) -->
 <script async="" src="https://www.googletagmanager.com/gtag/js?id=AW-18130743239"></script>
 <script>
@@ -2935,6 +2933,43 @@
   .waheb-projects-cta { transition: none !important; }
 }
 
+/* Branded previews for reference projects without supplied screenshots. */
+#projects .waheb-project-fallback--branded {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: .7rem;
+  padding: 2.1rem 1.4rem;
+  background:
+    radial-gradient(circle at 15% 20%, rgba(120, 113, 255, .24), transparent 43%),
+    radial-gradient(circle at 85% 85%, rgba(56, 189, 248, .13), transparent 43%),
+    linear-gradient(140deg, #191640, #0d0b27 65%, #111834);
+}
+#projects .waheb-project-fallback--branded::before {
+  content: "";
+  position: absolute;
+  inset: 15px;
+  border-radius: 14px;
+  border: 1px solid rgba(168, 169, 255, .13);
+  pointer-events: none;
+}
+#projects .waheb-project-fallback--branded strong {
+  max-width: 100%;
+  color: #f6f5ff;
+  font-size: clamp(1.12rem, 1.55vw, 1.65rem);
+  line-height: 1.3;
+  overflow-wrap: anywhere;
+}
+#projects .waheb-project-fallback--branded small {
+  max-width: 100%;
+  color: #a2a6ff;
+  font-size: .75rem;
+  line-height: 1.5;
+  letter-spacing: 0;
+  overflow-wrap: anywhere;
+}
+
 </style>
 <meta content="summary" name="twitter:card"/><script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"WahebSite","url":"https://waheb-site.de/","inLanguage":"de-DE"}</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Startseite","item":"https://waheb-site.de/"}]}</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Arbeitet WahebSite nur lokal oder deutschlandweit?","acceptedAnswer":{"@type":"Answer","text":"WahebSite ist deutschlandweit ausgerichtet. Neben der zentralen Startseite können zusätzliche Standortseiten helfen, Leistungen regional verständlich zu präsentieren."}},{"@type":"Question","name":"Was ist bei SEO-Landingpages für Städte wichtig?","acceptedAnswer":{"@type":"Answer","text":"Wichtig sind echte Relevanz, klare Nutzerführung, eigenständige Inhalte und saubere interne Verlinkung. Reine Kopien mit ausgetauschtem Ortsnamen sind langfristig deutlich schwächer."}},{"@type":"Question","name":"Ist eine neue Website automatisch suchmaschinenoptimiert?","acceptedAnswer":{"@type":"Answer","text":"Nicht automatisch. Design, Technik, Struktur, Inhalte und lokale Signale sollten gemeinsam aufgebaut werden, damit die Website nicht nur modern aussieht, sondern auch besser gefunden werden kann."}}]}</script><link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
 <style id="waheb-project-scroll-effects">
@@ -4271,17 +4306,81 @@
 <p class="waheb-project-description">Professioneller Praxisauftritt mit übersichtlichen Informationen und Kontaktwegen.</p>
 </div>
 </a>
-<a aria-label="Lindenhof Benrath öffnen" class="waheb-project-card" data-project-card="" href="https://lindenhof-benrath.com/" rel="noopener noreferrer" target="_blank">
+<a aria-label="BABIN BAU öffnen" class="waheb-project-card" data-project-card="" href="https://babinbau.de/" rel="noopener noreferrer" target="_blank">
 <span aria-hidden="true" class="waheb-project-neon-border"></span>
 <div class="waheb-project-preview">
-<div class="waheb-project-fallback"><strong>Lindenhof Benrath</strong><small>lindenhof-benrath.com</small></div>
-<img alt="Vorschau der Website Lindenhof Benrath" class="waheb-project-shot" data-sources="images/Projekte9.png" decoding="async" loading="lazy" src="images/Projekte9.png"/>
-<span class="waheb-project-live waheb-project-live--svg">Website öffnen <svg aria-hidden="true" class="waheb-arrow-svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" viewbox="0 0 24 24"><path d="M7 17 17 7"></path><path d="M9 7h8v8"></path></svg></span>
+<div class="waheb-project-fallback waheb-project-fallback--branded"><strong>BABIN BAU</strong><small>babinbau.de</small></div>
+<img alt="Vorschau der Website BABIN BAU" class="waheb-project-shot" data-sources="images/Projekte9.png" decoding="async" loading="lazy" src="images/Projekte9.png"/>
+<span class="waheb-project-live waheb-project-live--svg">Website öffnen <svg aria-hidden="true" class="waheb-arrow-svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" viewBox="0 0 24 24"><path d="M7 17 17 7"></path><path d="M9 7h8v8"></path></svg></span>
 </div>
 <div class="waheb-project-content">
 <div class="waheb-project-meta">
 <span class="waheb-project-type">Website</span>
 <span class="waheb-project-index">09</span>
+</div>
+<h3 class="waheb-project-name">BABIN BAU</h3>
+<p class="waheb-project-description">Moderner Webauftritt für Renovierung, Sanierung und individuellen Innenausbau.</p>
+</div>
+</a>
+<a aria-label="Othman Küchenmontage öffnen" class="waheb-project-card" data-project-card="" href="https://othman-küchenmontage.de/" rel="noopener noreferrer" target="_blank">
+<span aria-hidden="true" class="waheb-project-neon-border"></span>
+<div class="waheb-project-preview">
+<div class="waheb-project-fallback waheb-project-fallback--branded"><strong>Othman Küchenmontage</strong><small>othman-küchenmontage.de</small></div>
+<img alt="Vorschau der Website Othman Küchenmontage" class="waheb-project-shot" data-sources="images/Projekte10.png" decoding="async" loading="lazy" src="images/Projekte10.png"/>
+<span class="waheb-project-live waheb-project-live--svg">Website öffnen <svg aria-hidden="true" class="waheb-arrow-svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" viewBox="0 0 24 24"><path d="M7 17 17 7"></path><path d="M9 7h8v8"></path></svg></span>
+</div>
+<div class="waheb-project-content">
+<div class="waheb-project-meta">
+<span class="waheb-project-type">Website</span>
+<span class="waheb-project-index">10</span>
+</div>
+<h3 class="waheb-project-name">Othman Küchenmontage</h3>
+<p class="waheb-project-description">Übersichtlicher Webauftritt für Küchenmontage und passgenauen Küchenaufbau.</p>
+</div>
+</a>
+<a aria-label="WOLF Dienstleistungen öffnen" class="waheb-project-card" data-project-card="" href="https://wolf-dienstleistungen.de/" rel="noopener noreferrer" target="_blank">
+<span aria-hidden="true" class="waheb-project-neon-border"></span>
+<div class="waheb-project-preview">
+<div class="waheb-project-fallback waheb-project-fallback--branded"><strong>WOLF Dienstleistungen</strong><small>wolf-dienstleistungen.de</small></div>
+<img alt="Vorschau der Website WOLF Dienstleistungen" class="waheb-project-shot" data-sources="images/Projekte11.png" decoding="async" loading="lazy" src="images/Projekte11.png"/>
+<span class="waheb-project-live waheb-project-live--svg">Website öffnen <svg aria-hidden="true" class="waheb-arrow-svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" viewBox="0 0 24 24"><path d="M7 17 17 7"></path><path d="M9 7h8v8"></path></svg></span>
+</div>
+<div class="waheb-project-content">
+<div class="waheb-project-meta">
+<span class="waheb-project-type">Website</span>
+<span class="waheb-project-index">11</span>
+</div>
+<h3 class="waheb-project-name">WOLF Dienstleistungen</h3>
+<p class="waheb-project-description">Professioneller Auftritt für Baggerarbeiten, Tiefbau und Landschaftsbau.</p>
+</div>
+</a>
+<a aria-label="H&amp;M Bauelemente öffnen" class="waheb-project-card" data-project-card="" href="https://hm-bauelemente24.de/" rel="noopener noreferrer" target="_blank">
+<span aria-hidden="true" class="waheb-project-neon-border"></span>
+<div class="waheb-project-preview">
+<div class="waheb-project-fallback waheb-project-fallback--branded"><strong>H&amp;M Bauelemente</strong><small>hm-bauelemente24.de</small></div>
+<img alt="Vorschau der Website H&amp;M Bauelemente" class="waheb-project-shot" data-sources="images/Projekte12.png" decoding="async" loading="lazy" src="images/Projekte12.png"/>
+<span class="waheb-project-live waheb-project-live--svg">Website öffnen <svg aria-hidden="true" class="waheb-arrow-svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" viewBox="0 0 24 24"><path d="M7 17 17 7"></path><path d="M9 7h8v8"></path></svg></span>
+</div>
+<div class="waheb-project-content">
+<div class="waheb-project-meta">
+<span class="waheb-project-type">Website</span>
+<span class="waheb-project-index">12</span>
+</div>
+<h3 class="waheb-project-name">H&amp;M Bauelemente</h3>
+<p class="waheb-project-description">Moderne Präsentation für Fenster, Rollläden, Wintergärten und Terrassenüberdachungen.</p>
+</div>
+</a>
+<a aria-label="Lindenhof Benrath öffnen" class="waheb-project-card" data-project-card="" href="https://lindenhof-benrath.com/" rel="noopener noreferrer" target="_blank">
+<span aria-hidden="true" class="waheb-project-neon-border"></span>
+<div class="waheb-project-preview">
+<div class="waheb-project-fallback"><strong>Lindenhof Benrath</strong><small>lindenhof-benrath.com</small></div>
+<img alt="Vorschau der Website Lindenhof Benrath" class="waheb-project-shot" data-sources="images/Projekte13.png" decoding="async" loading="lazy" src="images/Projekte13.png"/>
+<span class="waheb-project-live waheb-project-live--svg">Website öffnen <svg aria-hidden="true" class="waheb-arrow-svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" viewbox="0 0 24 24"><path d="M7 17 17 7"></path><path d="M9 7h8v8"></path></svg></span>
+</div>
+<div class="waheb-project-content">
+<div class="waheb-project-meta">
+<span class="waheb-project-type">Website</span>
+<span class="waheb-project-index">13</span>
 </div>
 <h3 class="waheb-project-name">Lindenhof Benrath</h3>
 <p class="waheb-project-description">Einladender Gastronomie-Auftritt mit modernem Design und klarer Navigation.</p>
@@ -4291,13 +4390,13 @@
 <span aria-hidden="true" class="waheb-project-neon-border"></span>
 <div class="waheb-project-preview">
 <div class="waheb-project-fallback"><strong>Will's BBQ</strong><small>willsbbq.de</small></div>
-<img alt="Vorschau der Website Will's BBQ" class="waheb-project-shot" data-sources="images/Projekte10.png" decoding="async" loading="lazy" src="images/Projekte10.png"/>
+<img alt="Vorschau der Website Will's BBQ" class="waheb-project-shot" data-sources="images/Projekte14.png" decoding="async" loading="lazy" src="images/Projekte14.png"/>
 <span class="waheb-project-live waheb-project-live--svg">Website öffnen <svg aria-hidden="true" class="waheb-arrow-svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" viewbox="0 0 24 24"><path d="M7 17 17 7"></path><path d="M9 7h8v8"></path></svg></span>
 </div>
 <div class="waheb-project-content">
 <div class="waheb-project-meta">
 <span class="waheb-project-type">Website</span>
-<span class="waheb-project-index">10</span>
+<span class="waheb-project-index">14</span>
 </div>
 <h3 class="waheb-project-name">Will's BBQ</h3>
 <p class="waheb-project-description">Markanter Webauftritt für BBQ, Catering und unkomplizierte Kundenanfragen.</p>
@@ -4307,13 +4406,13 @@
 <span aria-hidden="true" class="waheb-project-neon-border"></span>
 <div class="waheb-project-preview">
 <div class="waheb-project-fallback"><strong>Al Dente Leichlingen</strong><small>aldente-leichlingen.de</small></div>
-<img alt="Vorschau der Website Al Dente Leichlingen" class="waheb-project-shot" data-sources="images/Projekte11.png" decoding="async" loading="lazy" src="images/Projekte11.png"/>
+<img alt="Vorschau der Website Al Dente Leichlingen" class="waheb-project-shot" data-sources="images/Projekte15.png" decoding="async" loading="lazy" src="images/Projekte15.png"/>
 <span class="waheb-project-live waheb-project-live--svg">Website öffnen <svg aria-hidden="true" class="waheb-arrow-svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" viewbox="0 0 24 24"><path d="M7 17 17 7"></path><path d="M9 7h8v8"></path></svg></span>
 </div>
 <div class="waheb-project-content">
 <div class="waheb-project-meta">
 <span class="waheb-project-type">Website</span>
-<span class="waheb-project-index">11</span>
+<span class="waheb-project-index">15</span>
 </div>
 <h3 class="waheb-project-name">Al Dente Leichlingen</h3>
 <p class="waheb-project-description">Moderner Restaurant-Auftritt für Speisekarte, Reservierung und Kontakt.</p>
@@ -4323,13 +4422,13 @@
 <span aria-hidden="true" class="waheb-project-neon-border"></span>
 <div class="waheb-project-preview">
 <div class="waheb-project-fallback"><strong>Bei Denis Restaurant</strong><small>beidenis-restaurant.de</small></div>
-<img alt="Vorschau der Website Bei Denis Restaurant" class="waheb-project-shot" data-sources="images/Projekte12.png" decoding="async" loading="lazy" src="images/Projekte12.png"/>
+<img alt="Vorschau der Website Bei Denis Restaurant" class="waheb-project-shot" data-sources="images/Projekte16.png" decoding="async" loading="lazy" src="images/Projekte16.png"/>
 <span class="waheb-project-live waheb-project-live--svg">Website öffnen <svg aria-hidden="true" class="waheb-arrow-svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" viewbox="0 0 24 24"><path d="M7 17 17 7"></path><path d="M9 7h8v8"></path></svg></span>
 </div>
 <div class="waheb-project-content">
 <div class="waheb-project-meta">
 <span class="waheb-project-type">Website</span>
-<span class="waheb-project-index">12</span>
+<span class="waheb-project-index">16</span>
 </div>
 <h3 class="waheb-project-name">Bei Denis Restaurant</h3>
 <p class="waheb-project-description">Warmer Gastronomie-Auftritt mit klarer Präsentation und direkter Erreichbarkeit.</p>
@@ -4345,7 +4444,7 @@
 <div class="waheb-project-content">
 <div class="waheb-project-meta">
 <span class="waheb-project-type">Website</span>
-<span class="waheb-project-index">14</span>
+<span class="waheb-project-index">17</span>
 </div>
 <h3 class="waheb-project-name">SchuSchu Restaurant</h3>
 <p class="waheb-project-description">Stilvoller Restaurant-Auftritt mit übersichtlichen Inhalten und Kontaktoptionen.</p>
@@ -4361,7 +4460,7 @@
 <div class="waheb-project-content">
 <div class="waheb-project-meta">
 <span class="waheb-project-type">Website</span>
-<span class="waheb-project-index">15</span>
+<span class="waheb-project-index">18</span>
 </div>
 <h3 class="waheb-project-name">MyHome24</h3>
 <p class="waheb-project-description">Klare Präsentation für Dienstleistungen rund um Haushalt und Immobilien.</p>
@@ -4377,7 +4476,7 @@
 <div class="waheb-project-content">
 <div class="waheb-project-meta">
 <span class="waheb-project-type">Website</span>
-<span class="waheb-project-index">16</span>
+<span class="waheb-project-index">19</span>
 </div>
 <h3 class="waheb-project-name">SeniorTrainer</h3>
 <p class="waheb-project-description">Moderner Trainingsauftritt mit klarer Präsentation, Leistungen und Kontaktmöglichkeiten.</p>
@@ -4393,7 +4492,7 @@
 <div class="waheb-project-content">
 <div class="waheb-project-meta">
 <span class="waheb-project-type">Website</span>
-<span class="waheb-project-index">17</span>
+<span class="waheb-project-index">20</span>
 </div>
 <h3 class="waheb-project-name">ORALC Fachzahnarzt Praxis</h3>
 <p class="waheb-project-description">Moderner Praxisauftritt für Oralchirurgie, Implantologie und Terminbuchung in Berlin.</p>

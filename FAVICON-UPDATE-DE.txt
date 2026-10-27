@@ -1,0 +1,6 @@
+Die ursprünglichen google-favicon-Bilder (blaue Figur) wurden aus dem ersten Projektarchiv wiederhergestellt.
+Alle HTML-Seiten verweisen auf google-favicon-48x48.png und google-favicon-192x192.png statt der üblichen favicon-Dateien.
+Die ursprüngliche google-favicon.ico mit einem W bleibt erhalten, wird aber in HTML nicht verwendet.
+Projekt-Reihenfolge und andere Medien bleiben unverändert.
+Bitte alte favicon.ico, favicon.png und favicon-*.png Dateien nach dem Upload auch vom Server entfernen.
+Die Aktualisierung in der Google-Suche kann einige Zeit dauern.

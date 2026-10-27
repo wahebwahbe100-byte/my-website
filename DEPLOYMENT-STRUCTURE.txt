@@ -1,20 +1,14 @@
-Richtige Struktur im Hauptverzeichnis des Servers:
-/
-├── index.html
-├── favicon.ico
-├── favicon.png
-├── robots.txt
-├── sitemap.xml
-├── README.md
-├── images/
-├── pages/
-│   ├── standorte.html
-│   ├── ueber-uns.html
-│   ├── cities/
-│   └── legal/
-└── seo/   (optional, nur interne Ablage)
+Waheb Site – Deployment
 
-Wichtig:
-- favicon.ico und favicon.png müssen im Root liegen.
-- robots.txt und sitemap.xml sollten ebenfalls im Root liegen.
-- In allen HTML-Dateien wurden absolute Pfade für das Favicon gesetzt.
+Statische Homepage mit index.html an der Projektwurzel. Für Deployment den Inhalt
+von my-website-main in das Web-Root (z.B. public_html) hochladen.
+
+Favicon-Dateien (im Root):
+- google-favicon.ico
+- google-favicon-48x48.png
+- google-favicon-192x192.png
+- google-favicon-512x512.png
+- site.webmanifest
+
+WICHTIG: Alte Dateien favicon.ico / favicon.png / favicon-NxN.png vom
+Hosting löschen, falls sie beim Deployment nicht automatisch entfernt werden.
